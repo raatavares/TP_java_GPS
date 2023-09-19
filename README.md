@@ -17,7 +17,7 @@
 ## Team
 
 - Leonardo Silva 2021135858
-- Student B
+- Ricardo Tavares 2021144652
 - Student C
 
 ***
