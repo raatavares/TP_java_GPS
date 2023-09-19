@@ -30,13 +30,24 @@
 
 This section contains a summary of the problem that the project will solve. It should provide a brief history of the problem and an explanation of how the organization justified the decision to build software to address it. This section should cover the reasons why the problem exists, the organization's history with this problem, any previous projects that were undertaken to try to address it, and the way that the decision to begin this project was reached. 
 
-##### Stakeholders
 
-This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences. 
+##### Stakeholders
+Lar de Idosos(Dep. Clinico, Dep.Culinario, Dep.Financeiro)
+Familiares dos utentes
+Funcionarios
+Utentes
+
+_This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences. _
 
 ##### Users
 
-This is a bulleted list of the users. As with the stakeholders, each user can either be referred to by name or role ("support rep," "call quality auditor," "home web site user")however, if there are many users, it is usually inefficient to try to name each one. The needs of each user are described. 
+Dep. Clinico - Medicação
+Dep. Culinario - Alimentos, alergias, dieta.
+Dep. Financeiro - Gastos, Lucros
+Funcionarios - Admi. Medicação, Visitas, Nedd Especiais
+
+
+_ This is a bulleted list of the users. As with the stakeholders, each user can either be referred to by name or role ("support rep," "call quality auditor," "home web site user")however, if there are many users, it is usually inefficient to try to name each one. The needs of each user are described. _
 
 ***
 
