@@ -16,9 +16,9 @@
 
 ## Team
 
-- Student A
-- Student B
-- Student C
+- Leonardo Silva 2021135858
+- Ricardo Tavares 2021144652
+- Daniel Bravo 2021137795
 
 ***
 
