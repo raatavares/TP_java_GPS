@@ -16,7 +16,7 @@
 
 ## Team
 
-- Student A
+- Leonardo Silva 2021135858
 - Student B
 - Student C
 
