@@ -18,7 +18,7 @@
 
 - Leonardo Silva 2021135858
 - Ricardo Tavares 2021144652
-- Student C
+- Daniel Bravo 2021137795
 
 ***
 
