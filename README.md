@@ -20,6 +20,7 @@
 - Ricardo Tavares 2021144652
 - Daniel Bravo 2021137795
 - Mário Lourenço 2021129732
+- Sandra Perdigão 2019102697
 
 ***
 
@@ -27,6 +28,13 @@
 
 #### Problem Statement
 ##### Project background
+
+Atualmente nos Lares de Idosos existe uma grande lacuna devido à disparidade entre o número de residentes idosos e os funcionários disponíveis, o que leva a que hajam dificuldades no que respeita aos cuidados necessários para cada idoso.
+
+Por vezes acontecem alguns erros como por exemplo a administração inadequada de medicamentos, administração de alimentos alérgicos, o não cumprimento da dieta recomendada, etc.
+Sem um sistema de gestão adequado, o bem-estar dos idosos pode estar comprometido.
+
+Nesse contexto, um software de gestão especializado para Lares de Idosos desempenha um papel vital. Além de melhorar a gestão das necessidades dos idosos e a eficiência dos funcionários, ele também garante a administração precisa de medicamentos e alimentos, proporcionando assim uma qualidade de vida mais elevada para os idosos e tranquilidade para seus entes queridos. Portanto, investir em tecnologia de gestão é essencial para enfrentar os desafios atuais e garantir um futuro mais seguro e satisfatório para a população idosa nas instituições de cuidados.
 
 This section contains a summary of the problem that the project will solve. It should provide a brief history of the problem and an explanation of how the organization justified the decision to build software to address it. This section should cover the reasons why the problem exists, the organization's history with this problem, any previous projects that were undertaken to try to address it, and the way that the decision to begin this project was reached. 
 
