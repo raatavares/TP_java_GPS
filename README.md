@@ -16,11 +16,11 @@
 
 ## Team
 
-- Leonardo Silva 2021135858
-- Ricardo Tavares 2021144652
-- Daniel Bravo 2021137795
-- Mário Lourenço 2021129732
-- Sandra Perdigão 2019102697
+- Leonardo Silva - 2021135858
+- Ricardo Tavares - 2021144652
+- Daniel Bravo - 2021137795
+- Mário Lourenço - 2021129732
+- Sandra Perdigão - 2019102697
 
 ***
 
@@ -36,25 +36,29 @@ Sem um sistema de gestão adequado, o bem-estar dos idosos pode estar comprometi
 
 Nesse contexto, um software de gestão especializado para Lares de Idosos desempenha um papel vital. Além de melhorar a gestão das necessidades dos idosos e a eficiência dos funcionários, ele também garante a administração precisa de medicamentos e alimentos, proporcionando assim uma qualidade de vida mais elevada para os idosos e tranquilidade para seus entes queridos. Portanto, investir em tecnologia de gestão é essencial para enfrentar os desafios atuais e garantir um futuro mais seguro e satisfatório para a população idosa nas instituições de cuidados.
 
-This section contains a summary of the problem that the project will solve. It should provide a brief history of the problem and an explanation of how the organization justified the decision to build software to address it. This section should cover the reasons why the problem exists, the organization's history with this problem, any previous projects that were undertaken to try to address it, and the way that the decision to begin this project was reached. 
+_This section contains a summary of the problem that the project will solve. It should provide a brief history of the problem and an explanation of how the organization justified the decision to build software to address it. This section should cover the reasons why the problem exists, the organization's history with this problem, any previous projects that were undertaken to try to address it, and the way that the decision to begin this project was reached._
 
 ##### Stakeholders
-Lar de Idosos(Dep. Clinico, Dep.Culinario, Dep.Financeiro)
-Familiares dos utentes
-Funcionarios
-Utentes
+- Lar de Idosos (Dep. Clinico, Dep.Culinario, Dep.Financeiro)
+- Familiares dos utentes - Comunicação com o Lar de Idosos
+- Funcionários - Gestão dos Utentes
+- Utentes - Melhores condições
 
 
-This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences. 
+_This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences._ 
 
 ##### Users
-Dep. Clinico - Medicação
-Dep. Culinario - Alimentos, alergias, dieta.
-Dep. Financeiro - Gastos, Lucros
-Funcionarios - Admi. Medicação, Visitas, Nedd Especiais
+- Dep. Financeiro - Necessidade de um sistema que controlo as despepesas da instituição(pagameto a funcionarios,alimentção, etc) e os pagamentos recebidos por parte dos utentes/familiares.
 
+- Dep. Clinico - Necessidade de um sistema para receitar medicação dos diferentes utentes e de registar no processo caso exista algum incidente.
 
-This is a bulleted list of the users. As with the stakeholders, each user can either be referred to by name or role ("support rep," "call quality auditor," "home web site user")however, if there are many users, it is usually inefficient to try to name each one. The needs of each user are described. 
+- Dep. Culinário - Necessidade de saber as quantidades e tipos de comida(alergias, dietas) a serem feitos em cada dia assim como requerer alimentos caso estejam acabar.
+
+- Funcionários - Necessidade de um registo com as medicações, das atenções especiais e do horario de visitas  dos utentes.
+
+- Familiares dos Utentes - Necessidade de um chat/status do processo do utente e da sua condição.
+
+_This is a bulleted list of the users. As with the stakeholders, each user can either be referred to by name or role ("support rep," "call quality auditor," "home web site user")however, if there are many users, it is usually inefficient to try to name each one. The needs of each user are described._
 
 ***
 
