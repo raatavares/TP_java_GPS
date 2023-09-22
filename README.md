@@ -121,7 +121,7 @@ writing down their needs; by this time, a concrete understanding of the project 
 - Envio de alertas aquando a realização de eventos críticos, aniversários, erros de medicação, entre outros.
 
 
-This section contains a list of features. A feature is as a cohesive area of the software that fulfills a specific need
+_This section contains a list of features. A feature is as a cohesive area of the software that fulfills a specific need
 by providing a set of services or capabilities. Any software package, in fact, any engineered product, can be broken
 down into features. The project manager can choose the number of features in the vision and scope document by changing
 the level of detail or granularity of each feature, and by combining multiple features into a single one. Sometimes
@@ -135,7 +135,7 @@ description of the functionality that it provides. This description does not nee
 sentences that give a general explanation of the feature. However, if there is more information that a stakeholder or
 project team member feels should be included, it is important to include that information. For example, it is sometimes
 useful to include a use case (see Chapter 6), as long as it is written in such a way that all of the stakeholders can
-read and understand it.
+read and understand it._
 
 ##### Features that will not be developed
 
