@@ -85,12 +85,41 @@ to try to name each one. The needs of each user are described._
 
 ##### Vision statement
 
-The goal of the vision statement is to describe what the project is expected to accomplish. It should explain what the
+O objetivo deste projeto é revolucionar a Gestão de Lares de Idosos, para isso será necessário desenvolver um software bastante completo e complexo. Este software não só melhorará a qualidade de vida dos idosos residentes em lares, como também permitirá aos funcionários/utilizadores realizarem as suas tarefas mais acertadamente uma vez que será possivel aceder aos mais diversos dados relativos a cada idoso facilitando o seu trabalho.
+Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se ajudar a criar um ambiente mais acolhedor para os residentes de lares.
+
+_The goal of the vision statement is to describe what the project is expected to accomplish. It should explain what the
 purpose of the project is. This should be a compelling reason, a solid justification for spending time, money, and
 resources on the project. The best time to write the vision statement is after talking to the stakeholders and users and
-writing down their needs; by this time, a concrete understanding of the project should be starting to jell.
+writing down their needs; by this time, a concrete understanding of the project should be starting to jell._
 
 ##### List of features
+
+**Gestão de Medicamentos**
+
+
+- Providenciar uma plataforma segura na qual os funcionários responsáveis pelos idosos possam verificar a medicação a ser tomada.
+- Manter um registo detalhado dos horários da toma dos medicamentos.
+- Alertas para os horários de administração de medicamentos.
+
+**Gestão Dietética**
+
+- Planos de refeições personalizados para os idosos tendo em conta as suas restrições dietéticas e alergias.
+
+**Gestão de Pessoal**
+
+- Manter uma base de dados com todos os funcionários do lar,contendo as suas funções e horários.
+- Permitir que todos os funcionários tenham acesso aos registos das informações sobre os idosos
+
+**Gestão de Perfis dos Residentes**
+
+- Criar perfis para novos residentes, incluido alergias, preferências ao nivel da alimentação e informações pessoais.
+- Armazenar na base de dados fotografias e documentação importante relacionados aos residentes.
+
+**Alertas e Notificações**
+
+- Envio de alertas aquando a realização de eventos críticos, aniversários, erros de medicação, entre outros.
+
 
 This section contains a list of features. A feature is as a cohesive area of the software that fulfills a specific need
 by providing a set of services or capabilities. Any software package, in fact, any engineered product, can be broken
