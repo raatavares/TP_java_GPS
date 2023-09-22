@@ -128,9 +128,9 @@ the level of detail or granularity of each feature, and by combining multiple fe
 those features are small ("screw-top cap," "holds one liter of liquid"); sometimes they are big ("four-wheel drive," "
 seats seven passengers"). It is useful to describe a product in about 10 features in the vision and scope document,
 because this usually yields a level of complexity that most people reading it are comfortable with. Adding too many
-features will overwhelm most readers.
+features will overwhelm most readers._
 
-Each feature should be listed in a separate paragraph or bullet point. It should be given a name, followed by a
+_Each feature should be listed in a separate paragraph or bullet point. It should be given a name, followed by a
 description of the functionality that it provides. This description does not need to be detailed; it can simply be a few
 sentences that give a general explanation of the feature. However, if there is more information that a stakeholder or
 project team member feels should be included, it is important to include that information. For example, it is sometimes
