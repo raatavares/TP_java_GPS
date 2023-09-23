@@ -67,23 +67,25 @@ that were undertaken to try to address it, and the way that the decision to begi
 - Melhores condições: Necessidade de um ambiente seguro, confortável e bem administrado, que inclua cuidados de saúde adequados, nutrição adequada, e atenção personalizada para melhorar a sua qualidade de vida.
 
 _This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support
-group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences._
+group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences.
 
 ##### Users
 
-- Dep. Financeiro - Necessidade de um sistema que controlo as despepesas da instituição(pagameto a
-  funcionarios,alimentção, etc) e os pagamentos recebidos por parte dos utentes/familiares.
+1. Lar de Idosos
 
-- Dep. Clinico - Necessidade de um sistema para receitar medicação dos diferentes utentes e de registar no processo caso
-  exista algum incidente.
+- Departamento Clínico: Necessidade de um sistema para conter a informação dos medicamentos prescritos para os diferentes utentes, horário de administração, registo de incidentes médicos ou problemas de saúde dos utentes, para um acompanhamento adequado.
 
-- Dep. Culinário - Necessidade de saber as quantidades e tipos de comida(alergias, dietas) a serem feitos em cada dia
-  assim como requerer alimentos caso estejam acabar.
+- Departamento Culinario: Necessidade de saberas quantidades e tipos de comida a serem preparados a cada dia, levando em consideração alergias alimentares e dietas específicas dos utentes.
 
-- Funcionários - Necessidade de um registo com as medicações, das atenções especiais e do horario de visitas dos
-  utentes.
+- Departamento Financeiro: Necessidade de um sistema que controle as despesas da instituição, incluindo pagamento a funcionários, despesas com alimentação, e outros custos operacionais. Necessidade de registar os pagamentos recebidos por parte dos utentes/ familiares para garantir um registo preciso das finanças do lar.
 
-- Familiares dos Utentes - Necessidade de um chat/status do processo do utente e da sua condição.
+2. Familiares dos utentes
+
+- Necessidade de um sistema que forneça um chat ou estado do processo do utente, permitindo uma comunicação direta com a equipa do lar. Interesse em informações atualizadas sobre a condição e o bem-estar do utente, para tranquilidade e acompanhamento dos familiares.
+
+3. Funcionários
+
+- Necessidade de um registo que contenha informações sobre as medicações que cada utente precisa de tomar, garantido uma administração precisa. Interesse em que esteja disponível informação sobre cuidados específicos necessários para cada utente, assim como acesso ao horário de visistas dos utentes para coordenar as interações familiares e garantir o bem-estar dos idosos.
 
 _This is a bulleted list of the users. As with the stakeholders, each user can either be referred to by name or role ("
 support rep," "call quality auditor," "home web site user")however, if there are many users, it is usually inefficient
