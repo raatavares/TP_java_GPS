@@ -46,10 +46,25 @@ that were undertaken to try to address it, and the way that the decision to begi
 
 ##### Stakeholders
 
-- Lar de Idosos (Dep. Clinico, Dep.Culinario, Dep.Financeiro)
-- Familiares dos utentes - Comunicação com o Lar de Idosos
-- Funcionários - Gestão dos Utentes
-- Utentes - Melhores condições
+1. Lar de Idosos
+
+- Departamento Clínico: Necessidade de um sistema de gestão que ajude a administrar eficazmente os cuidados de saúde aos utentes, incluindo registos médicos, administração de medicamentos e acompanhamento de condições de saúde.
+
+- Departamento Culinario: Necessidades relacionadas à gestão de dietas e preferências alimentares dos utentes, bem como alergias alimentares dos utentes e planeamento de refeições individualizado.
+
+- Departamento Financeiro: Necessidades relacionadas à gestão financeira do lar, incluindo informação da prestação de cada utente, controlo de custos, etc.
+
+2. Familiares dos utentes
+
+- Comunicação com o Lar de Idosos: Necessidade de acesso fácil a informações sobre o bem-estar e atendimento aos seus entes queridos, bem como uma linha de Comunicação direta com a equipa do lar.
+
+3. Funcionários
+
+- Gestão dos utentes: Necessidade de uma ferramenta que simplifique o acompanhamento das necessidades indiviuais dos utentes, alocação de tarefas e comunicação interna.
+
+4. Utentes
+
+- Melhores condições: Necessidade de um ambiente seguro, confortável e bem administrado, que inclua cuidados de saúde adequados, nutrição adequada, e atenção personalizada para melhorar a sua qualidade de vida.
 
 _This is a bulleted list of the stakeholders. Each stakeholder may be referred to by name, title, or role ("support
 group manager," "CTO," "senior manager"). The needs of each stakeholder are described in a few sentences._
