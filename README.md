@@ -109,7 +109,6 @@ writing down their needs; by this time, a concrete understanding of the project 
 
 **Gestão de Medicamentos**
 
-
 - Providenciar uma plataforma segura na qual os funcionários responsáveis pelos idosos possam verificar a medicação a ser tomada.
 - Manter um registo detalhado dos horários da toma dos medicamentos.
 - Alertas para os horários de administração de medicamentos.
@@ -160,10 +159,17 @@ during the review of the document because it allows everyone to agree on the exc
 
 ##### Risk
 
+1. Segurança de Dados: Risco de violações de segurança de dados que podem comprometer informações sensíveis dos idosos.
+2. Resistência à mudança: Risco de resistência por parte dos funcionários e da equipa de cuidados aos idosos em relação à adoção da nova tecnologia.
+3. Erro de Entrada de Dados: Risco de dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
+4. Falhas técnicas: Risco de falhas técnicas na aplicação que poderiam interromper o funcionamento.
+
 Risks are potential uncertainties or adverse events that can impact the achievement of objectives and require proactive
 management to mitigate or minimize their negative effects.
 
 ##### Assumptions
+
+A primeira versão da aplicação será um protótipo disponível como uma aplicação de desktop. A aplicação não recolhe dados por si só. Os utilizadores autorizados para cada secção inserem informações dos utentes, das finanças do lar, etc. Será assumido que os utilizadores inserem dados confiáveis.
 
 This is the list of assumptions that the stakeholders, users, or project team have made. The team should hold a
 brainstorming session to come up with a list of assumptions. (See Chapter 3 for more information on assumptions.)
