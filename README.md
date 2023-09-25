@@ -150,6 +150,13 @@ read and understand it._
 
 ##### Features that will not be developed
 
+- Não incluiremos a funcionalidade de processar pagamentos para funcionários, fornecedores, utentes.
+
+- Não abordaremos a gestão de stock de alimentos.
+
+- Não haverá integração com sistemas externos de saúde ou segurança social.
+
+
 Features are often left out of a project on purpose. When a feature is explicitly left out of the software, it should be
 added to this section to tell the reader that a decision was made to exclude it. For example, one way to handle an
 unrealistic deadline is by removing one or more features from the software, in which case the removed features should be
@@ -163,6 +170,7 @@ during the review of the document because it allows everyone to agree on the exc
 2. Resistência à mudança: Risco de resistência por parte dos funcionários e da equipa de cuidados aos idosos em relação à adoção da nova tecnologia.
 3. Erro de Entrada de Dados: Risco de dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
 4. Falhas técnicas: Risco de falhas técnicas na aplicação que poderiam interromper o funcionamento.
+5. 
 
 Risks are potential uncertainties or adverse events that can impact the achievement of objectives and require proactive
 management to mitigate or minimize their negative effects.
