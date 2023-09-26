@@ -156,7 +156,7 @@ read and understand it._
 
 - Não haverá integração com sistemas externos de saúde ou segurança social.
 
-- Não iremos desenvolver um sistema de diálogo entre funcionários.
+- Não iremos desenvolver um sistema de diálogo entre funcionários, familiares e utentes.
 
 
 
