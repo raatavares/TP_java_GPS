@@ -156,13 +156,16 @@ read and understand it._
 
 - Não haverá integração com sistemas externos de saúde ou segurança social.
 
+- Não iremos desenvolver um sistema de diálogo entre funcionários.
 
-Features are often left out of a project on purpose. When a feature is explicitly left out of the software, it should be
+
+
+_Features are often left out of a project on purpose. When a feature is explicitly left out of the software, it should be
 added to this section to tell the reader that a decision was made to exclude it. For example, one way to handle an
 unrealistic deadline is by removing one or more features from the software, in which case the removed features should be
 moved into this section. The reason these features should be moved rather than deleted from the document is that
 otherwise, readers might assume that they were overlooked and bring them up in a review. This is especially important
-during the review of the document because it allows everyone to agree on the exclusion of the feature (or object to it).
+during the review of the document because it allows everyone to agree on the exclusion of the feature (or object to it)._
 
 ##### Risk
 
