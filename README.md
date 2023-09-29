@@ -235,13 +235,24 @@ brainstorming session to come up with a list of assumptions. (See Chapter 3 for 
 
 ##### User Story 1
 
-As ..., I want ..., so ...
+**Departamento Clínico**
+
+Como enfermeira do departamento clínico de um lar de idosos quero controlar a administração da medicação dos utentes, bem como fazer o seu acompanhamento do estado de saúde, para isso preciso de ter acesso á informação da medicação e problemas de saúde de cada utente.
 
 ###### Acceptance Criteria
 
-```
-An acceptance test should be written here
-```
+1. Quando o enfermeiro entra no sistema, deve ser capaz de verificar a lista de todos os utentes do lar.
+
+2. Deve ser capaz de selecionar o utente do qual pretende obter informação.
+
+3. O enfermeiro deve ter acesso á informação relativa a: tipo de medicamento a tomar, dosagem, hórario da toma do medicamento, várias informações relativas ao seu estado de saúde, e outras informações que possam ser importantes a estes.
+
+4. Os enfermeiros devem receber avisos sobre a aproximação da hora de administração da medicação de um determinado utente.
+
+5. Devem ser capazes de registar no sistema a toma ou não da medicação, bem como registar no sistema qualquer tipo de problemas de saúde ou incidentes na toma da medicação.
+
+6. Deve ser possivel registar a falta de medicamentos, bem como a falta de utensílios essenciais ao trabalho do enfermeiro.
+
 
 ###### Prototype
 
