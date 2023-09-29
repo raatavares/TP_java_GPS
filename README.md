@@ -262,6 +262,20 @@ A prototype of user story 1 should be here. You can see in (#use-case-diagram) h
 
 ##### User Story 2
 
+Como familiar eu quero ter uma maior proximidade com o utente presente no lar,
+visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação mais fácil.
+
+###### Acceptance Criteria
+
+1. Quando um familiar entra no sistema, deve ser capaz de ver o horario de visita e da medicação
+2. Deve ser capaz de ter acesso a um chat para comunicar com o utente
+3. Deve ser capaz de ter acesso ao estado de saúde do utente
+
+###### Prototype
+
+A prototype of user story 1 should be here. You can see in (#use-case-diagram) how to import an image.
+
+
 ***
 
 ##### User Story 3
