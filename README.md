@@ -280,6 +280,22 @@ A prototype of user story 1 should be here. You can see in (#use-case-diagram) h
 
 ##### User Story 3
 
+Como funcionário de um lar de idosos, eu quero poder acessar o sistema para saber quais tarefas a realizar, saber horários de entrada e saída, assim como horas de levantar e deitar utentes. 
+
+###### Acceptance Criteria
+
+1. Deve ser possível visualizar informações essenciais sobre cada residente, incluindo seu nome, idade, histórico médico relevante e quaisquer alergias.
+
+2. Deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si, para uma maior cooperação entre si e troca de turnos em casos de necessidade.
+
+3. Deve ser possível acessar um registro de horários de administração de medicamentos para cada residente onde se pode obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
+
+4. Deve ser possível acessar um registro de horários de rotina para cada residente onde se pode obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
+
+###### Prototype
+
+A prototype of user story 3 should be here. You can see in (#use-case-diagram) how to import an image.
+
 ***
 
 ## Architecture and Design
