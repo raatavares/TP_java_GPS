@@ -297,6 +297,29 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 A prototype of user story 3 should be here. You can see in (#use-case-diagram) how to import an image.
 
 ***
+##### User Story 4
+
+**Departamento Culinário**
+
+Como funcionária no Departamento Culinario de um lar de idosos, quero controlar o planeamento das refeições, garantir que as preferências alimentares e restrições dietéticas dos idosos sejam consideradas, e manter registo de stock para garantir que os ingredientes estejam sempre disponíveis.
+
+###### Acceptance Criteria
+
+1. Quando a funcionária do Departamento Culinario entra no sistema, deve poder visualizar o planeamento de refeições para os idosos.
+
+2. Deve ser possível aceder a informações sobre as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
+
+3. Deve receber alertas sobre restrições ou preferências alimentares especiais ao planear refeições, para garantir que as necessidades de cada idoso sejam correspondidas.
+
+4. A funcionária do Departamento Culinario pode registar informações sobre o stock de ingredientes, incluindo datas de validade e datas de reposição previstas.
+
+5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
+
+###### Prototype
+
+A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
+
+***
 
 ## Architecture and Design
 
