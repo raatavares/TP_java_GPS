@@ -273,8 +273,7 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 
 ###### Prototype
 
-A prototype of user story 1 should be here. You can see in (#use-case-diagram) how to import an image.
-
+![imgUseCase/img.png](imgUseCase/img.png)
 
 ***
 

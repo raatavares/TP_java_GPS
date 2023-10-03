@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c721d5-fc2b-4c20-aae7-69af828c5796" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/imgUseCase/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -54,6 +55,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\imgUseCase" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +75,8 @@
       <workItem from="1695731238119" duration="3656000" />
       <workItem from="1695740646098" duration="73000" />
       <workItem from="1695905810829" duration="136000" />
-      <workItem from="1696020202110" duration="2090000" />
+      <workItem from="1696020202110" duration="2196000" />
+      <workItem from="1696329950413" duration="127000" />
     </task>
     <servers />
   </component>
