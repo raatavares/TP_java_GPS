@@ -279,6 +279,67 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 
 ##### User Story 3
 
+Como funcionário de um lar de idosos, eu quero poder acessar o sistema para saber quais tarefas a realizar, saber horários de entrada e saída, assim como horas de levantar e deitar utentes. 
+
+###### Acceptance Criteria
+
+1. Deve ser possível visualizar informações essenciais sobre cada residente, incluindo seu nome, idade, histórico médico relevante e quaisquer alergias.
+
+2. Deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si, para uma maior cooperação entre si e troca de turnos em casos de necessidade.
+
+3. Deve ser possível acessar um registro de horários de administração de medicamentos para cada residente onde se pode obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
+
+4. Deve ser possível acessar um registro de horários de rotina para cada residente onde se pode obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
+
+###### Prototype
+
+A prototype of user story 3 should be here. You can see in (#use-case-diagram) how to import an image.
+
+***
+##### User Story 4
+
+**Departamento Culinário**
+
+Como funcionária no Departamento Culinario de um lar de idosos, quero controlar o planeamento das refeições, garantir que as preferências alimentares e restrições dietéticas dos idosos sejam consideradas, e manter registo de stock para garantir que os ingredientes estejam sempre disponíveis.
+
+###### Acceptance Criteria
+
+1. Quando a funcionária do Departamento Culinario entra no sistema, deve poder visualizar o planeamento de refeições para os idosos.
+
+2. Deve ser possível aceder a informações sobre as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
+
+3. Deve receber alertas sobre restrições ou preferências alimentares especiais ao planear refeições, para garantir que as necessidades de cada idoso sejam correspondidas.
+
+4. A funcionária do Departamento Culinario pode registar informações sobre o stock de ingredientes, incluindo datas de validade e datas de reposição previstas.
+
+5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
+
+###### Prototype
+
+A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
+
+***
+
+##### User Story 5
+
+**Departamento Financeiro**
+
+Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenciar as finanças da instituição de forma eficaz e transparente. Para isso, preciso ter acesso às informações financeiras relevantes, tais como gastos alimentares, despesas com energia, água, cuidados médicos, manutenção de instalações e outras despesas operacionais essenciais.
+
+###### Acceptance Criteria
+
+1. Ao acessar o sistema, o membro da equipe financeira deve ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
+
+2. Deve ser possível acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
+
+3. Devem ser capazes de registrar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
+
+4. Os membros da equipe financeira devem ser alertados sobre datas de vencimento de contas a pagar, para que não haja pagamentos em atraso.
+
+###### Prototype
+
+A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
+
 ***
 
 ## Architecture and Design
