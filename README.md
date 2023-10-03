@@ -256,7 +256,7 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Prototype
 
-A prototype of user story 1 should be here. You can see in (#use-case-diagram) how to import an image.
+![imgUseCase/LarDeIdoso.png](imgUseCase/LarDeIdoso.png)
 
 ***
 
