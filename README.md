@@ -334,11 +334,13 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 2. Deve ser possível acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
 
-3. Devem ser capazes de registrar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
+3. Devem ser capazes de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
 
 4. Os membros da equipe financeira devem ser alertados sobre datas de vencimento de contas a pagar, para que não haja pagamentos em atraso.
 
 ###### Prototype
+
+![imgUseCase/DepartamentoFinanceiro.png](imgUseCase/DepartamentoFinanceiro.png)
 
 A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
 
