@@ -353,6 +353,44 @@ A prototype of user story 5 should be here. You can see in (#use-case-diagram) h
 A domain model should be here. You can see in (#use-case-diagram) how to import an image.
 
 ***
+## Risk
+
+#### Treshhold of Sucess
+
+
+
+#### Risk List
+
+
+
+#### Mitigation Actions
+
+
+
+***
+## Release Plan
+### Release 1
+##### Goal
+#### Sprint 1
+###### Dates
+###### Weight
+###### Release
+###### Goal
+
+#### Sprint 2
+###### Dates
+###### Weight
+###### Release
+###### Goal
+***
+### Release 2
+#### Sprint 3
+###### Dates
+###### Weight
+###### Release
+###### Goal
+
+***
 
 ## Implementation
 
