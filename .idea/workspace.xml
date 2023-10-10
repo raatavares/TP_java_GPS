@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d7c721d5-fc2b-4c20-aae7-69af828c5796" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/DepartamentoClinico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/DepartamentoFinanceiro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/Funcionarios.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/LarDeIdoso.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/depCulinaria.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/depculinaria.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUseCase/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +79,7 @@
       <workItem from="1696349809838" duration="1098000" />
       <workItem from="1696879007289" duration="2539000" />
       <workItem from="1696928166331" duration="2393000" />
-      <workItem from="1696935803756" duration="390000" />
+      <workItem from="1696935803756" duration="1103000" />
     </task>
     <servers />
   </component>
