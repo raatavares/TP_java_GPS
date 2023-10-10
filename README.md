@@ -256,7 +256,7 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Prototype
 
-![imgUseCase/LarDeIdoso.png](imgUseCase/LarDeIdoso.png)
+![imgUseCase/DepartamentoClinico.png](imgUseCase/DepartamentoClinico.png)
 
 ***
 
