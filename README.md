@@ -349,7 +349,7 @@ A prototype of user story 5 should be here. You can see in (#use-case-diagram) h
 
 #### Domain Model
 
-A domain model should be here. You can see in (#use-case-diagram) how to import an image.
+![Modelo de Dominio](Arquitetura e Design/IMG_ModeloDominio.png)
 
 ***
 ## Risk
