@@ -256,7 +256,7 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Prototype
 
-![imgUseCase/DepartamentoClinico.png](imgUseCase/DepartamentoClinico.png)
+![Prototipos/imgs//DepartamentoClinico.png](Prototipos/imgs/DepartamentoClinico.png)
 
 ***
 
@@ -273,8 +273,7 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 
 ###### Prototype
 
-![imgUseCase/img.png](imgUseCase/img.png)
-
+![Prototipos/imgs/Familiares.png](Prototipos/imgs/Familiares.png)
 ***
 
 ##### User Story 3
@@ -293,7 +292,7 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 ###### Prototype
 
-![imgUseCase/Funcionarios.png](imgUseCase/Funcionarios.png)
+![Prototipos/imgs/Funcionarios.png](Prototipos/imgs/Funcionarios.png)
 
 ***
 ##### User Story 4
@@ -316,7 +315,7 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 
 ###### Prototype
 
-![imgUseCase/depculinaria.png](imgUseCase/depculinaria.png)
+![Prototipos/imgs/depculinaria.png](Prototipos/imgs/depculinaria.png)
 
 A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
 
@@ -340,7 +339,7 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 ###### Prototype
 
-![imgUseCase/DepartamentoFinanceiro.png](imgUseCase/DepartamentoFinanceiro.png)
+![Prototipos/imgs/DepartamentoFinanceiro.png](Prototipos/imgs/DepartamentoFinanceiro.png)
 
 A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
 

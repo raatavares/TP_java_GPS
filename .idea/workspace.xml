@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c721d5-fc2b-4c20-aae7-69af828c5796" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/imgUseCase/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/DepartamentoClinico.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/DepartamentoFinanceiro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/Funcionarios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/LarDeIdoso.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/depCulinaria.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/depculinaria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUseCase/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +56,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37586206&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -76,7 +84,12 @@
       <workItem from="1695740646098" duration="73000" />
       <workItem from="1695905810829" duration="136000" />
       <workItem from="1696020202110" duration="2196000" />
-      <workItem from="1696329950413" duration="127000" />
+      <workItem from="1696329950413" duration="1303000" />
+      <workItem from="1696339802926" duration="594000" />
+      <workItem from="1696349809838" duration="1098000" />
+      <workItem from="1696879007289" duration="2539000" />
+      <workItem from="1696928166331" duration="2393000" />
+      <workItem from="1696935803756" duration="390000" />
     </task>
     <servers />
   </component>
