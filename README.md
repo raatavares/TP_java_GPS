@@ -316,7 +316,7 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 
 ###### Prototype
 
-![imgUseCase/LarDeIdoso.png](imgUseCase/depCulinaria.jpg)
+![imgUseCase/depculinaria.png](imgUseCase/depculinaria.png)
 
 A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
 
