@@ -166,6 +166,23 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ***
 
+## Definition of done
+
+(This section is already written, do not edit)
+It is a collection of criteria that must be completed for a User Story to be considered “done.”
+
+- All tasks done
+  - CI – built, tested (Junit), reviewed (SonarCloud)
+  - Merge request to qa (code review)
+
+- Acceptance tests passed
+
+- Accepted by the client
+
+- Code merged to main
+
+
+***
 ##### User Story 1
 
 **Departamento Clínico**
@@ -187,7 +204,7 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 6. Deve ser possivel registar a falta de medicamentos, bem como a falta de utensílios essenciais ao trabalho do enfermeiro.
 
 
-###### Prototype
+###### Mockup
 
 ![Prototipos/imgs//DepartamentoClinico.png](Prototipos/imgs/DepartamentoClinico.png)
 
@@ -206,7 +223,7 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 2. Deve ser capaz de ter acesso a um chat para comunicar com o utente
 3. Deve ser capaz de ter acesso ao estado de saúde do utente
 
-###### Mockups
+###### Mockup
 
 ![Prototipos/imgs/Familiares.png](Prototipos/imgs/Familiares.png)
 ***
@@ -225,7 +242,7 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 4. Deve ser possível acessar um registro de horários de rotina para cada residente onde se pode obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
 
-###### Mockups
+###### Mockup
 
 ![Prototipos/imgs/Funcionarios.png](Prototipos/imgs/Funcionarios.png)
 
@@ -249,7 +266,7 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 
 5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
 
-###### Mockups
+###### Mockup
 
 ![Prototipos/imgs/depculinaria.png](Prototipos/imgs/depculinaria.png)
 
@@ -273,91 +290,11 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 4. Os membros da equipe financeira devem ser alertados sobre datas de vencimento de contas a pagar, para que não haja pagamentos em atraso.
 
-###### Mockups
+###### Mockup
 
 ![Prototipos/imgs/DepartamentoFinanceiro.png](Prototipos/imgs/DepartamentoFinanceiro.png)
 
 A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
-
-***
-
-## Definition of done
-
-(This section is already written, do not edit)
-It is a collection of criteria that must be completed for a User Story to be considered “done.”
-
-- All tasks done
-  - CI – built, tested (Junit), reviewed (SonarCloud)
-  - Merge request to qa (code review)
-
-- Acceptance tests passed
-
-- Accepted by the client
-
-- Code merged to main
-
-
-***
-
-##### User Story 1
-
-1. Quando o enfermeiro entra no sistema, deve ser capaz de verificar a lista de todos os utentes do lar.
-
-2. Deve ser capaz de selecionar o utente do qual pretende obter informação.
-
-3. O enfermeiro deve ter acesso á informação relativa a: tipo de medicamento a tomar, dosagem, hórario da toma do medicamento, várias informações relativas ao seu estado de saúde, e outras informações que possam ser importantes a estes.
-
-4. Os enfermeiros devem receber avisos sobre a aproximação da hora de administração da medicação de um determinado utente.
-
-5. Devem ser capazes de registar no sistema a toma ou não da medicação, bem como registar no sistema qualquer tipo de problemas de saúde ou incidentes na toma da medicação.
-
-6. Deve ser possivel registar a falta de medicamentos, bem como a falta de utensílios essenciais ao trabalho do enfermeiro.
-
-***
-
-##### User Story 2
-
-1. Quando um familiar entra no sistema, deve ser capaz de ver o horario de visita e da medicação
-2. Deve ser capaz de ter acesso a um chat para comunicar com o utente
-3. Deve ser capaz de ter acesso ao estado de saúde do utente
-
-***
-
-##### User Story 3
-
-1. Deve ser possível visualizar informações essenciais sobre cada residente, incluindo seu nome, idade, histórico médico relevante e quaisquer alergias.
-
-2. Deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si, para uma maior cooperação entre si e troca de turnos em casos de necessidade.
-
-3. Deve ser possível acessar um registro de horários de administração de medicamentos para cada residente onde se pode obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
-
-4. Deve ser possível acessar um registro de horários de rotina para cada residente onde se pode obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
-
-***
-
-##### User Story 4
-
-1. Quando a funcionária do Departamento Culinario entra no sistema, deve poder visualizar o planeamento de refeições para os idosos.
-
-2. Deve ser possível aceder a informações sobre as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
-
-3. Deve receber alertas sobre restrições ou preferências alimentares especiais ao planear refeições, para garantir que as necessidades de cada idoso sejam correspondidas.
-
-4. A funcionária do Departamento Culinario pode registar informações sobre o stock de ingredientes, incluindo datas de validade e datas de reposição previstas.
-
-5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
-
-***
-
-##### User Story 5
-
-1. Ao acessar o sistema, o membro da equipe financeira deve ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
-
-2. Deve ser possível acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
-
-3. Devem ser capazes de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
-
-4. Os membros da equipe financeira devem ser alertados sobre datas de vencimento de contas a pagar, para que não haja pagamentos em atraso.
 
 ***
 
