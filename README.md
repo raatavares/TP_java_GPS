@@ -298,11 +298,32 @@ A prototype of user story 5 should be here. You can see in (#use-case-diagram) h
 
 ***
 
+##### User Story 6
+
+**Gerência**
+
+Como membro da gerência de um lar de idosos, os mesmos deverão ser responsáveis pela organização e gestão de tarefas dos funcionários como tal devem ter a capacidade de os avisar de certas situações. Devem ainda ter a capacidade de verificar os dados pessoais mais relevantes relativos aos idosos do seu lar.
+
+###### Acceptance Criteria
+
+1. Ao acessar o sistema, os membros da gerência deverão ter a capacidade de enviar avisos aos seus mais variados funcionários.
+
+2. Devem ainda ser capazes de verificar dados pessoais relativos aos idosos do lar.
+
+
+###### Mockup
+
+
+
+***
+
 ## Architecture and Design
 
 #### Domain Model
 
 ![Modelo de Dominio](Arquitetura e Design/IMG_ModeloDominio.png)
+
+
 
 ***
 
