@@ -191,17 +191,19 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Acceptance Criteria
 
-1. Quando o enfermeiro entra no sistema, deve ser capaz de verificar a lista de todos os utentes do lar.
+1. Dado que o enfermeiro entrou no sistema, quando ele acede á lista de utentes do lar, ele deve ser capaz de visualizar a lista completa de utentes.
 
-2. Deve ser capaz de selecionar o utente do qual pretende obter informação.
+2. Dado que o enfermeiro está a visualizar a lista de utentes, quando o mesmo seleciona um utente deve ser capaz de aceder às informações desse utente.
 
-3. O enfermeiro deve ter acesso á informação relativa a: tipo de medicamento a tomar, dosagem, hórario da toma do medicamento, várias informações relativas ao seu estado de saúde, e outras informações que possam ser importantes a estes.
+3. Dado que o enfermeiro está a visualizar as informações de um utente, quando ele navega pelas informações do utente,o mesmo deve encontrar detalhes como o tipo de medicamento a tomar, dosagem, horário da administração do medicamento, informações de saúde relevantes e outras informações importantes.
 
-4. Os enfermeiros devem receber avisos sobre a aproximação da hora de administração da medicação de um determinado utente.
+4. Dado que o enfermeiro está a visualizar as informações de um utente,quando a hora de administração de medicamentos de um utente se aproxima,então o enfermeiro deve receber avisos sobre a hora de administração.
 
-5. Devem ser capazes de registar no sistema a toma ou não da medicação, bem como registar no sistema qualquer tipo de problemas de saúde ou incidentes na toma da medicação.
+5. Dado que o enfermeiro está a registar a administração de medicamentos,quando ele administra o medicamento ao utente ou se recusa a fazê-lo,ele deve registar essa ação no sistema.
 
-6. Deve ser possivel registar a falta de medicamentos, bem como a falta de utensílios essenciais ao trabalho do enfermeiro.
+6. Dado que o enfermeiro está a registar informações de saúde,quando ocorre um problema de saúde, então ele deve registar os detalhes no sistema.
+
+7. Dado que o enfermeiro está a utilizar o sistema, quando ele deteta a falta de medicamentos ou falta de utensilios essenciais ao seu trabalho,então ele deve ser capaz de fazer esse registo.
 
 
 ###### Mockup
