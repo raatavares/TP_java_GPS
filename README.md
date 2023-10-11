@@ -119,7 +119,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 **Alertas e Notificações**
 
-- Envio de alertas aquando a realização de eventos críticos, aniversários, erros de medicação, entre outros.
+- Envio de alertas por parte da gerência aquando a realização de eventos críticos, aniversários, erros de medicação, entre outros.
 
 
 ##### Features that will not be developed
