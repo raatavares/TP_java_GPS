@@ -246,7 +246,7 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 ###### Mockup
 
-![Prototipos/imgs/Funcionarios.png](Prototipos/imgs/Funcionarios.png)
+![Prototipos/imgs/FuncionariosMockup.png](Prototipos/imgs/FuncionariosMockup.png)
 
 ***
 
