@@ -163,7 +163,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 - [US3 - Funcionário](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
 - [US4 - Departamento Culinária](https://gitlab.com/ShorMario/gps_g33/-/issues/4)
 - [US5 - Departamento Financeiro](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
-- [US5 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
+- [US6 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
 
