@@ -327,25 +327,28 @@ quando este deseja verificar informações pessoais de um idoso residente no lar
 
 ![Modelo de Dominio](Arquitetura e Design/IMG_ModeloDominio.png)
 
-
-
 ***
 
 ### Risk
 
 ##### Threshhold of Success
-- By the 2nd release date, 30% of all the User Stories from the Product Backlog are closed. (for example)
-- Goal2
-- Goal3
+- Quando tivermos a meio do projeto iremos ter ≥ 50% das ‘user’ stories acabadas.
+
+**(Adicionar mais)**
 
 ##### Risk List
-- RSK1 – PxI: 4x5=20; The team has no experience in software estimation, therefore there might cause underestimation, delaying the project in an uncontrolled way (for example)
-- RSKn – PxI: axb=c; Risk statement
+- RSK1 – PxI: 3x5=15 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
+- RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
+- RSK3 – PxI: 5x4=20; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
+- RSK4 – PxI: 1x5=5; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
+- RSK5 – PxI: 4x5=20; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 ##### Mitigation Actions
 (threats>=20)
-- RSK2 – MS; At the middle of each sprint, compare the progress of the project with the estimation and, if necessary, review the sprint plan. (for example)
-- RSKn – CP/AS/MS; Contingency Plan (CP), Avoidance Strategy (AS) or Minimization Strategy (MS)
+- RSK3 – AS; Iremos fazer verificações de dados para garantir que os dados inseridos são precisos e confiáveis.
+- RSK5 – AS; Iremos implementar medidas de segurança para proteger os dados dos idosos. (ex: encriptação de dados, autenticação de utilizadores, etc.)
+
+**Nota:** _Contingency Plan (CP), Avoidance Strategy (AS) or Minimization Strategy (MS)_
 
 ***
 
@@ -353,7 +356,12 @@ quando este deseja verificar informações pessoais de um idoso residente no lar
 
 ### Release 1
 ##### Goal
-MVP - description
+
+  **Objetivo**
+  - Ter ReadMe com modelo atualizado
+  - Mockups das páginas iniciais / principais
+  - Criterios de aceitação das user stories com modelo give/when/then
+  - Ter as boards prontas com as labels corretas
 
 ##### Sprint 1
 
