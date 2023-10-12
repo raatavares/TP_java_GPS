@@ -237,13 +237,13 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 ###### Acceptance Criteria
 
-1. Deve ser possível visualizar informações essenciais sobre cada residente, incluindo seu nome, idade, histórico médico relevante e quaisquer alergias.
+1. Dado que o funcionário está a visualizar a lista de utentes, quando este seleciona um utente, deve ser capaz de visualizar informações essenciais sobre cada residente.
 
-2. Deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si, para uma maior cooperação entre si e troca de turnos em casos de necessidade.
+2. Dado que o funcionário entrou no sistema, quando este tenta comunicar com outro funcionário para informar acerca de algo ou trocar um turno, deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si.
 
-3. Deve ser possível acessar um registro de horários de administração de medicamentos para cada residente onde se pode obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
+3. Dado que o funcionário está a visualizar o registro de horários de administração de medicamentos de cada utente, quando este seleciona um utente, este deve ser capaz de obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
 
-4. Deve ser possível acessar um registro de horários de rotina para cada residente onde se pode obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
+4. Dado que o funcionário está a visualizar o registro de horários de rotina de cada residente, quando este seleciona um utente, este deve ser capaz de obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
 
 ###### Mockup
 
