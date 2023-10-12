@@ -308,9 +308,10 @@ Como membro da gerência de um lar de idosos, os mesmos deverão ser responsáve
 
 ###### Acceptance Criteria
 
-1. Ao acessar o sistema, os membros da gerência deverão ter a capacidade de enviar avisos aos seus mais variados funcionários.
+1. Dado que um membro da gerência está logado no sistema,quando este deseja enviar um aviso aos funcionários,ele deve ser capaz de criar e enviar um aviso para os funcionários.
 
-2. Devem ainda ser capazes de verificar dados pessoais relativos aos idosos do lar.
+2. Dado que um membro da gerência está logado no sistema,
+quando este deseja verificar informações pessoais de um idoso residente no lar, então ele deve ser capaz de selecionar o idoso em específico e visualizar os seus dados pessoais.
 
 
 ###### Mockup
