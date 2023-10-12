@@ -158,11 +158,12 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ##### User Stories list
 
-- User story 1 (link to issue card)
-- User story 2 (link to issue card)
-- User story 3 (link to issue card)
-- User story 4 (link to issue card)
-- User story 5 (link to issue card)
+- [US1 - Departamento Clínico](https://gitlab.com/ShorMario/gps_g33/-/issues/1)
+- [US2 - Familiar](https://gitlab.com/ShorMario/gps_g33/-/issues/2)
+- [US3 - Funcionário](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
+- [US4 - Departamento Culinária](https://gitlab.com/ShorMario/gps_g33/-/issues/4)
+- [US5 - Departamento Financeiro](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
+- [US5 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
 
