@@ -354,99 +354,97 @@ quando este deseja verificar informações pessoais de um idoso residente no lar
 
 ***
 
+## Pre-Game
+### Sprint 0 Plan
+
+- Goal: description
+- Dates: from 10-13/Oct to 24-27/Oct, 2 weeks
+- Sprint 0 Backlog (don't edit this list):
+  - Task1 – Write Team
+  - Task2 – Write V&S
+  - Task3 – Write Requirements
+  - Task4 – Write DoD
+  - Task5 – Write Architecture&Design
+  - Task6 – Write Risk Plan
+  - Task7 – Write Pre-Gane
+  - Task8 – Write Release Plan
+  - Task9 – Write Product Increments
+  - Task10 – Create Product Board
+  - Task11 – Create Sprint 0 Board
+  - Task12 – Write US in PB, estimate (SML), prioritize (MoSCoW), sort
+  - Task13 – Create repository with “GPS Git” Workflow
+
+***
+
 ## Release Plan
 
 ### Release 1
-##### Goal
 
-  **Objetivo**
-  - Ter ReadMe com modelo atualizado
-  - Mockups das páginas iniciais / principais
-  - Criterios de aceitação das user stories com modelo give/when/then
-  - Ter as boards prontas com as labels corretas
+- Goal: MVP - Para a primeira release iremos ter os funcionarios conseguirem ver os dados dos idosos.
 
-##### Sprint 1
-
-###### Dates
-From X to Y, N weeks
-
-###### Weight
-Until A Story Points
-
-###### Release
-V0.1
-
-###### Goal
-Goal description
-
-##### Sprint 2
-
-###### Dates
-From Y to Z, M weeks
-
-###### Weight
-Until B Story Points
-
-###### Release
-V0.2
-
-###### Goal
-Goal description
+- Dates: [teams 0] 21-24/Nov | [teams1] 28-30/Nov
+- Release: V1.0
 
 ***
 
 ### Release 2
 
-##### Sprint 3
-
-###### Dates
-From Z to K, P weeks
-
-###### Weight
-Until C Story Points
-
-###### Release
-V1.0
-
-###### Goal
-Final Release - description
+- Goal: Final release – description​
+- Date: [teams 0+1] 12-15/Dec
+- Release: V2.0
 
 ***
-## Implementation
 
-#### Product Increment 1
+## Increments
 
-##### Sprint Goal
+### Sprint 1
+##### Sprint Plan
 
-The sprint goal was ...
+- Goal: what’s the goal for this sprint
 
-##### Planned vs Implemented
+- Dates: from 24-27/Oct to 7-10/Nov | 14-17/Nov, 2 | 3 weeks
 
-For this iteration we planned to implement the:
+- Roles:
+  - Product Owner: name
+  - Scrum Master: name
 
-- Feature 1
-- Feature 2
+- To do:
+  - (list of US or Tasks from the PB)
+  - US1: As … I want … so that …
+  - Task1: Some task
+  
+- Story Points: 2S+3M+3X+2H
 
-For this iteration we implemented the:
+- Analysis: short analysis of the planning meeting
 
-- Feature 1
-- Feature 2
+##### Sprint Review
+
+- Analysis: what was not done or what was added (Link to US or Task from the PB)
+
+- Story Points: 2S+1M+2X+2H
+
+- Version: 0.1 
+
+- Client analysis: client feedback
+
+- Conclusions: what to add/review
 
 ##### Sprint Retrospective
 
 - What we did well:
-  - A
+    - A
 - What we did less well:
-  - B
+    - B
 - How to improve to the next sprint:
-  - C
+    - C
 
 ***
 
-#### Product Increment 2
+#### Sprint 2
 
 ***
 
-#### Product Increment 3
+#### Sprint 3
 
 ***
+
