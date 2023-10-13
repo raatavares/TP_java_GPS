@@ -209,7 +209,7 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Mockup
 
-![Prototipos/imgs//DepartamentoClinico.png](Prototipos/imgs/DepartamentoClinico.png)
+![Prototipos/imgs//DepartamentoClinico.png](Mockups/imgs/DepartamentoClinico.png)
 
 ***
 
@@ -222,13 +222,14 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 
 ###### Acceptance Criteria
 
-1. Quando um familiar entra no sistema, deve ser capaz de ver o horario de visita e da medicação
-2. Deve ser capaz de ter acesso a um chat para comunicar com o utente
-3. Deve ser capaz de ter acesso ao estado de saúde do utente
+1. Dado que um familiar entrou no sistema, quando este seleciona 'Visitas' deve conseguir ver o horario de visita
+2. Dado que um familiar entrou no sistema, quando este seleciona 'Medicação' deve conseguir ver o horario de medicação
+3. Dado que um familiar entrou no sistema, quando este seleciona 'Contacto' deve conseguir comunicar com o utente
+4. Dado que um familiar entrou no sistema, quando este seleciona 'Estado de Saúde' deve conseguir ver as consultas do utente.
 
 ###### Mockup
 
-![Prototipos/imgs/Familiares.png](Prototipos/imgs/Familiares.png)
+![Prototipos/imgs/Familiares.png](Mockups/imgs/Familiares.png)
 ***
 
 ##### User Story 3
@@ -247,7 +248,7 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 ###### Mockup
 
-![Prototipos/imgs/FuncionariosMockup.png](Prototipos/imgs/FuncionariosMockup.png)
+![Prototipos/imgs/FuncionariosMockup.png](Mockups/imgs/FuncionariosMockup.png)
 
 ***
 
@@ -271,7 +272,7 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 
 ###### Mockup
 
-![Prototipos/imgs/depculinaria.png](Prototipos/imgs/depculinaria.png)
+![Prototipos/imgs/depculinaria.png](Mockups/imgs/depculinaria.png)
 
 A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
 
@@ -295,7 +296,7 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 ###### Mockup
 
-![Prototipos/imgs/DepartamentoFinanceiro.png](Prototipos/imgs/DepartamentoFinanceiro.png)
+![Prototipos/imgs/DepartamentoFinanceiro.png](Mockups/imgs/DepartamentoFinanceiro.png)
 
 A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
 
@@ -317,6 +318,7 @@ quando este deseja verificar informações pessoais de um idoso residente no lar
 
 ###### Mockup
 
+![Gerencia.png](Mockups/imgs/Gerencia.png)
 
 
 ***

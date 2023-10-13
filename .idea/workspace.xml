@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d7c721d5-fc2b-4c20-aae7-69af828c5796" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/DepCulinaria.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/DepCulinaria.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/DepFinanceiro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/DepFinanceiro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Familiares_Contacto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Familiares_Contacto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Familiares_EstadoSaude.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Familiares_EstadoSaude.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Familiares_Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Familiares_Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Familiares_Horario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Familiares_Horario.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Familiares_Medicacao.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Familiares_Medicacao.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/Funcionários.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Funcionários.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/imgs/DepartamentoClinico.png" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/imgs/DepartamentoClinico.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/imgs/DepartamentoFinanceiro.png" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/imgs/DepartamentoFinanceiro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/imgs/Familiares.png" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/imgs/Familiares.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/imgs/FuncionariosMockup.png" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/imgs/FuncionariosMockup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototipos/imgs/depculinaria.png" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/imgs/depculinaria.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +95,7 @@
       <workItem from="1696928166331" duration="2393000" />
       <workItem from="1696935803756" duration="1103000" />
       <workItem from="1696946096321" duration="4485000" />
-      <workItem from="1697131032474" duration="4990000" />
+      <workItem from="1697131032474" duration="7517000" />
     </task>
     <servers />
   </component>
