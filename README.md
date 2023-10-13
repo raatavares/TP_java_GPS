@@ -286,13 +286,13 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 ###### Acceptance Criteria
 
-1. Ao acessar o sistema, o membro da equipe financeira deve ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
+1. Dado que um membro da equipe financeira acesse o sistema, quando este estiver logado, deverá ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
 
-2. Deve ser possível acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
+2. Dado que um membro da equipe financeira acesse o sistema, quando este desejar, deverá ser capaz de acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
 
-3. Devem ser capazes de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
+3. Dado que um membro da equipe financeira acesse o sistema, quando este precisar, deverá ser capaz de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
 
-4. Os membros da equipe financeira devem ser alertados sobre datas de vencimento de contas a pagar, para que não haja pagamentos em atraso.
+4. Dado que um membro da equipa financeira aceda ao sistema, quando se aproximarem as datas de vencimento das contas a pagar, estes devem receber alertas, a fim de evitar pagamentos em atraso.
 
 ###### Mockup
 
