@@ -315,7 +315,6 @@ It is a collection of criteria that must be completed for a User Story to be con
 Para que o projeto seja bem sucedido, devemos ter:
 - ≥ 50% das ‘user’ stories concluídas
 - Acompanhamento da medicação e problemas de saúde de cada utente
-- Resumo das finanças da instituição
 - Permitir a gestão de tarefas dos funcionários
 
 **(Adicionar mais)**
@@ -323,28 +322,24 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Risk List
 
 **RSK1 Falta de Experiência em Desenvolvimento de Software**
-- RSK1 – PxI: 3x5=15 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
+- RSK1 – PxI: 4x5=20 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
 
 **RSK2 Resistência à mudança**
 - RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 5x4=20; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
+- RSK3 – PxI: 3x5=15; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
 
 **RSK4 Falhas técnicas**
-- RSK4 – PxI: 1x5=5; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
+- RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
 
 **RSK5 Violações de segurança**
-- RSK5 – PxI: 4x5=20; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
+- RSK5 – PxI: 3x5=15; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 
 ##### Mitigation Actions
 (threats>=20)
 - RSK1 - AS; Certificar durante os sprints e reuniões se os membros do grupo estão alinhados e resolver eventuais bloqueios.
-- RSK2 - MS; Tentar que o software seja user friendly de forma a facilitar a aceitação por parte dos utilizadores.
-- RSK3 – AS; Iremos fazer verificações de dados para garantir que os dados inseridos são precisos e confiáveis.
-- RSK4 - MS; Tentar minimizar bugs e uso excessivo de recursos de forma a minimizar possíveis falhas.
-- RSK5 – CP; Iremos implementar medidas de segurança para proteger os dados dos idosos. (ex: encriptação de dados, autenticação de utilizadores, etc.)
 
 **Nota:** _Contingency Plan (CP), Avoidance Strategy (AS) or Minimization Strategy (MS)_
 
