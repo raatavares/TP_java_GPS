@@ -152,6 +152,17 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Mockups
 
+![Prototipos/imgs//DepartamentoClinico.png](Mockups/imgs/DepartamentoClinico.png)
+
+![Prototipos/imgs/Familiares.png](Mockups/imgs/Familiares.png)
+
+![Prototipos/imgs/FuncionariosMockup.png](Mockups/imgs/FuncionariosMockup.png)
+
+![Prototipos/imgs/depculinaria.png](Mockups/imgs/depculinaria.png)
+
+![Prototipos/imgs/DepartamentoFinanceiro.png](Mockups/imgs/DepartamentoFinanceiro.png)
+
+![Gerencia.png](Mockups/imgs/Gerencia.png)
 ***
 
 ### User Stories
@@ -164,7 +175,6 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 - [US4 - Departamento Culinária](https://gitlab.com/ShorMario/gps_g33/-/issues/4)
 - [US5 - Departamento Financeiro](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
 - [US6 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
-
 
 ***
 ##### User Story 1
@@ -189,11 +199,6 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 7. Dado que o enfermeiro está a utilizar o sistema, quando ele deteta a falta de medicamentos ou falta de utensilios essenciais ao seu trabalho,então ele deve ser capaz de fazer esse registo.
 
-
-###### Mockup
-
-![Prototipos/imgs//DepartamentoClinico.png](Mockups/imgs/DepartamentoClinico.png)
-
 ***
 
 ##### User Story 2
@@ -210,9 +215,6 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 3. Dado que um familiar entrou no sistema, quando este seleciona 'Contacto' deve conseguir comunicar com o utente
 4. Dado que um familiar entrou no sistema, quando este seleciona 'Estado de Saúde' deve conseguir ver as consultas do utente.
 
-###### Mockup
-
-![Prototipos/imgs/Familiares.png](Mockups/imgs/Familiares.png)
 ***
 
 ##### User Story 3
@@ -228,10 +230,6 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 3. Dado que o funcionário está a visualizar o registro de horários de administração de medicamentos de cada utente, quando este seleciona um utente, este deve ser capaz de obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
 
 4. Dado que o funcionário está a visualizar o registro de horários de rotina de cada residente, quando este seleciona um utente, este deve ser capaz de obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
-
-###### Mockup
-
-![Prototipos/imgs/FuncionariosMockup.png](Mockups/imgs/FuncionariosMockup.png)
 
 ***
 
@@ -253,12 +251,6 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 
 5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
 
-###### Mockup
-
-![Prototipos/imgs/depculinaria.png](Mockups/imgs/depculinaria.png)
-
-A prototype of user story 4 should be here. You can see in (#use-case-diagram) how to import an image.
-
 ***
 
 ##### User Story 5
@@ -277,12 +269,6 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 4. Dado que um membro da equipa financeira aceda ao sistema, quando se aproximarem as datas de vencimento das contas a pagar, estes devem receber alertas, a fim de evitar pagamentos em atraso.
 
-###### Mockup
-
-![Prototipos/imgs/DepartamentoFinanceiro.png](Mockups/imgs/DepartamentoFinanceiro.png)
-
-A prototype of user story 5 should be here. You can see in (#use-case-diagram) how to import an image.
-
 ***
 
 ##### User Story 6
@@ -297,12 +283,6 @@ Como membro da gerência de um lar de idosos, os mesmos deverão ser responsáve
 
 2. Dado que um membro da gerência está logado no sistema,
 quando este deseja verificar informações pessoais de um idoso residente no lar, então ele deve ser capaz de selecionar o idoso em específico e visualizar os seus dados pessoais.
-
-
-###### Mockup
-
-![Gerencia.png](Mockups/imgs/Gerencia.png)
-
 
 ***
 
