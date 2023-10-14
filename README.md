@@ -132,6 +132,8 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 - Não iremos desenvolver um sistema de diálogo entre funcionários, familiares e utentes.
 
+- Não iremos gerenciar as finanças da instituição.
+
 ##### Assumptions
 
 1. A primeira versão da aplicação será um protótipo disponível como uma aplicação de desktop.
@@ -152,16 +154,28 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Mockups
 
+**Departamento Clínico**
+Os funcionários do departamento clínico podem verificar a lista de utentes, registar a administração de medicamentos, registar problemas de saúde, receber avisos e fazer anotações.
 ![Mockup Dep. Clinico](Mockups/imgs/DepartamentoClinico.png)
 
+**Familiares**
+Os familiares poderam agendar visitas, controlar as medicações e verificar o estado de saúde do utente.
 ![Mockup Familiares](Mockups/imgs/Familiares.png)
 
+**Funcionários**
+Os funcionários terão acesso a informações dos utentes, chat entre outros funcionários para assuntos diversos, cuidar da administração de medicamentos e rotinas de utentes.
 ![Mockup Funcionarios](Mockups/imgs/FuncionariosMockup.png)
 
+**Departamento Culinária **
+Os funcionários do departamento de culinária podem fazer planeamento de refeições e analisar informações culinárias de cada utente. Além disso, poderão registar stocks e receber alertas.
 ![Mockup Dep. Culinaria](Mockups/imgs/depculinaria.png)
 
+**Departamento Financeiro**
+Os funcionários do departamento financeiro poderão analisar e adicionar despesas e receitas a nível geral da instituição, assim como analisar e adicionar despesas individuais de utentes.
 ![Mockup Dep. Financeiro](Mockups/imgs/DepartamentoFinanceiro.png)
 
+**Gerência**
+Os elementos da gerência terão acesso a diversas informações sobre cada utente, assim como poderão criar vários tipos de avisos.
 ![Mockup Gerencia](Mockups/imgs/Gerencia.png)
 ***
 
@@ -348,7 +362,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 ## Pre-Game
 ### Sprint 0 Plan
 
-- Goal: description
+- Goal: Terminar o README e as Mockups do projeto.
 
 - Dates: from 10-13/Oct to 24-27/Oct, 2 weeks
 
@@ -375,7 +389,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: MVP - Para a primeira release iremos ter os funcionarios conseguirem ver os dados dos idosos.
 
-- Dates: [teams 0] 21-24/Nov | [teams1] 28-30/Nov
+- Dates: [teams1] 28-30/Nov
 - Release: V1.0
 
 ***
