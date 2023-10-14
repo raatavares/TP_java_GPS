@@ -152,17 +152,17 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Mockups
 
-![Prototipos/imgs//DepartamentoClinico.png](Mockups/imgs/DepartamentoClinico.png)
+![Mockup Dep. Clinico](Mockups/imgs/DepartamentoClinico.png)
 
-![Prototipos/imgs/Familiares.png](Mockups/imgs/Familiares.png)
+![Mockup Familiares](Mockups/imgs/Familiares.png)
 
-![Prototipos/imgs/FuncionariosMockup.png](Mockups/imgs/FuncionariosMockup.png)
+![Mockup Funcionarios](Mockups/imgs/FuncionariosMockup.png)
 
-![Prototipos/imgs/depculinaria.png](Mockups/imgs/depculinaria.png)
+![Mockup Dep. Culinaria](Mockups/imgs/depculinaria.png)
 
-![Prototipos/imgs/DepartamentoFinanceiro.png](Mockups/imgs/DepartamentoFinanceiro.png)
+![Mockup Dep. Financeiro](Mockups/imgs/DepartamentoFinanceiro.png)
 
-![Gerencia.png](Mockups/imgs/Gerencia.png)
+![Mockup Gerencia](Mockups/imgs/Gerencia.png)
 ***
 
 ### User Stories
@@ -185,19 +185,19 @@ Como enfermeira do departamento clínico de um lar de idosos quero controlar a a
 
 ###### Acceptance Criteria
 
-1. Dado que o enfermeiro entrou no sistema, quando ele acede á lista de utentes do lar, ele deve ser capaz de visualizar a lista completa de utentes.
+1. **Dado** que o enfermeiro entrou no sistema, **quando** ele acede á lista de utentes do lar, ele **deve** ser capaz de visualizar a lista completa de utentes.
 
-2. Dado que o enfermeiro está a visualizar a lista de utentes, quando o mesmo seleciona um utente deve ser capaz de aceder às informações desse utente.
+2. **Dado** que o enfermeiro está a visualizar a lista de utentes, **quando** o mesmo seleciona um utente **deve** ser capaz de aceder às informações desse utente.
 
-3. Dado que o enfermeiro está a visualizar as informações de um utente, quando ele navega pelas informações do utente,o mesmo deve encontrar detalhes como o tipo de medicamento a tomar, dosagem, horário da administração do medicamento, informações de saúde relevantes e outras informações importantes.
+3. **Dado** que o enfermeiro está a visualizar as informações de um utente, **quando** ele navega pelas informações do utente,o mesmo **deve** encontrar detalhes como o tipo de medicamento a tomar, dosagem, horário da administração do medicamento, informações de saúde relevantes e outras informações importantes.
 
-4. Dado que o enfermeiro está a visualizar as informações de um utente,quando a hora de administração de medicamentos de um utente se aproxima,então o enfermeiro deve receber avisos sobre a hora de administração.
+4. **Dado** que o enfermeiro está a visualizar as informações de um utente,**quando** a hora de administração de medicamentos de um utente se aproxima,então o enfermeiro **deve** receber avisos sobre a hora de administração.
 
-5. Dado que o enfermeiro está a registar a administração de medicamentos,quando ele administra o medicamento ao utente ou se recusa a fazê-lo,ele deve registar essa ação no sistema.
+5. **Dado** que o enfermeiro está a registar a administração de medicamentos,**quando** ele administra o medicamento ao utente ou se recusa a fazê-lo,ele **deve** registar essa ação no sistema.
 
-6. Dado que o enfermeiro está a registar informações de saúde,quando ocorre um problema de saúde, então ele deve registar os detalhes no sistema.
+6. **Dado** que o enfermeiro está a registar informações de saúde,**quando** ocorre um problema de saúde, então ele **deve** registar os detalhes no sistema.
 
-7. Dado que o enfermeiro está a utilizar o sistema, quando ele deteta a falta de medicamentos ou falta de utensilios essenciais ao seu trabalho,então ele deve ser capaz de fazer esse registo.
+7. **Dado** que o enfermeiro está a utilizar o sistema, **quando** ele deteta a falta de medicamentos ou falta de utensilios essenciais ao seu trabalho,então ele **deve** ser capaz de fazer esse registo.
 
 ***
 
@@ -210,26 +210,28 @@ visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação m
 
 ###### Acceptance Criteria
 
-1. Dado que um familiar entrou no sistema, quando este seleciona 'Visitas' deve conseguir ver o horario de visita
-2. Dado que um familiar entrou no sistema, quando este seleciona 'Medicação' deve conseguir ver o horario de medicação
-3. Dado que um familiar entrou no sistema, quando este seleciona 'Contacto' deve conseguir comunicar com o utente
-4. Dado que um familiar entrou no sistema, quando este seleciona 'Estado de Saúde' deve conseguir ver as consultas do utente.
+1. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Visitas' **deve** conseguir ver o horario de visita
+2. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Medicação' **deve** conseguir ver o horario de medicação
+3. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Contacto' **deve** conseguir comunicar com o utente
+4. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Estado de Saúde' **deve** conseguir ver as consultas do utente.
 
 ***
 
 ##### User Story 3
 
+**Funcionario**
+
 Como funcionário de um lar de idosos, eu quero poder acessar o sistema para saber quais tarefas a realizar, saber horários de entrada e saída, assim como horas de levantar e deitar utentes.
 
 ###### Acceptance Criteria
 
-1. Dado que o funcionário está a visualizar a lista de utentes, quando este seleciona um utente, deve ser capaz de visualizar informações essenciais sobre cada residente.
+1. **Dado** que o funcionário está a visualizar a lista de utentes, **quando** este seleciona um utente, **deve** ser capaz de visualizar informações essenciais sobre cada residente.
 
-2. Dado que o funcionário entrou no sistema, quando este tenta comunicar com outro funcionário para informar acerca de algo ou trocar um turno, deve haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si.
+2. **Dado** que o funcionário entrou no sistema, **quando** este tenta comunicar com outro funcionário para informar acerca de algo ou trocar um turno, **deve** haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si.
 
-3. Dado que o funcionário está a visualizar o registro de horários de administração de medicamentos de cada utente, quando este seleciona um utente, este deve ser capaz de obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
+3. **Dado** que o funcionário está a visualizar o registro de horários de administração de medicamentos de cada utente, **quando** este seleciona um utente, este **deve** ser capaz de obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
 
-4. Dado que o funcionário está a visualizar o registro de horários de rotina de cada residente, quando este seleciona um utente, este deve ser capaz de obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
+4. **Dado** que o funcionário está a visualizar o registro de horários de rotina de cada residente, **quando** este seleciona um utente, este **deve** ser capaz de obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
 
 ***
 
@@ -237,19 +239,14 @@ Como funcionário de um lar de idosos, eu quero poder acessar o sistema para sab
 
 **Departamento Culinário**
 
-Como funcionária no Departamento Culinario de um lar de idosos, quero controlar o planeamento das refeições, garantir que as preferências alimentares e restrições dietéticas dos idosos sejam consideradas, e manter registo de stock para garantir que os ingredientes estejam sempre disponíveis.
+Como funcionária no Departamento Culinario de um lar de idosos, quero controlar o planeamento das refeições, garantir que as preferências alimentares e restrições dietéticas dos idosos sejam consideradas, e manter registo de ‘stock’ para garantir que os ingredientes estejam sempre disponíveis.
 
 ###### Acceptance Criteria
 
-1. Quando a funcionária do Departamento Culinario entra no sistema, deve poder visualizar o planeamento de refeições para os idosos.
-
-2. Deve ser possível aceder a informações sobre as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
-
-3. Deve receber alertas sobre restrições ou preferências alimentares especiais ao planear refeições, para garantir que as necessidades de cada idoso sejam correspondidas.
-
-4. A funcionária do Departamento Culinario pode registar informações sobre o stock de ingredientes, incluindo datas de validade e datas de reposição previstas.
-
-5. Deve ser possível criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
+1. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Planeamento Refeições' **deve** poder visualizar o planeamento de refeições assim como avisos sobre preferências alimentares especiais para alguns idosos.
+2. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Preferências Alimentares/Restrições' **deve** conseguir ver as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
+3. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Registar Stock' **deve** conseguir registar informações sobre o ‘stock’ de ingredientes, incluindo datas de validade e datas de reposição previstas.
+4. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Criar Plano Semanal' **deve** conseguir criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
 
 ***
 
@@ -261,13 +258,13 @@ Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenci
 
 ###### Acceptance Criteria
 
-1. Dado que um membro da equipe financeira acesse o sistema, quando este estiver logado, deverá ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
+1. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este estiver logado, deverá ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
 
-2. Dado que um membro da equipe financeira acesse o sistema, quando este desejar, deverá ser capaz de acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
+2. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este desejar, deverá ser capaz de acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
 
-3. Dado que um membro da equipe financeira acesse o sistema, quando este precisar, deverá ser capaz de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
+3. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este precisar, deverá ser capaz de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
 
-4. Dado que um membro da equipa financeira aceda ao sistema, quando se aproximarem as datas de vencimento das contas a pagar, estes devem receber alertas, a fim de evitar pagamentos em atraso.
+4. **Dado** que um membro da equipa financeira aceda ao sistema, **quando** se aproximarem as datas de vencimento das contas a pagar, estes devem receber alertas, a fim de evitar pagamentos em atraso.
 
 ***
 
@@ -279,10 +276,10 @@ Como membro da gerência de um lar de idosos, os mesmos deverão ser responsáve
 
 ###### Acceptance Criteria
 
-1. Dado que um membro da gerência está logado no sistema,quando este deseja enviar um aviso aos funcionários,ele deve ser capaz de criar e enviar um aviso para os funcionários.
+1. **Dado** que um membro da gerência está logado no sistema, **quando** este deseja enviar um aviso aos funcionários,ele **deve** ser capaz de criar e enviar um aviso para os funcionários.
 
-2. Dado que um membro da gerência está logado no sistema,
-quando este deseja verificar informações pessoais de um idoso residente no lar, então ele deve ser capaz de selecionar o idoso em específico e visualizar os seus dados pessoais.
+2. **Dado** que um membro da gerência está logado no sistema,
+**quando** este deseja verificar informações pessoais de um idoso residente no lar, então ele **deve** ser capaz de selecionar o idoso em específico e visualizar os seus dados pessoais.
 
 ***
 
