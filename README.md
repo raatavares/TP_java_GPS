@@ -373,6 +373,10 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Dates: from 10-13/Oct to 24-27/Oct, 2 weeks
 
+- Roles:
+  - Product Owner: Ricardo Tavares
+  - Scrum Master: Leonardo Silva
+
 - Sprint 0 Backlog (don't edit this list):
   - Task1 – Write Team
   - Task2 – Write V&S
@@ -403,7 +407,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 2
 
-- Goal: Final release – description​
+- Goal: Para o release final iremos implementar todas as funcionalidades do Departamento Cliníco, Departamento de Culinária, Gerência e os Familiares.
 - Date: [teams 0+1] 12-15/Dec
 - Release: V2.0
 
@@ -414,18 +418,20 @@ Para que o projeto seja bem sucedido, devemos ter:
 ### Sprint 1
 ##### Sprint Plan
 
-- Goal: what’s the goal for this sprint
+- Goal: Desenvolver todas as funcionalidades relativas aos funcionárias
 
 - Dates: from 24-27/Oct to 7-10/Nov | 14-17/Nov, 2 | 3 weeks
 
 - Roles:
-  - Product Owner: name
-  - Scrum Master: name
+  - Product Owner: **A ser decidido**
+  - Scrum Master: **A ser decidido**
 
 - To do:
-  - (list of US or Tasks from the PB)
-  - US1: As … I want … so that …
-  - Task1: Some task
+  - **US3 - Funcionários**
+  - Task1 - Visualizar informações sobre o utente.
+  - Task2 - Comunicação interna de funcionários.
+  - Task3 - Visualização de medicação a ser administrada a cada utente.
+  - Task4 - Visualização de informação relativa a horários do utente.
   
 - Story Points: 2S+3M+3X+2H
 
