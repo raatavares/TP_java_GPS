@@ -433,7 +433,7 @@ Para que o projeto seja bem sucedido, devemos ter:
   - Task3 - Visualização de medicação a ser administrada a cada utente.
   - Task4 - Visualização de informação relativa a horários do utente.
   
-- Story Points: 2S+3M+3X+2H
+- Story Points: Small: 2, Medium: 1, Large: 1; Total = 2S + 1M + 1L =
 
 - Analysis: short analysis of the planning meeting
 
