@@ -154,6 +154,9 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Mockups
 
+**Login**
+![Mockup Login](Mockups/imgs/login.png)
+
 **Departamento Clínico**
 Os funcionários do departamento clínico podem verificar a lista de utentes, registar a administração de medicamentos, registar problemas de saúde, receber avisos e fazer anotações.
 
