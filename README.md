@@ -148,7 +148,17 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Use Case Diagram
 
-![Use case diagram](imgs/UML_use_case_example-800x707.png)
+**Departamento Clínico**
+
+![Use case diagram DepartamentoClinico](Diagramas de Casos de Uso/depClinico.png)
+
+**Familiares**
+
+![Use case diagram Familiares](Diagramas de Casos de Uso/familiares.png)
+
+**Departamento Culinária **
+
+![Use case diagram DepartamentoCulinaria](Diagramas de Casos de Uso/depCulinaria_ucd.png)
 
 ***
 
