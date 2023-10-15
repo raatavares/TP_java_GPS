@@ -158,7 +158,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 **Departamento Culinária **
 
-![Use case diagram DepartamentoCulinaria](Diagramas de Casos de Uso/depCulinaria_ucd.png)
+![Use case diagram DepartamentoCulinaria](Diagramas de Casos de Uso/depCulinaria_ucd.jpg)
 
 ***
 
