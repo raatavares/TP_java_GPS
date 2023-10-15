@@ -156,6 +156,11 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ![Use case diagram Familiares](Diagramas de Casos de Uso/familiares.png)
 
+**Funcionários**
+
+![Use case diagram Funcionarios](Diagramas de Casos de Uso/Funcionarios.png)
+
+
 **Departamento Culinária**
 
 ![Use case diagram DepartamentoCulinaria](Diagramas de Casos de Uso/depCulinaria_ucd.jpg)
