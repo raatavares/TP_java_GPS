@@ -281,7 +281,6 @@ Como funcionária no Departamento Culinario de um lar de idosos, quero controlar
 1. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Planeamento Refeições' **deve** poder visualizar o planeamento de refeições assim como avisos sobre preferências alimentares especiais para alguns idosos.
 2. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Preferências Alimentares/Restrições' **deve** conseguir ver as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
 3. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Registar Stock' **deve** conseguir registar informações sobre o ‘stock’ de ingredientes, incluindo datas de validade e datas de reposição previstas.
-4. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Criar Plano Semanal' **deve** conseguir criar um plano de refeições semanal, tendo em consideração as preferências e restrições dos idosos.
 
 ***
 
