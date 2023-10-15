@@ -156,9 +156,13 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ![Use case diagram Familiares](Diagramas de Casos de Uso/familiares.png)
 
-**Departamento Culinária **
+**Departamento Culinária**
 
 ![Use case diagram DepartamentoCulinaria](Diagramas de Casos de Uso/depCulinaria_ucd.jpg)
+
+**Departamento Financeiro**
+
+![Use case diagram DepartamentoFinanceiro](Diagramas de Casos de Uso/depFinanceiro.png)
 
 ***
 
@@ -183,7 +187,7 @@ Os funcionários terão acesso a informações dos utentes, chat entre outros fu
 
 ![Mockup Funcionarios](Mockups/imgs/FuncionariosMockup.png)
 
-**Departamento Culinária **
+**Departamento Culinária**
 Os funcionários do departamento de culinária podem fazer planeamento de refeições e analisar informações culinárias de cada utente. Além disso, poderão registar stocks e receber alertas.
 
 ![Mockup Dep. Culinaria](Mockups/imgs/depculinaria.png)
