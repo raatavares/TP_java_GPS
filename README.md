@@ -221,110 +221,6 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US6 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
-##### User Story 1
-
-**Departamento Clínico**
-
-Como enfermeira do departamento clínico de um lar de idosos quero controlar a administração da medicação dos utentes, bem como fazer o seu acompanhamento do estado de saúde, para isso preciso de ter acesso á informação da medicação e problemas de saúde de cada utente.
-
-###### Acceptance Criteria
-
-1. **Dado** que o enfermeiro entrou no sistema, **quando** ele acede á lista de utentes do lar, ele **deve** ser capaz de visualizar a lista completa de utentes.
-
-2. **Dado** que o enfermeiro está a visualizar a lista de utentes, **quando** o mesmo seleciona um utente **deve** ser capaz de aceder às informações desse utente.
-
-3. **Dado** que o enfermeiro está a visualizar as informações de um utente, **quando** ele navega pelas informações do utente,o mesmo **deve** encontrar detalhes como o tipo de medicamento a tomar, dosagem, horário da administração do medicamento, informações de saúde relevantes e outras informações importantes.
-
-4. **Dado** que o enfermeiro está a visualizar as informações de um utente,**quando** a hora de administração de medicamentos de um utente se aproxima,então o enfermeiro **deve** receber avisos sobre a hora de administração.
-
-5. **Dado** que o enfermeiro está a registar a administração de medicamentos,**quando** ele administra o medicamento ao utente ou se recusa a fazê-lo,ele **deve** registar essa ação no sistema.
-
-6. **Dado** que o enfermeiro está a registar informações de saúde,**quando** ocorre um problema de saúde, então ele **deve** registar os detalhes no sistema.
-
-7. **Dado** que o enfermeiro está a utilizar o sistema, **quando** ele deteta a falta de medicamentos ou falta de utensilios essenciais ao seu trabalho,então ele **deve** ser capaz de fazer esse registo.
-
-***
-
-##### User Story 2
-
-**Familiar**
-
-Como familiar eu quero ter uma maior proximidade com o utente presente no lar,
-visto que eu quero conseguir saber o bem-estar, saúde e ter uma comunicação mais fácil.
-
-###### Acceptance Criteria
-
-1. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Visitas' **deve** conseguir ver o horario de visita
-2. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Medicação' **deve** conseguir ver o horario de medicação
-3. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Contacto' **deve** conseguir comunicar com o utente
-4. **Dado** que um familiar entrou no sistema, **quando** este seleciona 'Estado de Saúde' **deve** conseguir ver as consultas do utente.
-
-***
-
-##### User Story 3
-
-**Funcionario**
-
-Como funcionário de um lar de idosos, eu quero poder acessar o sistema para saber quais tarefas a realizar, saber horários de entrada e saída, assim como horas de levantar e deitar utentes.
-
-###### Acceptance Criteria
-
-1. **Dado** que o funcionário está a visualizar a lista de utentes, **quando** este seleciona um utente, **deve** ser capaz de visualizar informações essenciais sobre cada residente.
-
-2. **Dado** que o funcionário entrou no sistema, **quando** este tenta comunicar com outro funcionário para informar acerca de algo ou trocar um turno, **deve** haver uma funcionalidade de chat que permita aos funcionários se comunicarem entre si.
-
-3. **Dado** que o funcionário está a visualizar o registro de horários de administração de medicamentos de cada utente, **quando** este seleciona um utente, este **deve** ser capaz de obter informações relativas aos medicamentos a serem administrados, as doses e os horários.
-
-4. **Dado** que o funcionário está a visualizar o registro de horários de rotina de cada residente, **quando** este seleciona um utente, este **deve** ser capaz de obter informações relativas a horas de acordar e deitar, assim como banhos, trocas de fraldas, atividades didáticas e horas de visita.
-
-***
-
-##### User Story 4
-
-**Departamento Culinário**
-
-Como funcionária no Departamento Culinario de um lar de idosos, quero controlar o planeamento das refeições, garantir que as preferências alimentares e restrições dietéticas dos idosos sejam consideradas, e manter registo de ‘stock’ para garantir que os ingredientes estejam sempre disponíveis.
-
-###### Acceptance Criteria
-
-1. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Planeamento Refeições' **deve** poder visualizar o planeamento de refeições assim como avisos sobre preferências alimentares especiais para alguns idosos.
-2. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Preferências Alimentares/Restrições' **deve** conseguir ver as preferências alimentares e restrições dietéticas de cada idoso, incluindo alergias.
-3. **Dado** que um membro do Dep. Culinario entrou no sistema, **quando** este seleciona 'Registar Stock' **deve** conseguir registar informações sobre o ‘stock’ de ingredientes, incluindo datas de validade e datas de reposição previstas.
-
-***
-
-##### User Story 5
-
-**Departamento Financeiro**
-
-Como membro da equipe financeira de um lar de idosos, quero ser capaz de gerenciar as finanças da instituição de forma eficaz e transparente. Para isso, preciso ter acesso às informações financeiras relevantes, tais como gastos alimentares, despesas com energia, água, cuidados médicos, manutenção de instalações e outras despesas operacionais essenciais.
-
-###### Acceptance Criteria
-
-1. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este estiver logado, deverá ser capaz de visualizar um resumo das finanças da instituição, incluindo receitas e despesas totais.
-
-2. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este desejar, deverá ser capaz de acessar detalhes financeiros específicos, como relatórios de despesas mensais de cada idoso.
-
-3. **Dado** que um membro da equipe financeira acesse o sistema, **quando** este precisar, deverá ser capaz de registar despesas adicionais e receitas inesperadas no sistema, de forma que as finanças sejam sempre atualizadas e precisas.
-
-4. **Dado** que um membro da equipa financeira aceda ao sistema, **quando** se aproximarem as datas de vencimento das contas a pagar, estes devem receber alertas, a fim de evitar pagamentos em atraso.
-
-***
-
-##### User Story 6
-
-**Gerência**
-
-Como membro da gerência de um lar de idosos, os mesmos deverão ser responsáveis pela organização e gestão de tarefas dos funcionários como tal devem ter a capacidade de os avisar de certas situações. Devem ainda ter a capacidade de verificar os dados pessoais mais relevantes relativos aos idosos do seu lar.
-
-###### Acceptance Criteria
-
-1. **Dado** que um membro da gerência está logado no sistema, **quando** este deseja enviar um aviso aos funcionários,ele **deve** ser capaz de criar e enviar um aviso para os funcionários.
-
-2. **Dado** que um membro da gerência está logado no sistema,
-**quando** este deseja verificar informações pessoais de um idoso residente no lar, então ele **deve** ser capaz de selecionar o idoso em específico e visualizar os seus dados pessoais.
-
-***
 
 ## Definition of done
 
@@ -422,7 +318,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: MVP - Para a primeira release iremos ter os funcionarios conseguirem ver os dados dos idosos.
 
-- Dates: [teams1] 28-30/Nov
+- Dates:  28-30/Nov
 - Release: V1.0
 
 ***
@@ -430,7 +326,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 ### Release 2
 
 - Goal: Para o release final iremos implementar todas as funcionalidades do Departamento Cliníco, Departamento de Culinária, Gerência e os Familiares.
-- Date: [teams 0+1] 12-15/Dec
+- Date: 12-15/Dec
 - Release: V2.0
 
 ***
@@ -442,7 +338,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: Desenvolver todas as funcionalidades relativas aos funcionárias
 
-- Dates: from 24-27/Oct to 7-10/Nov | 14-17/Nov, 2 | 3 weeks
+- Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
 
 - Roles:
   - Product Owner: **A ser decidido**
@@ -450,11 +346,11 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - To do:
   - **US3 - Funcionários**
-  - Task1 - Visualizar informações sobre o utente.
-  - Task2 - Comunicação interna de funcionários.
-  - Task3 - Visualização de medicação a ser administrada a cada utente.
-  - Task4 - Visualização de informação relativa a horários do utente.
-  
+    - Task1 - Visualizar informações sobre o utente.
+    - Task2 - Comunicação interna de funcionários.
+    - Task3 - Visualização de medicação a ser administrada a cada utente.
+    - Task4 - Visualização de informação relativa a horários do utente.
+    
 - Story Points: Small: 2, Medium: 1, Large: 1; Total = 2S + 1M + 1L =
 
 - Analysis: short analysis of the planning meeting
