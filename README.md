@@ -23,10 +23,10 @@
 
 ## Team
 
-- Leonardo Silva - 2021135858
-- Ricardo Tavares - 2021144652
 - Daniel Bravo - 2021137795
+- Leonardo Silva - 2021135858
 - Mário Lourenço - 2021129732
+- Ricardo Tavares - 2021144652
 - Sandra Perdigão - 2019102697
 
 ***
