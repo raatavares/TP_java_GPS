@@ -299,16 +299,16 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 1
 
-- Goal: MVP - Para a primeira release iremos ter os funcionarios conseguirem ver os dados dos idosos.
+- Goal: MVP - Para a primeira release iremos ter todas as funcionalidades dos Funcionários, Departamento Clinico, e Familiares funcionais.
 
-- Dates:  28-30/Nov
+- Dates:  from 24-27/Oct to 28-30/Nov
 - Release: V1.0
 
 ***
 
 ### Release 2
 
-- Goal: Para o release final iremos implementar todas as funcionalidades do Departamento Cliníco, Departamento de Culinária, Gerência e os Familiares.
+- Goal: Para o release final iremos implementar todas as funcionalidades do Departamento de Culinária e Gerência funcionais.
 - Date: 12-15/Dec
 - Release: V2.0
 
@@ -319,7 +319,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 ### Sprint 1
 ##### Sprint Plan
 
-- Goal: Desenvolver todas as funcionalidades relativas aos funcionárias
+- Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
 
 - Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
 
@@ -333,8 +333,13 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task2 - Comunicação interna de funcionários.
     - Task3 - Visualização de medicação a ser administrada a cada utente.
     - Task4 - Visualização de informação relativa a horários do utente.
+  - **US2 - Familiares**
+    - Task1 - Visualizar o horário de visitas.
+    - Task2 - Visualizar o horário de medicação.
+    - Task3 - Comunicar com o utente.
+    - Task4 - Visualizar as consultas do utente.
     
-- Story Points: Small: 2, Medium: 1, Large: 1; Total = 2S + 1M + 1L =
+- Story Points: 3H + 8H + 2H + 3H + 1H + 2H + 8H + 5H = 32H
 
 - Analysis: short analysis of the planning meeting
 
