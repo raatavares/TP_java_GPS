@@ -201,6 +201,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US5 - Departamento Financeiro](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
 - [US6 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 - [US7 - Armazém](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
+- [US8 - Animador de Atividades Recreativas](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
 
 ***
 
