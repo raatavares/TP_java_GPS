@@ -148,7 +148,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 ### Use Case Diagram
 
-![Use case diagram](Diagramas de Casos de Uso/LarDeIdososv2.png)
+![Use case diagram](Diagramas de Casos de Uso/LarDeIdososV2.png)
 
 ***
 
