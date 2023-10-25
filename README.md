@@ -202,7 +202,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US3: Como membro do Dep. Financeiro quero Visualizar as receitas e despesas do lar de idosos](https://gitlab.com/ShorMario/gps_g33/-/issues/63)
 - [US4: Como membro do Dep. Financeiro quero receber alertas das faturas que estão proximas de vencer](https://gitlab.com/ShorMario/gps_g33/-/issues/64)
 - [US5: Como membro do Dep. Financeiro quero visualizar as despesas de residentes em especifico](https://gitlab.com/ShorMario/gps_g33/-/issues/65)
-- [US6 - Como Familiar eu quero comunicar com o lar de idosos](https://gitlab.com/ShorMario/gps_g33/-/issues/30)
+- [US6 - Como familiar quero ter uma comunicação com o lar de idosos](https://gitlab.com/ShorMario/gps_g33/-/issues/30)
 - [US7 - Como Familiar eu quero visualizar as consultas do utente](https://gitlab.com/ShorMario/gps_g33/-/issues/33)
 - [US8: Como Funcionario eu quero comunicar com outros funcionarios e departamentos](https://gitlab.com/ShorMario/gps_g33/-/issues/67)
 - [US9: Como Funcionario eu quero Visualizar as informações do residente](https://gitlab.com/ShorMario/gps_g33/-/issues/68)
