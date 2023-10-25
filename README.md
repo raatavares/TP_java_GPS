@@ -55,6 +55,8 @@ um futuro mais seguro e satisfatório para a população idosa nas instituiçõe
 
 - Departamento Financeiro: Necessidades relacionadas à gestão financeira do lar, incluindo informação da prestação de cada utente, controlo de custos, etc.
 
+-Animador: Necessidades relacionadas à gestão das atividades recreativas do lar, bem como o registo de participação dos utentes.
+
 **2. Familiares dos utentes**
 
 - Comunicação com o Lar de Idosos: Necessidade de acesso fácil a informações sobre o bem-estar e atendimento aos seus entes queridos, bem como uma linha de Comunicação direta com a equipa do lar.
