@@ -302,7 +302,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 1
 
-- Goal: MVP - Para a primeira release iremos ter todas as funcionalidades dos Funcionários, Departamento Clinico, e Familiares funcionais.
+- Goal: MVP - Para a primeira release iremos ter todas as funcionalidades dos Funcionários, Departamento Clinico, e Departamento Culinária funcionais, bem como a funcionalidade de gestão de funcionários e residentes do lar.
 
 - Dates:  from 24-27/Oct to 28-30/Nov
 - Release: V1.0
@@ -311,7 +311,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 2
 
-- Goal: Para o release final iremos implementar todas as funcionalidades do Departamento de Culinária e Gerência funcionais.
+- Goal: Para o release final iremos implementar todas as funcionalidades dos Familiares e Gerência funcionais.
 - Date: 12-15/Dec
 - Release: V2.0
 
