@@ -197,14 +197,23 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 
 ##### User Stories list
 
-- [US1 - Departamento Clínico](https://gitlab.com/ShorMario/gps_g33/-/issues/1)
-- [US2 - Familiar](https://gitlab.com/ShorMario/gps_g33/-/issues/2)
-- [US3 - Funcionário](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
-- [US4 - Departamento Culinária](https://gitlab.com/ShorMario/gps_g33/-/issues/4)
-- [US5 - Departamento Financeiro](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
-- [US6 - Gerência](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
-- [US7 - Armazém](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
-- [US8 - Animador de Atividades Recreativas](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
+- [US1: Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
+- [US2: Como enfermeira do Dep. Clinico quero registar a falta de medicação e utensílios.](https://gitlab.com/ShorMario/gps_g33/-/issues/2)
+- [US3: Como membro do Dep. Financeiro quero Visualizar as receitas e despesas do lar de idosos](https://gitlab.com/ShorMario/gps_g33/-/issues/63)
+- [US4: Como membro do Dep. Financeiro quero receber alertas das faturas que estão proximas de vencer](https://gitlab.com/ShorMario/gps_g33/-/issues/64)
+- [US5: Como membro do Dep. Financeiro quero visualizar as despesas de residentes em especifico](https://gitlab.com/ShorMario/gps_g33/-/issues/65)
+- [US6 - Comunicação Externa](https://gitlab.com/ShorMario/gps_g33/-/issues/30)
+- [US7 - Visualizar consultas](https://gitlab.com/ShorMario/gps_g33/-/issues/33)
+- [US8: Como Funcionario eu quero comunicar com outros funcionarios e departamentos](https://gitlab.com/ShorMario/gps_g33/-/issues/67)
+- [US9: Como Funcionario eu quero Visualizar as informações do residente](https://gitlab.com/ShorMario/gps_g33/-/issues/68)
+- [US10: Como Gerente eu quero gerir os residentes (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/5)
+- [US11: Como Gerente eu quero criar avisos para todos os funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/4)
+- [US12: Como Gerente eu quero gerir os funcionarios(Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/1)
+- [US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/61)
+- [US14: Como Animador eu quero registar a participação do residente na atividade](https://gitlab.com/ShorMario/gps_g33/-/issues/62)
+- [US15: Como cozinheira/o no Dep. Culinario eu quero gerir o stock dos alimentos](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
+- [US16: Como cozinheira/o no Dep. Culinário eu quero visualizar a lista de restrições e preferências alimentares](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
+- [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
 
