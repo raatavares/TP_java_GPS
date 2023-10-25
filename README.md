@@ -73,9 +73,11 @@ um futuro mais seguro e satisfatório para a população idosa nas instituiçõe
 
 - Departamento Clínico: Necessidade de um sistema para conter a informação dos medicamentos prescritos para os diferentes utentes, horário de administração, registo de incidentes médicos ou problemas de saúde dos utentes, para um acompanhamento adequado.
 
-- Departamento Culinario: Necessidade de saberas quantidades e tipos de comida a serem preparados a cada dia, levando em consideração alergias alimentares e dietas específicas dos utentes.
+- Departamento Culinario: Necessidade de saber as quantidades e tipos de comida a serem preparados a cada dia, levando em consideração alergias alimentares e dietas específicas dos utentes.
 
 - Departamento Financeiro: Necessidade de um sistema que controle as despesas da instituição, incluindo pagamento a funcionários, despesas com alimentação, e outros custos operacionais. Necessidade de registar os pagamentos recebidos por parte dos utentes/ familiares para garantir um registo preciso das finanças do lar.
+
+- Animador: Necessidade de um sistema que controle a participação dos utentes nas atividades, assim como gerir as diversas atividades(criar, editar e apagar).
 
 **2. Familiares dos utentes**
 
