@@ -156,40 +156,40 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 
 **Login**
 
-[<img src="Mockups/imgs/login.png" width="300"/>](Mockup Login)
+<img src="Mockups/imgs/login.png" width="300"/>
 
 **Departamento Clínico**
 Os funcionários do departamento clínico podem verificar a lista de utentes, registar a administração de medicamentos, registar problemas de saúde, receber avisos e fazer anotações.
 
-[<img src="Mockups/imgs/DepartamentoClinico.png" width="300"/>](Mockup Dep Clinico)
+<img src="Mockups/imgs/DepartamentoClinico.png" width="300"/>
 
 **Familiares**
 Os familiares poderam agendar visitas, controlar as medicações e verificar o estado de saúde do utente.
 
 
-[<img src="Mockups/imgs/Familiares.png" width="300"/>](Mockup Mockup Familiares)
+<img src="Mockups/imgs/Familiares.png" width="300"/>
 
 **Funcionários**
 Os funcionários terão acesso a informações dos utentes, chat entre outros funcionários para assuntos diversos, cuidar da administração de medicamentos e rotinas de utentes.
 
-[<img src="Mockups/imgs/FuncionariosMockup.png" width="300"/>](Mockup Funcionarios)
+<img src="Mockups/imgs/FuncionariosMockup.png" width="300"/>
   
 
 
 **Departamento Culinária**
 Os funcionários do departamento de culinária podem fazer planeamento de refeições e analisar informações culinárias de cada utente. Além disso, poderão registar stocks e receber alertas.
 
-[<img src="Mockups/imgs/depculinaria.png" width="300"/>](Mockup Dep Culinaria)
+<img src="Mockups/imgs/depculinaria.png" width="300"/>
 
 **Departamento Financeiro**
 Os funcionários do departamento financeiro poderão analisar e adicionar despesas e receitas a nível geral da instituição, assim como analisar e adicionar despesas individuais de utentes.
 
-[<img src="Mockups/imgs/DepartamentoFinanceiro.png" width="300"/>](Mockup Dep Financeiro)
+<img src="Mockups/imgs/DepartamentoFinanceiro.png" width="300"/>
 
 **Gerência**
 Os elementos da gerência terão acesso a diversas informações sobre cada utente, assim como poderão criar vários tipos de avisos.
 
-[<img src="Mockups/imgs/Gerencia.png" width="300"/>](Mockup Gerencia)
+<img src="Mockups/imgs/Gerencia.png" width="300"/>
 
 ***
 
