@@ -193,7 +193,11 @@ Os funcionários do departamento financeiro poderão analisar e adicionar despes
 **Gerência**
 Os elementos da gerência terão acesso a diversas informações sobre cada utente, assim como poderão criar vários tipos de avisos.
 
-<img src="Mockups/imgs/Gerencia.png" width="300"/>
+<img src="Mockups/imgs/Gerencia_Home.png" width="300"/> 
+<img src="Mockups/imgs/Gerencia_Residentes.png" width="300"/>
+<img src="Mockups/imgs/Gerencia_ModalResidentes.png" width="221"/>
+<img src="Mockups/imgs/Gerencia_Funcionarios.png" width="300"/>
+<img src="Mockups/imgs/Gerencia_ModalFuncionarios.png" width="221"/>
 
 ***
 
