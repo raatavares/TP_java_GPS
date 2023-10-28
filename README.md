@@ -165,7 +165,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 **Departamento Clínico**
 Os funcionários do departamento clínico podem verificar a lista de utentes, registar a administração de medicamentos, registar problemas de saúde, receber avisos e fazer anotações.
 
-<img src="Mockups/imgs/Consultas_Medicaçao.png" width="300"/>
+<img src="Mockups/imgs/Consultas_Medicacao.png" width="300"/>
 <img src="Mockups/imgs/Consultas_Medicaçao_Modal.png" width="221"/>
 
 **Familiares**
