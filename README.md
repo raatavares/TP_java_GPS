@@ -166,7 +166,7 @@ Atendendo a estas necessidades críticas dos funcionários e idosos pretende-se 
 Os funcionários do departamento clínico podem verificar a lista de utentes, registar a administração de medicamentos, registar problemas de saúde, receber avisos e fazer anotações.
 
 <img src="Mockups/imgs/Consultas_Medicacao.png" width="300"/>
-<img src="Mockups/imgs/Consultas_Medicaçao_Modal.png" width="221"/>
+<img src="Mockups/imgs/Consultas_Medicacao_Modal.png" width="221"/>
 
 **Familiares**
 Os familiares poderam agendar visitas, controlar as medicações e verificar o estado de saúde do utente.
@@ -177,7 +177,7 @@ Os familiares poderam agendar visitas, controlar as medicações e verificar o e
 **Funcionários**
 Os funcionários terão acesso a informações dos utentes, chat entre outros funcionários para assuntos diversos, cuidar da administração de medicamentos e rotinas de utentes.
 
-<img src="Mockups/imgs/InformaçõesDeResidente.png" width="300"/>
+<img src="Mockups/imgs/InformacoesDeResidente.png" width="300"/>
   
 
 
