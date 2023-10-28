@@ -184,7 +184,9 @@ Os funcionários terão acesso a informações dos utentes, chat entre outros fu
 **Departamento Culinária**
 Os funcionários do departamento de culinária podem fazer planeamento de refeições e analisar informações culinárias de cada utente. Além disso, poderão registar stocks e receber alertas.
 
-<img src="Mockups/imgs/depculinaria.png" width="300"/>
+<img src="Mockups/imgs/Culinaria_Home.png" width="221"/>
+<img src="Mockups/imgs/Culinaria_CriarRefeicao.png" width="300"/>
+<img src="Mockups/imgs/Culinaria_Refeicoes.png" width="221"/>
 
 **Departamento Financeiro**
 Os funcionários do departamento financeiro poderão analisar e adicionar despesas e receitas a nível geral da instituição, assim como analisar e adicionar despesas individuais de utentes.
