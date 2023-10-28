@@ -3,7 +3,7 @@ stages:
   - test
 
 variables:
-  CI_REGISTRY_IMAGE: "gps_g33"
+  CI_REGISTRY_IMAGE: "shormario/gps_g33"
   CI_REGISTRY: "registry.gitlab.com"
 
 build-job:
