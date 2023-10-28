@@ -138,7 +138,8 @@
             <manifest> 
               <addClasspath>true</addClasspath> 
               <classpathPrefix>lib/</classpathPrefix> 
-              <mainClass><package>./javafx-sdk</package></mainClass> 
+              <mainClass>com.example.gps_g33/com.example.gps_g33.HelloApplication</mainClass>
+              <package>jar</package> 
             </manifest> 
           </archive> 
         </configuration> 
