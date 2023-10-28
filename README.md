@@ -185,7 +185,7 @@ Os funcionários terão acesso a informações dos utentes, chat entre outros fu
 Os funcionários do departamento de culinária podem fazer planeamento de refeições e analisar informações culinárias de cada utente. Além disso, poderão registar stocks e receber alertas.
 
 <img src="Mockups/imgs/Culinaria_Home.png" width="221"/>
-<img src="Mockups/imgs/Culinaria_CriarRefeição.png" width="300"/>
+<img src="Mockups/imgs/Culinaria_CriarRefeicao.png" width="300"/>
 <img src="Mockups/imgs/Culinaria_Refeicoes.png" width="221"/>
 
 **Departamento Financeiro**
