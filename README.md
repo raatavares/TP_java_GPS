@@ -323,7 +323,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 1
 
-- Goal: MVP - Para a primeira release iremos ter todas as funcionalidades dos Funcionários, Departamento Clinico, e Departamento Culinária funcionais, bem como a funcionalidade de gestão de funcionários e residentes do lar.
+- Goal: MVP - Na primeira versão, o nosso objetivo é implementar para a gerencia a gestão de residente e a administração de funcionários  assim como o planeamento das refeições no Departamento de Culinária.
 
 - Dates:  from 24-27/Oct to 28-30/Nov
 - Release: V1.0
@@ -332,7 +332,10 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 2
 
-- Goal: Para o release final iremos implementar todas as funcionalidades dos Familiares e Gerência funcionais.
+- Goal: Para a versão final,iremos introduzir a opção de visualizar residentes para os funcionários, no Departamento Culinário iremos ter a capacidade de visualizar as restrições alimentares de cada residente, enquanto no Departamento Clínico, disponibilizaremos o registo de consultas e informações sobre a medicação do residente.
+
+
+
 - Date: 12-15/Dec
 - Release: V2.0
 
@@ -348,8 +351,8 @@ Para que o projeto seja bem sucedido, devemos ter:
 - Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
 
 - Roles:
-  - Product Owner: **A ser decidido**
-  - Scrum Master: **A ser decidido**
+  - Product Owner: Daniel Bravo
+  - Scrum Master: Ricardo Tavares
 
 - To do:
   - **US10 - Como Gerente eu quero gerir os residentes (Criar,Apagar,Editar)**
@@ -398,7 +401,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task15 - Tratar da lógica do botão "Radio Buttons" para guardar o tipo de refeição. - 1H 
 
     
-- Story Points: 3H + 8H + 2H + 3H + 1H + 2H + 8H + 5H = 32H
+- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
 
 - Analysis: short analysis of the planning meeting
 
