@@ -323,7 +323,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 1
 
-- Goal: MVP - Para a primeira release iremos ter todas as funcionalidades dos Funcionários, Departamento Clinico, e Departamento Culinária funcionais, bem como a funcionalidade de gestão de funcionários e residentes do lar.
+- Goal: MVP - Na primeira versão, o nosso objetivo é implementar para a gerencia a gestão de residente e a administração de funcionários  assim como o planeamento das refeições no Departamento de Culinária.
 
 - Dates:  from 24-27/Oct to 28-30/Nov
 - Release: V1.0
@@ -332,7 +332,10 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ### Release 2
 
-- Goal: Para o release final iremos implementar todas as funcionalidades dos Familiares e Gerência funcionais.
+- Goal: Para a versão final,iremos introduzir a opção de visualizar residentes para os funcionários, no Departamento Culinário iremos ter a capacidade de visualizar as restrições alimentares de cada residente, enquanto no Departamento Clínico, disponibilizaremos o registo de consultas e informações sobre a medicação do residente.
+
+
+
 - Date: 12-15/Dec
 - Release: V2.0
 
@@ -348,22 +351,57 @@ Para que o projeto seja bem sucedido, devemos ter:
 - Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
 
 - Roles:
-  - Product Owner: **A ser decidido**
-  - Scrum Master: **A ser decidido**
+  - Product Owner: Daniel Bravo
+  - Scrum Master: Ricardo Tavares
 
 - To do:
-  - **US3 - Funcionários**
-    - Task1 - Visualizar informações sobre o utente.
-    - Task2 - Comunicação interna de funcionários.
-    - Task3 - Visualização de medicação a ser administrada a cada utente.
-    - Task4 - Visualização de informação relativa a horários do utente.
-  - **US2 - Familiares**
-    - Task1 - Visualizar o horário de visitas.
-    - Task2 - Visualizar o horário de medicação.
-    - Task3 - Comunicar com o utente.
-    - Task4 - Visualizar as consultas do utente.
+  - **US10 - Como Gerente eu quero gerir os residentes (Criar,Apagar,Editar)**
+    - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
+    - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
+    - Task3 - Tratar da lógica do botão Apagar (Selecionar qual residente eliminar e retirar da tabela) - 1H
+    - Task4 - Criação da cena em SceneBuilder para a janela "Residentes". - 1H
+    - Task5 - Criação da cena em SceneBuilder para a janela de "Criar Residentes" á tabela. - 1H
+    - Task6 - Criação da cena em SceneBuilder para a janela de "Editar Residentes". - 1H
+    - Task7 - Tratar da lógica do TextField para procura de residentes. - 1H
+    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. - 1H
+    - Task9 - Tratar da lógica de adicionar um residente á tabela de Residentes. - 1H
+    - Task10 - Tratar da lógica de editar informações sobre os Residentes. - 2H
+    - Task11 - Tratar da lógica da tabela para amostra de todos os utentes. - 1H 
+
+  - **US12 - Como Gerente eu quero gerir os funcionarios(Criar,Apagar,Editar)**
+  
+    - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
+    - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
+    - Task3 - Tratar da lógica do botão Apagar (Selecionar qual funcionário eliminar e retirar da tabela) - 1H
+    - Task4 - Criação da cena em SceneBuilder para a janela "Funcionários". - 1H
+    - Task5 - Criação da cena em SceneBuilder para a janela de "Criar Funcionários" á tabela. - 1H
+    - Task6 - Criação da cena em SceneBuilder para a janela de "Editar Funcionário". - 1H
+    - Task7 - Tratar da lógica do TextField para procura de funcionários. - 1H
+    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. - 1H
+    - Task9 - Tratar da lógica de adicionar um funcionário á tabela de Funcionários. - 1H
+    - Task10 - Tratar da lógica de editar informações sobre os Funcionários. - 2H
+    - Task11 - Tratar da lógica da tabela para amostra de todos os funcionários. - 1H
+
+  - **US17 - Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)**
+
+    - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
+    - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
+    - Task3 - Tratar da lógica do botão Apagar (Selecionar qual refeição eliminar e retirar da tabela) - 1H
+    - Task4 - Criação da cena em SceneBuilder para a janela "Refeições". - 1H
+    - Task5 - Criação da cena em SceneBuilder para a janela de "Nova Refeição" á tabela. - 1H
+    - Task6 - Criação da cena em SceneBuilder para a janela de "Editar Refeição". - 1H
+    - Task7 - Tratar da lógica do TextField para procura de refeições. - 1H
+    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. - 1H
+    - Task9 - Tratar da lógica de adicionar uma refeição á tabela de Refeições. -1H
+    - Task10 - Tratar da lógica de editar a refeição. -2H
+    - Task11 - Tratar da lógica da tabela para amostra de todas as refeições - 1H
+    - Task12 - Tratar da lógica da tabela da janela "Nova Refeição", para mostragem de todos os residentes (Nome e NIF). - 1H
+    - Task13 - Tratar da lógica da possibilidade de selecionar um utente para associar á refeição.- 1H
+    - Task14 - Tratar da lógica do botão "toggle" de forma a indicar que a refeição é direcionada a todos os utentes. - 1H
+    - Task15 - Tratar da lógica do botão "Radio Buttons" para guardar o tipo de refeição. - 1H 
+
     
-- Story Points: 3H + 8H + 2H + 3H + 1H + 2H + 8H + 5H = 32H
+- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
 
 - Analysis: short analysis of the planning meeting
 
