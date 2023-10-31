@@ -5,16 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c721d5-fc2b-4c20-aae7-69af828c5796" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/controller/GerenciaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/controller/NavBarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/img/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_Funcionarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_Home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_Modal.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_ModalFuncionarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_ModalResidentes.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/views/Gerencia_Residentes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas de Casos de Uso/UserCase.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/Diagramas de Casos de Uso/UserCase.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mockups/Gerencia_Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Mockups/Gerencia_Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mockups/imgs/Gerencia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gps_g33/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gps_g33/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +47,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -39,18 +60,22 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mario/Downloads/javafx-sdk.zip&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mario/OneDrive - ISEC/3 Ano/1Semestre/GPS/Projeto/gps_g33/src/main/resources/com/example/gps_g33/views&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37586206&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
@@ -58,9 +83,25 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\src\main\resources\com\example\gps_g33\views" />
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\src\main\resources\com\example\gps_g33" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\src\main\resources\com\example\gps_g33\views" />
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\src\main\resources\com\example\gps_g33" />
+      <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\src\main\resources\com\example\gps_g33\img" />
       <recent name="C:\Users\mario\OneDrive - ISEC\3 Ano\1Semestre\GPS\Projeto\gps_g33\imgUseCase" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.gps_g33.HelloApplication" />
+      <module name="gps_g33" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,6 +130,15 @@
       <workItem from="1697562578903" duration="2100000" />
       <workItem from="1698157722973" duration="3728000" />
       <workItem from="1698413328720" duration="153000" />
+      <workItem from="1698664612301" duration="38000" />
+      <workItem from="1698667139413" duration="4432000" />
+      <workItem from="1698690572064" duration="3861000" />
+      <workItem from="1698766186107" duration="598000" />
+      <workItem from="1698767549638" duration="1086000" />
+      <workItem from="1698768987242" duration="672000" />
+      <workItem from="1698769737861" duration="3212000" />
+      <workItem from="1698774722099" duration="317000" />
+      <workItem from="1698775119165" duration="1085000" />
     </task>
     <servers />
   </component>

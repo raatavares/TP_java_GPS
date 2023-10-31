@@ -1,4 +1,5 @@
-module com.example.gps_g33 {
+module com.example.gps_g33
+{
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -13,4 +14,5 @@ module com.example.gps_g33 {
 
     opens com.example.gps_g33 to javafx.fxml;
     exports com.example.gps_g33;
+    exports com.example.gps_g33.controller;
 }
