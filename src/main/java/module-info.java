@@ -15,4 +15,5 @@ module com.example.gps_g33
     opens com.example.gps_g33 to javafx.fxml;
     exports com.example.gps_g33;
     exports com.example.gps_g33.controller;
+    opens com.example.gps_g33.modelos to javafx.base;
 }
