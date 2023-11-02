@@ -202,6 +202,8 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 <img src="Mockups/imgs/Gerencia_ModalResidentes.png" width="221"/>
 <img src="Mockups/imgs/Gerencia_Funcionarios.png" width="300"/>
 <img src="Mockups/imgs/Gerencia_ModalFuncionarios.png" width="221"/>
+<img src="Mockups/imgs/Gerencia_EditFuncionarios.png" width="221"/>
+<img src="Mockups/imgs/Gerencia_EditResidentes.png" width="221"/>
 
 ***
 
