@@ -12,6 +12,7 @@ module com.example.gps_g33
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
+
     opens com.example.gps_g33 to javafx.fxml;
     exports com.example.gps_g33;
     exports com.example.gps_g33.controller;

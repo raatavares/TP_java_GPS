@@ -17,6 +17,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import java.io.IOException;
+import java.security.PublicKey;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class GerenciaFuncionariosController implements ModalCallback{
@@ -58,6 +61,7 @@ public class GerenciaFuncionariosController implements ModalCallback{
     @FXML
     public Button deleteButton;
 
+
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
@@ -87,11 +91,61 @@ public class GerenciaFuncionariosController implements ModalCallback{
         }
     }
 
+    public void onEditButton(ActionEvent event) {
+        Funcionario funcionario = tableView.getSelectionModel().getSelectedItem();
+        if(funcionario!= null){
+            try {
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_EditFuncionarios.fxml"));
+                Parent root = loader.load();
+
+
+
+                EditController editController = loader.getController();
+                editController.setModalCallback(this);
+
+                editController.setFuncionarioParaEdicao(funcionario);
+
+                Stage modalStage = new Stage();
+                modalStage.initModality(Modality.APPLICATION_MODAL);
+                modalStage.setTitle("Editar Funcionário");
+
+                // Definir o conteúdo da janela modal
+                Scene scene = new Scene(root);
+                modalStage.setScene(scene);
+
+                // Mostrar a janela modal
+                modalStage.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
         funcionario.setId(++id);
         listaDeFuncionarios.add(funcionario);
         tableView.setItems(listaDeFuncionarios);
+    }
+
+    @Override
+    public void onFuncionarioEditado(Funcionario funcionario) {
+        for (int i = 0; i < listaDeFuncionarios.size(); i++) {
+            if(listaDeFuncionarios.get(i).getId() == funcionario.getId()){
+                listaDeFuncionarios.set(i, funcionario);
+                break;
+            }
+        }
+    }
+
+
+    public void onSearch() {
+        String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
+        List<Funcionario> funcionariosFiltrados = listaDeFuncionarios.stream()
+                .filter(funcionario -> funcionario.getNome().toLowerCase().contains(nome))
+                .collect(Collectors.toList());
+
+        tableView.setItems(FXCollections.observableArrayList(funcionariosFiltrados));
     }
 
     public void initialize(){
@@ -104,6 +158,13 @@ public class GerenciaFuncionariosController implements ModalCallback{
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         tableView.setItems(listaDeFuncionarios);
+    }
+
+    public void onDelete(ActionEvent actionEvent) {
+        Funcionario funcionario = tableView.getSelectionModel().getSelectedItem();
+        if(funcionario!= null){
+            listaDeFuncionarios.remove(funcionario);
+        }
     }
 
 }
