@@ -72,7 +72,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE" onAction="#onDelete">
+                  <Button fx:id="deleteButton" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE" onAction="#onDelete">
                      <font>
                         <Font size="16.0" />
                      </font>

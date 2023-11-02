@@ -10,60 +10,54 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
+
 import java.io.IOException;
-import java.security.PublicKey;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
-public class GerenciaFuncionariosController implements ModalCallback{
+public class GerenciaResidentesController implements ModalCallback{
 
     private int id = 0;
     @FXML
-    public TableView<Funcionario> tableView;
-    @FXML
-    public TableColumn<Funcionario, Integer> idColumn;
-    @FXML
-    public TableColumn<Funcionario, String> nomeColumn;
+    public TableView<Residente> tableViewResidentes;
 
     @FXML
-    public TableColumn<Funcionario, String> sobrenomeColumn;
+    public TableColumn<Residente, Integer> idColumn;
+    @FXML
+    public TableColumn<Residente, String> nomeColumn;
 
     @FXML
-    public TableColumn<Funcionario, String> dataNascimentoColumn;
+    public TableColumn<Residente, String> dataNascimentoColumn;
 
     @FXML
-    public TableColumn<Funcionario, String> nifColumn;
+    public TableColumn<Residente, String> nifColumn;
 
     @FXML
-    public TableColumn<Funcionario, String> contatoColumn;
+    public TableColumn<Residente, String> contatoColumn;
 
     @FXML
-    public TableColumn<Funcionario, String> emailColumn;
+    public TableColumn<Residente, String> emailColumn;
 
-    private ObservableList<Funcionario> listaDeFuncionarios = FXCollections.observableArrayList();
+    private ObservableList<Residente> listaDeResidentes = FXCollections.observableArrayList();
 
     @FXML
     public TextField searchField;
 
     @FXML
-    public TextField searchFieldResidentes;
+    public Button addButtonResidente;
 
     @FXML
-    public Button addButton;
+    public Button editButtonResidente;
 
     @FXML
-    public Button editButton;
-
-    @FXML
-    public Button deleteButton;
+    public Button deleteButtonResidente;
 
 
     private ModalCallback callback;
@@ -71,18 +65,18 @@ public class GerenciaFuncionariosController implements ModalCallback{
         this.callback = callback;
     }
     @FXML
-    public void handleAddButton(ActionEvent event) throws IOException {
+    public void onCreate(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_ModalFuncionarios.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_ModalResidentes.fxml"));
             Parent root = loader.load();
 
             // Definir o callback
-            ModalController controller = loader.getController();
+            ModalControllerResidente controller = loader.getController();
             controller.setModalCallback(this);
 
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setTitle("Adicionar Funcionário");
+            modalStage.setTitle("Adicionar Residente");
 
             // Definir o conteúdo da janela modal
             Scene scene = new Scene(root);
@@ -96,18 +90,16 @@ public class GerenciaFuncionariosController implements ModalCallback{
     }
 
     public void onEditButton(ActionEvent event) {
-        Funcionario funcionario = tableView.getSelectionModel().getSelectedItem();
-        if(funcionario!= null){
+        Residente residente = tableViewResidentes.getSelectionModel().getSelectedItem();
+        if(residente!= null){
             try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_EditFuncionarios.fxml"));
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_EditResidentes.fxml"));
                 Parent root = loader.load();
 
-
-
-                EditController editController = loader.getController();
+                EditControllerResidente editController = loader.getController();
                 editController.setModalCallback(this);
 
-                editController.setFuncionarioParaEdicao(funcionario);
+                editController.setResidenteParaEdicao(residente);
 
                 Stage modalStage = new Stage();
                 modalStage.initModality(Modality.APPLICATION_MODAL);
@@ -127,57 +119,59 @@ public class GerenciaFuncionariosController implements ModalCallback{
 
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
-        funcionario.setId(++id);
-        listaDeFuncionarios.add(funcionario);
-        tableView.setItems(listaDeFuncionarios);
+
     }
 
     @Override
     public void onResidenteEditado(Residente residente) {
+        for (int i = 0; i < listaDeResidentes.size(); i++) {
+            if(listaDeResidentes.get(i).getId() == residente.getId()){
+                listaDeResidentes.set(i, residente);
+                break;
+            }
+        }
     }
-
     @Override
     public void onResidenteCriado(Residente residente) {
-
+        residente.setId(++id);
+        listaDeResidentes.add(residente);
+        tableViewResidentes.setItems(listaDeResidentes);
     }
 
     @Override
     public void onFuncionarioEditado(Funcionario funcionario) {
-        for (int i = 0; i < listaDeFuncionarios.size(); i++) {
-            if(listaDeFuncionarios.get(i).getId() == funcionario.getId()){
-                listaDeFuncionarios.set(i, funcionario);
-                break;
-            }
-        }
+
     }
 
 
     public void onSearch() {
         String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
-        List<Funcionario> funcionariosFiltrados = listaDeFuncionarios.stream()
-                .filter(funcionario -> funcionario.getNome().toLowerCase().contains(nome))
+        List<Residente> residentesFiltrados = listaDeResidentes.stream()
+                .filter(residente -> residente.getNome().toLowerCase().contains(nome))
                 .collect(Collectors.toList());
 
-        tableView.setItems(FXCollections.observableArrayList(funcionariosFiltrados));
+
+
+        tableViewResidentes.setItems(FXCollections.observableArrayList(residentesFiltrados));
     }
 
     public void initialize(){
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        sobrenomeColumn.setCellValueFactory(new PropertyValueFactory<>("sobrenome"));
         dataNascimentoColumn.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
         nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
         contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-        tableView.setItems(listaDeFuncionarios);
+        tableViewResidentes.setItems(listaDeResidentes);
     }
 
-    public void onDelete(ActionEvent actionEvent) {
-        Funcionario funcionario = tableView.getSelectionModel().getSelectedItem();
-        if(funcionario!= null){
-            listaDeFuncionarios.remove(funcionario);
+    public void onDeleteButton(ActionEvent actionEvent) {
+        Residente residente = tableViewResidentes.getSelectionModel().getSelectedItem();
+        if(residente!= null){
+            listaDeResidentes.remove(residente);
         }
     }
 
 }
+

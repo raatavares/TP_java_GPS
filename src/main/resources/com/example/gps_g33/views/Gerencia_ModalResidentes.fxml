@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.ModalControllerResidente">
    <children>
       <Label layoutX="125.0" layoutY="30.0" style="-fx-background-color: #3a4151;" text="CRIAR RESIDENTES" textFill="WHITE">
          <font>
@@ -28,7 +28,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <DatePicker layoutX="38.0" layoutY="207.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="dataNascimentoPicker" layoutX="38.0" layoutY="207.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="38.0" layoutY="186.0" text="Data de Nascimento">
          <font>
             <Font size="15.0" />
@@ -49,12 +49,12 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="321.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Criar" textFill="WHITE" />
-      <Button layoutX="389.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
-      <TextField layoutX="38.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField layoutX="274.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField layoutX="274.0" layoutY="207.0" prefHeight="25.0" prefWidth="129.0" />
-      <TextField layoutX="274.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField layoutX="38.0" layoutY="282.0" prefHeight="25.0" prefWidth="121.0" />
+      <Button fx:id="criarButton" layoutX="321.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Criar" textFill="WHITE" onAction="#handleCriarButton"/>
+      <Button fx:id="cancelarButton" layoutX="389.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" onAction="#handleCancelarButton"/>
+      <TextField fx:id="nomeField" layoutX="38.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField fx:id="sobrenomeField" layoutX="274.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField fx:id="nifField" layoutX="274.0" layoutY="207.0" prefHeight="25.0" prefWidth="129.0" />
+      <TextField fx:id="contactoField" layoutX="274.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField fx:id ="emailField" layoutX="38.0" layoutY="282.0" prefHeight="25.0" prefWidth="121.0" />
    </children>
 </AnchorPane>
