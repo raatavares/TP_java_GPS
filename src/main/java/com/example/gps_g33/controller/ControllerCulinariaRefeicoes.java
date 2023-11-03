@@ -18,7 +18,7 @@ import java.util.Date;
 
 public class ControllerCulinariaRefeicoes{
     public Button buttonToAddRefeicao;
-    public Button buttonToEditRefeicao
+    public Button buttonToEditRefeicao;
     public Button buttonToRefeicoes;
     public Button buttonToResidentes;
     public StackPane contentArea;
