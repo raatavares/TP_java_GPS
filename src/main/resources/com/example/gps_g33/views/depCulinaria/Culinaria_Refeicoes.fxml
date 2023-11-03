@@ -135,7 +135,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">
+                  <Button fx:id="buttonToEditRefeicao"  onAction="#handleToEditRefeicao" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">            
                      <font>
                         <Font size="16.0" />
                      </font>
