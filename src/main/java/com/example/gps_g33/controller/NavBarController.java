@@ -40,17 +40,17 @@ public class NavBarController {
     }
 
     public void switchToHome() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Home.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Home.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
     public void switchToFuncionarios(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Funcionarios.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Funcionarios.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
     public void switchToResidentes() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Residentes.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Residentes.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
