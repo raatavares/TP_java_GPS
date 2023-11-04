@@ -67,7 +67,7 @@ public class GerenciaResidentesController implements ModalCallback{
     @FXML
     public void onCreate(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_ModalResidentes.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/gerencia/Gerencia_ModalResidentes.fxml"));
             Parent root = loader.load();
 
             // Definir o callback
