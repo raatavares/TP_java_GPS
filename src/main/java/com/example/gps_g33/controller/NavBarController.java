@@ -1,7 +1,6 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
-import com.example.gps_g33.ModelManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +17,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NavBarController {
-    ModelManager model;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     public Button funcionariosButton;
@@ -33,24 +34,23 @@ public class NavBarController {
     @FXML
     public void initialize() {
         Date dataAtual = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("HH:mm | dd-MM");
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         String data = formato.format(dataAtual);
         lblDate.setText(data);
-        this.model = new ModelManager();
     }
 
     public void switchToHome() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Home.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Home.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
-    public void switchToFuncionarios() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Funcionarios.fxml"));
+    public void switchToFuncionarios(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Funcionarios.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
     public void switchToResidentes() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Residentes.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Residentes.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

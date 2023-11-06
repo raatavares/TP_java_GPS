@@ -61,7 +61,7 @@ public class GerenciaFuncionariosController implements ModalCallback{
     @FXML
     public void handleAddButton(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_ModalFuncionarios.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/gerencia/Gerencia_ModalFuncionarios.fxml"));
             Parent root = loader.load();
 
             // Definir o callback
