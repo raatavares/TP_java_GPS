@@ -1,10 +1,10 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.modelos.Residente;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,44 +23,34 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GerenciaResidentesController implements ModalCallback{
-
-    private int id = 0;
     @FXML
     public TableView<Residente> tableViewResidentes;
-
-    @FXML
     public TableColumn<Residente, Integer> idColumn;
-    @FXML
     public TableColumn<Residente, String> nomeColumn;
-
-    @FXML
     public TableColumn<Residente, String> dataNascimentoColumn;
-
-    @FXML
     public TableColumn<Residente, String> nifColumn;
-
-    @FXML
     public TableColumn<Residente, String> contatoColumn;
-
-    @FXML
     public TableColumn<Residente, String> emailColumn;
-
-    private ObservableList<Residente> listaDeResidentes = FXCollections.observableArrayList();
-
-    @FXML
     public TextField searchField;
-
-    @FXML
     public Button addButtonResidente;
-
-    @FXML
     public Button editButtonResidente;
-
-    @FXML
     public Button deleteButtonResidente;
-
-
+    private Data data;
     private ModalCallback callback;
+
+    public void initialize(){
+        data = Data.getInstance();
+
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        dataNascimentoColumn.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
+        nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
+        contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        updateTable();
+    }
+
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
     }
@@ -124,18 +114,21 @@ public class GerenciaResidentesController implements ModalCallback{
 
     @Override
     public void onResidenteEditado(Residente residente) {
-        for (int i = 0; i < listaDeResidentes.size(); i++) {
-            if(listaDeResidentes.get(i).getId() == residente.getId()){
-                listaDeResidentes.set(i, residente);
+
+        for (int i = 0; i < data.getResidentes().size(); i++) {
+            if(data.getResidentes().get(i).getId() == residente.getId()){
+                data.getResidentes().set(i, residente);
                 break;
             }
         }
+        updateTable();
+
     }
     @Override
     public void onResidenteCriado(Residente residente) {
-        residente.setId(++id);
-        listaDeResidentes.add(residente);
-        tableViewResidentes.setItems(listaDeResidentes);
+        residente.setId(data.calcularProximoIdResidentes());
+        data.addResidente(residente);
+        updateTable();
     }
 
     @Override
@@ -146,7 +139,7 @@ public class GerenciaResidentesController implements ModalCallback{
 
     public void onSearch() {
         String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
-        List<Residente> residentesFiltrados = listaDeResidentes.stream()
+        List<Residente> residentesFiltrados = data.getResidentes().stream()
                 .filter(residente -> residente.getNome().toLowerCase().contains(nome))
                 .collect(Collectors.toList());
 
@@ -155,22 +148,19 @@ public class GerenciaResidentesController implements ModalCallback{
         tableViewResidentes.setItems(FXCollections.observableArrayList(residentesFiltrados));
     }
 
-    public void initialize(){
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        dataNascimentoColumn.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
-        nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
-        contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-        tableViewResidentes.setItems(listaDeResidentes);
-    }
-
-    public void onDeleteButton(ActionEvent actionEvent) {
+    public void onDeleteButton() {
         Residente residente = tableViewResidentes.getSelectionModel().getSelectedItem();
         if(residente!= null){
-            listaDeResidentes.remove(residente);
+            data.removeResidente(residente.getId());
         }
+        updateTable();
+    }
+
+
+    public void updateTable() {
+        tableViewResidentes.getItems().clear();
+        tableViewResidentes.getItems().addAll(data.getResidentes());
     }
 
 }

@@ -11,10 +11,14 @@ module com.example.gps_g33
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.fasterxml.jackson.databind;
+    requires json.simple;
+    requires com.google.gson;
 
 
     opens com.example.gps_g33 to javafx.fxml;
     exports com.example.gps_g33;
     exports com.example.gps_g33.controller;
-    opens com.example.gps_g33.modelos to javafx.base;
+    exports com.example.gps_g33.modelos;
+    opens com.example.gps_g33.modelos to javafx.base,com.google.gson;
 }

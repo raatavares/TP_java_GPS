@@ -1,6 +1,7 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.ModelManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NavBarController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    ModelManager model;
 
     @FXML
     public Button funcionariosButton;
@@ -34,9 +33,10 @@ public class NavBarController {
     @FXML
     public void initialize() {
         Date dataAtual = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("HH:mm | dd-MM");
         String data = formato.format(dataAtual);
         lblDate.setText(data);
+        this.model = new ModelManager();
     }
 
     public void switchToHome() throws IOException {
@@ -44,7 +44,7 @@ public class NavBarController {
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
-    public void switchToFuncionarios(ActionEvent event) throws IOException {
+    public void switchToFuncionarios() throws IOException {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/Gerencia_Funcionarios.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);

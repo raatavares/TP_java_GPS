@@ -1,10 +1,13 @@
 package com.example.gps_g33;
 
+import com.example.gps_g33.modelos.Data;
+import com.example.gps_g33.modelos.Funcionario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Hashtable;
 
 public class HelloApplication extends Application {
     @Override
@@ -19,6 +22,10 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        Data data = Data.getInstance();
+
+
         launch();
     }
+
 }

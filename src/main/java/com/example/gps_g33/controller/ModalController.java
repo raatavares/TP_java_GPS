@@ -48,7 +48,7 @@ public class ModalController{
         String email = emailField.getText();
         String dataNascimento = dataNascimentoPicker.getValue().toString();
 
-        Funcionario funcionario = new Funcionario(0, nome, sobrenome, dataNascimento, nif, contato, email);
+        Funcionario funcionario = new Funcionario(0, nome, sobrenome, dataNascimento, nif, contato, email, "");
 
         if (callback != null) {
             callback.onFuncionarioCriado(funcionario);
