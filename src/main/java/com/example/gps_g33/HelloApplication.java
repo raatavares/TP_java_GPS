@@ -38,8 +38,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        Data data = Data.getInstance();
-
 
         launch();
     }

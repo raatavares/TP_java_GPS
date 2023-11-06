@@ -10,9 +10,6 @@ module com.example.gps_g33
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
-    requires com.almasb.fxgl.all;
-    requires com.fasterxml.jackson.databind;
-    requires json.simple;
     requires com.google.gson;
 
 

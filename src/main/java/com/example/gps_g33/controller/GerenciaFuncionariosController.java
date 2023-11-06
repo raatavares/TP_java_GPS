@@ -87,7 +87,7 @@ public class GerenciaFuncionariosController implements ModalCallback{
         Funcionario funcionario = tableView.getSelectionModel().getSelectedItem();
         if(funcionario!= null){
             try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_EditFuncionarios.fxml"));
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/gerencia/Gerencia_EditFuncionarios.fxml"));
                 Parent root = loader.load();
 
 

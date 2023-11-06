@@ -83,7 +83,7 @@ public class GerenciaResidentesController implements ModalCallback{
         Residente residente = tableViewResidentes.getSelectionModel().getSelectedItem();
         if(residente!= null){
             try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/Gerencia_EditResidentes.fxml"));
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/gerencia/Gerencia_EditResidentes.fxml"));
                 Parent root = loader.load();
 
                 EditControllerResidente editController = loader.getController();
