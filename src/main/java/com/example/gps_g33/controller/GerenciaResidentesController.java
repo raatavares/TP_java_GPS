@@ -3,6 +3,7 @@ package com.example.gps_g33.controller;
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
+import com.example.gps_g33.modelos.Refeicao;
 import com.example.gps_g33.modelos.Residente;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -131,6 +132,15 @@ public class GerenciaResidentesController implements ModalCallback{
         updateTable();
     }
 
+    @Override
+    public void onRefeicaoCriado(Refeicao refeicao) {
+
+    }
+
+    @Override
+    public void onRefeicaoEditado(Funcionario funcionario) {
+
+    }
     @Override
     public void onFuncionarioEditado(Funcionario funcionario) {
 

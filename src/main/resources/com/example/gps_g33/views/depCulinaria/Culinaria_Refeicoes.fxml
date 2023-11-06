@@ -103,16 +103,17 @@
           <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
+            <TableView fx:id="tableViewRefeicao" prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="51.0" text="ID" />
-                <TableColumn prefWidth="99.0" text="Nome" />
-                  <TableColumn prefWidth="104.0" text="Data da Refeição" />
-                  <TableColumn prefWidth="75.0" text="Descrição" />
-                  <TableColumn prefWidth="99.0" text="Nome do Utente" />
-                  <TableColumn minWidth="0.0" prefWidth="79.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="79.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="85.0" text="." />
+                <TableColumn fx:id="idColumn" prefWidth="51.0" text="ID" />
+                <TableColumn fx:id="nomeColumn" prefWidth="99.0" text="Nome" />
+                  <TableColumn fx:id="dataRefeicaoColumn" prefWidth="104.0" text="Data da Refeição" />
+                  <TableColumn fx:id="DescricaoColumn" prefWidth="75.0" text="Descrição" />
+                  <TableColumn fx:id="NIF" prefWidth="99.0" text="NIF" />
+                  <TableColumn fx:id="tipoDietaColumn" prefWidth="99.0" text="Dieta" />
+                  <TableColumn  minWidth="0.0" prefWidth="79.0" text="." />
+                  <TableColumn  minWidth="0.0" prefWidth="79.0" text="." />
+                  <TableColumn  minWidth="0.0" prefWidth="85.0" text="." />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
