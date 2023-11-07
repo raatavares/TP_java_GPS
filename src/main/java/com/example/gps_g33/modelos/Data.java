@@ -35,6 +35,18 @@ public class Data {
         return null; // Retornar null se o funcionário não for encontrado
     }
 
+    public Funcionario isValidLogin(String username, String password) {
+
+        for (Funcionario funcionario : funcionariosData) {
+            if (funcionario.getUsername().equals(username) && funcionario.getPassword().equals(password)) {
+                return funcionario;
+            }
+        }
+
+        return null;
+    }
+
+
     public void addFuncionario(Funcionario funcionario) {
         funcionariosData.add(funcionario);
         saveData();

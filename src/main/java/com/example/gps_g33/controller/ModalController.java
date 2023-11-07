@@ -7,6 +7,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.Vector;
+
 public class ModalController{
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
@@ -47,8 +49,11 @@ public class ModalController{
         String contato = contactoField.getText();
         String email = emailField.getText();
         String dataNascimento = dataNascimentoPicker.getValue().toString();
+        String username = nome+sobrenome;
+        String password = "123456789";
 
-        Funcionario funcionario = new Funcionario(0, nome, sobrenome, dataNascimento, nif, contato, email, "");
+
+        Funcionario funcionario = new Funcionario(0, nome, sobrenome, dataNascimento, nif, contato, email, "Funcionario", username, password);
 
         if (callback != null) {
             callback.onFuncionarioCriado(funcionario);

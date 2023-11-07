@@ -12,25 +12,11 @@ import java.util.Hashtable;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/gerencia/Gerencia_Navbar.fxml"));
-//
-//       Scene scene = new Scene(fxmlLoader.load(), 1280 , 720);
-//        stage.setScene(scene);
-//
-//        stage.setResizable(false);
-//        stage.show();
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Home.fxml"));
-//
-//        Scene scene = new Scene(fxmlLoader.load(), 1280 , 720);
-//        stage.setScene(scene);
-//
-//        stage.setResizable(false);
-//        stage.show();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/login/Login.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 600 , 600);
+        Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
         stage.setScene(scene);
 
         stage.setResizable(false);

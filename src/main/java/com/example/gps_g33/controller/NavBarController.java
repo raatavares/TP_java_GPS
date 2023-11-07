@@ -1,6 +1,7 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.LoginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,12 +28,12 @@ public class NavBarController {
     public Button buttonHomeFuncionarios;
     public Button buttonHomeAvisos;
     public StackPane contentArea;
-
     public Text lblDate;
 
 
     @FXML
     public void initialize() {
+
         Date dataAtual = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         String data = formato.format(dataAtual);
@@ -54,4 +55,17 @@ public class NavBarController {
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
+
+    public void buttonSair() throws IOException {
+        Stage stage = (Stage) buttonHomeResidentes.getScene().getWindow();
+        stage.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/login/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
+        stage.setScene(scene);
+
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }
