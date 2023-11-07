@@ -27,6 +27,8 @@ import java.util.Date;
 public class ControllerCulinariaRefeicoes implements ModalCallback{
 
     private int id = 0;
+
+    public Button buttonSair;
     public Button buttonToAddRefeicao;
     public Button buttonToEditRefeicao;
     public Button buttonToRefeicoes;
@@ -77,6 +79,11 @@ public class ControllerCulinariaRefeicoes implements ModalCallback{
         tipoDietaColumn.setCellValueFactory(new PropertyValueFactory<>("tipoDieta"));
 
         tableViewRefeicao.setItems(listaDeRefeicoes);
+
+        buttonSair.setOnAction(event -> {
+            Stage stage = (Stage) buttonSair.getScene().getWindow();
+            stage.close();
+        });
     }
 
     public void switchToRefeicoes() throws IOException {
@@ -89,6 +96,7 @@ public class ControllerCulinariaRefeicoes implements ModalCallback{
         contentArea.getChildren().clear();
         contentArea.getChildren().add(fxml);
     }
+
 
     public void handleToAddRefeicao() {
         try {

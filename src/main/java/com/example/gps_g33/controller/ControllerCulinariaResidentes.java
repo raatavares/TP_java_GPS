@@ -7,12 +7,14 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ControllerCulinariaResidentes {
+    public Button buttonSair;
     public Button buttonToRefeicoes;
     public Button buttonToResidentes;
     public StackPane contentArea;
@@ -24,6 +26,11 @@ public class ControllerCulinariaResidentes {
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         String data = formato.format(dataAtual);
         lblDate.setText(data);
+
+        buttonSair.setOnAction(event -> {
+            Stage stage = (Stage) buttonSair.getScene().getWindow();
+            stage.close();
+        });
     }
 
     public void switchToRefeicoes() throws IOException {
