@@ -401,6 +401,8 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task13 - Tratar da lógica da possibilidade de selecionar um utente para associar á refeição.- 1H
     - Task14 - Tratar da lógica do botão "toggle" de forma a indicar que a refeição é direcionada a todos os utentes. - 1H
     - Task15 - Tratar da lógica do botão "Radio Buttons" para guardar o tipo de refeição. - 1H 
+    - Task16 - Tratar da lógica do TextField para procura de residentes. - 1H
+    - Task17 - Tratar da lógica da tabela para mostrar de todos os residentes. - 1H 
 
     
 - Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
