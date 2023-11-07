@@ -34,19 +34,19 @@
                   <TableColumn fx:id="nifColumn" prefWidth="75.0" text="NIF" />
                   <TableColumn fx:id="contatoColumn" prefWidth="99.0" text="Contacto" />
                   <TableColumn fx:id="emailColumn" minWidth="0.0" prefWidth="79.0" text="Email" />
-                  <TableColumn minWidth="0.0" prefWidth="99.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="65.0" text="." />
+                  <TableColumn fx:id="prefAliColumn" minWidth="0.0" prefWidth="186.4000244140625" text="Preferências Alimentares" />
+                  <TableColumn fx:id="alergiasColumn" minWidth="0.0" prefWidth="149.60003662109375" text="Alergias" />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                  <TextField fx:id="searchField" prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;" onAction="#onSearch">
+                  <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
                      <HBox.margin>
                         <Insets right="270.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="addButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE" onAction="#onCreate">
+                  <Button fx:id="addButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onCreate" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -58,7 +58,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button fx:id="editButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" onAction="#onEditButton">
+                  <Button fx:id="editButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onEditButton" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -70,7 +70,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button fx:id="deleteButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE" onAction="#onDeleteButton">
+                  <Button fx:id="deleteButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onDeleteButton" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>

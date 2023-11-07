@@ -16,6 +16,7 @@ public class Data {
     private List<Funcionario> funcionariosData;
     private List<Residente> residentesData;
 
+    private int idLogado;
 
     public Data(){
         loadData();
@@ -139,6 +140,13 @@ public class Data {
         return maiorId + 1;
     }
 
+    public int getIdLogado() {
+        return idLogado;
+    }
+
+    public void setIdLogado(int idLogado) {
+        this.idLogado = idLogado;
+    }
 
     public static Data getInstance() {
         if (instance == null) {

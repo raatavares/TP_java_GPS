@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ControllerCulinariaRefeicoes implements ModalCallback{
+public class CulinariaRefeicoesController implements ModalCallback{
 
     private int id = 0;
 

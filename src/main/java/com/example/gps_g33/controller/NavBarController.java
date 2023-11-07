@@ -2,6 +2,8 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.LoginController;
+import com.example.gps_g33.modelos.Data;
+import com.example.gps_g33.modelos.Funcionario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,33 +20,61 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NavBarController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
-    @FXML
-    public Button funcionariosButton;
-    public Button buttonHomeResidentes;
-    public Button buttonHomeFuncionarios;
-    public Button buttonHomeAvisos;
     public StackPane contentArea;
     public Text lblDate;
 
 
+    //Gerencia
+    @FXML
+    public Button buttonFuncionarios;
+
+
+    //Culinaria
+    public Button buttonGerirStock;
+
+    public Button buttonRefeicoes;
+    //Ambos
+    public Button buttonAvisos;
+    public Button buttonResidentes;
+
+    private Data data;
     @FXML
     public void initialize() {
-
+        data = Data.getInstance();
         Date dataAtual = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         String data = formato.format(dataAtual);
         lblDate.setText(data);
+        setButtonsView();
     }
 
-    public void switchToHome() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Home.fxml"));
-        contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+    public void setButtonsView(){
+        String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        if(departamento.equals("Culinaria")){
+            buttonResidentes.setVisible(true);
+            buttonGerirStock.setVisible(true);
+            buttonRefeicoes.setVisible(true);
+
+            buttonAvisos.setVisible(false);
+            buttonAvisos.setVisible(false);
+            buttonFuncionarios.setVisible(false);
+            buttonFuncionarios.setManaged(false);
+
+        } else if (departamento.equals("Gerencia")) {
+
+            buttonAvisos.setVisible(true);
+            buttonFuncionarios.setVisible(true);
+            buttonResidentes.setVisible(true);
+
+            buttonGerirStock.setVisible(false);
+            buttonGerirStock.setManaged(false);
+            buttonRefeicoes.setVisible(false);
+            buttonRefeicoes.setManaged(false);
+        }
+
     }
+
     public void switchToFuncionarios(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Funcionarios.fxml"));
         contentArea.getChildren().removeAll();
@@ -56,8 +86,20 @@ public class NavBarController {
         contentArea.getChildren().setAll(fxml);
     }
 
+    public void switchToAvisos() throws IOException {
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Avisos.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToRefeicoes() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Refeicoes.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
     public void buttonSair() throws IOException {
-        Stage stage = (Stage) buttonHomeResidentes.getScene().getWindow();
+        Stage stage = (Stage) contentArea.getScene().getWindow();
         stage.close();
 
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/login/login.fxml"));

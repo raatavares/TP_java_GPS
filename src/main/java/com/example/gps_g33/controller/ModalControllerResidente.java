@@ -48,7 +48,8 @@ public class ModalControllerResidente{
         String email = emailField.getText();
         String dataNascimento = dataNascimentoPicker.getValue().toString();
 
-        Residente residente = new Residente(0, nome, sobrenome, dataNascimento, nif, contato, email);
+
+        Residente residente = new Residente(0, nome, sobrenome, dataNascimento, nif, contato, email, "Nenhuma", "Nenhuma");
 
         if (callback != null) {
             callback.onResidenteCriado(residente);

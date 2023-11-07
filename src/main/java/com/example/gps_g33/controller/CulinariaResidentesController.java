@@ -1,7 +1,6 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,8 +13,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CulinariaController {
-
+public class CulinariaResidentesController {
     public Button buttonSair;
     public Button buttonToRefeicoes;
     public Button buttonToResidentes;
@@ -34,6 +32,7 @@ public class CulinariaController {
             stage.close();
         });
     }
+
     public void switchToRefeicoes() throws IOException {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Refeicoes.fxml"));
         contentArea.getChildren().clear();

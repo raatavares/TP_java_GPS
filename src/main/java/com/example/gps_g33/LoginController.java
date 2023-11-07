@@ -42,6 +42,7 @@ public class LoginController {
                 lblError.setText("Departamento ainda não implementado");
                 lblError.setVisible(true);
             }else {
+                data.setIdLogado(validFunc.getId());
                 loadView(viewPath);
                 lblError.setVisible(false);
             }
@@ -71,7 +72,7 @@ public class LoginController {
 
         stage = new Stage();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource(viewPath));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/gerencia/Gerencia_Navbar.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280 , 720);
         stage.setScene(scene);
 

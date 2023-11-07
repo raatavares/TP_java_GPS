@@ -32,6 +32,8 @@ public class GerenciaResidentesController implements ModalCallback{
     public TableColumn<Residente, String> nifColumn;
     public TableColumn<Residente, String> contatoColumn;
     public TableColumn<Residente, String> emailColumn;
+    public TableColumn<Residente, String> prefAliColumn;
+    public TableColumn<Residente, String> alergiasColumn;
     public TextField searchField;
     public Button addButtonResidente;
     public Button editButtonResidente;
@@ -48,6 +50,32 @@ public class GerenciaResidentesController implements ModalCallback{
         nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
         contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+        prefAliColumn.setCellValueFactory(new PropertyValueFactory<>("prefAli"));
+        alergiasColumn.setCellValueFactory(new PropertyValueFactory<>("alergias"));
+
+
+        String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        if(departamento.equals("Culinaria")){
+            idColumn.setVisible(true);
+            nomeColumn.setVisible(true);
+            prefAliColumn.setVisible(true);
+            alergiasColumn.setVisible(true);
+
+            dataNascimentoColumn.setVisible(false);
+            nifColumn.setVisible(false);
+            contatoColumn.setVisible(false);
+            emailColumn.setVisible(false);
+        } else if (departamento.equals("Gerencia")) {
+            idColumn.setVisible(true);
+            nomeColumn.setVisible(true);
+            dataNascimentoColumn.setVisible(true);
+            nifColumn.setVisible(true);
+            contatoColumn.setVisible(true);
+            emailColumn.setVisible(true);
+
+            prefAliColumn.setVisible(false);
+            alergiasColumn.setVisible(false);
+        }
 
         updateTable();
     }

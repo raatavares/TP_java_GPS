@@ -9,8 +9,12 @@ public class Residente {
     private String contato;
     private String email;
 
+    private String prefAli;
+
+    private String alergias;
+
     // Construtor da classe
-    public Residente(int id, String nome, String sobrenome, String dataNascimento, String nif, String contato, String email) {
+    public Residente(int id, String nome, String sobrenome, String dataNascimento, String nif, String contato, String email, String prefAli, String alergias) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -18,6 +22,8 @@ public class Residente {
         this.nif = nif;
         this.contato = contato;
         this.email = email;
+        this.prefAli = prefAli;
+        this.alergias = alergias;
     }
 
     // Métodos getters e setters
@@ -76,6 +82,22 @@ public class Residente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPrefAli(String prefAli) {
+        this.prefAli = prefAli;
+    }
+
+    public String getPrefAli() {
+        return prefAli;
+    }
+
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
+    }
+
+    public String getAlergias() {
+        return alergias;
     }
 }
 

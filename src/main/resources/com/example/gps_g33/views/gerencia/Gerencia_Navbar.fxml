@@ -28,7 +28,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="buttonHomeFuncionarios" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToFuncionarios" prefHeight="72.0" prefWidth="305.0" style="-fx-background-color: #f4f5ed;" text="Funcionarios">
+            <Button fx:id="buttonFuncionarios" focusTraversable="false" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToFuncionarios" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Funcionarios">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" size="20" />
                </graphic>
@@ -36,7 +36,23 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="buttonHomeResidentes" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToResidentes" prefHeight="72.0" prefWidth="307.0" style="-fx-background-color: #f4f5ed;" text="Residentes">
+            <Button fx:id="buttonRefeicoes" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToRefeicoes" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Refeições">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SPOON" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonGerirStock" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Gerir stock">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BAR_CHART" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonResidentes" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToResidentes" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Residentes">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" size="20" />
                </graphic>
@@ -44,7 +60,7 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="buttonHomeAvisos" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="307.0" style="-fx-background-color: #f4f5ed;" text="Avisos">
+            <Button fx:id="buttonAvisos" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Avisos">
                <graphic>
                   <FontAwesomeIconView glyphName="EXCLAMATION" size="20" text="" />
                </graphic>
