@@ -1,1 +1,39 @@
-[{"id":2,"nome":"Pedro","sobrenome":"Oliveira","dataNascimento":"1990-07-10","nif":"543216789","contato":"543216789","email":"pedroOliveira@gmail.com","departamento":"Culinaria","username":"p","password":"p"},{"id":3,"nome":"Ana","sobrenome":"Ferreira","dataNascimento":"1988-11-25","nif":"456789123","contato":"456789123","email":"anaFerreira@gmail.com","departamento":"Animacao","username":"anaFerreira","password":"123456"}]
+[
+  {
+    "id": 1,
+    "nome": "Maria",
+    "sobrenome": "Santos",
+    "dataNascimento": "1985-03-15",
+    "nif": "987654321",
+    "contato": "987654321",
+    "email": "mariaSantos@gmail.com",
+    "departamento": "Gerencia",
+    "username": "m",
+    "password": "1"
+  },
+  {
+    "id": 2,
+    "nome": "Pedro",
+    "sobrenome": "Oliveira",
+    "dataNascimento": "1990-07-10",
+    "nif": "543216789",
+    "contato": "543216789",
+    "email": "pedroOliveira@gmail.com",
+    "departamento": "Culinaria",
+    "username": "p",
+    "password": "p"
+
+  },
+  {
+    "id": 3,
+    "nome": "Ana",
+    "sobrenome": "Ferreira",
+    "dataNascimento": "1988-11-25",
+    "nif": "456789123",
+    "contato": "456789123",
+    "email": "anaFerreira@gmail.com",
+    "departamento": "Animacao",
+    "username": "anaFerreira",
+    "password": "123456"
+  }
+]
