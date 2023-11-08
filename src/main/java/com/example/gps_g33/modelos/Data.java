@@ -11,10 +11,12 @@ public class Data {
     public String PATH_RESIDENTES = "Dados\\residentes.json";
     public String PATH_FUNCIONARIOS = "Dados\\funcionarios.json";
     public String PATH_FAMILIARES = "./Dados/familiares.json";
+    public String PATH_REFEICOES = "Dados\\refeicoes.json";
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
     private List<Residente> residentesData;
+    private List<Refeicao> refeicoesData;
 
     private int idLogado;
 
@@ -91,17 +93,48 @@ public class Data {
     }
 
 
+
+    public List<Refeicao> getRefeicoes() {
+        return refeicoesData;
+    }
+
+    public Refeicao getRefeicaoPorId(int id) {
+        for (Refeicao refeicao : refeicoesData) {
+            if (refeicao.getId() == id) {
+                return refeicao;
+            }
+        }
+        return null; // Retornar null se o residente não for encontrado
+    }
+
+    public void addRefeicao(Refeicao refeicao) {
+        refeicoesData.add(refeicao);
+        saveData();
+    }
+
+    public void removeRefeicao(int id) {
+        Refeicao refeicaoToRemove = getRefeicaoPorId(id);
+        if (refeicaoToRemove != null) {
+            refeicoesData.remove(refeicaoToRemove);
+        }
+        saveData();
+    }
+
+
     public void loadData() {
         try {
             Gson gson = new Gson();
             FileReader readerResi = new FileReader(PATH_RESIDENTES);
             FileReader readerFunc = new FileReader(PATH_FUNCIONARIOS);
+            FileReader readerRefei = new FileReader(PATH_REFEICOES);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
+            Type refeicaoListType = new TypeToken<List<Refeicao>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
+            refeicoesData = gson.fromJson(readerRefei, refeicaoListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,12 +146,15 @@ public class Data {
             Gson gson = new Gson();
             FileWriter writerResi = new FileWriter(PATH_RESIDENTES);
             FileWriter writerFunc = new FileWriter(PATH_FUNCIONARIOS);
+            FileWriter writerRefei = new FileWriter(PATH_REFEICOES);
 
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
+            gson.toJson(refeicoesData, writerRefei);
 
             writerResi.close();
             writerFunc.close();
+            writerRefei.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -135,6 +171,15 @@ public class Data {
     public int calcularProximoIdResidentes() {
         int maiorId = residentesData.stream()
                 .map(Residente::getId)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+        return maiorId + 1;
+    }
+
+
+    public int calcularProximoIdRefeicoes() {
+        int maiorId = refeicoesData.stream()
+                .map(Refeicao::getId)
                 .max(Comparator.naturalOrder())
                 .orElse(0);
         return maiorId + 1;

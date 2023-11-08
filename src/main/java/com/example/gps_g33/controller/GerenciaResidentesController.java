@@ -166,7 +166,7 @@ public class GerenciaResidentesController implements ModalCallback{
     }
 
     @Override
-    public void onRefeicaoEditado(Funcionario funcionario) {
+    public void onRefeicaoEditado(Refeicao refeicao) {
 
     }
     @Override

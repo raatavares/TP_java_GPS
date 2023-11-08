@@ -9,9 +9,8 @@ public interface ModalCallback {
     void onFuncionarioEditado(Funcionario funcionario);
 
     void onResidenteEditado(Residente residente);
-
     void onResidenteCriado(Residente residente);
 
     void onRefeicaoCriado(Refeicao refeicao);
-    void onRefeicaoEditado(Funcionario funcionario);
+    void onRefeicaoEditado(Refeicao refeicao);
 }

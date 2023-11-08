@@ -2,11 +2,13 @@ package com.example.gps_g33.controller;
 
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.modelos.Refeicao;
 import com.example.gps_g33.modelos.Residente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -23,53 +26,38 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CulinariaRefeicoesController implements ModalCallback{
-
     private int id = 0;
-
-    public Button buttonSair;
     public Button buttonToAddRefeicao;
     public Button buttonToEditRefeicao;
-    public Button buttonToRefeicoes;
-    public Button buttonToResidentes;
     public StackPane contentArea;
-    public Text lblDate;
-
-    
+    public TextField searchField;
     @FXML
     public TableView<Refeicao> tableViewRefeicao;
-
     @FXML
     public TableColumn<Refeicao, Integer> idColumn;
-
     @FXML
     public TableColumn<Refeicao, String> nomeColumn;
-
     @FXML
     public TableColumn<Refeicao, String> dataRefeicaoColumn;
-
     @FXML
     public TableColumn<Refeicao, String> DescricaoColumn;
-
     @FXML
     public TableColumn<Refeicao, String> NIF;
-
     @FXML
     public TableColumn<Refeicao, String> tipoDietaColumn;
-
     private ObservableList<Refeicao> listaDeRefeicoes = FXCollections.observableArrayList();
-
+    private Data data;
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
     }
     @FXML
     public void initialize() {
-        Date dataAtual = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-        String data = formato.format(dataAtual);
-        lblDate.setText(data);
+        data = Data.getInstance();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -78,25 +66,8 @@ public class CulinariaRefeicoesController implements ModalCallback{
         NIF.setCellValueFactory(new PropertyValueFactory<>("nif"));
         tipoDietaColumn.setCellValueFactory(new PropertyValueFactory<>("tipoDieta"));
 
-        tableViewRefeicao.setItems(listaDeRefeicoes);
-
-        buttonSair.setOnAction(event -> {
-            Stage stage = (Stage) buttonSair.getScene().getWindow();
-            stage.close();
-        });
+        updateTable();
     }
-
-    public void switchToRefeicoes() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Refeicoes.fxml"));
-        contentArea.getChildren().clear();
-        contentArea.getChildren().add(fxml);
-    }
-    public void switchToResidentes() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Residentes.fxml"));
-        contentArea.getChildren().clear();
-        contentArea.getChildren().add(fxml);
-    }
-
 
     public void handleToAddRefeicao() {
         try {
@@ -124,30 +95,37 @@ public class CulinariaRefeicoesController implements ModalCallback{
             e.printStackTrace();
         }
     }
-    public void handleToEditRefeicao() {
-        try {
-            // Carregar o FXML da janela pop-up
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/depCulinaria/Culinaria_EditRefeicao.fxml"));
-            Parent popupRoot = loader.load();
+    public void handleToEditRefeicao(ActionEvent event) {
+        Refeicao refeicao = tableViewRefeicao.getSelectionModel().getSelectedItem();
+        if(refeicao!= null){
+            try {
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/depCulinaria/Culinaria_EditRefeicao.fxml"));
+                Parent root = loader.load();
 
-            // Criar uma nova cena com a janela pop-up
-            Scene popupScene = new Scene(popupRoot);
 
-            // Criar um novo palco (Stage) para a janela pop-up
-            Stage popupStage = new Stage();
-            popupStage.initModality(Modality.APPLICATION_MODAL); // Torna a janela pop-up modal
-            popupStage.setTitle("Editar Refeição"); // Defina o título da janela pop-up
-            popupStage.setScene(popupScene);
 
-            // Mostrar a janela pop-up
-            popupStage.showAndWait(); // Espere até que a janela pop-up seja fechada
+                EditControllerRefeicao editControllerRefeicao = loader.getController();
+                editControllerRefeicao.setModalCallback(this);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+                editControllerRefeicao.setRefeicaoParaEdicao(refeicao);
+
+                Stage modalStage = new Stage();
+                modalStage.initModality(Modality.APPLICATION_MODAL);
+                modalStage.setTitle("Editar Refeição");
+
+                // Definir o conteúdo da janela modal
+                Scene scene = new Scene(root);
+                modalStage.setScene(scene);
+
+                // Mostrar a janela modal
+                modalStage.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
- @Override
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }
@@ -169,16 +147,42 @@ public class CulinariaRefeicoesController implements ModalCallback{
 
     @Override
     public void onRefeicaoCriado(Refeicao refeicao) {
-        refeicao.setId(++id);
-        listaDeRefeicoes.add(refeicao);
-        System.out.println(refeicao);
-        tableViewRefeicao.setItems(listaDeRefeicoes);
-
+     refeicao.setId(data.calcularProximoIdRefeicoes());
+     data.addRefeicao(refeicao);
+     updateTable();
     }
 
     @Override
-    public void onRefeicaoEditado(Funcionario funcionario) {
+    public void onRefeicaoEditado(Refeicao refeicao) {
+        for (int i = 0; i < data.getRefeicoes().size(); i++) {
+            if(data.getRefeicoes().get(i).getId() == refeicao.getId()){
+                data.getRefeicoes().set(i, refeicao);
+                break;
+            }
+        }
+        updateTable();
+    }
 
+    public void onSearch() {
+        String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
+        List<Refeicao> refeicoesFiltrados = data.getRefeicoes().stream()
+                .filter(refeicao -> refeicao.getNome().toLowerCase().contains(nome))
+                .collect(Collectors.toList());
+
+        tableViewRefeicao.setItems(FXCollections.observableArrayList(refeicoesFiltrados));
+    }
+
+    public void onDelete() {
+        Refeicao refeicao = tableViewRefeicao.getSelectionModel().getSelectedItem();
+        if(refeicao != null){
+            data.removeRefeicao(refeicao.getId());
+        }
+        updateTable();
+    }
+
+    public void updateTable() {
+        tableViewRefeicao.getItems().clear();
+        tableViewRefeicao.getItems().addAll(data.getRefeicoes());
     }
 }
 

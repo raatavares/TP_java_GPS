@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="531.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="531.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.EditControllerRefeicao">
    <children>
       <Label layoutX="163.0" layoutY="14.0" style="-fx-background-color: #3a4151;" text="EDITAR REFEIÇÃO" textFill="WHITE">
          <font>
@@ -27,16 +27,16 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <DatePicker layoutX="324.0" layoutY="111.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="dataRefeicaoPicker" layoutX="324.0" layoutY="111.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="324.0" layoutY="91.0" text="Data da Refeição">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="353.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" />
-      <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
-      <TextField layoutX="34.0" layoutY="143.0" prefHeight="26.0" prefWidth="174.0" />
-      <TextArea layoutX="324.0" layoutY="168.0" prefHeight="89.0" prefWidth="174.0" />
+      <Button fx:id="editarButton" onAction="#onEditarButton" layoutX="353.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" />
+      <Button fx:id="cancelarButton" onAction="#handleCancelarButton" layoutX="421.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
+      <TextField fx:id="nomeField" layoutX="34.0" layoutY="143.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextArea fx:id ="descricaoField" layoutX="324.0" layoutY="168.0" prefHeight="89.0" prefWidth="174.0" />
       <Label layoutX="324.0" layoutY="147.0" text="Descrição">
          <font>
             <Font size="15.0" />
@@ -47,14 +47,14 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="34.0" layoutY="209.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextField fx:id ="nifField" layoutX="34.0" layoutY="209.0" prefHeight="26.0" prefWidth="174.0" />
       <Group layoutX="325.0" layoutY="282.0">
          <children>
             <VBox layoutY="-7.0" prefHeight="67.0" prefWidth="174.0" spacing="5.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Dieta" />
-                  <RadioButton mnemonicParsing="false" text="Personalizada" />
-                  <RadioButton mnemonicParsing="false" text="Normal" />
+                  <RadioButton fx:id="dieta_Refeicao" mnemonicParsing="false" text="Dieta" />
+                  <RadioButton fx:id="dieta_Personalizada" mnemonicParsing="false" text="Personalizada" />
+                  <RadioButton fx:id="dieta_Normal" mnemonicParsing="false" text="Normal" />
                </children>
             </VBox>
          </children>
