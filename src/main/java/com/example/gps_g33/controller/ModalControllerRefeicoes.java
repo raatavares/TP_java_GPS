@@ -15,6 +15,7 @@ import java.util.List;
 
 public class ModalControllerRefeicoes {
     private Data data;
+    private boolean adicionarParaTodos = false;
     @FXML
     public TextField nome_Refeicao;
 
@@ -51,7 +52,8 @@ public class ModalControllerRefeicoes {
     @FXML
     public TableColumn<Residente,String> nif_residente;
 
-
+    @FXML
+    public ToggleButton toogleButtonTodos;
 
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
@@ -62,6 +64,11 @@ public class ModalControllerRefeicoes {
 
     @FXML
     public void initialize() {
+
+        // Desabilitar a edição das TextField
+        nome_Refeicao.setEditable(false);
+        nif_Refeicao.setEditable(false);
+
         //inicializar a tabela de residentes
         //Lógica para atualizar a tabela de residentes
         nome_residente.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -71,6 +78,7 @@ public class ModalControllerRefeicoes {
 
         tabela_residentes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
+                adicionarParaTodos = false;
                 // Quando um residente é selecionado, atualizar as TextField
                 nome_Refeicao.setText(newSelection.getNome());
                 nif_Refeicao.setText(newSelection.getNif());
@@ -83,7 +91,7 @@ public class ModalControllerRefeicoes {
 
         data = Data.getInstance();
         List<Residente> residentes = data.getResidentes();
-        // Convertendo a lista para uma ObservableList
+        // Converter a lista para uma ObservableList
         ObservableList<Residente> observableList = FXCollections.observableArrayList(residentes);
 
         tabela_residentes.setItems(observableList);
@@ -91,25 +99,51 @@ public class ModalControllerRefeicoes {
 
     @FXML
     public void handleCriarButton() {
-        // Lógica para criar um novo funcionário com os dados inseridos
-        String nome = nome_Refeicao.getText();
-        String nif = nif_Refeicao.getText();
-        String descricao = descricao_Refeicao.getText();
-        String dataRefeicao = dataRefeicao_Refeicao.getValue().toString();
-        String tipoDieta;
-        if(dieta_Refeicao.isSelected()){
-            tipoDieta = "Dieta";
-        }else if(dieta_Personalizada.isSelected()){
-            tipoDieta = "Dieta Personalizada";
+
+        if(adicionarParaTodos){
+            List<Residente> residentes = data.getResidentes();
+            for (Residente residente: residentes){
+                String nome = residente.getNome();
+                String nif = residente.getNif();
+                String descricao = descricao_Refeicao.getText();
+                String dataRefeicao = dataRefeicao_Refeicao.getValue().toString();
+                String tipoDieta;
+                if(dieta_Refeicao.isSelected()){
+                    tipoDieta = "Dieta";
+                }else if(dieta_Personalizada.isSelected()){
+                    tipoDieta = "Dieta Personalizada";
+                }
+                else{
+                    tipoDieta = "Dieta Normal";
+                }
+
+                Refeicao refeicao = new Refeicao(0, nome, dataRefeicao, descricao , nif, tipoDieta);
+                if (callback != null) {
+                    callback.onRefeicaoCriado(refeicao);
+                }
+            }
         }
         else{
-            tipoDieta = "Dieta Normal";
-        }
+            // Lógica para a refeição para um unico residente
+            String nome = nome_Refeicao.getText();
+            String nif = nif_Refeicao.getText();
+            String descricao = descricao_Refeicao.getText();
+            String dataRefeicao = dataRefeicao_Refeicao.getValue().toString();
+            String tipoDieta;
+            if(dieta_Refeicao.isSelected()){
+                tipoDieta = "Dieta";
+            }else if(dieta_Personalizada.isSelected()){
+                tipoDieta = "Dieta Personalizada";
+            }
+            else{
+                tipoDieta = "Dieta Normal";
+            }
 
-        Refeicao refeicao = new Refeicao(0, nome, dataRefeicao, descricao , nif, tipoDieta);
+            Refeicao refeicao = new Refeicao(0, nome, dataRefeicao, descricao , nif, tipoDieta);
 
-        if (callback != null) {
-            callback.onRefeicaoCriado(refeicao);
+            if (callback != null) {
+                callback.onRefeicaoCriado(refeicao);
+            }
         }
 
         // Fechar o modal
@@ -122,5 +156,12 @@ public class ModalControllerRefeicoes {
         // Fechar o modal sem fazer nada
         Stage stage = (Stage) cancelar_Button.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    public void handleToogleButtonTodos(){
+        nome_Refeicao.clear();
+        nif_Refeicao.clear();
+        adicionarParaTodos = toogleButtonTodos.isSelected();
     }
 }
