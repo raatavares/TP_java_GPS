@@ -45,10 +45,10 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TableView layoutX="34.0" layoutY="161.0" prefHeight="157.0" prefWidth="247.0">
+      <TableView fx:id="tabela_residentes" layoutX="34.0" layoutY="161.0" prefHeight="157.0" prefWidth="247.0">
         <columns>
-          <TableColumn prefWidth="146.0" text="Nome" />
-          <TableColumn minWidth="0.0" prefWidth="104.0" text="NIF" />
+          <TableColumn fx:id="nome_residente" prefWidth="146.0" text="Nome" />
+          <TableColumn fx:id="nif_residente" minWidth="0.0" prefWidth="104.0" text="NIF" />
         </columns>
       </TableView>
       <ToggleButton layoutX="34.0" layoutY="327.0" mnemonicParsing="false" text="TODOS" />

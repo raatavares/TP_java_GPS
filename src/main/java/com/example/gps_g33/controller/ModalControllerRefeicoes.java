@@ -1,12 +1,20 @@
 package com.example.gps_g33.controller;
 
+import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.modelos.Refeicao;
+import com.example.gps_g33.modelos.Residente;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class ModalControllerRefeicoes {
+    private Data data;
     @FXML
     public TextField nome_Refeicao;
 
@@ -34,6 +42,15 @@ public class ModalControllerRefeicoes {
     @FXML
     public Button cancelar_Button;
 
+    @FXML
+    public TableView<Residente> tabela_residentes;
+
+    @FXML
+    public TableColumn<Residente,String> nome_residente;
+
+    @FXML
+    public TableColumn<Residente,String> nif_residente;
+
 
 
     private ModalCallback callback;
@@ -43,7 +60,27 @@ public class ModalControllerRefeicoes {
 
 
 
+    @FXML
+    public void initialize() {
+        //inicializar a tabela de residentes
 
+        //Lógica para atualizar a tabela de residentes
+        nome_residente.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        nif_residente.setCellValueFactory(new PropertyValueFactory<>("nif"));
+
+        updatetable();
+    }
+
+    public void updatetable() {
+        // Lógica para atualizar a tabela de residentes
+
+        data = Data.getInstance();
+        List<Residente> residentes = data.getResidentes();
+        // Convertendo a lista para uma ObservableList
+        ObservableList<Residente> observableList = FXCollections.observableArrayList(residentes);
+
+        tabela_residentes.setItems(observableList);
+    }
 
     @FXML
     public void handleCriarButton() {
