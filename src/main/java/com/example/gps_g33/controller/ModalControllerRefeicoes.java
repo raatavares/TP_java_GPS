@@ -63,12 +63,19 @@ public class ModalControllerRefeicoes {
     @FXML
     public void initialize() {
         //inicializar a tabela de residentes
-
         //Lógica para atualizar a tabela de residentes
         nome_residente.setCellValueFactory(new PropertyValueFactory<>("nome"));
         nif_residente.setCellValueFactory(new PropertyValueFactory<>("nif"));
 
         updatetable();
+
+        tabela_residentes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                // Quando um residente é selecionado, atualizar as TextField
+                nome_Refeicao.setText(newSelection.getNome());
+                nif_Refeicao.setText(newSelection.getNif());
+            }
+        });
     }
 
     public void updatetable() {
