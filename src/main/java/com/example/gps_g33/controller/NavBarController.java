@@ -38,6 +38,11 @@ public class NavBarController {
     public Button buttonAvisos;
     public Button buttonResidentes;
 
+    //Clinic
+    public Button buttonConsultas;
+
+    public Button buttonMedicamentos;
+
     private Data data;
     @FXML
     public void initialize() {
@@ -60,6 +65,8 @@ public class NavBarController {
             buttonAvisos.setVisible(false);
             buttonFuncionarios.setVisible(false);
             buttonFuncionarios.setManaged(false);
+            buttonConsultas.setVisible(false);
+            buttonMedicamentos.setVisible(false);
 
         } else if (departamento.equals("Gerencia")) {
 
@@ -71,6 +78,22 @@ public class NavBarController {
             buttonGerirStock.setManaged(false);
             buttonRefeicoes.setVisible(false);
             buttonRefeicoes.setManaged(false);
+            buttonConsultas.setVisible(false);
+            buttonMedicamentos.setVisible(false);
+        }
+        else if (departamento.equals("Clinico")) {
+
+            buttonConsultas.setVisible(true);
+            buttonMedicamentos.setVisible(true);
+
+            buttonAvisos.setVisible(false);
+            buttonFuncionarios.setVisible(false);
+            buttonResidentes.setVisible(false);
+            buttonGerirStock.setVisible(false);
+            buttonGerirStock.setManaged(false);
+            buttonRefeicoes.setVisible(false);
+            buttonRefeicoes.setManaged(false);
+
         }
 
     }
@@ -94,6 +117,18 @@ public class NavBarController {
 
     public void switchToRefeicoes() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Refeicoes.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToConsultas() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depClinico/Consultas_Medicaçao.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToMedicamentos() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

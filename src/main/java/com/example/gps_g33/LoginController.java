@@ -60,6 +60,9 @@ public class LoginController {
         } else if (departamento.equals("Gerencia")) {
             return "views/gerencia/Gerencia_Navbar.fxml";
         }
+        else if (departamento.equals("Clinico")) {
+            return "views/depClinico/Consultas_Medicaçao.fxml";
+        }
         return null;
     }
 
@@ -73,6 +76,7 @@ public class LoginController {
         stage = new Stage();
 
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/gerencia/Gerencia_Navbar.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load(), 1280 , 720);
         stage.setScene(scene);
 

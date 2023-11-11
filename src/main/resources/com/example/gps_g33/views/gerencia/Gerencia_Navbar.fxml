@@ -68,6 +68,22 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
+            <Button fx:id="buttonConsultas" onAction="#switchToConsultas" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Consultas e Medicação">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonMedicamentos" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Medicamentos e Utensílios">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
             <GridPane alignment="TOP_CENTER" prefHeight="270.0" prefWidth="249.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="123.0" />
@@ -104,7 +120,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="41.0" layoutY="30.0" text="/gerencia/home" textFill="WHITE" />
+            <Label layoutX="41.0" layoutY="30.0" text="/home" textFill="WHITE" />
          </children>
       </Pane>
       <StackPane fx:id="contentArea" layoutX="249.0" layoutY="1.0" prefHeight="720.0" prefWidth="951.0" />
