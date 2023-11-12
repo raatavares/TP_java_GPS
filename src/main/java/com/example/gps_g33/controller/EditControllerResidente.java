@@ -70,7 +70,7 @@ public class EditControllerResidente {
             sobrenomeField.setStyle("");
         }
 
-        if (email.length() < 3) {
+        if (email.length() < 3 || !email.contains("@")){
             emailField.setStyle("-fx-border-color: red");
             camposValidos = false;
         } else {
@@ -93,7 +93,7 @@ public class EditControllerResidente {
         }
 
         // Verificar se a data de nascimento é válida
-        if (dataNascimento == null || dataNascimento.isAfter(dataAtual)) {
+        if (dataNascimento == null || dataNascimento.isAfter(dataAtual) || dataNascimento.isBefore(LocalDate.of(1900, 1, 1)) || dataNascimento.isAfter(LocalDate.of(2000, 1, 1))) {
             dataNascimentoPicker.setStyle("-fx-border-color: red");
             camposValidos = false;
         } else {
