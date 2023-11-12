@@ -270,13 +270,13 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Risk List
 
 **RSK1 Falta de Experiência em Desenvolvimento de Software**
-- RSK1 – PxI: 4x5=20 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
+- RSK1 – PxI: 3x5=15 Os membros já estão mais à vontade com o código para desenvolvimento do projeto.
 
 **RSK2 Resistência à mudança**
 - RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 3x5=15; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados.
+- RSK3 – PxI: 2x5=10; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
 
 **RSK4 Falhas técnicas**
 - RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
@@ -287,7 +287,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Mitigation Actions
 (threats>=20)
-- RSK1 - AS; Certificar durante os sprints e reuniões se os membros do grupo estão alinhados e resolver eventuais bloqueios.
+
 
 **Nota:** _Contingency Plan (CP), Avoidance Strategy (AS) or Minimization Strategy (MS)_
 
