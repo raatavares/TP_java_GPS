@@ -11,9 +11,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.ModalControllerConsultasMedicacao">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.EditControllerConsultasMedicacao">
    <children>
-      <Label layoutX="110.0" layoutY="30.0" style="-fx-background-color: #3a4151;" text="Consultas e Medicação" textFill="WHITE">
+      <Label layoutX="110.0" layoutY="30.0" style="-fx-background-color: #3a4151;" text="Editar Consultas e Medicação" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -21,7 +21,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </Label>
-      <DatePicker fx:id="dataConsulta" layoutX="289.0" layoutY="121.0" prefHeight="26.0" prefWidth="138.0" />
+      <DatePicker fx:id="dataConsultaField" layoutX="289.0" layoutY="121.0" prefHeight="26.0" prefWidth="138.0" />
       <Label layoutX="289.0" layoutY="100.0" text="Data de Consulta">
          <font>
             <Font size="15.0" />
@@ -38,7 +38,7 @@
             <TableColumn fx:id="nif_residente" minWidth="0.0" prefWidth="104.0" text="NIF" />
          </columns>
       </TableView>
-      <Button fx:id="criar_Button" onAction="#handleCriarButton" layoutX="305.0" layoutY="331.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE" />
+      <Button fx:id="editar_Button" onAction="#onEditarButton" layoutX="305.0" layoutY="331.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE" />
       <Button fx:id="cancelar_Button" onAction="#handleCancelarButton" layoutX="389.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
       <TextField fx:id="medicacaoField" layoutX="289.0" layoutY="179.0" prefHeight="26.0" prefWidth="138.0" />
       <ListView layoutX="34.0" layoutY="211.0" prefHeight="122.0" prefWidth="192.0" />

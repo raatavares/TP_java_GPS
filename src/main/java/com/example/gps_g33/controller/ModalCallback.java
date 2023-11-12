@@ -1,6 +1,7 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.modelos.Funcionario;
+import com.example.gps_g33.modelos.Medicacao;
 import com.example.gps_g33.modelos.Refeicao;
 import com.example.gps_g33.modelos.Residente;
 
@@ -13,4 +14,7 @@ public interface ModalCallback {
 
     void onRefeicaoCriado(Refeicao refeicao);
     void onRefeicaoEditado(Refeicao refeicao);
+
+    void onMedicacaoCriado(Medicacao medicacao);
+    void onMedicacaoEditado(Medicacao medicacao);
 }

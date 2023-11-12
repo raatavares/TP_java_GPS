@@ -1,10 +1,7 @@
 package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
-import com.example.gps_g33.modelos.Data;
-import com.example.gps_g33.modelos.Funcionario;
-import com.example.gps_g33.modelos.Refeicao;
-import com.example.gps_g33.modelos.Residente;
+import com.example.gps_g33.modelos.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -136,6 +133,16 @@ public class GerenciaFuncionariosController implements ModalCallback{
 
     @Override
     public void onRefeicaoEditado(Refeicao refeicao) {
+
+    }
+
+    @Override
+    public void onMedicacaoCriado(Medicacao medicacao) {
+
+    }
+
+    @Override
+    public void onMedicacaoEditado(Medicacao medicacao) {
 
     }
 

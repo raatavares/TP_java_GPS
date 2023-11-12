@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.ClinicoConsultasController">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.ConsultasMedicacaoController">
    <children>
       <GridPane layoutX="16" layoutY="220.0" prefHeight="487.0" prefWidth="976.0">
         <columnConstraints>
@@ -31,23 +31,23 @@
           <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
+            <TableView fx:id="tableViewMedicacao" prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="64.79998779296875" text="IDUtente" />
-                <TableColumn prefWidth="228.0" text="Nome" />
-                  <TableColumn prefWidth="261.5999755859375" text="Data Consultas" />
-                  <TableColumn prefWidth="422.39996337890625" text="Medicação" />
+                <TableColumn fx:id="idColumn" prefWidth="64.79998779296875" text="IDUtente" />
+                <TableColumn fx:id="nomeColumn" prefWidth="228.0" text="Nome" />
+                 <TableColumn fx:id="dataConsultasColumn" prefWidth="261.5999755859375" text="Data Consultas" />
+                 <TableColumn fx:id="medicacaoColumn" prefWidth="422.39996337890625" text="Medicação" />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                  <TextField prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
+                  <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
                      <HBox.margin>
                         <Insets right="270.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE">
+                  <Button  fx:id="buttonToAddMedicacao" onAction="#handleToAddMedicacao" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -59,7 +59,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">
+                  <Button fx:id="buttonToEditMedicacao" onAction="#handleToEditMedicacao" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -71,7 +71,7 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE">
+                  <Button fx:id="deleteButton" onAction="#onDelete" graphicTextGap="10.0" mnemonicParsing="false" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
