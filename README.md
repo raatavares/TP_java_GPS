@@ -440,11 +440,12 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-    - A
+    - A boa separação das tasks por cada User Story permitiu uma melhor divisão de tarefas pelos membros do grupo, não existindo uma grande sobreposição de trabalho, permitindo a cada membro do grupo trabalhar sobre a sua tarefa individualmente.
 - What we did less well:
-    - B
+    - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador não fomos fazendo os testes unitários. Em consequência disso teremos de fazer os testes unitários no fim de concluirmos todas as User Stories o que será mais complexo e demorará mais tempo.
 - How to improve to the next sprint:
-    - C
+    - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador realizar imediatamente a seguir os testes unitários relativos ao valor introduzido.
+    - Fazer uma melhor atribuição de Tasks por todos os membros do grupo.
 
 ***
 
