@@ -421,7 +421,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 
     
-- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
+- Story Points: Small: 0, Medium: 0, Large: 4; Total = 0S + 0M + 4L = 0S 0M 55L 
 
 - Analysis: short analysis of the planning meeting
 
