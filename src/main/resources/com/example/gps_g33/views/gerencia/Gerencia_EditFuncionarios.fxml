@@ -54,7 +54,7 @@
         <TextField fx:id="nomeField" layoutX="38.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
         <TextField fx:id="sobrenomeField" layoutX="274.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
         <TextField fx:id="nifField" layoutX="274.0" layoutY="207.0" prefHeight="25.0" prefWidth="129.0" />
-        <TextField fx:id="contactoField" layoutX="274.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" />
-        <TextField fx:id ="emailField" layoutX="38.0" layoutY="282.0" prefHeight="25.0" prefWidth="121.0" />
+        <TextField fx:id="emailField" layoutX="274.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" />
+        <TextField fx:id ="contactoField" layoutX="38.0" layoutY="282.0" prefHeight="25.0" prefWidth="121.0" />
     </children>
 </AnchorPane>

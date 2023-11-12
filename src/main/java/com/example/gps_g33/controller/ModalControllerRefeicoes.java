@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class ModalControllerRefeicoes {
@@ -99,14 +100,15 @@ public class ModalControllerRefeicoes {
 
     @FXML
     public void handleCriarButton() {
-
+        boolean camposValidos = true;
         if(adicionarParaTodos){
             List<Residente> residentes = data.getResidentes();
             for (Residente residente: residentes){
                 String nome = residente.getNome();
                 String nif = residente.getNif();
                 String descricao = descricao_Refeicao.getText();
-                String dataRefeicao = dataRefeicao_Refeicao.getValue().toString();
+                LocalDate dataRefeicao = dataRefeicao_Refeicao.getValue();
+                LocalDate dataAtual = LocalDate.now();
                 String tipoDieta;
                 if(dieta_Refeicao.isSelected()){
                     tipoDieta = "Dieta";
@@ -117,10 +119,32 @@ public class ModalControllerRefeicoes {
                     tipoDieta = "Dieta Normal";
                 }
 
-                Refeicao refeicao = new Refeicao(0, nome, dataRefeicao, descricao , nif, tipoDieta);
-                if (callback != null) {
-                    callback.onRefeicaoCriado(refeicao);
+                if (descricao.isEmpty()) {
+                    descricao_Refeicao.setStyle("-fx-border-color: red");
+                    camposValidos = false;
+                } else {
+                    descricao_Refeicao.setStyle("");
                 }
+
+                if (dataRefeicao == null || dataRefeicao.isBefore(dataAtual)) {
+                    dataRefeicao_Refeicao.setStyle("-fx-border-color: red");
+                    camposValidos = false;
+                } else {
+                    dataRefeicao_Refeicao.setStyle("");
+                }
+
+                if(camposValidos) {
+                    Refeicao refeicao = new Refeicao(0, nome, dataRefeicao.toString(), descricao, nif, tipoDieta);
+
+                    if (callback != null) {
+                        callback.onRefeicaoCriado(refeicao);
+                    }
+
+                    // Fechar o modal
+                    Stage stage = (Stage) criar_Button.getScene().getWindow();
+                    stage.close();
+                }
+
             }
         }
         else{
@@ -128,7 +152,8 @@ public class ModalControllerRefeicoes {
             String nome = nome_Refeicao.getText();
             String nif = nif_Refeicao.getText();
             String descricao = descricao_Refeicao.getText();
-            String dataRefeicao = dataRefeicao_Refeicao.getValue().toString();
+            LocalDate dataRefeicao = dataRefeicao_Refeicao.getValue();
+            LocalDate dataAtual = LocalDate.now();
             String tipoDieta;
             if(dieta_Refeicao.isSelected()){
                 tipoDieta = "Dieta";
@@ -139,16 +164,47 @@ public class ModalControllerRefeicoes {
                 tipoDieta = "Dieta Normal";
             }
 
-            Refeicao refeicao = new Refeicao(0, nome, dataRefeicao, descricao , nif, tipoDieta);
+            if (nome.length() < 3) {
+                nome_Refeicao.setStyle("-fx-border-color: red");
+                camposValidos = false;
+            } else {
+                nome_Refeicao.setStyle(""); // Remover borda vermelha se estiver presente
+            }
 
-            if (callback != null) {
-                callback.onRefeicaoCriado(refeicao);
+            if (nif.length() != 9) {
+                nif_Refeicao.setStyle("-fx-border-color: red");
+                camposValidos = false;
+            } else {
+                nif_Refeicao.setStyle("");
+            }
+
+            if (descricao.isEmpty()) {
+                descricao_Refeicao.setStyle("-fx-border-color: red");
+                camposValidos = false;
+            } else {
+                descricao_Refeicao.setStyle("");
+            }
+
+            if (dataRefeicao == null || dataRefeicao.isBefore(dataAtual)) {
+                dataRefeicao_Refeicao.setStyle("-fx-border-color: red");
+                camposValidos = false;
+            } else {
+                dataRefeicao_Refeicao.setStyle("");
+            }
+
+            if(camposValidos) {
+                Refeicao refeicao = new Refeicao(0, nome, dataRefeicao.toString(), descricao, nif, tipoDieta);
+
+                if (callback != null) {
+                    callback.onRefeicaoCriado(refeicao);
+                }
+
+                // Fechar o modal
+                Stage stage = (Stage) criar_Button.getScene().getWindow();
+                stage.close();
             }
         }
 
-        // Fechar o modal
-        Stage stage = (Stage) criar_Button.getScene().getWindow();
-        stage.close();
     }
 
     @FXML

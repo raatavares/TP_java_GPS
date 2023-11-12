@@ -7,6 +7,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
 import java.util.Vector;
 
 public class ModalController{
@@ -42,27 +43,78 @@ public class ModalController{
 
     @FXML
     public void handleCriarButton() {
+        boolean camposValidos = true;
+
         // Lógica para criar um novo funcionário com os dados inseridos
         String nome = nomeField.getText();
         String sobrenome = sobrenomeField.getText();
         String nif = nifField.getText();
         String contato = contactoField.getText();
         String email = emailField.getText();
-        String dataNascimento = dataNascimentoPicker.getValue().toString();
-        String username = nome+sobrenome;
+        LocalDate dataNascimento = dataNascimentoPicker.getValue();
+        LocalDate dataAtual = LocalDate.now();
+        String username = nome + sobrenome;
         String password = "123456789";
 
-
-        Funcionario funcionario = new Funcionario(0, nome, sobrenome, dataNascimento, nif, contato, email, "Funcionario", username, password);
-
-        if (callback != null) {
-            callback.onFuncionarioCriado(funcionario);
+        // Verificar comprimento dos campos
+        if (nome.length() < 3) {
+            nomeField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            nomeField.setStyle(""); // Remover borda vermelha se estiver presente
         }
 
-        // Fechar o modal
-        Stage stage = (Stage) criarButton.getScene().getWindow();
-        stage.close();
+        if (sobrenome.length() < 3) {
+            sobrenomeField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            sobrenomeField.setStyle("");
+        }
+
+        if (email.length() < 3) {
+            emailField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            emailField.setStyle("");
+        }
+
+        // Verificar tamanho exato dos campos
+        if (nif.length() != 9) {
+            nifField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            nifField.setStyle("");
+        }
+
+        if (contato.length() != 9) {
+            contactoField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            contactoField.setStyle("");
+        }
+
+        // Verificar se a data de nascimento é válida
+        if (dataNascimento == null || dataNascimento.isAfter(dataAtual)) {
+            dataNascimentoPicker.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            dataNascimentoPicker.setStyle("");
+        }
+
+        // Se todos os campos são válidos, criar o funcionário
+        if (camposValidos) {
+          Funcionario  funcionario = new Funcionario(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Funcionario", username, password);
+
+            if (callback != null) {
+                callback.onFuncionarioCriado(funcionario);
+            }
+
+            // Fechar o modal
+            Stage stage = (Stage) criarButton.getScene().getWindow();
+            stage.close();
+        }
     }
+
 
     @FXML
     public void handleCancelarButton() {
