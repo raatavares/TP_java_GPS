@@ -404,8 +404,24 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task16 - Tratar da lógica do TextField para procura de residentes. - 1H
     - Task17 - Tratar da lógica da tabela para mostrar de todos os residentes. - 1H 
 
+  - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.**
+
+    - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
+    - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
+    - Task3 - Tratar da lógica do botão Apagar (Selecionar o que eliminar e retirar da tabela) - 1H
+    - Task4 - Criação da cena em SceneBuilder para a janela "Consultas&Medicação" do utente. - 1H
+    - Task5 - Criação da cena em SceneBuilder para a janela de "Adicionar Consultas e Medicação" do utente á tabela. - 1H
+    - Task6 - Criação da cena em SceneBuilder para a janela de "Editar Consultas e Medicação" do utente. - 1H
+    - Task7 - Tratar da lógica do TextField para procura de utentes. - 1H
+    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. -1H 
+    - Task9 - Tratar da lógica de adicionar uma Consulta&Medicação á tabela do utente. - 1H
+    - Task10 - Tratar da lógica de editar informações sobre as Consultas&Medicações do utente na tabela. - 2H
+    - Task11 - Tratar da lógica da ListView dentro do modal para procura do utente a associar á consulta ou medicação. - 3H
+    - Task12 - Tratar da lógica da tabela para amostra das consultas e medicações associadas a cada utente. - 1H 
+
+
     
-- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
+- Story Points: Small: 0, Medium: 0, Large: 4; Total = 0S + 0M + 4L = 0S 0M 55L 
 
 - Analysis: short analysis of the planning meeting
 
