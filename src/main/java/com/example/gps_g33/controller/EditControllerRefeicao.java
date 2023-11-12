@@ -41,10 +41,12 @@ public class EditControllerRefeicao {
     private Refeicao refeicao;
     @FXML
     public void onEditarButton() {
+        boolean camposValidos = true;
         String nome = nomeField.getText();
         String descricao = descricaoField.getText();
         String nif = nifField.getText();
-        String dataNascimento = dataRefeicaoPicker.getValue().toString();
+        LocalDate dataRefeicao = dataRefeicaoPicker.getValue();
+        LocalDate dataAtual = LocalDate.now();
         String tipoDieta;
         if(dieta_Refeicao.isSelected()){
             tipoDieta = "Dieta";
@@ -55,22 +57,51 @@ public class EditControllerRefeicao {
             tipoDieta = "Dieta Normal";
         }
 
-        refeicao.setId(this.refeicao.getId());
-        refeicao.setNome(nome);
-        refeicao.setDescricao(descricao);
-        refeicao.setNif(nif);
-        refeicao.setTipoDieta(tipoDieta);
-        refeicao.setDataRefeicao(dataNascimento);
-
-
-
-        if (callback != null) {
-            callback.onRefeicaoEditado(refeicao);
+        if (nome.length() < 3) {
+            nomeField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            nomeField.setStyle(""); // Remover borda vermelha se estiver presente
         }
 
-        // Fechar o modal
-        Stage stage = (Stage) editarButton.getScene().getWindow();
-        stage.close();
+        if (nif.length() != 9) {
+            nifField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            nifField.setStyle("");
+        }
+
+        if (descricao.isEmpty()) {
+            descricaoField.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            descricaoField.setStyle("");
+        }
+
+        if (dataRefeicao == null || dataRefeicao.isBefore(dataAtual)) {
+            dataRefeicaoPicker.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        } else {
+            dataRefeicaoPicker.setStyle("");
+        }
+
+        if(camposValidos) {
+            refeicao.setId(this.refeicao.getId());
+            refeicao.setNome(nome);
+            refeicao.setDescricao(descricao);
+            refeicao.setNif(nif);
+            refeicao.setTipoDieta(tipoDieta);
+            refeicao.setDataRefeicao(dataRefeicao.toString());
+
+
+            if (callback != null) {
+                callback.onRefeicaoEditado(refeicao);
+            }
+
+            // Fechar o modal
+            Stage stage = (Stage) editarButton.getScene().getWindow();
+            stage.close();
+        }
     }
 
     @FXML
