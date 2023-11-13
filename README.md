@@ -226,7 +226,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/61)
 - [US14: Como Animador eu quero registar a participação do residente na atividade](https://gitlab.com/ShorMario/gps_g33/-/issues/62)
 - [US15: Como cozinheira/o no Dep. Culinario eu quero gerir o stock dos alimentos](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
-- [US16: Como cozinheira/o no Dep. Culinário eu quero visualizar a lista de restrições e preferências alimentares](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
+- [US16: US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
@@ -450,6 +450,54 @@ Para que o projeto seja bem sucedido, devemos ter:
 ***
 
 #### Sprint 2
+
+***
+##### Sprint Plan
+
+- Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
+
+- Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
+
+- Roles:
+  - Product Owner: Leonardo Silva
+  - Scrum Master: Sandra Perdigão
+
+- To do:
+  - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações. - Finalizar**
+
+  - **US9: Como Funcionario eu quero visualizar as informações do residente**
+  
+  - **US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes**
+
+  - **US2: Como enfermeira do Dep. Clinico quero registar a falta de medicação e utensílios.**
+
+  - **US7 - Como Familiar eu quero visualizar as consultas do utente**
+
+    
+- Story Points: 
+
+- Analysis: short analysis of the planning meeting
+
+##### Sprint Review
+
+- Analysis: what was not done or what was added (Link to US or Task from the PB)
+
+- Story Points: 2S+1M+2X+2H
+
+- Version: 0.1 
+
+- Client analysis: client feedback
+
+- Conclusions: what to add/review
+
+##### Sprint Retrospective
+
+- What we did well:
+    - A
+- What we did less well:
+    - B
+- How to improve to the next sprint:
+    - C
 
 ***
 
