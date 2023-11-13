@@ -35,11 +35,24 @@ public class InputValidation {
         return dataNascimento.isBefore(dataAtual);
     }
 
+    public static boolean isDataValidaRefeicoes(LocalDate dataNascimento) {
+        LocalDate dataAtual = LocalDate.now();
+        if(!isDataNotNull(dataNascimento))
+            return false;
+
+
+        return dataNascimento.isAfter(dataAtual);
+    }
+
     public static boolean isDataNotNull(LocalDate dataNascimento) {
         return dataNascimento != null;
     }
 
     public static boolean isLengthValid(String input, int length) {
+        return input.length() >= length;
+    }
+
+    public static boolean isDescricaoValid(String input, int length) {
         return input.length() >= length;
     }
 

@@ -61,6 +61,27 @@ public class InputValidationTest {
         assertEquals(true,InputValidation.isLengthValid("123456789",-1));
     }
 
+    @Test
+    void validateDescricao(){
+        assertEquals(true,InputValidation.isDescricaoValid("123456789",3));
+        assertEquals(false,InputValidation.isDescricaoValid("123456789",10));
+        assertEquals(true,InputValidation.isDescricaoValid("123456789",0));
+        assertEquals(true,InputValidation.isDescricaoValid("123456789",-1));
+    }
+
+    @Test
+    void validateDataValidaRefeicoes(){
+        assertEquals(false,InputValidation.isDataValidaRefeicoes(null));
+        assertEquals(true,InputValidation.isDataValidaRefeicoes(java.time.LocalDate.now().plusWeeks(2)));
+        assertEquals(false,InputValidation.isDataValidaRefeicoes(java.time.LocalDate.now().minusYears(1)));
+    }
+
+    @Test
+    void validateDataNotNull(){
+        assertEquals(true,InputValidation.isDataNotNull(java.time.LocalDate.now()));
+        assertEquals(false,InputValidation.isDataNotNull(null));
+    }
+
 
 
 

@@ -39,6 +39,13 @@ public class EditControllerRefeicao {
     public Button cancelarButton;
 
     private Refeicao refeicao;
+
+
+    @FXML
+    public void initialize() {
+        nomeField.setEditable(false);
+        nifField.setEditable(false);
+    }
     @FXML
     public void onEditarButton() {
         boolean camposValidos = true;

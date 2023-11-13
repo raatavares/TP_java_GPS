@@ -4,6 +4,7 @@ import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.modelos.Refeicao;
 import com.example.gps_g33.modelos.Residente;
+import com.example.gps_g33.util.InputValidation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -119,21 +120,11 @@ public class ModalControllerRefeicoes {
                     tipoDieta = "Dieta Normal";
                 }
 
-                if (descricao.isEmpty()) {
-                    descricao_Refeicao.setStyle("-fx-border-color: red");
-                    camposValidos = false;
-                } else {
-                    descricao_Refeicao.setStyle("");
-                }
 
-                if (dataRefeicao == null || dataRefeicao.isBefore(dataAtual)) {
-                    dataRefeicao_Refeicao.setStyle("-fx-border-color: red");
-                    camposValidos = false;
-                } else {
-                    dataRefeicao_Refeicao.setStyle("");
-                }
-
-                if(camposValidos) {
+                if(InputValidation.styleTextAreaError(descricao_Refeicao, !InputValidation.isDescricaoValid(descricao,3))
+                        && InputValidation.styleDataError(dataRefeicao_Refeicao, !InputValidation.isDataValidaRefeicoes(dataRefeicao))
+                )
+                {
                     Refeicao refeicao = new Refeicao(0, nome, dataRefeicao.toString(), descricao, nif, tipoDieta);
 
                     if (callback != null) {
@@ -164,35 +155,11 @@ public class ModalControllerRefeicoes {
                 tipoDieta = "Dieta Normal";
             }
 
-            if (nome.length() < 3) {
-                nome_Refeicao.setStyle("-fx-border-color: red");
-                camposValidos = false;
-            } else {
-                nome_Refeicao.setStyle(""); // Remover borda vermelha se estiver presente
-            }
-
-            if (nif.length() != 9) {
-                nif_Refeicao.setStyle("-fx-border-color: red");
-                camposValidos = false;
-            } else {
-                nif_Refeicao.setStyle("");
-            }
-
-            if (descricao.isEmpty()) {
-                descricao_Refeicao.setStyle("-fx-border-color: red");
-                camposValidos = false;
-            } else {
-                descricao_Refeicao.setStyle("");
-            }
-
-            if (dataRefeicao == null || dataRefeicao.isBefore(dataAtual)) {
-                dataRefeicao_Refeicao.setStyle("-fx-border-color: red");
-                camposValidos = false;
-            } else {
-                dataRefeicao_Refeicao.setStyle("");
-            }
-
-            if(camposValidos) {
+            if(InputValidation.styleTextError(nome_Refeicao, !InputValidation.isLengthValid(nome,3))
+                    && InputValidation.styleTextError(nif_Refeicao, !InputValidation.isNif(nif))
+                    && InputValidation.styleTextAreaError(descricao_Refeicao, !InputValidation.isDescricaoValid(descricao,3))
+                    && InputValidation.styleDataError(dataRefeicao_Refeicao, !InputValidation.isDataValidaRefeicoes(dataRefeicao))
+            ){
                 Refeicao refeicao = new Refeicao(0, nome, dataRefeicao.toString(), descricao, nif, tipoDieta);
 
                 if (callback != null) {
