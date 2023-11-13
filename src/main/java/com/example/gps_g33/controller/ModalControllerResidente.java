@@ -2,6 +2,7 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.modelos.Residente;
+import com.example.gps_g33.util.InputValidation;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -43,7 +44,6 @@ public class ModalControllerResidente{
 
     @FXML
     public void handleCriarButton() {
-        boolean camposValidos = true;
 
         String nome = nomeField.getText();
         String sobrenome = sobrenomeField.getText();
@@ -51,52 +51,16 @@ public class ModalControllerResidente{
         String contato = contactoField.getText();
         String email = emailField.getText();
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
-        LocalDate dataAtual = LocalDate.now();
 
-        if (nome.length() < 3) {
-            nomeField.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            nomeField.setStyle(""); // Remover borda vermelha se estiver presente
-        }
-
-        if (sobrenome.length() < 3) {
-            sobrenomeField.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            sobrenomeField.setStyle("");
-        }
-
-        if (email.length() < 3 || !email.contains("@")) {
-            emailField.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            emailField.setStyle("");
-        }
-
-        // Verificar tamanho exato dos campos
-        if (nif.length() != 9) {
-            nifField.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            nifField.setStyle("");
-        }
-
-        if (contato.length() != 9) {
-            contactoField.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            contactoField.setStyle("");
-        }
-
-        // Verificar se a data de nascimento é válida
-        if (dataNascimento == null || dataNascimento.isAfter(dataAtual) || dataNascimento.isBefore(LocalDate.of(1900, 1, 1)) || dataNascimento.isAfter(LocalDate.of(2000, 1, 1))) {
-            dataNascimentoPicker.setStyle("-fx-border-color: red");
-            camposValidos = false;
-        } else {
-            dataNascimentoPicker.setStyle("");
-        }
-        if (camposValidos) {
+        if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
+        && InputValidation.styleTextError(sobrenomeField, !InputValidation.isLengthValid(sobrenome,3))
+        && InputValidation.styleTextError(emailField, !InputValidation.isEmail(email) && !InputValidation.isLengthValid(email,3))
+        && InputValidation.styleTextError(nifField, !InputValidation.isNif(nif))
+        && InputValidation.styleTextError(contactoField, !InputValidation.isTelemovel(contato))
+        && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isDataValida(dataNascimento))
+        && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
+        )
+        {
             Residente residente = new Residente(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Nenhuma", "Nenhuma");
 
             if (callback != null) {
@@ -107,6 +71,7 @@ public class ModalControllerResidente{
             Stage stage = (Stage) criarButton.getScene().getWindow();
             stage.close();
         }
+
     }
 
     @FXML
@@ -116,6 +81,7 @@ public class ModalControllerResidente{
         stage.close();
     }
 
+
     public void setCampos(TextField nomeField, TextField sobrenomeField, TextField nifField, TextField contactoField, TextField emailField, DatePicker dataNascimentoPicker) {
         this.nomeField = nomeField;
         this.sobrenomeField = sobrenomeField;
@@ -124,4 +90,7 @@ public class ModalControllerResidente{
         this.emailField = emailField;
         this.dataNascimentoPicker = dataNascimentoPicker;
     }
+
+
+
 }
