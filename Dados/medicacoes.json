@@ -1,1 +1,2 @@
-[{"id":1,"nome":"teste","dataConsultaMedicacao":"teste","medicacao":"teste","nif":"teste"}]
+
+[{"id":2,"nome":"Maria","dataConsultaMedicacao":"2023-11-14","medicacao":"paracetamol 2 em 2 horas","nif":"123456789"},{"id":3,"nome":"Carlos","dataConsultaMedicacao":"2023-11-06","medicacao":"hggf","nif":"987654321"}]
