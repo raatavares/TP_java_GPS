@@ -244,4 +244,27 @@ public class Data {
         return instance;
     }
 
+    public void clearFuncionarios() {
+        funcionariosData.clear();
+        saveData();
+    }
+
+    public void clearResidentes() {
+        residentesData.clear();
+        saveData();
+    }
+
+    public void clearRefeicoes() {
+        refeicoesData.clear();
+        saveData();
+    }
+
+    public void clearMedicacoes() {
+        medicacoesData.clear();
+        saveData();
+    }
+
+    public void setMedicacoesData(List<Medicacao> medicacoes) {
+        medicacoesData = medicacoes;
+    }
 }
