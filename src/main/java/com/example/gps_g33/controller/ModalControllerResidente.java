@@ -115,4 +115,13 @@ public class ModalControllerResidente{
         Stage stage = (Stage) cancelarButton.getScene().getWindow();
         stage.close();
     }
+
+    public void setCampos(TextField nomeField, TextField sobrenomeField, TextField nifField, TextField contactoField, TextField emailField, DatePicker dataNascimentoPicker) {
+        this.nomeField = nomeField;
+        this.sobrenomeField = sobrenomeField;
+        this.nifField = nifField;
+        this.contactoField = contactoField;
+        this.emailField = emailField;
+        this.dataNascimentoPicker = dataNascimentoPicker;
+    }
 }

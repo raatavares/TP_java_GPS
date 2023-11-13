@@ -44,6 +44,7 @@ public class NavBarController {
     public Button buttonMedicamentos;
 
     private Data data;
+
     @FXML
     public void initialize() {
         data = Data.getInstance();
@@ -87,8 +88,11 @@ public class NavBarController {
             buttonMedicamentos.setVisible(true);
 
             buttonAvisos.setVisible(false);
+            buttonAvisos.setManaged(false);
             buttonFuncionarios.setVisible(false);
+            buttonFuncionarios.setManaged(false);
             buttonResidentes.setVisible(false);
+            buttonResidentes.setManaged(false);
             buttonGerirStock.setVisible(false);
             buttonGerirStock.setManaged(false);
             buttonRefeicoes.setVisible(false);
