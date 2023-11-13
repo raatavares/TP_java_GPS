@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visitas">
+   <children>
+      <AnchorPane id="visitas" fx:id="ss" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Text layoutX="204.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAR DE IDOSOS" textAlignment="CENTER" wrappingWidth="199.76641845703125">
+               <font>
+                  <Font name="Haettenschweiler" size="39.0" />
+               </font>
+            </Text>
+            <Button fx:id="voltar" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="103.0" text="VOLTAR" />
+            <Text layoutX="204.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FAMILIAR - CONTACTO" textAlignment="CENTER" wrappingWidth="199.76641845703125">
+               <font>
+                  <Font name="Verdana" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
