@@ -226,7 +226,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/61)
 - [US14: Como Animador eu quero registar a participação do residente na atividade](https://gitlab.com/ShorMario/gps_g33/-/issues/62)
 - [US15: Como cozinheira/o no Dep. Culinario eu quero gerir o stock dos alimentos](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
-- [US16: Como cozinheira/o no Dep. Culinário eu quero visualizar a lista de restrições e preferências alimentares](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
+- [US16: US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 
 ***
