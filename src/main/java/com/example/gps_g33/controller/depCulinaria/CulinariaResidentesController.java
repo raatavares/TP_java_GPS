@@ -1,4 +1,4 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.depCulinaria;
 
 import com.example.gps_g33.HelloApplication;
 import javafx.fxml.FXML;

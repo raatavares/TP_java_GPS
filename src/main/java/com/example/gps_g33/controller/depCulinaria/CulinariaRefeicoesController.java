@@ -1,7 +1,8 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.depCulinaria;
 
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,17 +17,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CulinariaRefeicoesController implements ModalCallback{
+public class CulinariaRefeicoesController implements ModalCallback {
     private int id = 0;
     public Button buttonToAddRefeicao;
     public Button buttonToEditRefeicao;

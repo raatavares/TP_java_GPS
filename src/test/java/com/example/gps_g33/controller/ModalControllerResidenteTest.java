@@ -1,17 +1,15 @@
 package com.example.gps_g33.controller;
 
+import com.example.gps_g33.controller.gerencia.ModalControllerResidente;
 import com.example.gps_g33.modelos.Residente;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 

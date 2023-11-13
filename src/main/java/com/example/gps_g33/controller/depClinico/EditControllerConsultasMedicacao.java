@@ -1,5 +1,6 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.depClinico;
 
+import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.Medicacao;
 
 import javafx.event.ActionEvent;

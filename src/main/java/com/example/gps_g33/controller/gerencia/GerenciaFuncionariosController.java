@@ -1,6 +1,7 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.gerencia;
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class GerenciaFuncionariosController implements ModalCallback{
+public class GerenciaFuncionariosController implements ModalCallback {
     private Data data;
 
     @FXML

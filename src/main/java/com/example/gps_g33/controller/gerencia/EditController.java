@@ -1,5 +1,6 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.gerencia;
 
+import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.util.InputValidation;
 import javafx.fxml.FXML;
@@ -9,9 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
-import java.util.Vector;
+import java.time.format.DateTimeFormatter;
 
-public class ModalController{
+public class EditController {
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
@@ -36,14 +37,14 @@ public class ModalController{
     public TextField emailField;
 
     @FXML
-    public Button criarButton;
+    public Button editarButton;
 
     @FXML
     public Button cancelarButton;
 
-
+    private Funcionario funcionario;
     @FXML
-    public void handleCriarButton() {
+    public void onEditarButton() {
         boolean camposValidos = true;
 
         // Lógica para criar um novo funcionário com os dados inseridos
@@ -52,39 +53,58 @@ public class ModalController{
         String nif = nifField.getText();
         String contato = contactoField.getText();
         String email = emailField.getText();
+
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
         LocalDate dataAtual = LocalDate.now();
-        String username = nome + sobrenome;
-        String password = "123456789";
 
 
-        // Se todos os campos são válidos, criar o funcionário
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
                 && InputValidation.styleTextError(sobrenomeField, !InputValidation.isLengthValid(sobrenome,3))
-                && InputValidation.styleTextError(emailField, !InputValidation.isEmail(email) && !InputValidation.isLengthValid(email,3))
+                && InputValidation.styleTextError(emailField, !InputValidation.isEmail(email) || !InputValidation.isLengthValid(email,3))
                 && InputValidation.styleTextError(nifField, !InputValidation.isNif(nif))
                 && InputValidation.styleTextError(contactoField, !InputValidation.isTelemovel(contato))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isDataValida(dataNascimento))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
         )
         {
-          Funcionario  funcionario = new Funcionario(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Funcionario", username, password);
+            funcionario.setId(this.funcionario.getId());
+            funcionario.setContato(contato);
+            funcionario.setEmail(email);
+            funcionario.setNif(nif);
+            funcionario.setNome(nome);
+            funcionario.setSobrenome(sobrenome);
+            funcionario.setDataNascimento(dataNascimento.toString());
 
             if (callback != null) {
-                callback.onFuncionarioCriado(funcionario);
+                callback.onFuncionarioEditado(funcionario);
             }
 
             // Fechar o modal
-            Stage stage = (Stage) criarButton.getScene().getWindow();
+            Stage stage = (Stage) editarButton.getScene().getWindow();
             stage.close();
         }
-    }
 
+
+    }
 
     @FXML
     public void handleCancelarButton() {
         // Fechar o modal sem fazer nada
         Stage stage = (Stage) cancelarButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void setFuncionarioParaEdicao(Funcionario funcionario) {
+        this.funcionario = funcionario;
+
+        nomeField.setText(funcionario.getNome());
+        sobrenomeField.setText(funcionario.getSobrenome());
+        nifField.setText(funcionario.getNif());
+        contactoField.setText(funcionario.getContato());
+        emailField.setText(funcionario.getEmail());
+
+        String dataNascimentoString = funcionario.getDataNascimento();
+        LocalDate dataNascimento = LocalDate.parse(dataNascimentoString);
+        dataNascimentoPicker.setValue(dataNascimento);
     }
 }

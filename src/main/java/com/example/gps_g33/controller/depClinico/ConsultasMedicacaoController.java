@@ -1,6 +1,7 @@
-package com.example.gps_g33.controller;
+package com.example.gps_g33.controller.depClinico;
 
 import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,7 +23,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ConsultasMedicacaoController implements ModalCallback{
+public class ConsultasMedicacaoController implements ModalCallback {
     @FXML
     public Button buttonToAddMedicacao;
 
