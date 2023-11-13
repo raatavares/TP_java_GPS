@@ -45,7 +45,6 @@ medicamentos e alimentos, proporcionando assim uma qualidade de vida mais elevad
 seus entes queridos. Portanto, investir em tecnologia de gestão é essencial para enfrentar os desafios atuais e garantir
 um futuro mais seguro e satisfatório para a população idosa nas instituições de cuidados.
 
-##### Stakeholders
 
 **1. Lar de Idosos**
 
