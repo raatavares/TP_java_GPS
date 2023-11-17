@@ -269,7 +269,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Risk List
 
 **RSK1 Falta de Experiência em Desenvolvimento de Software**
-- RSK1 – PxI: 3x5=15 Os membros já estão mais à vontade com o código para desenvolvimento do projeto.
+- RSK1 – PxI: 3x5=15 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
 
 **RSK2 Resistência à mudança**
 - RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
@@ -403,7 +403,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task16 - Tratar da lógica do TextField para procura de residentes. - 1H
     - Task17 - Tratar da lógica da tabela para mostrar de todos os residentes. - 1H 
 
-  - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.**
+  - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.** (Veio da Product Backlog)
 
     - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
     - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
@@ -426,25 +426,32 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Review
 
-- Analysis: what was not done or what was added (Link to US or Task from the PB)
+- Analysis: 
+
+  **Adicionado**: 
+  - [US1: Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
 
 - Story Points: 2S+1M+2X+2H
+- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
 
 - Version: 0.1 
 
-- Client analysis: client feedback
+- Client analysis: O cliente gostou e aprovou.
 
-- Conclusions: what to add/review
+- Conclusions: O cliente quer adicionar uma nova funcionalidade, "Possiblidade de os familiares marcarem visitas" e quer que demos a seguinte prioridade as US -> US1 > US9 > US16 >> US2 >> USNova >> US7.
 
 ##### Sprint Retrospective
 
 - What we did well:
     - A boa separação das tasks por cada User Story permitiu uma melhor divisão de tarefas pelos membros do grupo, não existindo uma grande sobreposição de trabalho, permitindo a cada membro do grupo trabalhar sobre a sua tarefa individualmente.
+
 - What we did less well:
     - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador não fomos fazendo os testes unitários. Em consequência disso teremos de fazer os testes unitários no fim de concluirmos todas as User Stories o que será mais complexo e demorará mais tempo.
+    - Não fizemos review do codigo apos fazer uma certa funcionalidade. 
+
 - How to improve to the next sprint:
-    - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador realizar imediatamente a seguir os testes unitários relativos ao valor introduzido.
-    - Fazer uma melhor atribuição de Tasks por todos os membros do grupo.
+    - Realizar os testes unitários logo apos termos codificado certa funcionalidade.
+    - A medida que vamos fazendo funcionalidades e os seus respetivos testes fazer tambem code review.
 
 ***
 
