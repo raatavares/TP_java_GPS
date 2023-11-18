@@ -43,6 +43,10 @@ public class NavBarController {
 
     public Button buttonMedicamentos;
 
+    //Funcionario
+    public Button buttonInfoResidentes;
+    public Button buttonChat;
+
     private Data data;
 
     @FXML
@@ -68,6 +72,10 @@ public class NavBarController {
             buttonFuncionarios.setManaged(false);
             buttonConsultas.setVisible(false);
             buttonMedicamentos.setVisible(false);
+            buttonInfoResidentes.setVisible(false);
+            buttonInfoResidentes.setManaged(false);
+            buttonChat.setVisible(false);
+            buttonChat.setManaged(false);
 
         } else if (departamento.equals("Gerencia")) {
 
@@ -81,6 +89,10 @@ public class NavBarController {
             buttonRefeicoes.setManaged(false);
             buttonConsultas.setVisible(false);
             buttonMedicamentos.setVisible(false);
+            buttonInfoResidentes.setVisible(false);
+            buttonInfoResidentes.setManaged(false);
+            buttonChat.setVisible(false);
+            buttonChat.setManaged(false);
         }
         else if (departamento.equals("Clinico")) {
 
@@ -97,9 +109,30 @@ public class NavBarController {
             buttonGerirStock.setManaged(false);
             buttonRefeicoes.setVisible(false);
             buttonRefeicoes.setManaged(false);
-
+            buttonInfoResidentes.setVisible(false);
+            buttonInfoResidentes.setManaged(false);
+            buttonChat.setVisible(false);
+            buttonChat.setManaged(false);
         }
+        else if(departamento.equals("Funcionario")){
+            buttonInfoResidentes.setVisible(true);
+            buttonChat.setVisible(true);
 
+            buttonConsultas.setVisible(false);
+            buttonConsultas.setManaged(false);
+            buttonMedicamentos.setVisible(false);
+            buttonMedicamentos.setManaged(false);
+            buttonAvisos.setVisible(false);
+            buttonAvisos.setManaged(false);
+            buttonFuncionarios.setVisible(false);
+            buttonFuncionarios.setManaged(false);
+            buttonResidentes.setVisible(false);
+            buttonResidentes.setManaged(false);
+            buttonGerirStock.setVisible(false);
+            buttonGerirStock.setManaged(false);
+            buttonRefeicoes.setVisible(false);
+            buttonRefeicoes.setManaged(false);
+        }
     }
 
     public void switchToFuncionarios(ActionEvent event) throws IOException {
@@ -132,6 +165,18 @@ public class NavBarController {
     }
 
     public void switchToMedicamentos() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToInfoResidentes() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/InformacoesDoResidente.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToChat() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);

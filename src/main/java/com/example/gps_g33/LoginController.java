@@ -63,6 +63,8 @@ public class LoginController {
         }
         else if (departamento.equals("Clinico")) {
             return "views/depClinico/Consultas_Medicaçao.fxml";
+        } else if (departamento.equals("Funcionario")) {
+            return "views/funcionarios/Funcionários.fxml";
         }
         return null;
     }
