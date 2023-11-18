@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.funcionarios.InfoResidentesController">
    <children>
       <GridPane layoutX="16.0" layoutY="220.0" prefHeight="487.0" prefWidth="976.0">
         <columnConstraints>
@@ -30,19 +30,19 @@
           <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
+            <TableView fx:id="tableViewResidentes" prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="64.79998779296875" text="ID" />
-                <TableColumn prefWidth="100.800048828125" text="Nome" />
-                  <TableColumn prefWidth="149.60003662109375" text="Data Nascimento" />
-                  <TableColumn prefWidth="132.0" text="Contacto" />
-                  <TableColumn prefWidth="526.3999633789062" text="Problemas de Saúde" />
+                <TableColumn fx:id="idColumn" prefWidth="64.79998779296875" text="ID" />
+                <TableColumn fx:id="nomeColumn" prefWidth="100.800048828125" text="Nome" />
+                  <TableColumn fx:id="dataNascimentoColumn" prefWidth="149.60003662109375" text="Data Nascimento" />
+                  <TableColumn fx:id="contatoColumn" prefWidth="132.0" text="Contacto" />
+                  <TableColumn fx:id="problemasSaudeColumn" prefWidth="526.3999633789062" text="Problemas de Saúde" />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                  <TextField prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
+                  <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
                      <HBox.margin>
                         <Insets right="270.0" />
                      </HBox.margin>

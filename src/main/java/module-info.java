@@ -21,4 +21,5 @@ module com.example.gps_g33
     exports com.example.gps_g33.controller.depCulinaria;
     exports com.example.gps_g33.controller.depClinico;
     exports com.example.gps_g33.controller.gerencia;
+    exports com.example.gps_g33.controller.funcionarios;
 }
