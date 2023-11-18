@@ -3,6 +3,7 @@ package com.example.gps_g33.controller.depClinico;
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
+import com.example.gps_g33.modelos.Data;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,7 +57,7 @@ public class ConsultasMedicacaoController implements ModalCallback {
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        dataConsultasColumn.setCellValueFactory(new PropertyValueFactory<>("dataMedicacao"));
+        dataConsultasColumn.setCellValueFactory(new PropertyValueFactory<>("dataConsultaMedicacao"));
         medicacaoColumn.setCellValueFactory(new PropertyValueFactory<>("medicacao"));
 
         updateTable();

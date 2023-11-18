@@ -37,17 +37,9 @@ public class EditControllerConsultasMedicacao {
 
     private Medicacao medicacao_Consulta;
 
-    @FXML
-    public void initialize() {
-
-        // Desabilitar a edição das TextField
-        nomeField.setEditable(false);
-        nifField.setEditable(false);
-    }
 
     @FXML
     public void onEditarButton() {
-        boolean camposValidos = true;
 
         String nome = nomeField.getText();
         String medicacao = medicacaoField.getText();
@@ -79,7 +71,13 @@ public class EditControllerConsultasMedicacao {
 
     @FXML
     public void setMedicacaoParaEdicao(Medicacao medicacao_Consulta) {
+
         this.medicacao_Consulta = medicacao_Consulta;
+
+        // Desabilitar a edição das TextField
+        nomeField.setEditable(false);
+        nifField.setEditable(false);
+
 
         nomeField.setText(medicacao_Consulta.getNome());
         medicacaoField.setText(medicacao_Consulta.getMedicacao());
