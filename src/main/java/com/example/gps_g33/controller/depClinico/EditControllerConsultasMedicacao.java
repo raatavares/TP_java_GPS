@@ -6,6 +6,7 @@ import com.example.gps_g33.modelos.Medicacao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -35,8 +36,19 @@ public class EditControllerConsultasMedicacao {
     public Button cancelar_Button;
 
     private Medicacao medicacao_Consulta;
+
+    @FXML
+    public void initialize() {
+
+        // Desabilitar a edição das TextField
+        nomeField.setEditable(false);
+        nifField.setEditable(false);
+    }
+
     @FXML
     public void onEditarButton() {
+        boolean camposValidos = true;
+
         String nome = nomeField.getText();
         String medicacao = medicacaoField.getText();
         String nif = nifField.getText();

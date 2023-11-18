@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConsultasMedicacaoController implements ModalCallback {
+    private Data data;
     @FXML
     public Button buttonToAddMedicacao;
 
@@ -44,7 +45,7 @@ public class ConsultasMedicacaoController implements ModalCallback {
 
     private ObservableList<Medicacao> listaDeMedicacoes = FXCollections.observableArrayList();
 
-    private Data data;
+
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
