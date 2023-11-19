@@ -141,9 +141,16 @@ public class NavBarController {
         contentArea.getChildren().setAll(fxml);
     }
     public void switchToResidentes() throws IOException {
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Residentes.fxml"));
-        contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        if(departamento.equals("Culinaria")){
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Residentes.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } else if (departamento.equals("Gerencia")) {
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Residentes.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        }
     }
 
     public void switchToAvisos() throws IOException {

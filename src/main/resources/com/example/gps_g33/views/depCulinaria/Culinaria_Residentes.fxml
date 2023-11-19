@@ -2,107 +2,21 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.depCulinaria.CulinariaResidentesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1005.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.depCulinaria.CulinariaResidentesController">
    <children>
-      <VBox prefHeight="800.0" prefWidth="249.0" style="-fx-background-color: #f4f5ed;">
-         <children>
-            <Pane prefHeight="232.0" prefWidth="249.0">
-               <children>
-                  <ImageView fitHeight="248.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                         <Image url="@../../img/logo.jpg" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="buttonToRefeicoes" onAction="#switchToRefeicoes" graphicTextGap="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="250.0" style="-fx-background-color: #f4f5ed;" text="Refeições">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="UTENSILS" size="20" />
-                     </graphic>
-                     <font>
-                        <Font name="Arial" size="20.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Pane>
-            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="305.0" style="-fx-background-color: #f4f5ed;" text="Gerir stock">
-               <graphic>
-                  <FontAwesomeIconView glyphName="BAR_CHART" size="20" text="" />
-               </graphic>
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Button>
-            <Button fx:id="buttonToResidentes" onAction="#switchToResidentes" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="307.0" style="-fx-background-color: #f4f5ed;" text="Residentes">
-               <graphic>
-                  <FontAwesomeIconView glyphName="USER" size="20" />
-               </graphic>
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Button>
-            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="307.0" style="-fx-background-color: #f4f5ed;" text="Avisos">
-               <graphic>
-                  <FontAwesomeIconView glyphName="EXCLAMATION" size="20" text="" />
-               </graphic>
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Button>
-            <GridPane alignment="TOP_CENTER" prefHeight="350.0" prefWidth="249.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="120.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="129.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <Button fx:id="buttonSair" contentDisplay="BOTTOM" layoutX="17.0" layoutY="43.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #3a4151;" text="SAIR" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </Pane>
-                  <Text fx:id="lblDate" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA/HORA" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="307.0" style="-fx-background-color: #f4f5ed;" text="Avisos">
-               <graphic>
-                  <FontAwesomeIconView glyphName="EXCLAMATION" size="20" text="" />
-               </graphic>
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-      <GridPane layoutX="267.0" layoutY="220.0" prefHeight="487.0" prefWidth="976.0">
+      <GridPane layoutX="16.0" layoutY="168.0" prefHeight="487.0" prefWidth="976.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -111,22 +25,18 @@
           <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
+            <TableView fx:id="tableViewResidentes" prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="51.0" text="ID" />
-                <TableColumn prefWidth="99.0" text="Nome" />
-                  <TableColumn prefWidth="156.0" text="Preferências Alimentares" />
-                  <TableColumn prefWidth="81.0" text="Alergias" />
-                  <TableColumn prefWidth="41.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="79.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="79.0" text="." />
-                  <TableColumn minWidth="0.0" prefWidth="85.0" text="." />
+                <TableColumn fx:id="idColumn" prefWidth="51.0" text="ID" />
+                <TableColumn fx:id="nomeColumn" prefWidth="99.0" text="Nome" />
+                  <TableColumn fx:id="prefAliColumn" minWidth="0.0" prefWidth="186.4000244140625" text="Preferências Alimentares" />
+                  <TableColumn fx:id="alergiasColumn" minWidth="0.0" prefWidth="149.60003662109375" text="Alergias" />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                  <TextField prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
+                  <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="340.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
                      <HBox.margin>
                         <Insets right="270.0" />
                      </HBox.margin>
@@ -135,16 +45,15 @@
             </HBox>
          </children>
       </GridPane>
-      <Pane layoutX="265.0" layoutY="66.0" prefHeight="115.0" prefWidth="976.0" style="-fx-background-color: #3a4151;">
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="115.0" prefWidth="976.0" style="-fx-background-color: #3a4151;">
          <children>
             <Label layoutX="41.0" layoutY="47.0" text="Residentes" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="41.0" layoutY="30.0" text="/culinaria/residentes" textFill="WHITE" />
+            <Label layoutX="41.0" layoutY="30.0" text="/culinario/residentes" textFill="WHITE" />
          </children>
       </Pane>
-       <StackPane fx:id="contentArea"/>
    </children>
 </AnchorPane>
