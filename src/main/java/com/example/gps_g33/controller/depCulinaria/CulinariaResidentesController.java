@@ -60,7 +60,7 @@ public class CulinariaResidentesController {
         tableViewResidentes.getItems().clear();
         tableViewResidentes.getItems().addAll(data.getResidentes());
     }
-    
+
 
 
     public void onSearch() {

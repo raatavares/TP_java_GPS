@@ -68,22 +68,28 @@ public class EditControllerRefeicao {
             tipoDieta = "Dieta Normal";
         }
 
-        refeicao.setId(this.refeicao.getId());
-        refeicao.setNome(nome);
-        refeicao.setDescricao(descricao);
-        refeicao.setNif(nif);
-        refeicao.setTipoDieta(tipoDieta);
-        refeicao.setDataRefeicao(dataNascimento);
+        if(InputValidation.styleTextAreaError(descricaoField, !InputValidation.isDescricaoValid(descricao,3))
+                && InputValidation.styleDataError(dataRefeicaoPicker, !InputValidation.isDataValidaRefeicoes(LocalDate.parse(dataNascimento)))
+        )
+        {
+            refeicao.setId(this.refeicao.getId());
+            refeicao.setNome(nome);
+            refeicao.setDescricao(descricao);
+            refeicao.setNif(nif);
+            refeicao.setTipoDieta(tipoDieta);
+            refeicao.setDataRefeicao(dataNascimento);
 
 
 
-        if (callback != null) {
-            callback.onRefeicaoEditado(refeicao);
+            if (callback != null) {
+                callback.onRefeicaoEditado(refeicao);
+            }
+
+            // Fechar o modal
+            Stage stage = (Stage) editarButton.getScene().getWindow();
+            stage.close();
         }
 
-        // Fechar o modal
-        Stage stage = (Stage) editarButton.getScene().getWindow();
-        stage.close();
     }
 
     @FXML
