@@ -17,4 +17,5 @@ public interface ModalCallback {
 
     void onMedicacaoCriado(Medicacao medicacao);
     void onMedicacaoEditado(Medicacao medicacao);
+
 }
