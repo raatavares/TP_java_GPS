@@ -227,6 +227,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US15: Como cozinheira/o no Dep. Culinario eu quero gerir o stock dos alimentos](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
 - [US16: US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
+- [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
 
 ***
 
