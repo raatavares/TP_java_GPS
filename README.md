@@ -477,7 +477,13 @@ Para que o projeto seja bem sucedido, devemos ter:
 
   - **US2: Como enfermeira do Dep. Clinico quero registar a falta de medicação e utensílios.**
 
-  - **US7 - Como Familiar eu quero visualizar as consultas do utente**
+  - **US18: Como funcionário pretendo abrir um periodo de visitas**
+
+  - **US19: Como Familiar pretendo fazer a reserva de um periodo de visitas**
+  
+  - **US7: Como Familiar eu quero visualizar as consultas do utente**
+
+
 
     
 - Story Points: 
