@@ -529,6 +529,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task 6 - Tratar da lógica de um familiar conseguir se desinscrever de um período de visitas.
     - Task 7 - Tratar de alterar a cena para "Minhas visitas".
     - Task 8 - Criação da cena "Minhas visitas".
+    - Task 9 - Tratar da lógica de preenchimento da tabela da janela "Minhas visitas"
   
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
 
