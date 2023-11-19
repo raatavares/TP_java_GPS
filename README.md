@@ -227,6 +227,7 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US15: Como cozinheira/o no Dep. Culinario eu quero gerir o stock dos alimentos](https://gitlab.com/ShorMario/gps_g33/-/issues/29)
 - [US16: US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes](https://gitlab.com/ShorMario/gps_g33/-/issues/28)
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
+- [US18: Como funcionário pretendo abrir um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/136)
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
 
 ***
@@ -473,14 +474,61 @@ Para que o projeto seja bem sucedido, devemos ter:
   - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações. - Finalizar**
 
   - **US9: Como Funcionario eu quero visualizar as informações do residente**
+
+    - Task1 - Criação da cena em SceneBuilder para a janela "Informações do Residente".
+    - Task2 - Tratar da lógica do TextField para procura de utentes.
+    - Task3 - Tratar de colocar a hora correta na label perto do botão Sair.
+    - Task4 - Tratar da lógica da tabela para amostra das informações do utente especificado na TextField.
   
   - **US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes**
 
+    - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar)
+    - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar)
+    - Task3 - Tratar da lógica do botão Apagar (Selecionar o que eliminar e retirar da tabela)
+    - Task4 - Criação da cena em SceneBuilder para a janela "Nova Informação" do utente.
+    - Task5 - Criação da cena em SceneBuilder para a janela de "Editar informação" do residente
+    - Task6 - Criação da cena em SceneBuilder para a janela de visualização da informação do residente
+    - Task7 - Tratar da lógica do TextField para procura de utentes
+    - Task8 - Tratar da lógica de adicionar uma nova informação sobre um utente á tabela.
+    - Task9 - Tratar da lógica de editar informações do utente na tabela.
+    - Task10 - Tratar da lógica da ListView dentro do modal para procura do utente a associar á restrição/preferência alimentar.
+    - Task11 - Tratar da lógica da tabela para amostra das restrições/preferências associadas a cada utente.
+    - Task12 - Tratar da lógica de guardar no ficheiro json os novos dados aquando o fecho do software.
+
   - **US2: Como enfermeira do Dep. Clinico quero registar a falta de medicação e utensílios.**
+
+    - Task 1 - Criação da cena "Medicamentos e Utensílios"
+    - Task 2 - Tratar da lógica da tabela para amostra dos Medicamentos ou Utensílios em falta ao departamento clinico.
+    - Task 3 - Tratar da lógica de eliminar a falta de um medicamento ou utensilio da lista.
+    - Task 4 - Criação da cena "Nova Falta de Medicamento/Utensilio"
+    - Task 5 - Alteração da cena para "Nova Falta de Medicamento/Utensilio" ao pressionar o botão "Adicionar"
+    - Task 6 - Gravação dos dados "Medicamentos/Utensílios em falta" em ficheiro json.
 
   - **US18: Como funcionário pretendo abrir um periodo de visitas**
 
+    - Task 1 - Alterar a janela NavBar dos funcionários adicionando a funcionalidade de criação de horário de visitas
+    - Task 2 - Criação da janela de visualização de todos os horários de visita.
+    - Task 3 - Tratar da lógica do calendário que apresenta todos os períodos de visita criados.
+    - Task 4 - Criar janela de "Criação do Novo Periodo de Visitas"
+    - Task 5 - Criar janela de "Edição do periodo de Visitas"
+    - Task 6 - Tratar da lógica de eliminar um periodo de visitas.
+    - Task 7 - Tratar da lógica de alterar para cena "Criação do Novo Periodo de Visitas" ao premir o botão "Criar"
+    - Task 8 - Tratar da lógica de alterar para cena "Edição do periodo de Visitas" ao premir o botão "Editar"
+    - Task 9 - Tratar da lógica de criação do novo periodo de visitas.
+    - Task 10 - Tratar da lógica de edição do periodo de visitas selecionado previamente.
+    - Task 11 - Tratar da lógica da gravação no ficheiro json dos periodos de visita existentes
+    - Task 12 - Tratar da apresentação da informação relativa a um periodo de visita ao pressionar o dia em concreto.
+
   - **US19: Como Familiar pretendo fazer a reserva de um periodo de visitas**
+
+    - Task 1 - Criação da cena dos Familiares
+    - Task 2 - Alteração da NavBar por forma a adicionar as novas funcionalidades do Familiar
+    - Task 3 - Tratar da lógica para mostrar os períodos de visitas no calendário.
+    - Task 4 - Tratar da lógica de inscrição de um familiar em um determinado período de visita.
+    - Task 5 - Tratar da lógica de gravação no ficheiro json das inscrições dos familiares em períodos de visita
+    - Task 6 - Tratar da lógica de um familiar conseguir se desinscrever de um período de visitas.
+    - Task 7 - Tratar de alterar a cena para "Minhas visitas".
+    - Task 8 - Criação da cena "Minhas visitas".
   
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
 
