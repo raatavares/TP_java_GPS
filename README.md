@@ -462,7 +462,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
 
-- Dates: from 24-27/Oct to 14-17/Nov, 3 weeks
+- Dates: from 14/Nov to 21/Nov, 2 weeks
 
 - Roles:
   - Product Owner: Leonardo Silva
