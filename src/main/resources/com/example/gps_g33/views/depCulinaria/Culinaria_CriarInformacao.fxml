@@ -29,8 +29,8 @@
          </font>
       </Label>
       <Button fx:id="cancelar_Button" layoutX="412.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleCancelarButton" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
-      <TextField fx:id="nome_Refeicao" layoutX="34.0" layoutY="111.0" prefHeight="25.0" prefWidth="112.0" />
-      <TextArea fx:id="descricao_Refeicao" layoutX="325.0" layoutY="153.0" prefHeight="103.0" prefWidth="174.0" />
+      <TextField fx:id="nomeField" layoutX="34.0" layoutY="111.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextArea fx:id="descricaoField" layoutX="325.0" layoutY="153.0" prefHeight="103.0" prefWidth="174.0" />
       <Label layoutX="325.0" layoutY="126.0" text="Descrição">
          <font>
             <Font size="15.0" />
@@ -47,13 +47,13 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="nif_Refeicao" layoutX="166.0" layoutY="110.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="nifField" layoutX="166.0" layoutY="110.0" prefHeight="25.0" prefWidth="112.0" />
       <Group layoutX="325.0" layoutY="282.0">
          <children>
             <VBox layoutY="-7.0" prefHeight="67.0" prefWidth="174.0" spacing="5.0">
                <children>
-                  <RadioButton fx:id="dieta_Personalizada" mnemonicParsing="false" text="Preferência Alimentar" />
-                  <RadioButton fx:id="dieta_Refeicao" mnemonicParsing="false" text="Restrição Alimentar" />
+                  <RadioButton fx:id="preferenciaAlimentar" mnemonicParsing="false" text="Preferência Alimentar" />
+                  <RadioButton fx:id="restricaoAlimentar" mnemonicParsing="false" text="Alergia Alimentar" />
                </children>
             </VBox>
          </children>

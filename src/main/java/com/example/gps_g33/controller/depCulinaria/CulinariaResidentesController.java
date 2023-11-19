@@ -150,7 +150,13 @@ public class CulinariaResidentesController implements ModalCallback {
 
     @Override
     public void onResidenteEditado(Residente residente) {
-
+        for (int i = 0; i < data.getResidentes().size(); i++) {
+            if(data.getResidentes().get(i).getId() == residente.getId()){
+                data.getResidentes().set(i, residente);
+                break;
+            }
+        }
+        updateTable();
     }
 
     @Override

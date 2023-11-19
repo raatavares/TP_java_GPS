@@ -45,8 +45,8 @@
          <children>
             <VBox layoutY="-7.0" prefHeight="67.0" prefWidth="174.0" spacing="5.0">
                <children>
-                  <RadioButton fx:id="dieta_Refeicao" mnemonicParsing="false" text="Preferêcia Alimentar" />
-                  <RadioButton fx:id="dieta_Personalizada" mnemonicParsing="false" text="Restrição Alimentar" />
+                  <RadioButton fx:id="preferenciaAlimentar" mnemonicParsing="false" text="Preferêcia Alimentar" />
+                  <RadioButton fx:id="restricaoAlimentar" mnemonicParsing="false" text="Alergia Alimentar" />
                </children>
             </VBox>
          </children>
