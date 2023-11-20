@@ -4,6 +4,7 @@ import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.LoginController;
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -197,8 +198,20 @@ public class NavBarController {
         Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
         stage.setScene(scene);
 
+        stage.setOnCloseRequest(event -> {
+            exitApp();
+        });
+
         stage.setResizable(false);
         stage.show();
     }
+    private void exitApp() {
+        System.out.println("Dados guardados com sucesso!");
 
+        Data data = Data.getInstance();
+
+        data.saveData();
+
+        Platform.exit();
+    }
 }

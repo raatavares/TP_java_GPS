@@ -2,6 +2,7 @@ package com.example.gps_g33;
 
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +55,15 @@ public class LoginController {
         }
     }
 
+    private void exitApp() {
+        System.out.println("Dados guardados com sucesso!");
+
+        Data data = Data.getInstance();
+
+        data.saveData();
+
+        Platform.exit();
+    }
 
     public String getViewPathForUser(String departamento) {
         if (departamento.equals("Culinaria")) {
@@ -82,6 +92,10 @@ public class LoginController {
 
         Scene scene = new Scene(fxmlLoader.load(), 1280 , 720);
         stage.setScene(scene);
+
+        stage.setOnCloseRequest(event -> {
+            exitApp();
+        });
 
         stage.setResizable(false);
         stage.show();
