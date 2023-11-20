@@ -288,6 +288,10 @@ public class Data {
         }
         return instance;
     }
+    public void clearUtensilios() {
+        utensiliosData.clear();
+        saveData();
+    }
 
     public void clearFuncionarios() {
         funcionariosData.clear();
