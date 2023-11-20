@@ -151,6 +151,16 @@ public class CulinariaRefeicoesController implements ModalCallback {
     }
 
     @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
+
+    @Override
     public void onRefeicaoCriado(Refeicao refeicao) {
      refeicao.setId(data.calcularProximoIdRefeicoes());
      data.addRefeicao(refeicao);

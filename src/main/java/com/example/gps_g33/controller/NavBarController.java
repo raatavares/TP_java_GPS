@@ -172,7 +172,7 @@ public class NavBarController {
     }
 
     public void switchToMedicamentos() throws IOException{
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depClinico/medicamentos&utensilios.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

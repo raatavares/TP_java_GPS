@@ -182,6 +182,16 @@ public class GerenciaResidentesController implements ModalCallback {
 
     }
 
+    @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
+
     public void onSearch() {
         String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
         List<Residente> residentesFiltrados = data.getResidentes().stream()

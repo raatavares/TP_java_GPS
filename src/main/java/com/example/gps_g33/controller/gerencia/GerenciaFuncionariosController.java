@@ -148,6 +148,16 @@ public class GerenciaFuncionariosController implements ModalCallback {
     }
 
     @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
+
+    @Override
     public void onFuncionarioEditado(Funcionario funcionario) {
 
         for (int i = 0; i < data.getFuncionarios().size(); i++) {

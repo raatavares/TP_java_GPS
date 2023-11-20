@@ -14,6 +14,7 @@ public class Data {
     public String PATH_REFEICOES = "Dados\\refeicoes.json";
 
     public String PATH_MEDICACOES = "Dados\\medicacoes.json";
+    public String PATH_UTENSILIOS = "Dados\\Medicamentos&Utensilios.json";
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -21,6 +22,7 @@ public class Data {
     private List<Refeicao> refeicoesData;
 
     private List<Medicacao> medicacoesData;
+    private List<Utensilio> utensiliosData;
 
     private int idLogado;
 
@@ -150,6 +152,33 @@ public class Data {
         return null;
     }
 
+
+    public List<Utensilio> getUtensilios() {
+        return utensiliosData;
+    }
+
+    public void addUtensilio(Utensilio utensilio) {
+        utensiliosData.add(utensilio);
+        saveData();
+    }
+
+    public void removeUtensilio(int id) {
+        Utensilio utensilioToRemove = getUtensilioPorId(id);
+        if (utensilioToRemove != null) {
+            utensiliosData.remove(utensilioToRemove);
+        }
+        saveData();
+    }
+
+    public Utensilio getUtensilioPorId(int id) {
+        for (Utensilio utensilio : utensiliosData) {
+            if (utensilio.getId() == id) {
+                return utensilio;
+            }
+        }
+        return null;
+    }
+
     public void loadData() {
         try {
             Gson gson = new Gson();
@@ -157,17 +186,20 @@ public class Data {
             FileReader readerFunc = new FileReader(PATH_FUNCIONARIOS);
             FileReader readerRefei = new FileReader(PATH_REFEICOES);
             FileReader readerMedi = new FileReader(PATH_MEDICACOES);
+            FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
             Type refeicaoListType = new TypeToken<List<Refeicao>>() {}.getType();
 
             Type medicacaoListType = new TypeToken<List<Medicacao>>() {}.getType();
+            Type utensilioListType = new TypeToken<List<Utensilio>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
             refeicoesData = gson.fromJson(readerRefei, refeicaoListType);
             medicacoesData = gson.fromJson(readerMedi, medicacaoListType);
+            utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -182,16 +214,19 @@ public class Data {
             FileWriter writerFunc = new FileWriter(PATH_FUNCIONARIOS);
             FileWriter writerRefei = new FileWriter(PATH_REFEICOES);
             FileWriter writerMedi = new FileWriter(PATH_MEDICACOES);
+            FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
 
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
             gson.toJson(refeicoesData, writerRefei);
             gson.toJson(medicacoesData, writerMedi);
+            gson.toJson(utensiliosData, writerUtensi);
 
             writerResi.close();
             writerFunc.close();
             writerRefei.close();
             writerMedi.close();
+            writerUtensi.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -225,6 +260,15 @@ public class Data {
     public int calcularProximoIdMedicacoes() {
         int maiorId = medicacoesData.stream()
                 .map(Medicacao::getId)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+        return maiorId + 1;
+    }
+
+
+    public int calcularProximoIdUtensilio() {
+        int maiorId = utensiliosData.stream()
+                .map(Utensilio::getId)
                 .max(Comparator.naturalOrder())
                 .orElse(0);
         return maiorId + 1;

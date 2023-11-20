@@ -145,6 +145,17 @@ public class ConsultasMedicacaoController implements ModalCallback {
         }
         updateTable();
     }
+
+    @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
+
     public void onDelete() {
         Medicacao medicacao = tableViewMedicacao.getSelectionModel().getSelectedItem();
         if(medicacao != null){

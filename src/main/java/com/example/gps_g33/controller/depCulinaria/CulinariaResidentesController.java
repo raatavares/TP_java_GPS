@@ -183,4 +183,14 @@ public class CulinariaResidentesController implements ModalCallback {
     public void onMedicacaoEditado(Medicacao medicacao) {
 
     }
+
+    @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
 }
