@@ -11,6 +11,7 @@ module com.example.gps_g33
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.google.gson;
+    requires com.calendarfx.view;
 
 
     opens com.example.gps_g33 to javafx.fxml;

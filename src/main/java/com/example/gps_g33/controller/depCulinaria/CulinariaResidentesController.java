@@ -130,14 +130,6 @@ public class CulinariaResidentesController implements ModalCallback {
         }
     }
 
-    public void onDeleteButton() {
-        Residente residente = tableViewResidentes.getSelectionModel().getSelectedItem();
-        if(residente!= null){
-            data.removeResidente(residente.getId());
-        }
-        updateTable();
-    }
-
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 

@@ -47,6 +47,7 @@ public class NavBarController {
     //Funcionario
     public Button buttonInfoResidentes;
     public Button buttonChat;
+    public Button buttonCriarHorario;
 
     private Data data;
 
@@ -75,6 +76,8 @@ public class NavBarController {
             buttonMedicamentos.setVisible(false);
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
+            buttonCriarHorario.setVisible(false);
+            buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
 
@@ -92,6 +95,8 @@ public class NavBarController {
             buttonMedicamentos.setVisible(false);
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
+            buttonCriarHorario.setVisible(false);
+            buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
         }
@@ -112,11 +117,14 @@ public class NavBarController {
             buttonRefeicoes.setManaged(false);
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
+            buttonCriarHorario.setVisible(false);
+            buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
         }
         else if(departamento.equals("Funcionario")){
             buttonInfoResidentes.setVisible(true);
+            buttonCriarHorario.setVisible(true);
             buttonChat.setVisible(true);
 
             buttonConsultas.setVisible(false);
@@ -180,6 +188,12 @@ public class NavBarController {
 
     public void switchToInfoResidentes() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/InformacoesDoResidente.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+    //TODO: criar horario
+    public void switchToCriarHorario() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/CriarHorasVisita.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

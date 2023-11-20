@@ -66,18 +66,6 @@
                         </FontAwesomeIconView>
                      </graphic>
                   </Button>
-                  <Button fx:id="deleteButtonResidente" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onDeleteButton" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </FontAwesomeIconView>
-                     </graphic>
-                  </Button>
                </children>
             </HBox>
          </children>
