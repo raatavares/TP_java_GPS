@@ -5,16 +5,18 @@ import java.lang.reflect.Type;
 import java.util.*;
 import java.io.FileReader;
 
+import com.calendarfx.model.Entry;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 public class Data {
     public String PATH_RESIDENTES = "Dados\\residentes.json";
     public String PATH_FUNCIONARIOS = "Dados\\funcionarios.json";
-    public String PATH_FAMILIARES = "./Dados/familiares.json";
+    public String PATH_FAMILIARES = "Dados\\familiares.json";
     public String PATH_REFEICOES = "Dados\\refeicoes.json";
 
     public String PATH_MEDICACOES = "Dados\\medicacoes.json";
     public String PATH_UTENSILIOS = "Dados\\Medicamentos&Utensilios.json";
+    public String PATH_VISITAS = "Dados\\visitas.json";
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -23,6 +25,8 @@ public class Data {
 
     private List<Medicacao> medicacoesData;
     private List<Utensilio> utensiliosData;
+
+    public List<Visita> calendarData;
 
     private int idLogado;
 
@@ -69,9 +73,6 @@ public class Data {
         saveData();
     }
 
-
-
-
     public List<Residente> getResidentes() {
         return residentesData;
     }
@@ -97,8 +98,6 @@ public class Data {
         }
         saveData();
     }
-
-
 
     public List<Refeicao> getRefeicoes() {
         return refeicoesData;
@@ -152,7 +151,6 @@ public class Data {
         return null;
     }
 
-
     public List<Utensilio> getUtensilios() {
         return utensiliosData;
     }
@@ -179,6 +177,41 @@ public class Data {
         return null;
     }
 
+    public List<Visita> getCalendarData() {
+        return calendarData;
+    }
+
+    private Visita getVisitaPorId(String id){
+        for (Visita Visita : calendarData) {
+            if (Visita.getId().equals(id)) {
+                return Visita;
+            }
+        }
+        return null;
+
+    }
+
+    public void removeCalendarEvent(String id) {
+        Visita visitaRemove = getVisitaPorId(id);
+        if (visitaRemove != null) {
+            calendarData.remove(visitaRemove);
+        }
+        saveData();
+    }
+    public void addCalendarEvent(Entry calendarEvent) {
+        Visita visita = new Visita(calendarEvent);
+        //Verificar que ainda nao existe nenhuma no mesmo dia e hora
+        for (Visita v:calendarData){
+            if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime())){
+                return;
+            }
+        }
+        calendarData.add(visita);
+    }
+
+
+
+
     public void loadData() {
         try {
             Gson gson = new Gson();
@@ -187,6 +220,7 @@ public class Data {
             FileReader readerRefei = new FileReader(PATH_REFEICOES);
             FileReader readerMedi = new FileReader(PATH_MEDICACOES);
             FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
+            FileReader readerVisitas = new FileReader(PATH_VISITAS);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -194,17 +228,19 @@ public class Data {
 
             Type medicacaoListType = new TypeToken<List<Medicacao>>() {}.getType();
             Type utensilioListType = new TypeToken<List<Utensilio>>() {}.getType();
+            Type calendarListType = new TypeToken<List<Visita>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
             refeicoesData = gson.fromJson(readerRefei, refeicaoListType);
             medicacoesData = gson.fromJson(readerMedi, medicacaoListType);
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
+
+            calendarData = gson.fromJson(readerVisitas, calendarListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
     public void saveData() {
@@ -215,18 +251,21 @@ public class Data {
             FileWriter writerRefei = new FileWriter(PATH_REFEICOES);
             FileWriter writerMedi = new FileWriter(PATH_MEDICACOES);
             FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
+            FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
 
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
             gson.toJson(refeicoesData, writerRefei);
             gson.toJson(medicacoesData, writerMedi);
             gson.toJson(utensiliosData, writerUtensi);
+            gson.toJson(calendarData, writeVisitas);
 
             writerResi.close();
             writerFunc.close();
             writerRefei.close();
             writerMedi.close();
             writerUtensi.close();
+            writeVisitas.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -316,4 +355,5 @@ public class Data {
     public void setMedicacoesData(List<Medicacao> medicacoes) {
         medicacoesData = medicacoes;
     }
+
 }
