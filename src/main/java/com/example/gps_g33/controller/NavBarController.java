@@ -49,6 +49,9 @@ public class NavBarController {
     public Button buttonChat;
     public Button buttonCriarHorario;
 
+    //Familiares
+    public Button buttonMarcarHorario;
+
     private Data data;
 
     @FXML
@@ -62,7 +65,8 @@ public class NavBarController {
     }
 
     public void setButtonsView(){
-        String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        //String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        String departamento = data.getDepartamentoLogado();
         if(departamento.equals("Culinaria")){
             buttonResidentes.setVisible(true);
             buttonGerirStock.setVisible(true);
@@ -80,6 +84,8 @@ public class NavBarController {
             buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
+            buttonMarcarHorario.setVisible(false);
+            buttonMarcarHorario.setManaged(false);
 
         } else if (departamento.equals("Gerencia")) {
 
@@ -99,6 +105,8 @@ public class NavBarController {
             buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
+            buttonMarcarHorario.setVisible(false);
+            buttonMarcarHorario.setManaged(false);
         }
         else if (departamento.equals("Clinico")) {
 
@@ -121,12 +129,41 @@ public class NavBarController {
             buttonCriarHorario.setManaged(false);
             buttonChat.setVisible(false);
             buttonChat.setManaged(false);
+            buttonMarcarHorario.setVisible(false);
+            buttonMarcarHorario.setManaged(false);
         }
         else if(departamento.equals("Funcionario")){
             buttonInfoResidentes.setVisible(true);
             buttonCriarHorario.setVisible(true);
             buttonChat.setVisible(true);
 
+            buttonConsultas.setVisible(false);
+            buttonConsultas.setManaged(false);
+            buttonMedicamentos.setVisible(false);
+            buttonMedicamentos.setManaged(false);
+            buttonAvisos.setVisible(false);
+            buttonAvisos.setManaged(false);
+            buttonFuncionarios.setVisible(false);
+            buttonFuncionarios.setManaged(false);
+            buttonResidentes.setVisible(false);
+            buttonResidentes.setManaged(false);
+            buttonGerirStock.setVisible(false);
+            buttonGerirStock.setManaged(false);
+            buttonRefeicoes.setVisible(false);
+            buttonRefeicoes.setManaged(false);
+            buttonMarcarHorario.setVisible(false);
+            buttonMarcarHorario.setManaged(false);
+        }
+        else if(departamento.equals("Familiares")){
+
+            buttonMarcarHorario.setVisible(true);
+
+            buttonInfoResidentes.setVisible(false);
+            buttonInfoResidentes.setManaged(false);
+            buttonCriarHorario.setVisible(false);
+            buttonCriarHorario.setManaged(false);
+            buttonChat.setVisible(false);
+            buttonChat.setManaged(false);
             buttonConsultas.setVisible(false);
             buttonConsultas.setManaged(false);
             buttonMedicamentos.setVisible(false);
@@ -194,6 +231,18 @@ public class NavBarController {
     //TODO: criar horario
     public void switchToCriarHorario() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/CriarHorasVisita.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToInfoFamiliares() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+    //TODO: criar horario
+    public void switchToMarcarHorario() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/MarcarHorasVisita.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

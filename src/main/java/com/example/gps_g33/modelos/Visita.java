@@ -33,6 +33,12 @@ public class Visita {
         this.recurrence = recurrence;
     }
 
+    public Visita(String title, String startTime, String endTime){
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
     public Visita(Entry c){
         this.title = c.getTitle();
         this.id = c.getId();

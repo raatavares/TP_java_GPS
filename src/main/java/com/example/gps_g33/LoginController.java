@@ -1,6 +1,7 @@
 package com.example.gps_g33;
 
 import com.example.gps_g33.modelos.Data;
+import com.example.gps_g33.modelos.Familiar;
 import com.example.gps_g33.modelos.Funcionario;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -36,23 +37,24 @@ public class LoginController {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
+
+        // Primeiro, tenta validar como funcionário
         Funcionario validFunc = data.isValidLogin(username, password);
-
         if (validFunc != null) {
-            String viewPath = getViewPathForUser(validFunc.getDepartamento());
-            if(viewPath == null) {
-                lblError.setText("Departamento ainda não implementado");
-                lblError.setVisible(true);
-            }else {
-                data.setIdLogado(validFunc.getId());
-                loadView(viewPath);
-                lblError.setVisible(false);
-            }
-
-        } else {
-            lblError.setText("Credenciais inválidas");
-            lblError.setVisible(true);
+            processLogin(validFunc.getId(), validFunc.getDepartamento());
+            return; // Termina a execução se um funcionário válido for encontrado
         }
+
+        // Em seguida, tenta validar como familiar
+        Familiar validFam = data.isValidLoginFamiliar(username, password);
+        if (validFam != null) {
+            processLogin(validFam.getId(), validFam.getDepartamento());
+            return; // Termina a execução se um familiar válido for encontrado
+        }
+
+        // Se nenhum dos dois for válido, mostra erro
+        lblError.setText("Credenciais inválidas");
+        lblError.setVisible(true);
     }
 
     private void exitApp() {
@@ -65,6 +67,19 @@ public class LoginController {
         Platform.exit();
     }
 
+    private void processLogin(int userId, String departamento) throws IOException {
+        String viewPath = getViewPathForUser(departamento);
+        if (viewPath == null) {
+            lblError.setText("Departamento ainda não implementado");
+            lblError.setVisible(true);
+        } else {
+            data.setIdLogado(userId);
+            data.setDepartamentoLogado(departamento);
+            loadView(viewPath);
+            lblError.setVisible(false);
+        }
+    }
+
     public String getViewPathForUser(String departamento) {
         if (departamento.equals("Culinaria")) {
             return "views/depCulinaria/Culinaria_Home.fxml";
@@ -75,6 +90,9 @@ public class LoginController {
             return "views/depClinico/Consultas_Medicaçao.fxml";
         } else if (departamento.equals("Funcionario")) {
             return "views/funcionarios/Funcionários.fxml";
+        }
+        else if (departamento.equals("Familiares")){
+            return "views/familiares/Familiares.fxml";
         }
         return null;
     }

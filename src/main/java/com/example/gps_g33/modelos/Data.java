@@ -25,10 +25,13 @@ public class Data {
 
     private List<Medicacao> medicacoesData;
     private List<Utensilio> utensiliosData;
+    private List<Familiar> familiaresData;
 
     public List<Visita> calendarData;
 
     private int idLogado;
+
+    private String departamentoLogado;
 
     public Data(){
         loadData();
@@ -56,6 +59,16 @@ public class Data {
             }
         }
 
+        return null;
+    }
+
+    public Familiar isValidLoginFamiliar(String username, String password) {
+
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getUsername().equals(username) && familiar.getPassword().equals(password)) {
+                return familiar;
+            }
+        }
         return null;
     }
 
@@ -221,6 +234,7 @@ public class Data {
             FileReader readerMedi = new FileReader(PATH_MEDICACOES);
             FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
             FileReader readerVisitas = new FileReader(PATH_VISITAS);
+            FileReader readerFamiliares = new FileReader(PATH_FAMILIARES);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -230,11 +244,14 @@ public class Data {
             Type utensilioListType = new TypeToken<List<Utensilio>>() {}.getType();
             Type calendarListType = new TypeToken<List<Visita>>() {}.getType();
 
+            Type familiarListType = new TypeToken<List<Familiar>>() {}.getType();
+
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
             refeicoesData = gson.fromJson(readerRefei, refeicaoListType);
             medicacoesData = gson.fromJson(readerMedi, medicacaoListType);
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
+            familiaresData = gson.fromJson(readerFamiliares, familiarListType);
 
             calendarData = gson.fromJson(readerVisitas, calendarListType);
         } catch (Exception e) {
@@ -252,6 +269,7 @@ public class Data {
             FileWriter writerMedi = new FileWriter(PATH_MEDICACOES);
             FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
             FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
+            FileWriter writerFamiliares = new FileWriter(PATH_FAMILIARES);
 
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
@@ -259,6 +277,7 @@ public class Data {
             gson.toJson(medicacoesData, writerMedi);
             gson.toJson(utensiliosData, writerUtensi);
             gson.toJson(calendarData, writeVisitas);
+            gson.toJson(familiaresData, writerFamiliares);
 
             writerResi.close();
             writerFunc.close();
@@ -266,6 +285,7 @@ public class Data {
             writerMedi.close();
             writerUtensi.close();
             writeVisitas.close();
+            writerFamiliares.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -319,6 +339,14 @@ public class Data {
 
     public void setIdLogado(int idLogado) {
         this.idLogado = idLogado;
+    }
+
+    public String getDepartamentoLogado() {
+        return departamentoLogado;
+    }
+
+    public void setDepartamentoLogado(String departamentoLogado) {
+        this.departamentoLogado = departamentoLogado;
     }
 
     public static Data getInstance() {
