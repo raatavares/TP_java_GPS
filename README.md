@@ -166,17 +166,21 @@ Os funcionários do departamento clínico podem verificar a lista de utentes, re
 
 <img src="Mockups/imgs/Consultas_Medicacao.png" width="300"/>
 <img src="Mockups/imgs/Consultas_Medicacao_Modal.png" width="221"/>
+<img src="Mockups/imgs/Clinico_MedicamentosUtensilios.png" width="221"/>
+<img src="Mockups/imgs/Clinico_ModalUtensilios.png" width="221"/>
 
 **Familiares**
 Os familiares poderam agendar visitas, controlar as medicações e verificar o estado de saúde do utente.
 
 
 <img src="Mockups/imgs/Familiares.png" width="300"/>
+<img src="Mockups/imgs/FamiliaresVisita.png" width="300"/>
 
 **Funcionários**
 Os funcionários terão acesso a informações dos utentes, chat entre outros funcionários para assuntos diversos, cuidar da administração de medicamentos e rotinas de utentes.
 
 <img src="Mockups/imgs/InformacoesDeResidente.png" width="300"/>
+<img src="Mockups/imgs/Funcionario_Visita.png" width="300"/>
   
 
 
