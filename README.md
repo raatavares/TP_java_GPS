@@ -438,7 +438,7 @@ Para que o projeto seja bem sucedido, devemos ter:
   - [US1: Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
 
 - Story Points: 2S+1M+2X+2H
-- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 0S 0M 40L 
+- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 40H 
 
 - Version: 0.1 
 
