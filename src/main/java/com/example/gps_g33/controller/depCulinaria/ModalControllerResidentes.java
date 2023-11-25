@@ -124,7 +124,7 @@ public class ModalControllerResidentes {
                 data.getResidentePorId(idSelected).setAlergias(descricao);
             }
             if (callback != null) {
-                callback.onResidenteEditado(data.getResidentePorId(idSelected));
+                callback.onRestrictionCriada(data.getResidentePorId(idSelected));
             }
 
             // Fechar o modal

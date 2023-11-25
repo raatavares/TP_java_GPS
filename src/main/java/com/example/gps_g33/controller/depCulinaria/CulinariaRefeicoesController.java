@@ -161,6 +161,16 @@ public class CulinariaRefeicoesController implements ModalCallback {
     }
 
     @Override
+    public void onRestrictionEditada(Residente residente) {
+
+    }
+
+    @Override
+    public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
+    @Override
     public void onRefeicaoCriado(Refeicao refeicao) {
      refeicao.setId(data.calcularProximoIdRefeicoes());
      data.addRefeicao(refeicao);

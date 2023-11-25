@@ -112,6 +112,7 @@ public class Data {
         saveData();
     }
 
+
     public List<Refeicao> getRefeicoes() {
         return refeicoesData;
     }
@@ -307,6 +308,11 @@ public class Data {
         return maiorId + 1;
     }
 
+    public void setResidente(Residente residente){
+        Residente residente1 = getResidentePorId(residente.getId());
+        residente1.setPrefAli(residente.getPrefAli());
+        residente1.setAlergias(residente.getAlergias());
+    }
 
     public int calcularProximoIdRefeicoes() {
         int maiorId = refeicoesData.stream()

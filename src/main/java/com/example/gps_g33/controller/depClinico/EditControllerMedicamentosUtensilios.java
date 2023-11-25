@@ -1,4 +1,4 @@
-package com.example.gps_g33.controller.gerencia;
+package com.example.gps_g33.controller.depClinico;
 
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.Residente;
@@ -38,7 +38,7 @@ public class EditControllerMedicamentosUtensilios {
         String nome = nomeField.getText();
         boolean falta = faltaField.isSelected();
 
-        if( !nome.isEmpty() && !nome.isBlank() ){
+        if( InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,5)) ){
             utensilio.setId(this.utensilio.getId());
             utensilio.setNome(nome);
             utensilio.setFalta(falta);

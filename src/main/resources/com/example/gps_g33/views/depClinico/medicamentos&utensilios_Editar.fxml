@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.gerencia.EditControllerMedicamentosUtensilios">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.depClinico.EditControllerMedicamentosUtensilios">
     <children>
         <Label layoutX="46.0" layoutY="32.0" style="-fx-background-color: #3a4151;" text="EDITAR Medicamentos/Utensilios" textFill="WHITE">
             <font>

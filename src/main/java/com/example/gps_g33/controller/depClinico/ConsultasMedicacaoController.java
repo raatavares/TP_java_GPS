@@ -156,6 +156,16 @@ public class ConsultasMedicacaoController implements ModalCallback {
 
     }
 
+    @Override
+    public void onRestrictionEditada(Residente residente) {
+
+    }
+
+    @Override
+    public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
     public void onDelete() {
         Medicacao medicacao = tableViewMedicacao.getSelectionModel().getSelectedItem();
         if(medicacao != null){

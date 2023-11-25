@@ -2,7 +2,6 @@ package com.example.gps_g33.controller.depClinico;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
-import com.example.gps_g33.controller.gerencia.EditControllerMedicamentosUtensilios;
 import com.example.gps_g33.modelos.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,14 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,8 +51,24 @@ public class MedicamentosUtensilioController implements ModalCallback {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
         utensilioColumn.setCellValueFactory(new PropertyValueFactory<>("falta"));
+        utensilioColumn.setCellFactory(createUtensilioCellFactory());
 
         updateTable();
+    }
+
+    private Callback<TableColumn<Utensilio, Boolean>, TableCell<Utensilio, Boolean>> createUtensilioCellFactory() {
+        return column -> new TableCell<Utensilio, Boolean>() {
+            @Override
+            protected void updateItem(Boolean falta, boolean empty) {
+                super.updateItem(falta, empty);
+
+                if (empty || falta == null) {
+                    setText(null);
+                } else {
+                    setText(falta ? "Sim" : "Não");
+                }
+            }
+        };
     }
 
     public void handleToAddUtensilio() {
@@ -192,5 +205,15 @@ public class MedicamentosUtensilioController implements ModalCallback {
             }
         }
         updateTable();
+    }
+
+    @Override
+    public void onRestrictionEditada(Residente residente) {
+
+    }
+
+    @Override
+    public void onRestrictionCriada(Residente residentePorId) {
+
     }
 }

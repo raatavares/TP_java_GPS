@@ -83,7 +83,7 @@ public class EditControllerResidenteCulinaria {
                 residente.setAlergias(descricao);
             }
             if (callback != null) {
-                callback.onResidenteEditado(residente);
+                callback.onRestrictionEditada(residente);
             }
 
             // Fechar o modal

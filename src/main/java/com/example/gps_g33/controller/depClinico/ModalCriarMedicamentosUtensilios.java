@@ -5,6 +5,7 @@ import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Medicacao;
 import com.example.gps_g33.modelos.Residente;
 import com.example.gps_g33.modelos.Utensilio;
+import com.example.gps_g33.util.InputValidation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,7 +46,7 @@ public class ModalCriarMedicamentosUtensilios {
         String nome = nomeField.getText();
         boolean falta = emFaltaCheckBox.isSelected();
 
-        if(!nome.isEmpty()) {
+        if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,5))){
             Utensilio utensilio = new Utensilio(0, nome, falta);
 
             if (callback != null) {
