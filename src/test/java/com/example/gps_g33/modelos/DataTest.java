@@ -60,9 +60,9 @@ class DataTest {
         List<Residente> residentes = new ArrayList<>();
 
         // Criar algumas instâncias de Residente para testar
-        Residente residente1 = new Residente(1, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
-        Residente residente2 = new Residente(2, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
-        Residente residente3 = new Residente(3, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente1 = new Residente(1, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente2 = new Residente(2, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente3 = new Residente(3, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
 
         residentes.add(residente1);
         residentes.add(residente2);
@@ -242,7 +242,7 @@ class DataTest {
     @Test
     void testGetResidentePorId() {
         Data data = new Data();
-        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
         data.addResidente(residente);
         assertEquals(residente, data.getResidentePorId(residente.getId()));
     }
@@ -275,7 +275,7 @@ class DataTest {
     @Test
     void testRemoveResidente() {
         Data data = new Data();
-        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
         data.addResidente(residente);
         data.removeResidente(residente.getId());
         assertNull(data.getResidentePorId(residente.getId()));
