@@ -48,6 +48,7 @@ public class CriarHorarioVisitaController {
         //Criar eventos para vagasVisitas
     if(data.getCalendarData() != null){
         for (Visita p:visitasList){
+
                 Entry<String> entry = new Entry<>(p.getTitle());
                 LocalDate startDate = LocalDate.parse(p.getStartDate());
                 LocalDate endDate = LocalDate.parse(p.getEndDate());
@@ -105,12 +106,13 @@ public class CriarHorarioVisitaController {
             return;
         }
 
-        if(event.getCalendar().getName().equals("Visitas - Livres")){
-            if(event.isEntryAdded()){
+        if(event.getCalendar().getName().equals("Visitas - Livres") && !event.getEntry().getTitle().equals("New Entry")){
+            System.out.println("Calendar Name: " + event.getCalendar().getName());
+            /*if(event.isEntryAdded()){*/
                 System.out.println("Adicionado ao ficheiro json");
                 System.out.println(event.getEntry());
                 data.addCalendarEvent(event.getEntry());
-            }
+          //  }
         }
     }
 
