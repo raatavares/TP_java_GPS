@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.time.LocalTime?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.gps_g33.controller.familiares.marcarHorarioVisitaController" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <TableView fx:id="tableView" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <columns>
+                <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Título" />
+                <TableColumn fx:id="startDateColumn" prefWidth="75.0" text="Data Início" />
+                <TableColumn fx:id="startTimeColumn" prefWidth="75.0" text="Hora Início" />
+                <TableColumn fx:id="endDateColumn" prefWidth="75.0" text="Data Fim" />
+                <TableColumn fx:id="endTimeColumn" prefWidth="75.0" text="Hora Fim" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0">
+            <ComboBox fx:id="timeSelector" prefWidth="150.0">
+                <items>
+                    <!-- Itens do ComboBox serão adicionados pelo controller -->
+                </items>
+            </ComboBox>
+            <Button fx:id="bookButton" onAction="#handleBook" text="Marcar Visita" />
+            <Button fx:id="cancelButton" onAction="#handleCancel" text="Cancelar" />
+        </HBox>
+        <Label fx:id="infoLabel" text="Selecione um horário e um intervalo" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+    </children>
+</AnchorPane>

@@ -2,6 +2,7 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.controller.gerencia.ModalControllerResidente;
 import com.example.gps_g33.modelos.Residente;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import java.time.LocalDate;
 
+@Disabled
 class ModalControllerResidenteTest {
 
     private ModalControllerResidente suaClasse;

@@ -51,6 +51,6 @@ public class Medicacao {
     }
 
     public void setMedicacao(String descricao) {
-        this.medicacao = medicacao;
+        this.medicacao = descricao;
     }
 }

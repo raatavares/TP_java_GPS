@@ -62,7 +62,7 @@ public class ModalControllerResidente{
         && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
         )
         {
-            Residente residente = new Residente(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Nenhuma", "Nenhuma");
+            Residente residente = new Residente(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Nenhuma", "Nenhuma", "Nenhuma");
 
             if (callback != null) {
                 callback.onResidenteCriado(residente);

@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Hashtable;
+import javafx.application.Platform;
 
 public class HelloApplication extends Application {
     @Override
@@ -19,9 +20,12 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
         stage.setScene(scene);
 
+
         stage.setResizable(false);
         stage.show();
     }
+
+
 
     public static void main(String[] args) {
 

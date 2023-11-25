@@ -32,16 +32,9 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TableView fx:id="tabela_residentes" layoutX="34.0" layoutY="161.0" prefHeight="157.0" prefWidth="247.0">
-         <columns>
-            <TableColumn fx:id="nome_residente" prefWidth="146.0" text="Nome" />
-            <TableColumn fx:id="nif_residente" minWidth="0.0" prefWidth="104.0" text="NIF" />
-         </columns>
-      </TableView>
-      <Button fx:id="editar_Button" onAction="#onEditarButton" layoutX="305.0" layoutY="331.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE" />
+      <Button fx:id="editar_Button" onAction="#onEditarButton" layoutX="305.0" layoutY="331.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" />
       <Button fx:id="cancelar_Button" onAction="#handleCancelarButton" layoutX="389.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
       <TextField fx:id="medicacaoField" layoutX="289.0" layoutY="179.0" prefHeight="26.0" prefWidth="138.0" />
-      <ListView layoutX="34.0" layoutY="211.0" prefHeight="122.0" prefWidth="192.0" />
       <Label layoutX="34.0" layoutY="97.0" text="Nome">
          <font>
             <Font size="15.0" />
