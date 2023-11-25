@@ -76,7 +76,39 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="buttonMedicamentos" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Medicamentos e Utensílios">
+            <Button fx:id="buttonMedicamentos" onAction="#switchToMedicamentos" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Medicamentos e Utensílios">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonInfoResidentes" onAction="#switchToInfoResidentes" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Informações do Residente">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonCriarHorario" onAction="#switchToCriarHorario" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Criar Horário de visita">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonChat" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Chat Interno">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonMarcarHorario" onAction="#switchToMarcarHorario" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Marcar Horário de visita">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" size="20" />
                </graphic>

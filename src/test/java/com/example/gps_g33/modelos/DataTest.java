@@ -18,6 +18,12 @@ class DataTest {
         assertEquals("p", funcionario.getUsername());
         assertEquals("p", funcionario.getPassword());
     }*/
+    @Test
+    void testClearUtensilios() {
+        Data data = new Data();
+        data.clearUtensilios();
+        assertEquals(0, data.getUtensilios().size());
+    }
 
     @Test
     void testClearMedicacoes() {
@@ -54,9 +60,9 @@ class DataTest {
         List<Residente> residentes = new ArrayList<>();
 
         // Criar algumas instâncias de Residente para testar
-        Residente residente1 = new Residente(1, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
-        Residente residente2 = new Residente(2, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
-        Residente residente3 = new Residente(3, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente1 = new Residente(1, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente2 = new Residente(2, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente3 = new Residente(3, "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
 
         residentes.add(residente1);
         residentes.add(residente2);
@@ -146,6 +152,30 @@ class DataTest {
     }
 
 
+    @Test
+    void testGetAddUtensilios() {
+        // Criar uma instância da sua classe que contém o método
+        Data data = new Data();
+        List<Utensilio> utensilios = new ArrayList<>();
+
+        // Criar algumas instâncias de utensilios para testar
+        Utensilio utensilio1 = new Utensilio(1, "Equipamentos de Proteção", false);
+        Utensilio utensilio2 = new Utensilio(2, "Gaze", true);
+        Utensilio utensilio3 = new Utensilio(3, "Anti-inflamatórios", true);
+
+
+        utensilios.add(utensilio1);
+        utensilios.add(utensilio2);
+        utensilios.add(utensilio3);
+        // Adicionar utensilios à fonte de dados (substitua isso com sua própria fonte de dados)
+        data.clearUtensilios();
+        data.addUtensilio(utensilio1);
+        data.addUtensilio(utensilio2);
+        data.addUtensilio(utensilio3);
+
+        // Verificar se a lista retornada contém os utensilios esperadas
+        assertEquals(utensilios, data.getUtensilios());
+    }
 
     @Test
     void testSetMedicacoes() {
@@ -212,9 +242,16 @@ class DataTest {
     @Test
     void testGetResidentePorId() {
         Data data = new Data();
-        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
         data.addResidente(residente);
         assertEquals(residente, data.getResidentePorId(residente.getId()));
+    }
+    @Test
+    void testGetUtensilioPorId() {
+        Data data = new Data();
+        Utensilio utensilio = new Utensilio(data.calcularProximoIdUtensilio(), "teste",true);
+        data.addUtensilio(utensilio);
+        assertEquals(utensilio, data.getUtensilioPorId(utensilio.getId()));
     }
 
     @Test
@@ -238,7 +275,7 @@ class DataTest {
     @Test
     void testRemoveResidente() {
         Data data = new Data();
-        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
+        Residente residente = new Residente(data.calcularProximoIdResidentes(), "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste", "teste");
         data.addResidente(residente);
         data.removeResidente(residente.getId());
         assertNull(data.getResidentePorId(residente.getId()));
@@ -251,5 +288,13 @@ class DataTest {
         data.addFuncionario(funcionario);
         data.removeFuncionario(funcionario.getId());
         assertNull(data.getFuncionarioPorId(funcionario.getId()));
+    }
+    @Test
+    void testRemoveUtensilio() {
+        Data data = new Data();
+        Utensilio utensilio = new Utensilio(data.calcularProximoIdUtensilio(), "teste", true);
+        data.addUtensilio(utensilio);
+        data.removeUtensilio(utensilio.getId());
+        assertNull(data.getUtensilioPorId(utensilio.getId()));
     }
 }

@@ -11,6 +11,7 @@ module com.example.gps_g33
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.google.gson;
+    requires com.calendarfx.view;
 
 
     opens com.example.gps_g33 to javafx.fxml;
@@ -21,4 +22,6 @@ module com.example.gps_g33
     exports com.example.gps_g33.controller.depCulinaria;
     exports com.example.gps_g33.controller.depClinico;
     exports com.example.gps_g33.controller.gerencia;
+    exports com.example.gps_g33.controller.funcionarios;
+    exports com.example.gps_g33.controller.familiares;
 }

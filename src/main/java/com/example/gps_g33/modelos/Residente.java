@@ -13,8 +13,10 @@ public class Residente {
 
     private String alergias;
 
+    private String problemasSaude;
+
     // Construtor da classe
-    public Residente(int id, String nome, String sobrenome, String dataNascimento, String nif, String contato, String email, String prefAli, String alergias) {
+    public Residente(int id, String nome, String sobrenome, String dataNascimento, String nif, String contato, String email, String prefAli, String alergias, String problemasSaude) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -24,6 +26,7 @@ public class Residente {
         this.email = email;
         this.prefAli = prefAli;
         this.alergias = alergias;
+        this.problemasSaude = problemasSaude;
     }
 
     // Métodos getters e setters
@@ -98,6 +101,14 @@ public class Residente {
 
     public String getAlergias() {
         return alergias;
+    }
+
+    public void setProblemasSaude(String problemasSaude) {
+        this.problemasSaude = problemasSaude;
+    }
+
+    public String getProblemasSaude() {
+        return problemasSaude;
     }
 }
 
