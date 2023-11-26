@@ -176,29 +176,7 @@ class DataTest {
         // Verificar se a lista retornada contém os utensilios esperadas
         assertEquals(utensilios, data.getUtensilios());
     }
-@Test
-    void testSetResidentes(){
-        Data data = new Data();
-        List<Residente> residentes = new ArrayList<>();
 
-        Residente residente1=new Residente(1,"Joao","Ze","12/12/1969","123456789","123456789","joao@isec.pt","Salada","polen","asma");
-        Residente residente2=new Residente(2,"Ze","Antonio","12/10/1959","123446729","923456789","ze@isec.pt","fruta","sopa","dwq");
-        Residente residente3=new Residente(3,"Antonio","Silva","19/05/1949","1234342729","975456789","Antonio@isec.pt","bolonhesa","ada","wdq");
-
-        residentes.add(residente1);
-        residentes.add(residente2);
-        residentes.add(residente3);
-        // Adicionar medicacoes à fonte de dados (substitua isso com sua própria fonte de dados)
-        data.addResidente(residente1);
-        data.addResidente(residente2);
-        data.addResidente(residente3);
-
-        data.setResidente(residente1);
-        data.setResidente(residente2);
-        data.setResidente(residente3);
-        // Verificar se a lista retornada contém as medicacoes esperadas
-        assertEquals(residentes, data.getResidentes());
-    }
 
 @Test
     void testSetResidentes(){
