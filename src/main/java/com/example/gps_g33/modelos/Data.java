@@ -210,6 +210,7 @@ public class Data {
         if (visitaRemove != null) {
             calendarData.remove(visitaRemove);
         }
+        System.out.println("Removido do ficheiro json");
         saveData();
     }
     public void addCalendarEvent(Entry calendarEvent) {
@@ -217,10 +218,26 @@ public class Data {
         //Verificar que ainda nao existe nenhuma no mesmo dia e hora
         for (Visita v:calendarData){
             if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime())){
+                System.out.println("Ja existe uma visita nesse dia e hora\n");
                 return;
             }
         }
+        System.out.println("Adicionado ao ficheiro json");
+        saveData();
         calendarData.add(visita);
+    }
+
+    public void updateCalendarEvent(Entry calendarEvent) {
+        Visita visita = new Visita(calendarEvent);
+        Visita visitaToUpdate = getVisitaPorId(visita.getId());
+        if (visitaToUpdate != null) {
+            calendarData.remove(visitaToUpdate);
+            calendarData.add(visita);
+            System.out.println("Atualizado no ficheiro json");
+            saveData();
+        }else{
+            System.out.println("Ouve um erro ao dar update ao evento");
+        }
     }
 
 
@@ -253,8 +270,8 @@ public class Data {
             medicacoesData = gson.fromJson(readerMedi, medicacaoListType);
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
             familiaresData = gson.fromJson(readerFamiliares, familiarListType);
-
             calendarData = gson.fromJson(readerVisitas, calendarListType);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
