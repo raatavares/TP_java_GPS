@@ -213,31 +213,41 @@ public class Data {
         System.out.println("Removido do ficheiro json");
         saveData();
     }
-    public void addCalendarEvent(Entry calendarEvent) {
+    public boolean addCalendarEvent(Entry calendarEvent) {
         Visita visita = new Visita(calendarEvent);
         //Verificar que ainda nao existe nenhuma no mesmo dia e hora
         for (Visita v:calendarData){
             if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime())){
                 System.out.println("Ja existe uma visita nesse dia e hora\n");
-                return;
+                return false;
             }
         }
         System.out.println("Adicionado ao ficheiro json");
         saveData();
         calendarData.add(visita);
+        return true;
     }
 
-    public void updateCalendarEvent(Entry calendarEvent) {
+    public boolean updateCalendarEvent(Entry calendarEvent) {
         Visita visita = new Visita(calendarEvent);
         Visita visitaToUpdate = getVisitaPorId(visita.getId());
         if (visitaToUpdate != null) {
+            for (Visita v:calendarData){
+                if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime()) && !v.getId().equals(visita.getId())){
+                    System.out.println("Ja existe uma visita nesse dia e hora\n");
+                    return false;
+                }
+            }
+
             calendarData.remove(visitaToUpdate);
             calendarData.add(visita);
             System.out.println("Atualizado no ficheiro json");
-            saveData();
+            return true;
         }else{
             System.out.println("Ouve um erro ao dar update ao evento");
+            return false;
         }
+
     }
 
 
