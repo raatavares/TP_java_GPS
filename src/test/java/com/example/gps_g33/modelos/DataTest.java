@@ -177,6 +177,42 @@ class DataTest {
         assertEquals(utensilios, data.getUtensilios());
     }
 
+
+@Test
+    void testSetResidentes(){
+        Data data = new Data();
+        List<Residente> residentes = new ArrayList<>();
+
+        Residente residente_1=new Residente(1,"Joao","Ze","12/12/1969","123456789","123456789","joao@isec.pt","","","asma");
+        Residente residente_2=new Residente(2,"Ze","Antonio","12/10/1959","123446729","923456789","ze@isec.pt","","","asma");
+        Residente residente_3=new Residente(3,"Antonio","Silva","19/05/1949","1234342729","975456789","Antonio@isec.pt","","","asma");
+
+        Residente residente1=new Residente(1,"Joao","Ze","12/12/1969","123456789","123456789","joao@isec.pt","Salada","polen","asma");
+        Residente residente2=new Residente(2,"Ze","Antonio","12/10/1959","123446729","923456789","ze@isec.pt","","sopa","asma");
+        Residente residente3=new Residente(3,"Antonio","Silva","19/05/1949","1234342729","975456789","Antonio@isec.pt","bolonhesa","","asma");
+
+        residentes.add(residente1);
+        residentes.add(residente2);
+        residentes.add(residente3);
+        // Adicionar medicacoes à fonte de dados (substitua isso com sua própria fonte de dados)
+        data.addResidente(residente_1);
+        data.addResidente(residente_2);
+        data.addResidente(residente_3);
+
+
+        data.setResidente(residente1);
+        data.setResidente(residente2);
+        data.setResidente(residente3);
+
+        assertEquals(residente1.getPrefAli(), data.getResidentePorId(1).getPrefAli());
+        assertEquals(residente1.getAlergias(), data.getResidentePorId(1).getAlergias());
+        assertEquals(residente2.getPrefAli(), data.getResidentePorId(2).getPrefAli());
+        assertEquals(residente2.getAlergias(), data.getResidentePorId(2).getAlergias());
+        assertEquals(residente3.getPrefAli(), data.getResidentePorId(3).getPrefAli());
+        assertEquals(residente3.getAlergias(), data.getResidentePorId(3).getAlergias());
+
+    }
+
     @Test
     void testSetMedicacoes() {
         // Criar uma instância da sua classe que contém o método
