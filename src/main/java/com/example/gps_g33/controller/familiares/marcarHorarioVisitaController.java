@@ -4,18 +4,25 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.time.LocalTime;
-import java.util.List;
-import com.example.gps_g33.modelos.Visita;
+import java.util.*;
+
+import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.controller.ModalCallback;
+import com.example.gps_g33.controller.depClinico.ModalControllerConsultasMedicacao;
+import com.example.gps_g33.modelos.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.util.ArrayList;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-public class marcarHorarioVisitaController {
+public class marcarHorarioVisitaController implements ModalCallback {
     @FXML
     public TableView<Visita> tableView;
 
@@ -29,17 +36,25 @@ public class marcarHorarioVisitaController {
     public TableColumn<Visita, String> endDateColumn;
     @FXML
     public TableColumn<Visita, String> endTimeColumn;
-
     @FXML
-    public ComboBox<LocalTime> timeSelector;
+    public Label infoLabel;
 
     public LocalTime minTime = LocalTime.MAX;
     public LocalTime maxTime = LocalTime.MIN;
 
+    public Data data;
+    private ModalCallback callback;
+    public void setModalCallback(ModalCallback callback) {
+        this.callback = callback;
+    }
+
     public void initialize() {
+        data = Data.getInstance();
+        callback = this;
+
         configureTableColumns();
-        populateTimeSelector();
         loadVisitSchedules();
+
     }
 
     public void configureTableColumns() {
@@ -48,16 +63,6 @@ public class marcarHorarioVisitaController {
         startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
-    }
-
-    public void populateTimeSelector() {
-        timeSelector.getItems().clear(); // Limpa itens anteriores
-
-        LocalTime time = minTime;
-        while (time.isBefore(maxTime)) {
-            timeSelector.getItems().add(time);
-            time = time.plusHours(1);
-        }
     }
 
     public void loadVisitSchedules() {
@@ -74,12 +79,13 @@ public class marcarHorarioVisitaController {
             if (startTime.plusHours(1).isBefore(endTime)) {
                 // Divide a visita em intervalos de 1 hora
                 while (startTime.plusHours(1).isBefore(endTime)) {
-                    Visita novaVisita = new Visita(horario.getTitle(), startTime.toString(), startTime.plusHours(1).toString());
+                    Visita novaVisita = new Visita(horario.getTitle(), startTime.toString(), startTime.plusHours(1).toString(), horario.getStartDate(), horario.getEndDate());
                     horariosProcessados.add(novaVisita);
                     startTime = startTime.plusHours(1);
+
                 }
                 // Adiciona o último intervalo
-                horariosProcessados.add(new Visita(horario.getTitle(), startTime.toString(), endTime.toString()));
+                horariosProcessados.add(new Visita(horario.getTitle(), startTime.toString(), endTime.toString(), horario.getStartDate(), horario.getEndDate()));
             } else {
                 // Adiciona a visita original
                 horariosProcessados.add(horario);
@@ -95,27 +101,125 @@ public class marcarHorarioVisitaController {
         }
 
         tableView.getItems().setAll(horariosProcessados);
-        populateTimeSelector();
     } catch (IOException e) {
         e.printStackTrace();
-        // Implementar tratamento de erro
     }
     }
 
     @FXML
     public void handleBook() {
-        Visita horarioSelecionado = tableView.getSelectionModel().getSelectedItem();
-        LocalTime tempoSelecionado = timeSelector.getSelectionModel().getSelectedItem();
+        try {
+            Visita selectedItem = tableView.getSelectionModel().getSelectedItem();
 
-        if (horarioSelecionado != null && tempoSelecionado != null) {
-            // Implementar a lógica da reserva aqui
-            System.out.println("Reserva feita para: " + horarioSelecionado.getTitle() + " às " + tempoSelecionado);
+            if (selectedItem != null) {
+                // Carregar o FXML da janela pop-up
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/familiares/CriarMarcacao.fxml"));
+                Parent popupRoot = loader.load();
+
+                CriarMarcacaoController controller = loader.getController();
+                controller.setModalCallback(this);
+                controller.setSelectedVisita(selectedItem);
+
+                Stage modalStage = new Stage();
+                modalStage.initModality(Modality.APPLICATION_MODAL);
+                modalStage.setTitle("Adicionar Marcação");
+
+                Scene scene = new Scene(popupRoot);
+                modalStage.setScene(scene);
+
+                modalStage.showAndWait();
+            } else {
+                infoLabel.setText("Nenhum item selecionado.");
+                System.out.println("Nenhum item selecionado.");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     @FXML
-    public void handleCancel() {
+    public void handleMinhasMarcacoes() {
         // Implementar a lógica de cancelamento aqui
         System.out.println("Reserva cancelada.");
+    }
+
+    @Override
+    public void onFuncionarioCriado(Funcionario funcionario) {
+
+    }
+
+    @Override
+    public void onFuncionarioEditado(Funcionario funcionario) {
+
+    }
+
+    @Override
+    public void onResidenteEditado(Residente residente) {
+
+    }
+
+    @Override
+    public void onResidenteCriado(Residente residente) {
+
+    }
+
+    @Override
+    public void onRefeicaoCriado(Refeicao refeicao) {
+
+    }
+
+    @Override
+    public void onRefeicaoEditado(Refeicao refeicao) {
+
+    }
+
+    @Override
+    public void onMedicacaoCriado(Medicacao medicacao) {
+
+    }
+
+    @Override
+    public void onMedicacaoEditado(Medicacao medicacao) {
+
+    }
+
+    @Override
+    public void onUtensilioCriado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onUtensilioEditado(Utensilio utensilio) {
+
+    }
+
+    @Override
+    public void onRestrictionEditada(Residente residente) {
+
+    }
+
+    @Override
+    public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
+    @Override
+    public void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas) {
+        for (int i = 0; i < data.getVisitasMarcadas().size(); i++) {
+            if(data.getVisitasMarcadas().get(i).getId() == visitasMarcadas.getId()){
+                data.getVisitasMarcadas().set(i, visitasMarcadas);
+                break;
+            }
+        }
+    }
+    public int calcularProximoIdVisitaMarcada() {
+        return 0;
+    }
+
+    @Override
+    public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
+        visitasMarcadas.setId(data.calcularProximoIdVisitaMarcada());
+        data.addVisitaMarcada(visitasMarcadas);
     }
 }

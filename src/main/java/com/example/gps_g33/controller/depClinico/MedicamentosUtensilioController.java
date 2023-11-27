@@ -216,4 +216,14 @@ public class MedicamentosUtensilioController implements ModalCallback {
     public void onRestrictionCriada(Residente residentePorId) {
 
     }
+
+    @Override
+    public void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas) {
+
+    }
+
+    @Override
+    public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
+
+    }
 }

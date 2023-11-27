@@ -2,10 +2,6 @@ package com.example.gps_g33.modelos;
 
 import com.calendarfx.model.Entry;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneId;
-
 public class Visita {
     private String title;
     private String id;
@@ -33,10 +29,12 @@ public class Visita {
         this.recurrence = recurrence;
     }
 
-    public Visita(String title, String startTime, String endTime){
+    public Visita(String title, String startTime, String endTime, String startDate, String endDate){
         this.title = title;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public Visita(Entry c){
@@ -52,6 +50,7 @@ public class Visita {
         this.rrule = c.getRecurrenceRule();
         this.recurrence = c.isRecurrence();
     }
+
 
     public String getTitle() {
         return title;
@@ -95,5 +94,13 @@ public class Visita {
 
     public boolean isRecurrence() {
         return recurrence;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }
