@@ -559,11 +559,16 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-    - A
+  - Ao codificar fomos utilizando a classe InputValidation que faz a verificação dos dados de entrada do utilizador, tendo isso em conta fizemos logo os testes unitários também.
+
 - What we did less well:
-    - B
+ - Nem sempre fizemos code review.
+ - Alguns erros na realização/escrita dos Story Points
+ - Houve uma notória ultrapassagem das horas para esta Sprint. Foram estimadas mais de 50 horas de trabalho para uma sprint onde deveriam ser feitas cerca de 40 horas.
+
 - How to improve to the next sprint:
-    - C
+ - Melhorar a regularidade com que fazemos merge request.
+ - Apesar de nos terem sido pedidas certas tasks para esta Sprint ,se após fazermos a estimativa das User Stories as horas de trabalho ultrapassarem as horas 40 horas relativas a duas semanas devemos fazer uma seleção de que User Stories apresentar.
 
 ***
 
