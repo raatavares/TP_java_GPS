@@ -19,6 +19,7 @@ public interface ModalCallback {
     void onUtensilioEditado(Utensilio utensilio);
 
     void onRestrictionEditada(Residente residente);
-
     void onRestrictionCriada(Residente residentePorId);
+    void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas);
+    void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas);
 }

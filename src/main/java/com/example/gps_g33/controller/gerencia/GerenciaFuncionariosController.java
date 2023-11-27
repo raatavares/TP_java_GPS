@@ -168,6 +168,16 @@ public class GerenciaFuncionariosController implements ModalCallback {
     }
 
     @Override
+    public void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas) {
+
+    }
+
+    @Override
+    public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
+
+    }
+
+    @Override
     public void onFuncionarioEditado(Funcionario funcionario) {
 
         for (int i = 0; i < data.getFuncionarios().size(); i++) {

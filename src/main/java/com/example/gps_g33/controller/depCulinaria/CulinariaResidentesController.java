@@ -187,6 +187,16 @@ public class CulinariaResidentesController implements ModalCallback {
     }
 
     @Override
+    public void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas) {
+
+    }
+
+    @Override
+    public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
+
+    }
+
+    @Override
     public void onRestrictionEditada(Residente residente) {
         data.setResidente(residente);
         updateTable();
