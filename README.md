@@ -576,3 +576,45 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ***
 
+##### Sprint Plan
+
+- Goal: 
+
+- Dates: from 27/11 to 11/12, 2 weeks
+
+- Roles:
+  - Product Owner: Mario Lourenço
+  - Scrum Master: Ricardo Tavares
+
+- To do:
+  - **US19-Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
+  
+  - **US7: Como Familiar eu quero visualizar as consultas do utente**
+
+    
+- Story Points: 
+
+- Analysis: short analysis of the planning meeting
+
+##### Sprint Review
+
+- Analysis: what was not done or what was added (Link to US or Task from the PB)
+
+- Story Points: 2S+1M+2X+2H
+
+- Version: 0.1 
+
+- Client analysis: client feedback
+
+- Conclusions: what to add/review
+
+##### Sprint Retrospective
+
+- What we did well:
+   - A
+
+- What we did less well:
+  - B
+
+- How to improve to the next sprint:
+  - C
