@@ -36,6 +36,7 @@ public class CriarMarcacaoController {
     public Button cancelarButton;
 
     public Data data;
+    public String titulo;
 
     public void initialize() {
         data = Data.getInstance();
@@ -43,10 +44,13 @@ public class CriarMarcacaoController {
 
     public void setSelectedVisita(Visita selectedVisita) {
         if (selectedVisita != null) {
+            titulo = selectedVisita.getTitle();
             horaInicioField.setText(selectedVisita.getStartTime());
             horaFimField.setText(selectedVisita.getEndTime());
             diaInicioField.setText(selectedVisita.getStartDate());
             diaFimField.setText(selectedVisita.getEndDate());
+            nomeField.setText(data.getNomeFamiliar());
+            nifField.setText(data.getNifFamiliar());
         }
     }
 
@@ -84,7 +88,7 @@ public class CriarMarcacaoController {
                 }
             } else {
                 // Criar uma nova reserva se não existir uma para o horário selecionado
-                VisitasMarcadas visitasMarcadas = new VisitasMarcadas(0, familiarParaMarcacao, "titulo", diaInicioField.getText(), diaFimField.getText(), horaInicioField.getText(), horaFimField.getText());
+                VisitasMarcadas visitasMarcadas = new VisitasMarcadas(0, familiarParaMarcacao, titulo, diaInicioField.getText(), diaFimField.getText(), horaInicioField.getText(), horaFimField.getText());
                 if (callback != null) {
                     callback.onVisitasMarcadasCriada(visitasMarcadas);
                 }

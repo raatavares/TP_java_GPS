@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
@@ -13,6 +14,7 @@ import com.example.gps_g33.modelos.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,6 +40,7 @@ public class marcarHorarioVisitaController implements ModalCallback {
     public TableColumn<Visita, String> endTimeColumn;
     @FXML
     public Label infoLabel;
+    public TextField searchField;
 
     public LocalTime minTime = LocalTime.MAX;
     public LocalTime maxTime = LocalTime.MIN;
@@ -65,11 +68,12 @@ public class marcarHorarioVisitaController implements ModalCallback {
         endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
     }
 
+    public List<Visita> horariosOriginais;
     public void loadVisitSchedules() {
         try {
             Gson gson = new Gson();
             Type horarioVisitaListType = new TypeToken<List<Visita>>(){}.getType();
-            List<Visita> horariosOriginais = gson.fromJson(new FileReader("Dados/visitas.json"), horarioVisitaListType);
+            horariosOriginais = gson.fromJson(new FileReader("Dados/visitas.json"), horarioVisitaListType);
             List<Visita> horariosProcessados = new ArrayList<>();
 
             for (Visita horario : horariosOriginais) {
@@ -139,9 +143,42 @@ public class marcarHorarioVisitaController implements ModalCallback {
     }
 
     @FXML
+    public void onSearch() {
+        String termoPesquisa = searchField.getText().toLowerCase();
+
+        List<Visita> visitasFiltradas = horariosOriginais.stream()
+                .filter(visita ->
+                        visita.getStartDate().toLowerCase().contains(termoPesquisa) ||
+                                visita.getTitle().toLowerCase().contains(termoPesquisa) ||
+                                visita.getStartTime().toLowerCase().contains(termoPesquisa)
+                )
+                .collect(Collectors.toList());
+
+        tableView.setItems(FXCollections.observableArrayList(visitasFiltradas));
+    }
+
+
+    @FXML
     public void handleMinhasMarcacoes() {
-        // Implementar a lógica de cancelamento aqui
-        System.out.println("Reserva cancelada.");
+        try {
+             // Carregar o FXML da janela pop-up
+             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/familiares/MinhasMarcacoes.fxml"));
+             Parent popupRoot = loader.load();
+
+             minhasMarcacoesController controller = loader.getController();
+             controller.setModalCallback(this);
+
+             Stage modalStage = new Stage();
+             modalStage.initModality(Modality.APPLICATION_MODAL);
+             modalStage.setTitle("Adicionar Marcação");
+
+             Scene scene = new Scene(popupRoot);
+             modalStage.setScene(scene);
+
+             modalStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

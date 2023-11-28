@@ -24,15 +24,6 @@ public class VisitasMarcadas {
         this.endTime = endTime;
     }
 
-    public VisitasMarcadas(int id, List<FamiliarParaMarcacao> familiares, String titulo, String startDate, String endDate, String startTime, String endTime) {
-        this.id = id;
-        this.familiares = new ArrayList<>(familiares);
-        this.titulo = titulo;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
     public void adicionarNomeVisitante(FamiliarParaMarcacao familiar) {
         this.familiares.add(familiar);
     }

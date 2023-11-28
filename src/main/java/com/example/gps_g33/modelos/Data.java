@@ -470,4 +470,12 @@ public class Data {
         medicacoesData = medicacoes;
     }
 
+    public String getNomeFamiliar() {
+        Funcionario funcionario = getFuncionarioPorId(idLogado);
+        return funcionario.getNome();
+    }
+    public String getNifFamiliar() {
+        Funcionario funcionario = getFuncionarioPorId(idLogado);
+        return funcionario.getNif();
+    }
 }
