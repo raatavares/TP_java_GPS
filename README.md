@@ -597,6 +597,12 @@ Para que o projeto seja bem sucedido, devemos ter:
   
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
 
+  - **US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)**
+
+  - **US14: Como Animador eu quero registar a participação do residente na atividade**
+
+  - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
+
     
 - Story Points: 
 
