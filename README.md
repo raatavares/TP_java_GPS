@@ -287,7 +287,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 - RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
 
 **RSK5 Violações de segurança**
-- RSK5 – PxI: 3x5=15; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
+- RSK5 – PxI: 4x4=16; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 
 ##### Mitigation Actions
@@ -468,7 +468,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
 
-- Dates: from 14/Nov to 21/Nov, 2 weeks
+- Dates: from 14/Nov to 27/Nov, 2 weeks
 
 - Roles:
   - Product Owner: Leonardo Silva
@@ -584,9 +584,9 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Plan
 
-- Goal: 
+- Goal: Realizar as funcionalidades dos familiares e animadores. É importante serem realizadas todas as User Stories propostas pois consequentemente será esse o produto final.
 
-- Dates: from 27/11 to 11/12, 2 weeks
+- Dates: from 28/11 to 11/12, 2 weeks
 
 - Roles:
   - Product Owner: Mario Lourenço
