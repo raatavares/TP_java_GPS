@@ -40,8 +40,6 @@ public class CriarHorarioVisitaController {
         calendarView.getCalendars().forEach(calendar -> calendar.addEventHandler(handler));
 
         //apenas uma evento por hora
-
-
         Thread updateTimeThread = new Thread("Calendar: Update Time Thread") {
             @Override
             public void run() {
@@ -106,10 +104,12 @@ public class CriarHorarioVisitaController {
 
         }else if(type == ENTRY_INTERVAL_CHANGED || type == ENTRY_TITLE_CHANGED || type == ENTRY_FULL_DAY_CHANGED || type == ENTRY_LOCATION_CHANGED || type == ENTRY_RECURRENCE_RULE_CHANGED  || type == ENTRY_USER_OBJECT_CHANGED){ // Evento alterado por algum motivo
             System.out.println("Evento alterado");
+            data.updateCalendarEvent(event.getEntry());
             if(data.updateCalendarEvent(event.getEntry())){
                 calendarView.refreshData();
             }
         }
+
 
 
 

@@ -2,6 +2,8 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.LoginController;
+import com.example.gps_g33.controller.familiares.marcarHorarioVisitaController;
+import com.example.gps_g33.controller.gerencia.EditController;
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
 import javafx.application.Platform;

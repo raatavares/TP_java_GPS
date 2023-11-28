@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import java.time.LocalTime?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.gps_g33.controller.familiares.marcarHorarioVisitaController" prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.familiares.marcarHorarioVisitaController">
     <children>
-        <TableView fx:id="tableView" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <TableView fx:id="tableView" layoutY="55.0" prefHeight="245.0" prefWidth="580.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
             <columns>
                 <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Título" />
                 <TableColumn fx:id="startDateColumn" prefWidth="75.0" text="Data Início" />
@@ -16,15 +21,20 @@
                 <TableColumn fx:id="endTimeColumn" prefWidth="75.0" text="Hora Fim" />
             </columns>
         </TableView>
-        <HBox alignment="CENTER" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0">
-            <ComboBox fx:id="timeSelector" prefWidth="150.0">
-                <items>
-                    <!-- Itens do ComboBox serão adicionados pelo controller -->
-                </items>
-            </ComboBox>
+        <HBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
             <Button fx:id="bookButton" onAction="#handleBook" text="Marcar Visita" />
-            <Button fx:id="cancelButton" onAction="#handleCancel" text="Cancelar" />
+            <Button fx:id="MinhasMarcacoesButton" onAction="#handleMinhasMarcacoes" text="Minhas Marcações" />
         </HBox>
-        <Label fx:id="infoLabel" text="Selecione um horário e um intervalo" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+        <Label fx:id="infoLabel" prefHeight="18.0" prefWidth="482.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" prefHeight="54.0" prefWidth="580.0" spacing="10.0">
+         <children>
+            <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
+            <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="231.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
+               <HBox.margin>
+                  <Insets right="270.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
     </children>
 </AnchorPane>
