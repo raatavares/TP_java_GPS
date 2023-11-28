@@ -546,7 +546,12 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Review
 
-- Analysis: what was not done or what was added (Link to US or Task from the PB)
+- Analysis: 3 tasks da [US18 - Dado que um funcionário entrou no sistema com as credenciais corretas, quando este pretende criar um horario para as visitas, deve ser capaz de ver/criar/editar/apagar os horarios de visistas.](https://gitlab.com/ShorMario/gps_g33/-/issues/141) não foram consideradas, pois utilizamos o componente do JavaFX, CalendarView da biblioteca CalendarFX que já tem essas funcionalidades
+    - [Task 7 - Tratar da lógica de alterar para cena "Criação do Novo Periodo de Visitas" ao premir o botão "Criar"](https://gitlab.com/ShorMario/gps_g33/-/issues/149)
+
+    - [Task 8 - Tratar da lógica de alterar para cena "Edição do periodo de Visitas" ao premir o botão "Editar"](https://gitlab.com/ShorMario/gps_g33/-/issues/150)
+
+    - [Task 12 - Tratar da apresentação da informação relativa a um periodo de visita ao pressionar o dia em concreto.](https://gitlab.com/ShorMario/gps_g33/-/issues/154)
 
 - Story Points: 2S+1M+2X+2H
 
