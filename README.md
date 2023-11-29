@@ -233,7 +233,8 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 - [US18: Como funcionário pretendo abrir um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/136)
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
-
+- [US20:  Como Gerente eu quero poder editar o cargo dos funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/172)
+- [US21: Como animador quero conseguir ver o histórico de atividades e que participantes estiveram nas atividades](https://gitlab.com/ShorMario/gps_g33/-/issues/173)
 ***
 
 ## Definition of done
@@ -593,13 +594,17 @@ Para que o projeto seja bem sucedido, devemos ter:
   - Scrum Master: Ricardo Tavares
 
 - To do:
-  - **US19-Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
+  - **US19: Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
+
+  - **US20: Como Gerente eu quero poder editar o cargo dos funcionarios**
   
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
 
   - **US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)**
 
   - **US14: Como Animador eu quero registar a participação do residente na atividade**
+
+  - **US21: Como animador quero conseguir ver o historico de atividades e que participantes estiveram nas atividades**
 
   - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
 
