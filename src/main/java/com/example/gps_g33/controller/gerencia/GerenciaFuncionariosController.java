@@ -33,6 +33,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
     public TableColumn<Funcionario, String> nifColumn;
     public TableColumn<Funcionario, String> contatoColumn;
     public TableColumn<Funcionario, String> emailColumn;
+    public TableColumn<Funcionario, String> departamentoColumn;
     public TextField searchField;
     public TextField searchFieldResidentes;
     public Button addButton;
@@ -50,6 +51,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
         nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
         contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+        departamentoColumn.setCellValueFactory(new PropertyValueFactory<>("departamento"));
 
         updateTable();
     }
@@ -66,6 +68,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
             // Definir o callback
             ModalController controller = loader.getController();
             controller.setModalCallback(this);
+            controller.initialize();
 
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
@@ -95,6 +98,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
                 editController.setModalCallback(this);
 
                 editController.setFuncionarioParaEdicao(funcionario);
+                //editController.initialize();
 
                 Stage modalStage = new Stage();
                 modalStage.initModality(Modality.APPLICATION_MODAL);

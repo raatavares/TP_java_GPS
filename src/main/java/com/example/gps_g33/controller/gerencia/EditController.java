@@ -3,14 +3,18 @@ package com.example.gps_g33.controller.gerencia;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.util.InputValidation;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Vector;
 
 public class EditController {
     private ModalCallback callback;
@@ -43,6 +47,25 @@ public class EditController {
     public Button cancelarButton;
 
     private Funcionario funcionario;
+
+    @FXML
+    public ChoiceBox<String> departamentoField;
+
+    Vector<String> departamentos;
+
+    public void initialize() {
+        System.out.println("Entrei no initialize");
+
+        departamentos = new Vector<>();
+        departamentos.add("Gerencia");
+        departamentos.add("Culinaria");
+        departamentos.add("Animacao");
+        departamentos.add("Funcionario");
+        departamentos.add("Clinico");
+
+        ObservableList<String> observableDepartamentos = FXCollections.observableArrayList(departamentos);
+        departamentoField.setItems(observableDepartamentos);
+    }
     @FXML
     public void onEditarButton() {
         boolean camposValidos = true;
@@ -53,6 +76,7 @@ public class EditController {
         String nif = nifField.getText();
         String contato = contactoField.getText();
         String email = emailField.getText();
+        String departamento = departamentoField.getValue();
 
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
         LocalDate dataAtual = LocalDate.now();
@@ -65,6 +89,7 @@ public class EditController {
                 && InputValidation.styleTextError(contactoField, !InputValidation.isTelemovel(contato))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isDataValida(dataNascimento))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
+                && departamentos.contains(departamento)
         )
         {
             funcionario.setId(this.funcionario.getId());
@@ -74,6 +99,7 @@ public class EditController {
             funcionario.setNome(nome);
             funcionario.setSobrenome(sobrenome);
             funcionario.setDataNascimento(dataNascimento.toString());
+            funcionario.setDepartamento(departamento);
 
             if (callback != null) {
                 callback.onFuncionarioEditado(funcionario);
