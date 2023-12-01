@@ -53,6 +53,7 @@ public class NavBarController {
 
     //Familiares
     public Button buttonMarcarHorario;
+    public Button buttonInfoFamiliares;
 
     private Data data;
 
@@ -88,6 +89,8 @@ public class NavBarController {
             buttonChat.setManaged(false);
             buttonMarcarHorario.setVisible(false);
             buttonMarcarHorario.setManaged(false);
+            buttonInfoFamiliares.setVisible(false);
+            buttonInfoFamiliares.setManaged(false);
 
         } else if (departamento.equals("Gerencia")) {
 
@@ -109,6 +112,8 @@ public class NavBarController {
             buttonChat.setManaged(false);
             buttonMarcarHorario.setVisible(false);
             buttonMarcarHorario.setManaged(false);
+            buttonInfoFamiliares.setVisible(false);
+            buttonInfoFamiliares.setManaged(false);
         }
         else if (departamento.equals("Clinico")) {
 
@@ -133,6 +138,8 @@ public class NavBarController {
             buttonChat.setManaged(false);
             buttonMarcarHorario.setVisible(false);
             buttonMarcarHorario.setManaged(false);
+            buttonInfoFamiliares.setVisible(false);
+            buttonInfoFamiliares.setManaged(false);
         }
         else if(departamento.equals("Funcionario")){
             buttonInfoResidentes.setVisible(true);
@@ -155,10 +162,13 @@ public class NavBarController {
             buttonRefeicoes.setManaged(false);
             buttonMarcarHorario.setVisible(false);
             buttonMarcarHorario.setManaged(false);
+            buttonInfoFamiliares.setVisible(false);
+            buttonInfoFamiliares.setManaged(false);
         }
         else if(departamento.equals("Familiares")){
 
             buttonMarcarHorario.setVisible(true);
+            buttonInfoFamiliares.setVisible(true);
 
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
@@ -238,7 +248,7 @@ public class NavBarController {
     }
 
     public void switchToInfoFamiliares() throws IOException{
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/InformacoesDoResidente.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
