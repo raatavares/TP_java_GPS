@@ -240,7 +240,6 @@ public class NavBarController {
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
-    //TODO: criar horario
     public void switchToCriarHorario() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/CriarHorasVisita.fxml"));
         contentArea.getChildren().removeAll();
@@ -254,7 +253,7 @@ public class NavBarController {
     }
     //TODO: criar horario
     public void switchToMarcarHorario() throws IOException{
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/MarcarHorasVisita.fxml"));
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/MarcarVisita.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
@@ -268,6 +267,7 @@ public class NavBarController {
     public void buttonSair() throws IOException {
         Stage stage = (Stage) contentArea.getScene().getWindow();
         stage.close();
+        data.saveData();
 
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/login/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500 , 250);

@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Hashtable;
+import java.util.Objects;
+
 import javafx.application.Platform;
 
 public class HelloApplication extends Application {
@@ -18,8 +20,8 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/login/Login.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
+        scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
         stage.setScene(scene);
-
 
         stage.setResizable(false);
         stage.show();
