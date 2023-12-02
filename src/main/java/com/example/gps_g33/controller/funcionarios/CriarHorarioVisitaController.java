@@ -81,6 +81,11 @@ public class CriarHorarioVisitaController {
                 entry.setFullDay(p.isFullDay());
                 entry.setRecurrenceRule(p.getRrule());
                 entry.setId(p.getId());
+
+                if(p.getFamiliares().size() == 5){
+                    entry.getStyleClass().add("customStyle");
+                }
+
                 calendarView.getCalendars().get(0).addEntry(entry);
         }
     }
@@ -101,7 +106,6 @@ public class CriarHorarioVisitaController {
         }else if(event.isEntryAdded()){
             System.out.println("Evento adicionado");
             data.addCalendarEvent(event.getEntry());
-
         }else if(type == ENTRY_INTERVAL_CHANGED || type == ENTRY_TITLE_CHANGED || type == ENTRY_FULL_DAY_CHANGED || type == ENTRY_LOCATION_CHANGED || type == ENTRY_RECURRENCE_RULE_CHANGED  || type == ENTRY_USER_OBJECT_CHANGED){ // Evento alterado por algum motivo
             System.out.println("Evento alterado");
             data.updateCalendarEvent(event.getEntry());
@@ -109,9 +113,6 @@ public class CriarHorarioVisitaController {
                 calendarView.refreshData();
             }
         }
-
-
-
 
         /*if(event.getCalendar().getName().equals("Visitas - Livres")){
             System.out.println("Calendar Name: " + event.getCalendar().getName());

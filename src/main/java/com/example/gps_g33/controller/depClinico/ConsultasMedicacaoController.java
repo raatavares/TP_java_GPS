@@ -166,16 +166,6 @@ public class ConsultasMedicacaoController implements ModalCallback {
 
     }
 
-    @Override
-    public void onVisitasMarcadasEditada(VisitasMarcadas visitasMarcadas) {
-
-    }
-
-    @Override
-    public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
-
-    }
-
     public void onDelete() {
         Medicacao medicacao = tableViewMedicacao.getSelectionModel().getSelectedItem();
         if(medicacao != null){
