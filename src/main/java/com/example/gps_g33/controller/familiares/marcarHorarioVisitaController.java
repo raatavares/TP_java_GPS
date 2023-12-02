@@ -259,4 +259,14 @@ public class marcarHorarioVisitaController implements ModalCallback {
         visitasMarcadas.setId(data.calcularProximoIdVisitaMarcada());
         data.addVisitaMarcada(visitasMarcadas);
     }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
+
+    }
 }

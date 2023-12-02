@@ -226,4 +226,14 @@ public class MedicamentosUtensilioController implements ModalCallback {
     public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {
 
     }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
+
+    }
 }

@@ -24,4 +24,5 @@ module com.example.gps_g33
     exports com.example.gps_g33.controller.gerencia;
     exports com.example.gps_g33.controller.funcionarios;
     exports com.example.gps_g33.controller.familiares;
+    exports com.example.gps_g33.controller.animacao;
 }
