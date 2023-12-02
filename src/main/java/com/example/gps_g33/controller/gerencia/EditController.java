@@ -129,6 +129,9 @@ public class EditController {
         contactoField.setText(funcionario.getContato());
         emailField.setText(funcionario.getEmail());
 
+        departamentoField.setValue(funcionario.getDepartamento());
+
+
         String dataNascimentoString = funcionario.getDataNascimento();
         LocalDate dataNascimento = LocalDate.parse(dataNascimentoString);
         dataNascimentoPicker.setValue(dataNascimento);
