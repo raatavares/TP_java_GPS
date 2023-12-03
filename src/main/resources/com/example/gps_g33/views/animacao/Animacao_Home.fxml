@@ -18,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.animacao.AnimacaoHomeController">
     <children>
-        <GridPane layoutX="16" layoutY="200.0" prefHeight="487.0" prefWidth="976.0">
+        <GridPane layoutX="16.0" layoutY="160.0" prefHeight="475.0" prefWidth="976.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
@@ -27,7 +27,7 @@
                 <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <TableView fx:id="tableViewAtividades" prefHeight="439.0" prefWidth="907.0" GridPane.rowIndex="1">
+                <TableView fx:id="tableViewAtividades" prefHeight="439.0" prefWidth="976.0" GridPane.rowIndex="1">
                     <columns>
                         <TableColumn fx:id="idColumn" prefWidth="51.0" text="ID" />
                         <TableColumn fx:id="nomeColumn" prefWidth="99.0" text="Nome" />
@@ -43,23 +43,11 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                     <children>
                         <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                        <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="234.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
+                        <TextField fx:id="searchField" onAction="#onSearch" prefHeight="27.0" prefWidth="330.0" style="-fx-border-color: #3a4151; -fx-background-color: #fff;">
                             <HBox.margin>
                                 <Insets right="270.0" />
                             </HBox.margin>
                         </TextField>
-                  <Button fx:id="buttonToAssociate" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleToAssociate" prefHeight="38.0" prefWidth="234.0" style="-fx-background-color: #3a4151;" text="Associar" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </FontAwesomeIconView>
-                     </graphic>
-                  </Button>
                         <Button fx:id="buttonToAddAtividade" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleToAddAtividade" prefHeight="38.0" prefWidth="234.0" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE">
                             <font>
                                 <Font size="16.0" />
@@ -111,5 +99,29 @@
             </children>
         </Pane>
         <StackPane fx:id="contentArea" />
+      <Button fx:id="buttonToAssociate" graphicTextGap="10.0" layoutX="840.0" layoutY="648.0" mnemonicParsing="false" onAction="#handleToAssociate" prefHeight="38.0" prefWidth="152.0" style="-fx-background-color: #3a4151;" text="Associar" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </FontAwesomeIconView>
+         </graphic>
+      </Button>
+      <Button fx:id="buttonToDesassociate" graphicTextGap="10.0" layoutX="674.0" layoutY="648.0" mnemonicParsing="false" onAction="#handleToDesassociate" prefHeight="38.0" prefWidth="152.0" style="-fx-background-color: #3a4151;" text="Desassociar" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </FontAwesomeIconView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>

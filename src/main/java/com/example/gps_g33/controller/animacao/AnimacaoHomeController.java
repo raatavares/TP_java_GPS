@@ -51,6 +51,8 @@ public class AnimacaoHomeController implements ModalCallback {
     public Button buttonToAddAtividade;
     @FXML
     public Button buttonToAssociate;
+    @FXML
+    public Button buttonToDesassociate;
 
     @FXML
     public Button buttonToEditAtividade;
@@ -138,7 +140,36 @@ public class AnimacaoHomeController implements ModalCallback {
 
                 Stage modalStage = new Stage();
                 modalStage.initModality(Modality.APPLICATION_MODAL);
-                modalStage.setTitle("Editar Atividade");
+                modalStage.setTitle("Associar Residente");
+
+                // Definir o conteúdo da janela modal
+                Scene scene = new Scene(root);
+                modalStage.setScene(scene);
+
+                // Mostrar a janela modal
+                modalStage.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void handleToDesassociate() {
+        Atividade atividade = tableViewAtividades.getSelectionModel().getSelectedItem();
+        if(atividade!= null){
+            try {
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/animacao/Animacao_DesassociateResidente.fxml"));
+                Parent root = loader.load();
+
+
+                ModalDesassociateResidenteController desassociateController= loader.getController();
+                desassociateController.setModalCallback(this);
+
+                desassociateController.setAtividadeParaDesassociacao(atividade);
+
+                Stage modalStage = new Stage();
+                modalStage.initModality(Modality.APPLICATION_MODAL);
+                modalStage.setTitle("Desassociar Residente");
 
                 // Definir o conteúdo da janela modal
                 Scene scene = new Scene(root);

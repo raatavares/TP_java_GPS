@@ -151,6 +151,7 @@ public class ModalAssociateResidenteController {
 
     public void setAtividadeParaAssociacao(Atividade atividade) {
         this.atividade = atividade;
+        System.out.println("Atividade: " + this.atividade);
         nome_Atividade.setText(atividade.getTipoAtividade());
         descricao_Atividade.setText(atividade.getDescricao());
 

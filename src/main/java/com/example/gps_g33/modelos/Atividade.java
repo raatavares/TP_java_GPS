@@ -30,6 +30,12 @@ public class Atividade {
             this.nifs = new ArrayList<>();
         this.nifs.add(residente.getNif());
     }
+    //function that remove a resident from the activity, firts remove nif and then remove name with the same index
+    public void removeResidente(Residente residente) {
+        int index = this.nifs.indexOf(residente.getNif());
+        this.nifs.remove(index);
+        this.nomes.remove(index);
+    }
 
     // Getters e setters para cada propriedade
     public int getId() {
@@ -79,4 +85,5 @@ public class Atividade {
     public void setNif(List<String> nif) {
         this.nifs = nif;
     }
+
 }
