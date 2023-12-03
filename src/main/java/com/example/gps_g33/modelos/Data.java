@@ -98,6 +98,42 @@ public class Data {
         }
         return null; // Retornar null se o residente não for encontrado
     }
+    public boolean usedNif(String Nif) {
+        for (Residente residente1 : residentesData) {
+            if (residente1.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        for (Funcionario funcionario : funcionariosData) {
+            if (funcionario.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        return false; // Retornar false se NIF não for usado
+    }
+    public boolean usedEmail(String email) {
+        for (Residente residente1 : residentesData) {
+            if (residente1.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        for (Funcionario funcionario : funcionariosData) {
+            if (funcionario.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false; // Retornar false se email não for usado
+    }
 
     public void addResidente(Residente residente) {
         residentesData.add(residente);
