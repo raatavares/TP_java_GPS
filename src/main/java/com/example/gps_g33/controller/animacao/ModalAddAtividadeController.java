@@ -14,16 +14,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModalAddAtividadeController {
     private Data data;
     private boolean adicionarParaTodos = false;
-    @FXML
-    public TextField nome_Atividade;
-
-    @FXML
-    public TextField nif_Atividade;
 
     @FXML
     public DatePicker dataAtividade_Atividade;
@@ -52,18 +48,6 @@ public class ModalAddAtividadeController {
     @FXML
     public Button cancelar_Button;
 
-    @FXML
-    public TableView<Residente> tabela_residentes;
-
-    @FXML
-    public TableColumn<Residente,String> nome_residente;
-
-    @FXML
-    public TableColumn<Residente,String> nif_residente;
-
-    @FXML
-    public ToggleButton toogleButtonTodos;
-
     private ModalCallback callback;
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
@@ -71,37 +55,8 @@ public class ModalAddAtividadeController {
     @FXML
     public void initialize() {
 
-        // Desabilitar a edição das TextField
-        nome_Atividade.setEditable(false);
-        nif_Atividade.setEditable(false);
-
-        //inicializar a tabela de residentes
-        //Lógica para atualizar a tabela de residentes
-        nome_residente.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        nif_residente.setCellValueFactory(new PropertyValueFactory<>("nif"));
-
-        updatetable();
-
-        tabela_residentes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                adicionarParaTodos = false;
-                // Quando um residente é selecionado, atualizar as TextField
-                nome_Atividade.setText(newSelection.getNome());
-                nif_Atividade.setText(newSelection.getNif());
-            }
-        });
     }
 
-    public void updatetable() {
-        // Lógica para atualizar a tabela de residentes
-
-        data = Data.getInstance();
-        List<Residente> residentes = data.getResidentes();
-        // Converter a lista para uma ObservableList
-        ObservableList<Residente> observableList = FXCollections.observableArrayList(residentes);
-
-        tabela_residentes.setItems(observableList);
-    }
 
     @FXML
     public void handleCriarButton() {
@@ -138,7 +93,7 @@ public class ModalAddAtividadeController {
                         && InputValidation.styleDataError(dataAtividade_Atividade, !InputValidation.isDataValidaRefeicoes(dataAtividade))
                 )
                 {
-                    Atividade atividade = new Atividade(0, nome, dataAtividade.toString(), tipoAtividade, descricao, nif);
+                    Atividade atividade = new Atividade(0, null, dataAtividade.toString(), tipoAtividade, descricao, null);
 
                     if (callback != null) {
                         callback.onAtividadeCriada(atividade);
@@ -153,8 +108,6 @@ public class ModalAddAtividadeController {
         }
         else{
             // Lógica para a atividade para um unico residente
-            String nome = nome_Atividade.getText();
-            String nif = nif_Atividade.getText();
             String descricao = descricao_Atividade.getText();
             LocalDate dataAtividade = dataAtividade_Atividade.getValue();
             LocalDate dataAtual = LocalDate.now();
@@ -177,12 +130,10 @@ public class ModalAddAtividadeController {
                 tipoAtividade = "Outra";
             }
 
-            if(InputValidation.styleTextError(nome_Atividade, !InputValidation.isLengthValid(nome,3))
-                    && InputValidation.styleTextError(nif_Atividade, !InputValidation.isNif(nif))
-                    && InputValidation.styleTextAreaError(descricao_Atividade, !InputValidation.isDescricaoValid(descricao,3))
+            if(InputValidation.styleTextAreaError(descricao_Atividade, !InputValidation.isDescricaoValid(descricao,3))
                     && InputValidation.styleDataError(dataAtividade_Atividade, !InputValidation.isDataValidaRefeicoes(dataAtividade))
             ){
-                Atividade atividade = new Atividade(0, nome, dataAtividade.toString(), tipoAtividade, descricao, nif);
+                Atividade atividade = new Atividade(0, null, dataAtividade.toString(), tipoAtividade, descricao, null);
 
                 if (callback != null) {
                     callback.onAtividadeCriada(atividade);
@@ -203,10 +154,4 @@ public class ModalAddAtividadeController {
         stage.close();
     }
 
-    @FXML
-    public void handleToogleButtonTodos(){
-        nome_Atividade.clear();
-        nif_Atividade.clear();
-        adicionarParaTodos = toogleButtonTodos.isSelected();
-    }
 }

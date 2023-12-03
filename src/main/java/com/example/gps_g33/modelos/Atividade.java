@@ -1,21 +1,34 @@
 package com.example.gps_g33.modelos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Atividade {
     private int id;
-    private String nome;
+    private List<String> nomes;
     private String dataAtividade;
     private String tipoAtividade; // Exemplo: piscina, teatro, etc.
     private String responsavel;
     private String descricao; // Descrição opcional da atividade
-    private String nif;
+    private List<String> nifs;
 
-    public Atividade(int id, String nome, String dataAtividade, String tipoAtividade, String descricao, String nif) {
+    public Atividade(int id, List<String> nome, String dataAtividade, String tipoAtividade, String descricao, List<String> nif) {
         this.id = id;
-        this.nome = nome;
+        this.nomes = nome;
         this.dataAtividade = dataAtividade;
         this.tipoAtividade = tipoAtividade;
         this.descricao = descricao;
-        this.nif = nif;
+        this.nifs = nif;
+    }
+    public void adicionarNomeResidente(Residente residente) {
+        if(this.nomes == null)
+            this.nomes = new ArrayList<>();
+        this.nomes.add(residente.getNome());
+    }
+    public void adicionarNifResidente(Residente residente) {
+        if(this.nifs == null)
+            this.nifs = new ArrayList<>();
+        this.nifs.add(residente.getNif());
     }
 
     // Getters e setters para cada propriedade
@@ -27,12 +40,12 @@ public class Atividade {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public List<String> getNomes() {
+        return nomes;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(List<String> nome) {
+        this.nomes = nome;
     }
 
     public String getDataAtividade() {
@@ -59,11 +72,11 @@ public class Atividade {
         this.descricao = descricao;
     }
 
-    public String getNif() {
-        return nif;
+    public List<String> getNifs() {
+        return nifs;
     }
 
-    public void setNif(String nif) {
-        this.nif = nif;
+    public void setNif(List<String> nif) {
+        this.nifs = nif;
     }
 }

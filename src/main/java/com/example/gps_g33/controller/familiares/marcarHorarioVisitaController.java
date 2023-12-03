@@ -250,9 +250,6 @@ public class marcarHorarioVisitaController implements ModalCallback {
             }
         }
     }
-    public int calcularProximoIdVisitaMarcada() {
-        return 0;
-    }
 
     @Override
     public void onVisitasMarcadasCriada(VisitasMarcadas visitasMarcadas) {

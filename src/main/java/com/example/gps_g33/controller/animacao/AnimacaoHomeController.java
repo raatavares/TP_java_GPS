@@ -49,6 +49,8 @@ public class AnimacaoHomeController implements ModalCallback {
 
     @FXML
     public Button buttonToAddAtividade;
+    @FXML
+    public Button buttonToAssociate;
 
     @FXML
     public Button buttonToEditAtividade;
@@ -60,10 +62,10 @@ public class AnimacaoHomeController implements ModalCallback {
         data = Data.getInstance();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nomes"));
         dataAtividadeColumn.setCellValueFactory(new PropertyValueFactory<>("dataAtividade"));
         descricaoColumn.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
+        nifColumn.setCellValueFactory(new PropertyValueFactory<>("nifs"));
         tipoAtividadeColumn.setCellValueFactory(new PropertyValueFactory<>("tipoAtividade"));
         tableViewAtividades.setPlaceholder(new Label("Deve inserir o nome do residente para pesquisar"));
 
@@ -85,7 +87,7 @@ public class AnimacaoHomeController implements ModalCallback {
         List<Atividade> atividadesFiltradas;
         if (atividades != null) {
             atividadesFiltradas = atividades.stream()
-                    .filter(atividade -> atividade.getNome().toLowerCase().contains(nome))
+                    .filter(atividade -> atividade.getNomes().stream().anyMatch(n -> n.toLowerCase().contains(nome)))
                     .collect(Collectors.toList());
         } else {
             atividadesFiltradas = new ArrayList<>(); // Retorna uma lista vazia se não houver atividades
@@ -107,7 +109,7 @@ public class AnimacaoHomeController implements ModalCallback {
 
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setTitle("Adicionar Atividade");
+            modalStage.setTitle("Associar á Atividade");
 
             // Definir o conteúdo da janela modal
             Scene scene = new Scene(popupRoot);
@@ -118,6 +120,35 @@ public class AnimacaoHomeController implements ModalCallback {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void handleToAssociate() {
+        Atividade atividade = tableViewAtividades.getSelectionModel().getSelectedItem();
+        if(atividade!= null){
+            try {
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/animacao/Animacao_AssociateResidente.fxml"));
+                Parent root = loader.load();
+
+
+                ModalAssociateResidenteController associateController= loader.getController();
+                associateController.setModalCallback(this);
+
+                associateController.setAtividadeParaAssociacao(atividade);
+
+                Stage modalStage = new Stage();
+                modalStage.initModality(Modality.APPLICATION_MODAL);
+                modalStage.setTitle("Editar Atividade");
+
+                // Definir o conteúdo da janela modal
+                Scene scene = new Scene(root);
+                modalStage.setScene(scene);
+
+                // Mostrar a janela modal
+                modalStage.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -245,4 +276,5 @@ public class AnimacaoHomeController implements ModalCallback {
         }
         updateTable();
     }
+
 }

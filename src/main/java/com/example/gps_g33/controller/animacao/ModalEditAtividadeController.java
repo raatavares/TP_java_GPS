@@ -22,11 +22,6 @@ public class ModalEditAtividadeController {
     public void setModalCallback(ModalCallback callback) {
         this.callback = callback;
     }
-    @FXML
-    public TextField nome_Atividade;
-
-    @FXML
-    public TextField nif_Atividade;
 
     @FXML
     public DatePicker dataAtividade_Atividade;
@@ -62,10 +57,7 @@ public class ModalEditAtividadeController {
     @FXML
     public void onEditarButton() {
 
-
-        String nome = nome_Atividade.getText();
         String descricao = descricao_Atividade.getText();
-        String nif = nif_Atividade.getText();
         String dataNascimento = dataAtividade_Atividade.getValue().toString();
         String tipoAtividade;
         if(atividade_ExercicioLeve.isSelected()){
@@ -91,9 +83,7 @@ public class ModalEditAtividadeController {
         )
         {
             atividade.setId(this.atividade.getId());
-            atividade.setNome(nome);
             atividade.setDescricao(descricao);
-            atividade.setNif(nif);
             atividade.setTipoAtividade(tipoAtividade);
             atividade.setDataAtividade(dataNascimento);
 
@@ -117,9 +107,7 @@ public class ModalEditAtividadeController {
     public void setAtividadeParaEdicao(Atividade atividade) {
         this.atividade = atividade;
 
-        nome_Atividade.setText(atividade.getNome());
         descricao_Atividade.setText(atividade.getDescricao());
-        nif_Atividade.setText(atividade.getNif());
         String tipoAtividade = atividade.getTipoAtividade();
         if(tipoAtividade.equals("Exercício Leve")){
             atividade_ExercicioLeve.setSelected(true);
@@ -141,9 +129,5 @@ public class ModalEditAtividadeController {
         String dataNascimentoString = atividade.getDataAtividade();
         LocalDate dataNascimento = LocalDate.parse(dataNascimentoString);
         dataAtividade_Atividade.setValue(dataNascimento);
-
-        // Desabilitar a edição das TextField
-        nome_Atividade.setEditable(false);
-        nif_Atividade.setEditable(false);
     }
 }

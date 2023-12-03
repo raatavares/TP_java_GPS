@@ -236,4 +236,5 @@ public class MedicamentosUtensilioController implements ModalCallback {
     public void onAtividadeEditada(Atividade atividade) {
 
     }
+
 }
