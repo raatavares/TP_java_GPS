@@ -17,7 +17,6 @@ public class Data {
     public String PATH_MEDICACOES = "Dados\\medicacoes.json";
     public String PATH_UTENSILIOS = "Dados\\Medicamentos&Utensilios.json";
     public String PATH_VISITAS = "Dados\\visitas.json";
-    public String PATH_VISITAS_MARCADAS = "Dados\\visitasMarcadas.json";
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -29,7 +28,6 @@ public class Data {
     private List<Familiar> familiaresData;
 
     public List<Visita> calendarData;
-    public List<VisitasMarcadas> visitasMarcadasData;
 
     private int idLogado;
 
@@ -197,7 +195,7 @@ public class Data {
         return calendarData;
     }
 
-    private Visita getVisitaPorId(String id){
+    public Visita getVisitaPorId(String id){
         for (Visita Visita : calendarData) {
             if (Visita.getId().equals(id)) {
                 return Visita;
@@ -252,36 +250,6 @@ public class Data {
         
     }
 
-
-
-    public List<VisitasMarcadas> getVisitasMarcadas() {
-        return visitasMarcadasData;
-    }
-
-    public void addVisitaMarcada(VisitasMarcadas visitasMarcadas) {
-        visitasMarcadasData.add(visitasMarcadas);
-        saveData();
-    }
-
-    public void removeVisitaMarcada(int id) {
-        VisitasMarcadas visitasMarcadasToRemove = getVisitaMarcadaPorId(id);
-        if (visitasMarcadasToRemove != null) {
-            visitasMarcadasData.remove(visitasMarcadasToRemove);
-        }
-        saveData();
-    }
-
-    public VisitasMarcadas getVisitaMarcadaPorId(int id) {
-        for (VisitasMarcadas visitasMarcadas : visitasMarcadasData) {
-            if (visitasMarcadas.getId() == id) {
-                return visitasMarcadas;
-            }
-        }
-        return null;
-    }
-
-
-
     public void loadData() {
         try {
             Gson gson = new Gson();
@@ -292,7 +260,6 @@ public class Data {
             FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
             FileReader readerVisitas = new FileReader(PATH_VISITAS);
             FileReader readerFamiliares = new FileReader(PATH_FAMILIARES);
-            FileReader readerVisitasMarcadas = new FileReader(PATH_VISITAS_MARCADAS);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -303,7 +270,6 @@ public class Data {
             Type calendarListType = new TypeToken<List<Visita>>() {}.getType();
 
             Type familiarListType = new TypeToken<List<Familiar>>() {}.getType();
-            Type visitasMarcadasListType = new TypeToken<List<VisitasMarcadas>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
@@ -312,7 +278,6 @@ public class Data {
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
             familiaresData = gson.fromJson(readerFamiliares, familiarListType);
             calendarData = gson.fromJson(readerVisitas, calendarListType);
-            visitasMarcadasData = gson.fromJson(readerVisitasMarcadas, visitasMarcadasListType);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -330,8 +295,6 @@ public class Data {
             FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
             FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
             FileWriter writerFamiliares = new FileWriter(PATH_FAMILIARES);
-            FileWriter writerVisitasMarcadas = new FileWriter(PATH_VISITAS_MARCADAS);
-
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
             gson.toJson(refeicoesData, writerRefei);
@@ -339,7 +302,6 @@ public class Data {
             gson.toJson(utensiliosData, writerUtensi);
             gson.toJson(calendarData, writeVisitas);
             gson.toJson(familiaresData, writerFamiliares);
-            gson.toJson(visitasMarcadasData, writerVisitasMarcadas);
 
             writerResi.close();
             writerFunc.close();
@@ -348,7 +310,6 @@ public class Data {
             writerUtensi.close();
             writeVisitas.close();
             writerFamiliares.close();
-            writerVisitasMarcadas.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -401,19 +362,6 @@ public class Data {
         return maiorId + 1;
     }
 
-
-    public int calcularProximoIdVisitaMarcada() {
-        if (visitasMarcadasData == null) {
-            visitasMarcadasData = new ArrayList<>(); // ou outra inicialização adequada
-        }
-
-        int maiorId = visitasMarcadasData.stream()
-                .map(VisitasMarcadas::getId)
-                .max(Comparator.naturalOrder())
-                .orElse(0);
-        return maiorId + 1;
-    }
-
     public int getIdLogado() {
         return idLogado;
     }
@@ -461,11 +409,6 @@ public class Data {
         saveData();
     }
 
-    public void clearVisitasMarcadas() {
-        visitasMarcadasData.clear();
-        saveData();
-    }
-
     public void setMedicacoesData(List<Medicacao> medicacoes) {
         medicacoesData = medicacoes;
     }
@@ -477,5 +420,22 @@ public class Data {
     public String getNifFamiliar() {
         Funcionario funcionario = getFuncionarioPorId(idLogado);
         return funcionario.getNif();
+    }
+
+    public Familiar getFamiliarPorId(int id) {
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getId() == id) {
+                return familiar;
+            }
+        }
+        return null; // Retornar null se o familiar não for encontrado
+    }
+
+    public List<Familiar> getFamiliares() {
+        return familiaresData;
+    }
+
+    public int getIdFamiliar() {
+        return idLogado;
     }
 }

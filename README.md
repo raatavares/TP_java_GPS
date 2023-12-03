@@ -233,7 +233,8 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 - [US18: Como funcionário pretendo abrir um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/136)
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
-
+- [US20:  Como Gerente eu quero poder editar o cargo dos funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/172)
+- [US21: Como animador quero conseguir ver o histórico de atividades e que participantes estiveram nas atividades](https://gitlab.com/ShorMario/gps_g33/-/issues/173)
 ***
 
 ## Definition of done
@@ -287,7 +288,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 - RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
 
 **RSK5 Violações de segurança**
-- RSK5 – PxI: 3x5=15; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
+- RSK5 – PxI: 4x4=16; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 
 ##### Mitigation Actions
@@ -468,7 +469,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
 
-- Dates: from 14/Nov to 21/Nov, 2 weeks
+- Dates: from 14/Nov to 27/Nov, 2 weeks
 
 - Roles:
   - Product Owner: Leonardo Silva
@@ -584,19 +585,51 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Plan
 
-- Goal: 
+- Goal: Realizar as funcionalidades dos familiares e animadores. É importante serem realizadas todas as User Stories propostas pois consequentemente será esse o produto final.
 
-- Dates: from 27/11 to 11/12, 2 weeks
+- Dates: from 28/11 to 11/12, 2 weeks
 
 - Roles:
   - Product Owner: Mario Lourenço
   - Scrum Master: Ricardo Tavares
 
 - To do:
-  - **US19-Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
-  
+  - **US19: Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
+  - **US20: Como Gerente eu quero poder editar o cargo dos funcionarios**
+    - Task1 - Alteração da Janela de Criação de um Funcionário.
+    - Task2 - Alteração da Janela de Edição de um Funcionário.
+    - Task3 - Alteração da lógica da tabela da Janela "Funcionários" do departamento de Gerencia para apresentar o departamento do Funcionário.
+    - Task4 - Lógica de colocar na ChoiceBox das Janelas de Criação e Edição do funcionário todos os Departamentos.
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
+    - Task1 - Criação da Janela "Consultas do Utente"
+    - Task2 - Lógica do preenchimento da tabela de consultas.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+  - **US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)**
+    - Task1 - Criação da Janela "Atividades"
+    - Task2 - Lógica de preenchimento da tabela de atividades.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+    - Task4 - Lógica de adicionar uma atividade.
+    - Task5 - Lógica de editar uma atividade.
+    - Task6 - Lógica de eliminar uma atividade.
+    - Task7 - Lógica de guardar os dados no ficheiro json.
+  - **US14: Como Animador eu quero registar a participação do residente na atividade**
+    - Task1 - Criação da Janela "Participantes"
+    - Task2 - Lógica de preenchimento da tabela de participantes.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+    - Task4 - Lógica de adicionar um participante.
+    - Task5 - Lógica de eliminar um participante.
+    - Task6 - Lógica de guardar os dados no ficheiro json.
 
+  - **US21: Como animador quero conseguir ver o historico de atividades e que participantes estiveram nas atividades**
+    - Task1 - Criação da Janela "Histórico de Atividades"
+    - Task2 - Lógica de preenchimento da tabela histórico de atividades.
+    - Task3 - Lógica de procurar atividade pela data de realização.
+    - Task4 - Criação do modal "Participantes"
+    - Task5 - Lógica de preenchimento da tabela de participantes.
+    - Task6 - Lógica de procura do Utente pela barra de pesquisa.
+
+  - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
+    - Task1 - Criação da Janela "Comunicação"
     
 - Story Points: 
 

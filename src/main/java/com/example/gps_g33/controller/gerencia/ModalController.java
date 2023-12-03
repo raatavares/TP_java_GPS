@@ -3,13 +3,17 @@ package com.example.gps_g33.controller.gerencia;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.Funcionario;
 import com.example.gps_g33.util.InputValidation;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Vector;
 
 public class ModalController{
@@ -34,6 +38,9 @@ public class ModalController{
     public TextField contactoField;
 
     @FXML
+    public ChoiceBox<String> departamentoField;
+
+    @FXML
     public TextField emailField;
 
     @FXML
@@ -42,7 +49,21 @@ public class ModalController{
     @FXML
     public Button cancelarButton;
 
+    Vector<String> departamentos;
 
+    public void initialize() {
+        System.out.println("Entrei no initialize");
+
+        departamentos = new Vector<>();
+        departamentos.add("Gerencia");
+        departamentos.add("Culinaria");
+        departamentos.add("Animacao");
+        departamentos.add("Funcionario");
+        departamentos.add("Clinico");
+
+        ObservableList<String> observableDepartamentos = FXCollections.observableArrayList(departamentos);
+        departamentoField.setItems(observableDepartamentos);
+    }
     @FXML
     public void handleCriarButton() {
         boolean camposValidos = true;
@@ -53,12 +74,14 @@ public class ModalController{
         String nif = nifField.getText();
         String contato = contactoField.getText();
         String email = emailField.getText();
+        String departamento = departamentoField.getValue();
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
         LocalDate dataAtual = LocalDate.now();
         String username = nome + sobrenome;
         String password = "123456789";
 
-
+        System.out.println(departamento);
+        System.out.println(departamentos.contains(departamento));
         // Se todos os campos são válidos, criar o funcionário
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
                 && InputValidation.styleTextError(sobrenomeField, !InputValidation.isLengthValid(sobrenome,3))
@@ -67,9 +90,10 @@ public class ModalController{
                 && InputValidation.styleTextError(contactoField, !InputValidation.isTelemovel(contato))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isDataValida(dataNascimento))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
-        )
+                && departamentos.contains(departamento))
+
         {
-          Funcionario  funcionario = new Funcionario(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, "Funcionario", username, password);
+          Funcionario  funcionario = new Funcionario(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, departamento, username, password);
 
             if (callback != null) {
                 callback.onFuncionarioCriado(funcionario);
