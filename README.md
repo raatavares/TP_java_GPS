@@ -559,9 +559,13 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Version: 0.1 
 
-- Client analysis: client feedback
+- Client analysis: O cliente gostou e aprovou.
 
-- Conclusions: what to add/review
+- Conclusions: O cliente quer adicionar novas funcionalidades: 
+  - Alterar o cargo na criação ou edição do perfil dos funcionários para os diversos departamentos existentes.
+  - Ser possivel aos Animadores visualizar o histórico de atividades bem como os seus participantes
+
+  Deve ser dada a seguinte prioridade: US19 > US20 que será a funcionalidade de alterar o cargo no perfil do funcionário > US7 >> US13 >> US14 >> US21 >> US6.
 
 ##### Sprint Retrospective
 
