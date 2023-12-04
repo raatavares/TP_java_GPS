@@ -5,12 +5,12 @@
 - [Team](#team)
 - [Vision and Scope](#vision-and-scope)
 - [Requirements](#requirements)
-    - [Use case diagram](#use-case-diagram)
-    - [Mockups](#mockups)
-    - [User stories](#user-stories)
+  - [Use case diagram](#use-case-diagram)
+  - [Mockups](#mockups)
+  - [User stories](#user-stories)
 - [Definition of Done](#definition-of-done)
 - [Architecture and Design](#architecture-and-design)
-    - [Domain Model](#domain-model)
+  - [Domain Model](#domain-model)
 - [Risk Plan](#risk-plan)
 - [Pre-Game](#pre-game)
 - [Release Plan](#release-plan)
@@ -181,7 +181,7 @@ Os funcionários terão acesso a informações dos utentes, chat entre outros fu
 
 <img src="Mockups/imgs/InformacoesDeResidente.png" width="300"/>
 <img src="Mockups/imgs/Funcionario_Visita.png" width="300"/>
-  
+
 
 
 **Departamento Culinária**
@@ -282,7 +282,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 - RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 1x5=5; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
+- RSK3 – PxI: 2x5=10; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
 
 **RSK4 Falhas técnicas**
 - RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
@@ -374,10 +374,10 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. - 1H
     - Task9 - Tratar da lógica de adicionar um residente á tabela de Residentes. - 1H
     - Task10 - Tratar da lógica de editar informações sobre os Residentes. - 2H
-    - Task11 - Tratar da lógica da tabela para amostra de todos os utentes. - 1H 
+    - Task11 - Tratar da lógica da tabela para amostra de todos os utentes. - 1H
 
   - **US12 - Como Gerente eu quero gerir os funcionarios(Criar,Apagar,Editar)**
-  
+
     - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar) - 1H
     - Task2 - Tratar da lógica do botão Editar (Alterar a cena para o Modal Editar) - 1H
     - Task3 - Tratar da lógica do botão Apagar (Selecionar qual funcionário eliminar e retirar da tabela) - 1H
@@ -406,9 +406,9 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task12 - Tratar da lógica da tabela da janela "Nova Refeição", para mostragem de todos os residentes (Nome e NIF). - 1H
     - Task13 - Tratar da lógica da possibilidade de selecionar um utente para associar á refeição.- 1H
     - Task14 - Tratar da lógica do botão "toggle" de forma a indicar que a refeição é direcionada a todos os utentes. - 1H
-    - Task15 - Tratar da lógica do botão "Radio Buttons" para guardar o tipo de refeição. - 1H 
+    - Task15 - Tratar da lógica do botão "Radio Buttons" para guardar o tipo de refeição. - 1H
     - Task16 - Tratar da lógica do TextField para procura de residentes. - 1H
-    - Task17 - Tratar da lógica da tabela para mostrar de todos os residentes. - 1H 
+    - Task17 - Tratar da lógica da tabela para mostrar de todos os residentes. - 1H
 
   - **US1 - Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.** (Veio da Product Backlog)
 
@@ -419,29 +419,29 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task5 - Criação da cena em SceneBuilder para a janela de "Adicionar Consultas e Medicação" do utente á tabela. - 1H
     - Task6 - Criação da cena em SceneBuilder para a janela de "Editar Consultas e Medicação" do utente. - 1H
     - Task7 - Tratar da lógica do TextField para procura de utentes. - 1H
-    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. -1H 
+    - Task8 - Tratar de colocar a hora correta na label perto do botão Sair. -1H
     - Task9 - Tratar da lógica de adicionar uma Consulta&Medicação á tabela do utente. - 1H
     - Task10 - Tratar da lógica de editar informações sobre as Consultas&Medicações do utente na tabela. - 2H
     - Task11 - Tratar da lógica da ListView dentro do modal para procura do utente a associar á consulta ou medicação. - 3H
-    - Task12 - Tratar da lógica da tabela para amostra das consultas e medicações associadas a cada utente. - 1H 
+    - Task12 - Tratar da lógica da tabela para amostra das consultas e medicações associadas a cada utente. - 1H
 
 
-    
-- Story Points: Small: 0, Medium: 0, Large: 4; Total = 0S + 0M + 4L = 0S 0M 55L 
+
+- Story Points: Small: 0, Medium: 0, Large: 4; Total = 0S + 0M + 4L = 0S 0M 55L
 
 - Analysis: short analysis of the planning meeting
 
 ##### Sprint Review
 
-- Analysis: 
+- Analysis:
 
-  **Adicionado**: 
+  **Adicionado**:
   - [US1: Como enfermeira do Dep. Clinico quero registar em um residente as suas consultas e medicações.](https://gitlab.com/ShorMario/gps_g33/-/issues/3)
 
 - Story Points: 2S+1M+2X+2H
-- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 40H 
+- Story Points: Small: 0, Medium: 0, Large: 3; Total = 0S + 0M + 3L = 40H
 
-- Version: 0.1 
+- Version: 0.1
 
 - Client analysis: O cliente gostou e aprovou.
 
@@ -450,15 +450,15 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-    - A boa separação das tasks por cada User Story permitiu uma melhor divisão de tarefas pelos membros do grupo, não existindo uma grande sobreposição de trabalho, permitindo a cada membro do grupo trabalhar sobre a sua tarefa individualmente.
+  - A boa separação das tasks por cada User Story permitiu uma melhor divisão de tarefas pelos membros do grupo, não existindo uma grande sobreposição de trabalho, permitindo a cada membro do grupo trabalhar sobre a sua tarefa individualmente.
 
 - What we did less well:
-    - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador não fomos fazendo os testes unitários. Em consequência disso teremos de fazer os testes unitários no fim de concluirmos todas as User Stories o que será mais complexo e demorará mais tempo.
-    - Não fizemos review do codigo apos fazer uma certa funcionalidade. 
+  - Ao fazer a lógica da verificação dos dados introduzidos pelo utilizador não fomos fazendo os testes unitários. Em consequência disso teremos de fazer os testes unitários no fim de concluirmos todas as User Stories o que será mais complexo e demorará mais tempo.
+  - Não fizemos review do codigo apos fazer uma certa funcionalidade.
 
 - How to improve to the next sprint:
-    - Realizar os testes unitários logo apos termos codificado certa funcionalidade.
-    - A medida que vamos fazendo funcionalidades e os seus respetivos testes fazer tambem code review.
+  - Realizar os testes unitários logo apos termos codificado certa funcionalidade.
+  - A medida que vamos fazendo funcionalidades e os seus respetivos testes fazer tambem code review.
 
 ***
 
@@ -484,7 +484,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task2 - Tratar da lógica do TextField para procura de utentes.
     - Task3 - Tratar de colocar a hora correta na label perto do botão Sair.
     - Task4 - Tratar da lógica da tabela para amostra das informações do utente especificado na TextField.
-  
+
   - **US16: Como cozinheira/o no Dep. Culinário eu quero criar/editar/apagar restrições e preferências alimentares dos residentes**
 
     - Task1 - Tratar da lógica do botão Adicionar (Alterar a cena para o Modal Adicionar)
@@ -535,38 +535,42 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task 7 - Tratar de alterar a cena para "Minhas visitas".
     - Task 8 - Criação da cena "Minhas visitas".
     - Task 9 - Tratar da lógica de preenchimento da tabela da janela "Minhas visitas"
-  
+
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
 
 
 
-    
-- Story Points: 
+
+- Story Points:
 
 - Analysis: short analysis of the planning meeting
 
 ##### Sprint Review
 
-- Analysis: [US18 - Dado que um funcionário entrou no sistema com as credenciais corretas, quando este pretende criar um horario para as visitas, deve ser capaz de ver/criar/editar/apagar os horarios de visistas.](https://gitlab.com/ShorMario/gps_g33/-/issues/141) 
-    - Não foram consideradas as seguintes tasks, pois utilizamos o componente do JavaFX, CalendarView da biblioteca CalendarFX que já tem essas funcionalidades
-    - [Task 7 - Tratar da lógica de alterar para cena "Criação do Novo Periodo de Visitas" ao premir o botão "Criar"](https://gitlab.com/ShorMario/gps_g33/-/issues/149)
+- Analysis: [US18 - Dado que um funcionário entrou no sistema com as credenciais corretas, quando este pretende criar um horario para as visitas, deve ser capaz de ver/criar/editar/apagar os horarios de visistas.](https://gitlab.com/ShorMario/gps_g33/-/issues/141)
+  - Não foram consideradas as seguintes tasks, pois utilizamos o componente do JavaFX, CalendarView da biblioteca CalendarFX que já tem essas funcionalidades
+  - [Task 7 - Tratar da lógica de alterar para cena "Criação do Novo Periodo de Visitas" ao premir o botão "Criar"](https://gitlab.com/ShorMario/gps_g33/-/issues/149)
 
-    - [Task 8 - Tratar da lógica de alterar para cena "Edição do periodo de Visitas" ao premir o botão "Editar"](https://gitlab.com/ShorMario/gps_g33/-/issues/150)
+  - [Task 8 - Tratar da lógica de alterar para cena "Edição do periodo de Visitas" ao premir o botão "Editar"](https://gitlab.com/ShorMario/gps_g33/-/issues/150)
 
-    - [Task 12 - Tratar da apresentação da informação relativa a um periodo de visita ao pressionar o dia em concreto.](https://gitlab.com/ShorMario/gps_g33/-/issues/154)
+  - [Task 12 - Tratar da apresentação da informação relativa a um periodo de visita ao pressionar o dia em concreto.](https://gitlab.com/ShorMario/gps_g33/-/issues/154)
 
 - Story Points: 2S+1M+2X+2H
 
-- Version: 0.1 
+- Version: 0.1
 
-- Client analysis: client feedback
+- Client analysis: O cliente gostou e aprovou.
 
-- Conclusions: what to add/review
+- Conclusions: O cliente quer adicionar novas funcionalidades:
+  - Alterar o cargo na criação ou edição do perfil dos funcionários para os diversos departamentos existentes.
+  - Ser possivel aos Animadores visualizar o histórico de atividades bem como os seus participantes
+
+  Deve ser dada a seguinte prioridade: US19 > US20 que será a funcionalidade de alterar o cargo no perfil do funcionário > US7 >> US13 >> US14 >> US21 >> US6.
 
 ##### Sprint Retrospective
 
 - What we did well:
-   - Ao codificar fomos utilizando a classe InputValidation que faz a verificação dos dados de entrada do utilizador, tendo isso em conta fizemos logo os testes unitários também.
+  - Ao codificar fomos utilizando a classe InputValidation que faz a verificação dos dados de entrada do utilizador, tendo isso em conta fizemos logo os testes unitários também.
 
 - What we did less well:
   - Nem sempre fizemos code review.
@@ -600,6 +604,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task2 - Alteração da Janela de Edição de um Funcionário.
     - Task3 - Alteração da lógica da tabela da Janela "Funcionários" do departamento de Gerencia para apresentar o departamento do Funcionário.
     - Task4 - Lógica de colocar na ChoiceBox das Janelas de Criação e Edição do funcionário todos os Departamentos.
+    - Task5 - Lógica de alterar os dados do funcionário no ficheiro json
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
     - Task1 - Criação da Janela "Consultas do Utente"
     - Task2 - Lógica do preenchimento da tabela de consultas.
@@ -630,8 +635,8 @@ Para que o projeto seja bem sucedido, devemos ter:
 
   - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
     - Task1 - Criação da Janela "Comunicação"
-    
-- Story Points: 
+
+- Story Points:
 
 - Analysis: short analysis of the planning meeting
 
@@ -641,7 +646,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Story Points: 2S+1M+2X+2H
 
-- Version: 0.1 
+- Version: 0.1
 
 - Client analysis: client feedback
 
@@ -650,7 +655,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-   - A
+  - A
 
 - What we did less well:
   - B
