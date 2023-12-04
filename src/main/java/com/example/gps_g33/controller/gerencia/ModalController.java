@@ -83,6 +83,9 @@ public class ModalController{
         System.out.println(departamento);
         System.out.println(departamentos.contains(departamento));
         // Se todos os campos são válidos, criar o funcionário
+        if (callback != null&&callback.usedCredentials(email, nif)) {
+            return;
+        }
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
                 && InputValidation.styleTextError(sobrenomeField, !InputValidation.isLengthValid(sobrenome,3))
                 && InputValidation.styleTextError(emailField, !InputValidation.isEmail(email) || !InputValidation.isLengthValid(email,3))
@@ -91,7 +94,6 @@ public class ModalController{
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isDataValida(dataNascimento))
                 && InputValidation.styleDataError(dataNascimentoPicker, !InputValidation.isAdulto(dataNascimento))
                 && departamentos.contains(departamento))
-
         {
           Funcionario  funcionario = new Funcionario(0, nome, sobrenome, dataNascimento.toString(), nif, contato, email, departamento, username, password);
 

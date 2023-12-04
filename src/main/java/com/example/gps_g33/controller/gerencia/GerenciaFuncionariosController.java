@@ -116,15 +116,27 @@ public class GerenciaFuncionariosController implements ModalCallback {
             }
         }
     }
-
+    @Override
+    public boolean usedCredentials(String email, String NIF) {
+        if (!data.usedNif(NIF)|| !data.usedEmail(email)) return false;
+        if (data.usedNif(NIF)) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return true;
+        } else if (data.usedEmail(email)) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return true;
+        }
+        return false;
+    }
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
+
         if (data.usedNif(funcionario.getNif())) {
             CustomPopOver.exibirPopup("NIF já utilizado");
-            return;
+            return ;
         } else if (data.usedEmail(funcionario.getEmail())) {
             CustomPopOver.exibirPopup("Email já utilizado");
-            return;
+            return ;
         }
         funcionario.setId(data.calcularProximoIdFuncionarios());
         data.addFuncionario(funcionario);
@@ -181,13 +193,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
 
     @Override
     public void onFuncionarioEditado(Funcionario funcionario) {
-        if (data.usedNif(funcionario.getNif())) {
-            CustomPopOver.exibirPopup("NIF já utilizado");
-            return;
-        } else if (data.usedEmail(funcionario.getEmail())) {
-            CustomPopOver.exibirPopup("Email já utilizado");
-            return;
-        }
+
         for (int i = 0; i < data.getFuncionarios().size(); i++) {
             if(data.getFuncionarios().get(i).getId() == funcionario.getId()){
                 data.getFuncionarios().set(i, funcionario);

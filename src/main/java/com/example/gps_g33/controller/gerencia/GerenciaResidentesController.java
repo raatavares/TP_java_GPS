@@ -133,6 +133,19 @@ public class GerenciaResidentesController implements ModalCallback {
     }
 
     @Override
+    public boolean usedCredentials(String email, String NIF) {
+        if (!data.usedNif(NIF)|| !data.usedEmail(email)) return false;
+        if (data.usedNif(NIF)) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return true;
+        } else if (data.usedEmail(email)) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }
@@ -140,13 +153,7 @@ public class GerenciaResidentesController implements ModalCallback {
     @Override
     public void onResidenteEditado(Residente residente) {
 
-        if (data.usedNif(residente.getNif())) {
-            CustomPopOver.exibirPopup("NIF já utilizado");
-            return;
-        } else if (data.usedEmail(residente.getEmail())) {
-            CustomPopOver.exibirPopup("Email já utilizado");
-            return;
-        }
+
         for (int i = 0; i < data.getResidentes().size(); i++) {
             if(data.getResidentes().get(i).getId() == residente.getId()){
                 data.getResidentes().set(i, residente);
@@ -160,6 +167,7 @@ public class GerenciaResidentesController implements ModalCallback {
     @Override
     public void onResidenteCriado(Residente residente) {
         residente.setId(data.calcularProximoIdResidentes());
+
         if (data.usedNif(residente.getNif())) {
             CustomPopOver.exibirPopup("NIF já utilizado");
             return;
