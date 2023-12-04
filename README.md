@@ -600,6 +600,7 @@ Para que o projeto seja bem sucedido, devemos ter:
     - Task2 - Alteração da Janela de Edição de um Funcionário.
     - Task3 - Alteração da lógica da tabela da Janela "Funcionários" do departamento de Gerencia para apresentar o departamento do Funcionário.
     - Task4 - Lógica de colocar na ChoiceBox das Janelas de Criação e Edição do funcionário todos os Departamentos.
+    - Task5 - Lógica de alterar os dados do funcionário no ficheiro json
   - **US7: Como Familiar eu quero visualizar as consultas do utente**
     - Task1 - Criação da Janela "Consultas do Utente"
     - Task2 - Lógica do preenchimento da tabela de consultas.
