@@ -282,7 +282,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 - RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 1x5=5; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
+- RSK3 – PxI: 2x5=10; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
 
 **RSK4 Falhas técnicas**
 - RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
