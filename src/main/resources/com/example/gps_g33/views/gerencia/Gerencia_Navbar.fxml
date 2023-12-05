@@ -125,6 +125,14 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
+            <Button fx:id="buttonAtividades" onAction="#switchToAtividades" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Atividades">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
             <GridPane alignment="TOP_CENTER" prefHeight="270.0" prefWidth="249.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="123.0" />

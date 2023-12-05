@@ -94,6 +94,9 @@ public class LoginController {
         else if (departamento.equals("Familiares")){
             return "views/familiares/Familiares.fxml";
         }
+        else if (departamento.equals("Animacao")){
+            return "views/animacao/Animacao_Home.fxml";
+        }
         return null;
     }
 

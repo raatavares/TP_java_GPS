@@ -17,6 +17,8 @@ public class Data {
     public String PATH_MEDICACOES = "Dados\\medicacoes.json";
     public String PATH_UTENSILIOS = "Dados\\Medicamentos&Utensilios.json";
     public String PATH_VISITAS = "Dados\\visitas.json";
+    public String PATH_ATIVIDADES = "Dados\\atividades.json";
+
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -28,6 +30,7 @@ public class Data {
     private List<Familiar> familiaresData;
 
     public List<Visita> calendarData;
+    public List<Atividade> atividadesData;
 
     private int idLogado;
 
@@ -250,6 +253,32 @@ public class Data {
         
     }
 
+    public List<Atividade> getAtividades() {
+        return atividadesData;
+    }
+
+    public void addAtividade(Atividade atividade) {
+        atividadesData.add(atividade);
+        saveData();
+    }
+
+    public void removeAtividade(int id) {
+        Atividade atividadeToRemove = getAtividadePorId(id);
+        if (atividadeToRemove != null) {
+            atividadesData.remove(atividadeToRemove);
+        }
+        saveData();
+    }
+
+    public Atividade getAtividadePorId(int id) {
+        for (Atividade atividade : atividadesData) {
+            if (atividade.getId() == id) {
+                return atividade;
+            }
+        }
+        return null;
+    }
+
     public void loadData() {
         try {
             Gson gson = new Gson();
@@ -260,6 +289,7 @@ public class Data {
             FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
             FileReader readerVisitas = new FileReader(PATH_VISITAS);
             FileReader readerFamiliares = new FileReader(PATH_FAMILIARES);
+            FileReader readerAtividades = new FileReader(PATH_ATIVIDADES);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -270,6 +300,7 @@ public class Data {
             Type calendarListType = new TypeToken<List<Visita>>() {}.getType();
 
             Type familiarListType = new TypeToken<List<Familiar>>() {}.getType();
+            Type atividadesListType = new TypeToken<List<Atividade>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
@@ -278,7 +309,7 @@ public class Data {
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
             familiaresData = gson.fromJson(readerFamiliares, familiarListType);
             calendarData = gson.fromJson(readerVisitas, calendarListType);
-
+            atividadesData = gson.fromJson(readerAtividades, atividadesListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -295,6 +326,7 @@ public class Data {
             FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
             FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
             FileWriter writerFamiliares = new FileWriter(PATH_FAMILIARES);
+            FileWriter writerAtividades = new FileWriter(PATH_ATIVIDADES);
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
             gson.toJson(refeicoesData, writerRefei);
@@ -302,6 +334,7 @@ public class Data {
             gson.toJson(utensiliosData, writerUtensi);
             gson.toJson(calendarData, writeVisitas);
             gson.toJson(familiaresData, writerFamiliares);
+            gson.toJson(atividadesData, writerAtividades);
 
             writerResi.close();
             writerFunc.close();
@@ -310,6 +343,7 @@ public class Data {
             writerUtensi.close();
             writeVisitas.close();
             writerFamiliares.close();
+            writerAtividades.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -362,6 +396,19 @@ public class Data {
         return maiorId + 1;
     }
 
+    public int calcularProximoIdAtividades() {
+
+        if (atividadesData == null) {
+            atividadesData = new ArrayList<>(); // ou outra inicialização adequada
+        }
+
+        int maiorId = atividadesData.stream()
+                .map(Atividade::getId)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+        return maiorId + 1;
+    }
+
     public int getIdLogado() {
         return idLogado;
     }
@@ -406,6 +453,11 @@ public class Data {
 
     public void clearMedicacoes() {
         medicacoesData.clear();
+        saveData();
+    }
+
+    public void clearAtividades() {
+        atividadesData.clear();
         saveData();
     }
 

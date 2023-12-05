@@ -20,4 +20,7 @@ public interface ModalCallback {
 
     void onRestrictionEditada(Residente residente);
     void onRestrictionCriada(Residente residentePorId);
+    
+    void onAtividadeCriada(Atividade atividade);
+    void onAtividadeEditada(Atividade atividade);
 }

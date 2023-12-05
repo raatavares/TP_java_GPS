@@ -55,6 +55,8 @@ public class NavBarController {
     public Button buttonMarcarHorario;
     public Button buttonInfoFamiliares;
 
+    //Animacao
+    public Button buttonAtividades;
     private Data data;
 
     @FXML
@@ -91,6 +93,9 @@ public class NavBarController {
             buttonMarcarHorario.setManaged(false);
             buttonInfoFamiliares.setVisible(false);
             buttonInfoFamiliares.setManaged(false);
+            buttonAtividades.setVisible(false);
+            buttonAtividades.setManaged(false);
+
 
         } else if (departamento.equals("Gerencia")) {
 
@@ -114,6 +119,8 @@ public class NavBarController {
             buttonMarcarHorario.setManaged(false);
             buttonInfoFamiliares.setVisible(false);
             buttonInfoFamiliares.setManaged(false);
+            buttonAtividades.setVisible(false);
+            buttonAtividades.setManaged(false);
         }
         else if (departamento.equals("Clinico")) {
 
@@ -140,6 +147,8 @@ public class NavBarController {
             buttonMarcarHorario.setManaged(false);
             buttonInfoFamiliares.setVisible(false);
             buttonInfoFamiliares.setManaged(false);
+            buttonAtividades.setVisible(false);
+            buttonAtividades.setManaged(false);
         }
         else if(departamento.equals("Funcionario")){
             buttonInfoResidentes.setVisible(true);
@@ -164,12 +173,42 @@ public class NavBarController {
             buttonMarcarHorario.setManaged(false);
             buttonInfoFamiliares.setVisible(false);
             buttonInfoFamiliares.setManaged(false);
+            buttonAtividades.setVisible(false);
+            buttonAtividades.setManaged(false);
         }
         else if(departamento.equals("Familiares")){
 
             buttonMarcarHorario.setVisible(true);
             buttonInfoFamiliares.setVisible(true);
 
+            buttonInfoResidentes.setVisible(false);
+            buttonInfoResidentes.setManaged(false);
+            buttonCriarHorario.setVisible(false);
+            buttonCriarHorario.setManaged(false);
+            buttonChat.setVisible(false);
+            buttonChat.setManaged(false);
+            buttonConsultas.setVisible(false);
+            buttonConsultas.setManaged(false);
+            buttonMedicamentos.setVisible(false);
+            buttonMedicamentos.setManaged(false);
+            buttonAvisos.setVisible(false);
+            buttonAvisos.setManaged(false);
+            buttonFuncionarios.setVisible(false);
+            buttonFuncionarios.setManaged(false);
+            buttonResidentes.setVisible(false);
+            buttonResidentes.setManaged(false);
+            buttonGerirStock.setVisible(false);
+            buttonGerirStock.setManaged(false);
+            buttonRefeicoes.setVisible(false);
+            buttonRefeicoes.setManaged(false);
+            buttonAtividades.setVisible(false);
+            buttonAtividades.setManaged(false);
+        }
+        else if(departamento.equals("Animacao")){
+            buttonAtividades.setVisible(true);
+
+            buttonMarcarHorario.setVisible(false);
+            buttonInfoFamiliares.setVisible(false);
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
             buttonCriarHorario.setVisible(false);
@@ -260,6 +299,12 @@ public class NavBarController {
 
     public void switchToChat() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+    public void switchToAtividades() throws IOException{
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/animacao/Animacao_Home.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
