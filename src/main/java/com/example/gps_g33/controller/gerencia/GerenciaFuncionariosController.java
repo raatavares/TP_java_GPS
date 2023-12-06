@@ -3,6 +3,7 @@ package com.example.gps_g33.controller.gerencia;
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
+import com.example.gps_g33.util.CustomPopOver;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -115,9 +116,28 @@ public class GerenciaFuncionariosController implements ModalCallback {
             }
         }
     }
-
+    @Override
+    public boolean usedCredentials(String email, String NIF) {
+        if (!data.usedNif(NIF)|| !data.usedEmail(email)) return false;
+        if (data.usedNif(NIF)) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return true;
+        } else if (data.usedEmail(email)) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return true;
+        }
+        return false;
+    }
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
+
+        if (data.usedNif(funcionario.getNif())) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return ;
+        } else if (data.usedEmail(funcionario.getEmail())) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return ;
+        }
         funcionario.setId(data.calcularProximoIdFuncionarios());
         data.addFuncionario(funcionario);
         updateTable();

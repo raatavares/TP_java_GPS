@@ -53,6 +53,9 @@ public class ModalControllerResidente{
         String email = emailField.getText();
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
 
+        if (callback != null&&callback.usedCredentials(email, nif)) {
+            return;
+        }
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
         && InputValidation.styleTextError(sobrenomeField, !InputValidation.isLengthValid(sobrenome,3))
         && InputValidation.styleTextError(emailField, !InputValidation.isEmail(email) || !InputValidation.isLengthValid(email,3))

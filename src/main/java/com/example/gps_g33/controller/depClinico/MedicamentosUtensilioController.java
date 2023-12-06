@@ -150,6 +150,11 @@ public class MedicamentosUtensilioController implements ModalCallback {
     }
 
     @Override
+    public boolean usedCredentials(String email, String NIF) {
+        return false;
+    }
+
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }

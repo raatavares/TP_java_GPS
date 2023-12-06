@@ -3,6 +3,8 @@ package com.example.gps_g33.controller;
 import com.example.gps_g33.modelos.*;
 
 public interface ModalCallback {
+    boolean usedCredentials(String email, String NIF);
+
     void onFuncionarioCriado(Funcionario funcionario);
     void onFuncionarioEditado(Funcionario funcionario);
 
