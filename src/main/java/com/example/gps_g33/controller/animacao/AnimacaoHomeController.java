@@ -221,6 +221,11 @@ public class AnimacaoHomeController implements ModalCallback {
     }
 
     @Override
+    public boolean usedCredentials(String email, String NIF) { // tive de adicionar este método para implementar a interface ModalCallback
+        return false;
+    }
+
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }

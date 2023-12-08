@@ -3,15 +3,13 @@ package com.example.gps_g33;
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Familiar;
 import com.example.gps_g33.modelos.Funcionario;
+import com.example.gps_g33.modelos.UserCredentials;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,6 +24,10 @@ public class LoginController {
 
     private Data data;
 
+    public CheckBox RememberChoiceBox;
+    private boolean loggedIn = false;
+    UserCredentials savedCredentials;
+
 
     public void initialize(){
         data = Data.getInstance();
@@ -37,6 +39,13 @@ public class LoginController {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
+        if (RememberChoiceBox.isSelected()) {
+            data.saveCredentials(new UserCredentials(usernameField.getText(), passwordField.getText()));
+        }
+
+        if (loggedIn) {
+            return;
+        }
 
         // Primeiro, tenta validar como funcionário
         Funcionario validFunc = data.isValidLogin(username, password);
@@ -75,6 +84,7 @@ public class LoginController {
         } else {
             data.setIdLogado(userId);
             data.setDepartamentoLogado(departamento);
+            loggedIn = true; // Define o status de logado
             loadView(viewPath);
             lblError.setVisible(false);
         }
@@ -120,5 +130,26 @@ public class LoginController {
 
         stage.setResizable(false);
         stage.show();
+    }
+
+    public void checkAndProcessSavedCredentials() throws IOException {
+        if (data.loadCredentials() != null) {
+            savedCredentials = data.loadCredentials();
+            System.out.printf("Credentials: " + savedCredentials.getUsername() + " " + savedCredentials.getPassword() + "\n");
+            Funcionario validFunc = data.isValidLogin(savedCredentials.getUsername(), savedCredentials.getPassword());
+            if (validFunc != null) {
+                processLogin(validFunc.getId(), validFunc.getDepartamento());
+            }
+            Familiar validFam = data.isValidLoginFamiliar(savedCredentials.getUsername(), savedCredentials.getPassword());
+            if (validFam != null) {
+                processLogin(validFam.getId(), validFam.getDepartamento());
+                return; // Termina a execução se um familiar válido for encontrado
+            }
+        }
+    }
+
+    public boolean isLoggedIn() {
+        System.out.printf("Logged in: " + loggedIn + "\n");
+        return loggedIn;
     }
 }

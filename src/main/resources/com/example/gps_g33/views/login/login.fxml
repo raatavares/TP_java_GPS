@@ -34,7 +34,7 @@
             </Label>
             <TextField fx:id="usernameField" layoutX="320.0" layoutY="78.0" promptText="Utilizador" />
             <PasswordField fx:id="passwordField" layoutX="320.0" layoutY="131.0" promptText="Password" />
-            <CheckBox layoutX="232.0" layoutY="184.0" mnemonicParsing="false" text="Lembrar-me" />
+            <CheckBox fx:id="RememberChoiceBox" layoutX="232.0" layoutY="184.0" mnemonicParsing="false" text="Lembrar-me" />
             <Button fx:id="loginButton" layoutX="363.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #2196F3;" text="Login" />
             <Label fx:id="lblError" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="213.0" prefHeight="22.0" prefWidth="270.0" textFill="RED" visible="false">
                <font>
