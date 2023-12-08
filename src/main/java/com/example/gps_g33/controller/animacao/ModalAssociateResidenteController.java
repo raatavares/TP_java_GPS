@@ -53,15 +53,35 @@ public class ModalAssociateResidenteController {
 
     @FXML
     public void initialize() {
-
         // Desabilitar a edição das TextField
         nome_residenteLabel.setEditable(false);
         nif_residenteLabel.setEditable(false);
 
-        //inicializar a tabela de residentes
-        //Lógica para atualizar a tabela de residentes
+        // Lógica para atualizar a tabela de residentes
         nome_residente.setCellValueFactory(new PropertyValueFactory<>("nome"));
         nif_residente.setCellValueFactory(new PropertyValueFactory<>("nif"));
+
+        // Adiciona o row factory para destacar os residentes associados à atividade
+        tabela_residentes.setRowFactory(tv -> new TableRow<Residente>() {
+            @Override
+            protected void updateItem(Residente residente, boolean empty) {
+                super.updateItem(residente, empty);
+
+                if (empty || residente == null) {
+                    setStyle(""); // Limpa qualquer estilo
+                } else {
+                    // Verifica se o NIF do residente está associado à atividade
+                    List<String> nifsAtividade = atividade != null ? atividade.getNifs() : null;
+                    if (nifsAtividade != null && nifsAtividade.contains(residente.getNif())) {
+                        // Se associado, define o estilo de fundo para vermelho
+                        setStyle("-fx-background-color: #FF0000;");
+                    } else {
+                        // Se não associado, não há estilo de fundo
+                        setStyle("");
+                    }
+                }
+            }
+        });
 
         updatetable();
 
@@ -74,6 +94,7 @@ public class ModalAssociateResidenteController {
             }
         });
     }
+
 
     public void updatetable() {
         // Lógica para atualizar a tabela de residentes

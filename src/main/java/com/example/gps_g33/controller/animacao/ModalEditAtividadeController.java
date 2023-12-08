@@ -54,6 +54,32 @@ public class ModalEditAtividadeController {
     public Button cancelar_Button;
 
     private Atividade atividade;
+
+
+    @FXML
+    public void initialize() {
+        addRadioButtonListener(atividade_ExercicioLeve);
+        addRadioButtonListener(atividade_Piscina);
+        addRadioButtonListener(atividade_Leitura);
+        addRadioButtonListener(atividade_Jogos);
+        addRadioButtonListener(atividade_Excursao);
+        addRadioButtonListener(atividade_Outra);
+
+    }
+
+    private void addRadioButtonListener(RadioButton radioButton) {
+        radioButton.selectedProperty().addListener((obs, wasSelected, isNowSelected) -> {
+            if (isNowSelected) {
+                // Desmarca os outros RadioButtons
+                if (radioButton != atividade_ExercicioLeve) atividade_ExercicioLeve.setSelected(false);
+                if (radioButton != atividade_Piscina) atividade_Piscina.setSelected(false);
+                if (radioButton != atividade_Leitura) atividade_Leitura.setSelected(false);
+                if (radioButton != atividade_Jogos) atividade_Jogos.setSelected(false);
+                if (radioButton != atividade_Excursao) atividade_Excursao.setSelected(false);
+                if (radioButton != atividade_Outra) atividade_Outra.setSelected(false);
+            }
+        });
+    }
     @FXML
     public void onEditarButton() {
 
