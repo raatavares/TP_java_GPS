@@ -219,7 +219,7 @@ class DataTest {
         Funcionario funcionario_1=new Funcionario(1,"Joao","Ze","12/12/1969","923456789","123456789","joao@isec.pt","","","asma");
         assertTrue(data.usedNif(funcionario_1.getNif()));
         data.addFuncionario(funcionario_1);
-        Funcionario funcionario_2=new Funcionario(1,"Joao","Ze","12/12/1969","563456789","123456789","jodfao@isec.pt","","","asma");
+        Funcionario funcionario_2=new Funcionario(1,"Joao","Ze","12/12/1969","563456089","123776789","jodfao@isec.pt","","","asma");
         assertFalse(data.usedNif(funcionario_2.getNif()));
         data.addFuncionario(funcionario_2);
 
