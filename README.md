@@ -648,6 +648,7 @@ Para que o projeto seja bem sucedido, devemos ter:
  
     
 - Story Points: 
+- Story Points: S: 4, M: 1, L: 2; Total = 18S 6M 9L 
 
 - Analysis: short analysis of the planning meeting
 
