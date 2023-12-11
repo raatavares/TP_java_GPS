@@ -105,4 +105,5 @@ public class ComunicationClient implements Initializable {
             }
         });
     }
+
 }

@@ -1,11 +1,14 @@
 package com.example.gps_g33.controller.funcionarios;
 
 import com.example.gps_g33.modelos.Data;
+import javafx.application.Platform;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import static java.lang.Thread.sleep;
 
 public class Server {
 
@@ -66,6 +69,12 @@ public class Server {
                     try {
                         if (bufferedReader.ready()) {
                             String messageFromClient = bufferedReader.readLine();
+                            if (messageFromClient.equals("Exiting...")) {
+                                ComunicationServer.addLabel("Cliente saiu da conversa\n Saindo do chat...", vbox);
+                                sleep(3000);
+                                closeEverything(socket, bufferedReader, bufferedWriter);
+                                break;
+                            }
                             ComunicationServer.addLabel(messageFromClient, vbox);
                         }
                     } catch (IOException e) {
@@ -73,6 +82,8 @@ public class Server {
                         System.out.println("Erro ao receber mensagem do cliente");
                         closeEverything(socket, bufferedReader, bufferedWriter);
                         break;
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
                 }
             }
@@ -80,16 +91,23 @@ public class Server {
     }
 
     public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
+
         try {
+
             if(bufferedReader != null){
                 bufferedReader.close();
             }
-            if(bufferedWriter != null){
+            if (bufferedWriter != null){
+                bufferedWriter.write("Exiting...");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
                 bufferedWriter.close();
             }
             if(socket != null){
                 socket.close();
             }
+            Platform.exit();
+            System.exit(0);
         } catch (Exception e) {
             e.printStackTrace();
         }

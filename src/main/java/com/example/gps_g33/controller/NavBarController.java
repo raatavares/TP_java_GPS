@@ -2,12 +2,7 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.LoginController;
-import com.example.gps_g33.controller.depCulinaria.EditControllerRefeicao;
-import com.example.gps_g33.controller.familiares.marcarHorarioVisitaController;
-import com.example.gps_g33.controller.funcionarios.ComunicationServer;
-import com.example.gps_g33.controller.gerencia.EditController;
 import com.example.gps_g33.modelos.Data;
-import com.example.gps_g33.modelos.Funcionario;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,12 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -254,6 +248,7 @@ public class NavBarController {
 
     public void switchToChat() throws IOException {
         String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        System.out.println(departamento);
         if(departamento.equals("Funcionario")){
             Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/ComunicationServer.fxml"));
             contentArea.getChildren().removeAll();
@@ -267,53 +262,62 @@ public class NavBarController {
     }
 
     public void switchToAvisos() throws IOException {
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Avisos.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToRefeicoes() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depCulinaria/Culinaria_Refeicoes.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToConsultas() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depClinico/Consultas_Medicaçao.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToMedicamentos() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/depClinico/medicamentos&utensilios.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToInfoResidentes() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/InformacoesDoResidente.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
     public void switchToCriarHorario() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/CriarHorasVisita.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToInfoFamiliares() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/InformacoesDoResidente.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
     //TODO: criar horario
     public void switchToMarcarHorario() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/MarcarVisita.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void switchToAtividades() throws IOException{
+        closeChat();
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/animacao/Animacao_Home.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
@@ -324,6 +328,8 @@ public class NavBarController {
         stage.close();
         data.clearCredentials();
         data.saveData();
+        closeChat();
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/login/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500 , 250);
@@ -337,14 +343,7 @@ public class NavBarController {
         stage.show();
     }
     private void exitApp() {
-        if(data.getServer() != null){
-            System.out.println("Server != null");
-            data.getServer().closeEverything(data.getServer().getSocket(), data.getServer().getBufferedReader(), data.getServer().getBufferedWriter());
-        }
-        if(data.getClient() != null){
-            System.out.println("Client != null");
-            data.getClient().closeEverything(data.getClient().getSocket(), data.getClient().getBufferedReader(), data.getClient().getBufferedWriter());
-        }
+        closeChat();
         System.out.println("Dados guardados com sucesso!");
 
         Data data = Data.getInstance();
@@ -352,5 +351,35 @@ public class NavBarController {
         data.saveData();
 
         Platform.exit();
+    }
+    private void closeChat()  {
+        if(data.getServer() != null){
+            BufferedWriter bufferedWriter=data.getServer().getBufferedWriter();
+            try {
+                bufferedWriter.write("Exiting...");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Server != null");
+            data.getServer().closeEverything(data.getServer().getSocket(), data.getServer().getBufferedReader(),bufferedWriter);
+            Platform.exit();
+            System.exit(0);
+        }
+        if(data.getClient() != null){
+            BufferedWriter bufferedWriter=data.getClient().getBufferedWriter();
+            try {
+                bufferedWriter.write("Exiting...");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Client != null");
+            data.getClient().closeEverything(data.getClient().getSocket(), data.getClient().getBufferedReader(), data.getClient().getBufferedWriter());
+        }
+
     }
 }

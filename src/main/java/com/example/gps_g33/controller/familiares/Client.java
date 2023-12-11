@@ -9,6 +9,8 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import static java.lang.Thread.sleep;
+
 public class Client {
     private Socket socket;
     private BufferedReader bufferedReader;
@@ -61,6 +63,13 @@ public class Client {
                     try {
                         if (bufferedReader.ready()) {
                             String messageFromClient = bufferedReader.readLine();
+
+                            if (messageFromClient.equals("Exiting...")) {
+                                ComunicationServer.addLabel("Funcionário saiu da conversa\n Saindo do chat...", vbox);
+                                sleep(3000);
+                                closeEverything(socket, bufferedReader, bufferedWriter);
+                                break;
+                            }
                             ComunicationServer.addLabel(messageFromClient, vbox);
                         }
                     } catch (IOException e) {
@@ -68,6 +77,8 @@ public class Client {
                         System.out.println("Erro ao receber mensagem do server");
                         closeEverything(socket, bufferedReader, bufferedWriter);
                         break;
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
                 }
             }
@@ -76,17 +87,21 @@ public class Client {
 
     public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
         try {
+
             if(bufferedReader != null){
                 bufferedReader.close();
             }
-            if(bufferedWriter != null){
+            if (bufferedWriter != null&&!socket.isClosed()){
+                bufferedWriter.write("Exiting...");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
                 bufferedWriter.close();
             }
             if(socket != null){
                 socket.close();
             }
-            Platform.exit();
-            System.exit(0);
+            //Platform.exit();
+            //System.exit(0);
         } catch (Exception e) {
             e.printStackTrace();
         }
