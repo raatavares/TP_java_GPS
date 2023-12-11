@@ -638,6 +638,14 @@ Para que o projeto seja bem sucedido, devemos ter:
   - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
     - Task1 - Criação da Janela "Comunicação"
     - Task2 - Melhoria de UI/UX
+   
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
+
+    - Task1 - Criar a lógica do modelo que irá guardar as credenciais do utilizador.
+    - Task2 - Criar a lógica de guardar as credenciais num ficheiro json.
+    - Task3 - Criar a lógica de obter as credenciais do utilizador se existirem.
+    - Task4 - Criar a lógica de eliminar as credenciais do ficheiro json a quando a saida do utilizador do software.
+ 
     
 - Story Points: 
 
@@ -645,7 +653,8 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Review
 
-- Analysis: what was not done or what was added (Link to US or Task from the PB)
+- Analysis: A pedido do Cliente foi adicionada a nova funcionalidade:
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
 
 - Story Points: 2S+1M+2X+2H
 
