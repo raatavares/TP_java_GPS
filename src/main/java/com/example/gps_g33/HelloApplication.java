@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
 
         // Verifica se há credenciais salvas
         if (data.loadCredentials() != null) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/views/login/Login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/login/Login.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root, 500, 250);
             scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
