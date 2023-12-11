@@ -235,6 +235,8 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
 - [US20:  Como Gerente eu quero poder editar o cargo dos funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/172)
 - [US21: Como animador quero conseguir ver o histórico de atividades e que participantes estiveram nas atividades](https://gitlab.com/ShorMario/gps_g33/-/issues/173)
+
+- [US22: Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente](https://gitlab.com/ShorMario/gps_g33/-/issues/215)
 ***
 
 ## Definition of done
@@ -276,19 +278,19 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Risk List
 
 **RSK1 Falta de Experiência em Desenvolvimento de Software**
-- RSK1 – PxI: 3x5=15 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
+- RSK1 – PxI: 1x3=3 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
 
 **RSK2 Resistência à mudança**
-- RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
+- RSK2 – PxI: 1x3=3; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 2x5=10; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
+- RSK3 – PxI: 1x3=3; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
 
 **RSK4 Falhas técnicas**
-- RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
+- RSK4 – PxI: 1x5=5; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
 
 **RSK5 Violações de segurança**
-- RSK5 – PxI: 4x4=16; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
+- RSK5 – PxI: 3x4=12; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 
 ##### Mitigation Actions
@@ -635,6 +637,15 @@ Para que o projeto seja bem sucedido, devemos ter:
 
   - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
     - Task1 - Criação da Janela "Comunicação"
+    - Task2 - Melhoria de UI/UX
+   
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
+
+    - Task1 - Criar a lógica do modelo que irá guardar as credenciais do utilizador.
+    - Task2 - Criar a lógica de guardar as credenciais num ficheiro json.
+    - Task3 - Criar a lógica de obter as credenciais do utilizador se existirem.
+    - Task4 - Criar a lógica de eliminar as credenciais do ficheiro json a quando a saida do utilizador do software.
+ 
     
 - Story Points: 
 
@@ -642,7 +653,8 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Review
 
-- Analysis: what was not done or what was added (Link to US or Task from the PB)
+- Analysis: A pedido do Cliente foi adicionada a nova funcionalidade:
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
 
 - Story Points: 2S+1M+2X+2H
 
@@ -655,10 +667,9 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-   - A
+  - Estimamos as horas de cada User Storie adequadamente, resultando numa maior produtividade de todos.
+  - Por cada User Storie foi feita uma branch resultando na melhor organização na divisão de tarefas pelos desenvolvedores
+  - Finalizada a User Storie foi sempre feito o merge request com code review da branch da User Storie para a branch dev.
 
 - What we did less well:
-  - B
-
-- How to improve to the next sprint:
-  - C
+  - Existiram alguns problemas ao fazer merge para a branch dev uma vez que algumas branch's estavam alguns commits atraás 
