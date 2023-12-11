@@ -2,7 +2,9 @@ package com.example.gps_g33.controller;
 
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.LoginController;
+import com.example.gps_g33.controller.depCulinaria.EditControllerRefeicao;
 import com.example.gps_g33.controller.familiares.marcarHorarioVisitaController;
+import com.example.gps_g33.controller.funcionarios.ComunicationServer;
 import com.example.gps_g33.controller.gerencia.EditController;
 import com.example.gps_g33.modelos.Data;
 import com.example.gps_g33.modelos.Funcionario;
@@ -16,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -180,13 +183,12 @@ public class NavBarController {
 
             buttonMarcarHorario.setVisible(true);
             buttonInfoFamiliares.setVisible(true);
+            buttonChat.setVisible(true);
 
             buttonInfoResidentes.setVisible(false);
             buttonInfoResidentes.setManaged(false);
             buttonCriarHorario.setVisible(false);
             buttonCriarHorario.setManaged(false);
-            buttonChat.setVisible(false);
-            buttonChat.setManaged(false);
             buttonConsultas.setVisible(false);
             buttonConsultas.setManaged(false);
             buttonMedicamentos.setVisible(false);
@@ -250,6 +252,20 @@ public class NavBarController {
         }
     }
 
+    public void switchToChat() throws IOException {
+        String departamento = (data.getFuncionarioPorId(data.getIdLogado())).getDepartamento();
+        if(departamento.equals("Funcionario")){
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/funcionarios/ComunicationServer.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } else {
+            System.out.println("Familiares");
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/familiares/ComunicationClient.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        }
+    }
+
     public void switchToAvisos() throws IOException {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/gerencia/Gerencia_Avisos.fxml"));
         contentArea.getChildren().removeAll();
@@ -297,12 +313,6 @@ public class NavBarController {
         contentArea.getChildren().setAll(fxml);
     }
 
-    public void switchToChat() throws IOException{
-        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource(""));
-        contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
-    }
-
     public void switchToAtividades() throws IOException{
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("views/animacao/Animacao_Home.fxml"));
         contentArea.getChildren().removeAll();
@@ -327,6 +337,14 @@ public class NavBarController {
         stage.show();
     }
     private void exitApp() {
+        if(data.getServer() != null){
+            System.out.println("Server != null");
+            data.getServer().closeEverything(data.getServer().getSocket(), data.getServer().getBufferedReader(), data.getServer().getBufferedWriter());
+        }
+        if(data.getClient() != null){
+            System.out.println("Client != null");
+            data.getClient().closeEverything(data.getClient().getSocket(), data.getClient().getBufferedReader(), data.getClient().getBufferedWriter());
+        }
         System.out.println("Dados guardados com sucesso!");
 
         Data data = Data.getInstance();

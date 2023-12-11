@@ -6,6 +6,8 @@ import java.util.*;
 import java.io.FileReader;
 
 import com.calendarfx.model.Entry;
+import com.example.gps_g33.controller.familiares.Client;
+import com.example.gps_g33.controller.funcionarios.Server;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 public class Data {
@@ -41,6 +43,21 @@ public class Data {
 
     public Data(){
         loadData();
+    }
+
+    public Server server;
+    public Client client;
+    public void setServer(Server server){
+        this.server = server;
+    }
+    public void setClient(Client client){
+        this.client = client;
+    }
+    public Server getServer(){
+        return server;
+    }
+    public Client getClient(){
+        return client;
     }
 
 
