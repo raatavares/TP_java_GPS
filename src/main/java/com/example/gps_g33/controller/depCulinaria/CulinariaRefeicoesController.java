@@ -97,8 +97,6 @@ public class CulinariaRefeicoesController implements ModalCallback {
                 FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/depCulinaria/Culinaria_EditRefeicao.fxml"));
                 Parent root = loader.load();
 
-
-
                 EditControllerRefeicao editControllerRefeicao = loader.getController();
                 editControllerRefeicao.setModalCallback(this);
 

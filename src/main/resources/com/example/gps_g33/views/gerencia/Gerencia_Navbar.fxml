@@ -109,7 +109,7 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="buttonChat" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Chat Interno">
+            <Button fx:id="buttonChat" onAction="#switchToChat" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #f4f5ed;" text="Chat Interno">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" size="20" />
                </graphic>
