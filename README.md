@@ -635,6 +635,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
   - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
     - Task1 - Criação da Janela "Comunicação"
+    - Task2 - Melhoria de UI/UX
     
 - Story Points: 
 
