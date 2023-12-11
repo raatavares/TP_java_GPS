@@ -1,6 +1,7 @@
 package com.example.gps_g33.controller.familiares;
 
 import com.example.gps_g33.controller.funcionarios.Server;
+import com.example.gps_g33.util.CustomPopOver;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -44,6 +45,7 @@ public class ComunicationClient implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Erro ao criar o cliente");
+            CustomPopOver.exibirPopup("Não se encontra nenhum funcionário conectado");
         }
 
         vb_message.heightProperty().addListener(new ChangeListener<Number>() {
