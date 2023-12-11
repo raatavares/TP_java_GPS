@@ -667,10 +667,9 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-   - A
+  - Estimamos as horas de cada User Storie adequadamente, resultando numa maior produtividade de todos.
+  - Por cada User Storie foi feita uma branch resultando na melhor organização na divisão de tarefas pelos desenvolvedores
+  - Finalizada a User Storie foi sempre feito o merge request com code review da branch da User Storie para a branch dev.
 
 - What we did less well:
-  - B
-
-- How to improve to the next sprint:
-  - C
+  - Existiram alguns problemas ao fazer merge para a branch dev uma vez que algumas branch's estavam alguns commits atraás 
