@@ -322,6 +322,7 @@ public class NavBarController {
     public void buttonSair() throws IOException {
         Stage stage = (Stage) contentArea.getScene().getWindow();
         stage.close();
+        data.clearCredentials();
         data.saveData();
 
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("views/login/login.fxml"));

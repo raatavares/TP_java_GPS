@@ -21,6 +21,8 @@ public class Data {
     public String PATH_VISITAS = "Dados\\visitas.json";
     public String PATH_ATIVIDADES = "Dados\\atividades.json";
 
+    public String PATH_LOGIN = "Dados\\logincredentials.json";
+
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -33,6 +35,7 @@ public class Data {
 
     public List<Visita> calendarData;
     public List<Atividade> atividadesData;
+    public List<UserCredentials> userCredentialsData;
 
     private int idLogado;
 
@@ -343,6 +346,7 @@ public class Data {
             FileReader readerVisitas = new FileReader(PATH_VISITAS);
             FileReader readerFamiliares = new FileReader(PATH_FAMILIARES);
             FileReader readerAtividades = new FileReader(PATH_ATIVIDADES);
+            FileReader readerLoginCredentials = new FileReader(PATH_LOGIN);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -355,6 +359,8 @@ public class Data {
             Type familiarListType = new TypeToken<List<Familiar>>() {}.getType();
             Type atividadesListType = new TypeToken<List<Atividade>>() {}.getType();
 
+            Type loginCredentialsListType = new TypeToken<List<UserCredentials>>() {}.getType();
+
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
             refeicoesData = gson.fromJson(readerRefei, refeicaoListType);
@@ -363,6 +369,7 @@ public class Data {
             familiaresData = gson.fromJson(readerFamiliares, familiarListType);
             calendarData = gson.fromJson(readerVisitas, calendarListType);
             atividadesData = gson.fromJson(readerAtividades, atividadesListType);
+            userCredentialsData = gson.fromJson(readerLoginCredentials, loginCredentialsListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -380,6 +387,8 @@ public class Data {
             FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
             FileWriter writerFamiliares = new FileWriter(PATH_FAMILIARES);
             FileWriter writerAtividades = new FileWriter(PATH_ATIVIDADES);
+            FileWriter writerUserCredentials = new FileWriter(PATH_LOGIN);
+
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
             gson.toJson(refeicoesData, writerRefei);
@@ -388,6 +397,8 @@ public class Data {
             gson.toJson(calendarData, writeVisitas);
             gson.toJson(familiaresData, writerFamiliares);
             gson.toJson(atividadesData, writerAtividades);
+            gson.toJson(userCredentialsData, writerUserCredentials);
+
 
             writerResi.close();
             writerFunc.close();
@@ -397,6 +408,7 @@ public class Data {
             writeVisitas.close();
             writerFamiliares.close();
             writerAtividades.close();
+            writerUserCredentials.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -494,6 +506,13 @@ public class Data {
         saveData();
     }
 
+    public void clearCredentials() {
+        userCredentialsData.clear();
+        userCredentialsData.add(new UserCredentials("",""));
+        saveData();
+    }
+
+
     public void clearResidentes() {
         residentesData.clear();
         saveData();
@@ -542,5 +561,21 @@ public class Data {
 
     public int getIdFamiliar() {
         return idLogado;
+    }
+
+    public UserCredentials loadCredentials() {
+        loadData();
+        if(userCredentialsData.get(0)!=null){
+            return userCredentialsData.get(0);
+        }else{
+            return null;
+        }
+
+    }
+
+    public void saveCredentials(UserCredentials userCredentials) {
+        userCredentialsData.clear();
+        userCredentialsData.add(userCredentials);
+        saveData();
     }
 }

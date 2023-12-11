@@ -63,7 +63,6 @@ public class InfoResidentesController {
 
             tableViewResidentes.setPlaceholder(new Label("Deve inserir o nome do residente para pesquisar"));
         }else{
-
             tableViewResidentes.setItems(FXCollections.observableArrayList(residentesFiltrados));
         }
 
