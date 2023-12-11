@@ -131,6 +131,11 @@ public class CulinariaResidentesController implements ModalCallback {
     }
 
     @Override
+    public boolean usedCredentials(String email, String NIF) {
+        return false;
+    }
+
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }
@@ -184,6 +189,16 @@ public class CulinariaResidentesController implements ModalCallback {
     public void onRestrictionCriada(Residente residentePorId) {
         data.setResidente(residentePorId);
         updateTable();
+    }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
+
     }
 
     @Override

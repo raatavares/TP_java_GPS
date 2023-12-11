@@ -97,8 +97,6 @@ public class CulinariaRefeicoesController implements ModalCallback {
                 FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/depCulinaria/Culinaria_EditRefeicao.fxml"));
                 Parent root = loader.load();
 
-
-
                 EditControllerRefeicao editControllerRefeicao = loader.getController();
                 editControllerRefeicao.setModalCallback(this);
 
@@ -118,6 +116,11 @@ public class CulinariaRefeicoesController implements ModalCallback {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public boolean usedCredentials(String email, String NIF) {
+        return false;
     }
 
     @Override
@@ -167,6 +170,16 @@ public class CulinariaRefeicoesController implements ModalCallback {
 
     @Override
     public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
 
     }
 

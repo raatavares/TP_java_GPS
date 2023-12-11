@@ -177,6 +177,54 @@ class DataTest {
         assertEquals(utensilios, data.getUtensilios());
     }
 
+    @Test
+    void testUsedNif(){
+        //TODO: Quando familiares for implementado, adicionar testes para familiares
+        Data data = new Data();
+
+        // Criar algumas instâncias de Funcionario para testar
+        Residente residente_1=new Residente(1,"Joao","Ze","12/12/1969","923456789","123456789","joao@isec.pt","","","asma");
+        Residente residente_2=new Residente(2,"Ze","Antonio","12/10/1959","823446729","923456789","ze@isec.pt","","","asma");
+        Residente residente_3=new Residente(3,"Antonio","Silva","19/05/1949","823446729","975456789","Antonio@isec.pt","","","asma");
+
+        data.addResidente(residente_1);
+        assertFalse(data.usedNif(residente_2.getNif()));
+        data.addResidente(residente_2);
+        assertTrue(data.usedNif(residente_3.getNif()));
+        data.addResidente(residente_3);
+
+        Funcionario funcionario_1=new Funcionario(1,"Joao","Ze","12/12/1969","923456789","123456789","joao@isec.pt","","","asma");
+        assertTrue(data.usedNif(funcionario_1.getNif()));
+        data.addFuncionario(funcionario_1);
+        Funcionario funcionario_2=new Funcionario(1,"Joao","Ze","12/12/1969","563456789","123456789","joao@isec.pt","","","asma");
+        assertFalse(data.usedNif(funcionario_2.getNif()));
+        data.addFuncionario(funcionario_2);
+    }
+
+    @Test
+    void testUsedEmail(){
+        //TODO: Quando familiares for implementado, adicionar testes para familiares
+        Data data = new Data();
+
+        Residente residente_1=new Residente(1,"Joao","Ze","12/12/1969","923456789","123456789","joao@isec.pt","","","asma");
+        Residente residente_2=new Residente(2,"Ze","Antonio","12/10/1959","823446729","923456789","ze@isec.pt","","","asma");
+        Residente residente_3=new Residente(3,"Antonio","Silva","19/05/1949","823446729","975456789","ze@isec.pt","","","asma");
+
+        data.addResidente(residente_1);
+        assertFalse(data.usedNif(residente_2.getNif()));
+        data.addResidente(residente_2);
+        assertTrue(data.usedNif(residente_3.getNif()));
+        data.addResidente(residente_3);
+
+        Funcionario funcionario_1=new Funcionario(1,"Joao","Ze","12/12/1969","923456789","123456789","joao@isec.pt","","","asma");
+        assertTrue(data.usedNif(funcionario_1.getNif()));
+        data.addFuncionario(funcionario_1);
+        Funcionario funcionario_2=new Funcionario(1,"Joao","Ze","12/12/1969","563456089","123776789","jodfao@isec.pt","","","asma");
+        assertFalse(data.usedNif(funcionario_2.getNif()));
+        data.addFuncionario(funcionario_2);
+
+
+    }
 
 @Test
     void testSetResidentes(){

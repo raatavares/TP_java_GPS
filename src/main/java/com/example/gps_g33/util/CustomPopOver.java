@@ -1,6 +1,7 @@
 package com.example.gps_g33.util;
 import com.calendarfx.model.Entry;
 import com.example.gps_g33.modelos.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 import org.controlsfx.control.PopOver;
@@ -55,5 +56,12 @@ public class CustomPopOver extends Region {
         });
 
         getChildren().add(button);
+    }
+    public static void exibirPopup(String mensagem) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Aviso");
+        alert.setHeaderText(null);
+        alert.setContentText(mensagem);
+        alert.showAndWait();
     }
 }
