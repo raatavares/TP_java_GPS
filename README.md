@@ -235,6 +235,8 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
 - [US20:  Como Gerente eu quero poder editar o cargo dos funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/172)
 - [US21: Como animador quero conseguir ver o histórico de atividades e que participantes estiveram nas atividades](https://gitlab.com/ShorMario/gps_g33/-/issues/173)
+
+- [US22: Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente](https://gitlab.com/ShorMario/gps_g33/-/issues/215)
 ***
 
 ## Definition of done
