@@ -7,11 +7,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="531.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.animacao.ModalAddAtividadeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="531.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.animacao.ModalAddAtividadeController">
     <children>
         <Label layoutX="163.0" layoutY="14.0" style="-fx-background-color: #3a4151;" text="NOVA ATIVIDADE" textFill="WHITE">
             <font>
@@ -38,12 +39,15 @@
         <Group layoutX="325.0" layoutY="242.0" />
           <VBox layoutX="302.0" layoutY="123.0" prefHeight="143.0" prefWidth="174.0" spacing="5.0">
               <children>
-                  <RadioButton fx:id="atividade_ExercicioLeve" mnemonicParsing="false" text="Exercicio Leve" />
-                  <RadioButton fx:id="atividade_Piscina" mnemonicParsing="false" text="Piscina" />
-                  <RadioButton fx:id="atividade_Leitura" mnemonicParsing="false" text="Leitura" />
-                  <RadioButton fx:id="atividade_Jogos" mnemonicParsing="false" text="Jogos" />
-                  <RadioButton fx:id="atividade_Excursao" mnemonicParsing="false" text="Excursão" />
-                  <RadioButton fx:id="atividade_Outra" mnemonicParsing="false" text="Outra" />
+                  <RadioButton fx:id="atividade_ExercicioLeve" mnemonicParsing="false" text="Exercicio Leve">
+               <toggleGroup>
+                  <ToggleGroup fx:id="atividade" />
+               </toggleGroup></RadioButton>
+                  <RadioButton fx:id="atividade_Piscina" mnemonicParsing="false" text="Piscina" toggleGroup="$atividade" />
+                  <RadioButton fx:id="atividade_Leitura" mnemonicParsing="false" text="Leitura" toggleGroup="$atividade" />
+                  <RadioButton fx:id="atividade_Jogos" mnemonicParsing="false" text="Jogos" toggleGroup="$atividade" />
+                  <RadioButton fx:id="atividade_Excursao" mnemonicParsing="false" text="Excursão" toggleGroup="$atividade" />
+                  <RadioButton fx:id="atividade_Outra" mnemonicParsing="false" text="Outra" toggleGroup="$atividade" />
               </children>
           </VBox>
     </children>

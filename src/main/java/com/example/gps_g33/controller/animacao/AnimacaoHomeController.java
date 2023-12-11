@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,14 +46,10 @@ public class AnimacaoHomeController implements ModalCallback {
     public TableColumn<Atividade, String> tipoAtividadeColumn;
 
     @FXML
-    public TextField searchField;
+    public DatePicker datePicker;
 
     @FXML
     public Button buttonToAddAtividade;
-    @FXML
-    public Button buttonToAssociate;
-    @FXML
-    public Button buttonToDesassociate;
 
     @FXML
     public Button buttonToEditAtividade;
@@ -64,15 +61,75 @@ public class AnimacaoHomeController implements ModalCallback {
         data = Data.getInstance();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nomes"));
         dataAtividadeColumn.setCellValueFactory(new PropertyValueFactory<>("dataAtividade"));
         descricaoColumn.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        nifColumn.setCellValueFactory(new PropertyValueFactory<>("nifs"));
         tipoAtividadeColumn.setCellValueFactory(new PropertyValueFactory<>("tipoAtividade"));
         tableViewAtividades.setPlaceholder(new Label("Deve inserir o nome do residente para pesquisar"));
+        TableColumn<Atividade, Boolean> colBtn = new TableColumn<>("Participantes");
+        colBtn.setMinWidth(60);
+        colBtn.setCellFactory(new Callback<TableColumn<Atividade, Boolean>, TableCell<Atividade, Boolean>>() {
+            @Override
+            public TableCell<Atividade, Boolean> call(TableColumn<Atividade, Boolean> p) {
+                return new EditButton();
+            }
+        });
+        tableViewAtividades.getColumns().add(colBtn);
+
 
         updateTable();
     }
+
+
+    public class EditButton extends TableCell<Atividade, Boolean> {
+        final Button colBtn = new Button("Participantes");
+        EditButton() {
+            colBtn.setOnAction(event -> {
+                //Quero mostrar os participantes da atividade selecionada na tabela de atividades e permitir a sua edição (adicionar ou remover participantes)
+                // Ao clicar no botão "Participantes" deve abrir uma janela pop-up com a lista de participantes da atividade selecionada na tabela de atividades
+                // E permitir a sua edição (adicionar ou remover participantes)
+                Atividade atividade = tableViewAtividades.getSelectionModel().getSelectedItem();
+
+                if(atividade != null){
+                    try {
+                        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/animacao/Animacao_AtividadeParticipantes.fxml"));
+
+                        Parent popupRoot = loader.load();
+
+                        ParticipantesController participantesController = loader.getController();
+
+                        participantesController.setAtividade(atividade);
+                        Stage modalStage = new Stage();
+                        modalStage.initModality(Modality.APPLICATION_MODAL);
+                        modalStage.setTitle("Participantes da Atividade");
+                        Scene scene = new Scene(popupRoot);
+                        modalStage.setScene(scene);
+
+                        // Mostra a janela modal
+                        modalStage.showAndWait();
+
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            });
+
+
+        }
+
+        @Override
+        protected void updateItem(Boolean t, boolean empty) {
+            super.updateItem(t, empty);
+            if (!empty) {
+                setGraphic(colBtn);
+            } else {
+                setGraphic(null);
+            }
+        }
+    }
+
+
+
 
     public void updateTable() {
         tableViewAtividades.getItems().clear();
@@ -82,20 +139,19 @@ public class AnimacaoHomeController implements ModalCallback {
         }
     }
 
-    public void onSearch() {
-        String nome = searchField.getText().toLowerCase(); // Converta para minúsculas para tornar a pesquisa não sensível a maiúsculas e minúsculas
-        List<Atividade> atividades = data.getAtividades();
-
-        List<Atividade> atividadesFiltradas;
-        if (atividades != null) {
-            atividadesFiltradas = atividades.stream()
-                    .filter(atividade -> atividade.getNomes().stream().anyMatch(n -> n.toLowerCase().contains(nome)))
-                    .collect(Collectors.toList());
-        } else {
-            atividadesFiltradas = new ArrayList<>(); // Retorna uma lista vazia se não houver atividades
+    public void onSearchData() {
+        if(datePicker.getValue() == null){
+            updateTable();
+            return;
         }
+        String dataPicker = datePicker.getValue().toString();
 
-        tableViewAtividades.setItems(FXCollections.observableArrayList(atividadesFiltradas));
+        Collection<Atividade> atividades = data.getAtividades().stream().filter(atividade -> atividade.getDataAtividade().equals(dataPicker)).collect(Collectors.toList());
+
+        tableViewAtividades.getItems().clear();
+        tableViewAtividades.getItems().addAll(atividades);
+
+
     }
 
     public void handleToAddAtividade() {
@@ -122,64 +178,6 @@ public class AnimacaoHomeController implements ModalCallback {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void handleToAssociate() {
-        Atividade atividade = tableViewAtividades.getSelectionModel().getSelectedItem();
-        if(atividade!= null){
-            try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/animacao/Animacao_AssociateResidente.fxml"));
-                Parent root = loader.load();
-
-
-                ModalAssociateResidenteController associateController= loader.getController();
-                associateController.setModalCallback(this);
-
-                associateController.setAtividadeParaAssociacao(atividade);
-
-                Stage modalStage = new Stage();
-                modalStage.initModality(Modality.APPLICATION_MODAL);
-                modalStage.setTitle("Associar Residente");
-
-                // Definir o conteúdo da janela modal
-                Scene scene = new Scene(root);
-                modalStage.setScene(scene);
-
-                // Mostrar a janela modal
-                modalStage.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void handleToDesassociate() {
-        Atividade atividade = tableViewAtividades.getSelectionModel().getSelectedItem();
-        if(atividade!= null){
-            try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("views/animacao/Animacao_DesassociateResidente.fxml"));
-                Parent root = loader.load();
-
-
-                ModalDesassociateResidenteController desassociateController= loader.getController();
-                desassociateController.setModalCallback(this);
-
-                desassociateController.setAtividadeParaDesassociacao(atividade);
-
-                Stage modalStage = new Stage();
-                modalStage.initModality(Modality.APPLICATION_MODAL);
-                modalStage.setTitle("Desassociar Residente");
-
-                // Definir o conteúdo da janela modal
-                Scene scene = new Scene(root);
-                modalStage.setScene(scene);
-
-                // Mostrar a janela modal
-                modalStage.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 

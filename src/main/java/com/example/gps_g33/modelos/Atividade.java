@@ -2,40 +2,28 @@ package com.example.gps_g33.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Atividade {
     private int id;
-    private List<String> nomes;
     private String dataAtividade;
     private String tipoAtividade; // Exemplo: piscina, teatro, etc.
     private String responsavel;
     private String descricao; // Descrição opcional da atividade
-    private List<String> nifs;
+    private List<Integer> Participantes = new ArrayList<>(); // Lista de participantes na atividade
 
-    public Atividade(int id, List<String> nome, String dataAtividade, String tipoAtividade, String descricao, List<String> nif) {
+    public Atividade(int id, String dataAtividade, String tipoAtividade, String descricao, List<Integer> participantes) {
         this.id = id;
-        this.nomes = nome;
         this.dataAtividade = dataAtividade;
         this.tipoAtividade = tipoAtividade;
         this.descricao = descricao;
-        this.nifs = nif;
+        if(participantes != null)
+            this.Participantes = participantes;
+        else
+            this.Participantes = new ArrayList<>();
     }
-    public void adicionarNomeResidente(Residente residente) {
-        if(this.nomes == null)
-            this.nomes = new ArrayList<>();
-        this.nomes.add(residente.getNome());
-    }
-    public void adicionarNifResidente(Residente residente) {
-        if(this.nifs == null)
-            this.nifs = new ArrayList<>();
-        this.nifs.add(residente.getNif());
-    }
-    //function that remove a resident from the activity, firts remove nif and then remove name with the same index
-    public void removeResidente(Residente residente) {
-        int index = this.nifs.indexOf(residente.getNif());
-        this.nifs.remove(index);
-        this.nomes.remove(index);
-    }
+
+
 
     // Getters e setters para cada propriedade
     public int getId() {
@@ -45,15 +33,6 @@ public class Atividade {
     public void setId(int id) {
         this.id = id;
     }
-
-    public List<String> getNomes() {
-        return nomes;
-    }
-
-    public void setNome(List<String> nome) {
-        this.nomes = nome;
-    }
-
     public String getDataAtividade() {
         return dataAtividade;
     }
@@ -78,12 +57,24 @@ public class Atividade {
         this.descricao = descricao;
     }
 
-    public List<String> getNifs() {
-        return nifs;
+    public List<Integer> getParticipantes() {
+        return Participantes;
     }
 
-    public void setNif(List<String> nif) {
-        this.nifs = nif;
+    public void setParticipantes(List<Integer> participantes) {
+        this.Participantes = participantes;
+    }
+
+    public void addParticipante(int id) {
+        this.Participantes.add(id);
+    }
+
+    public void removeParticipante(int id) {
+        if (Participantes.contains(id)) {
+            Participantes.remove(Integer.valueOf(id)); // Remove the first occurrence of the specified id
+        } else {
+            System.out.println("Não existe o id " + id + " na lista de participantes");
+        }
     }
 
 }

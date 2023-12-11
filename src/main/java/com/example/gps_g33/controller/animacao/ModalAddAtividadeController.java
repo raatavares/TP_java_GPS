@@ -93,7 +93,7 @@ public class ModalAddAtividadeController {
                         && InputValidation.styleDataError(dataAtividade_Atividade, !InputValidation.isDataValidaRefeicoes(dataAtividade))
                 )
                 {
-                    Atividade atividade = new Atividade(0, null, dataAtividade.toString(), tipoAtividade, descricao, null);
+                    Atividade atividade = new Atividade(0, dataAtividade.toString(), tipoAtividade, descricao, null);
 
                     if (callback != null) {
                         callback.onAtividadeCriada(atividade);
@@ -133,7 +133,7 @@ public class ModalAddAtividadeController {
             if(InputValidation.styleTextAreaError(descricao_Atividade, !InputValidation.isDescricaoValid(descricao,3))
                     && InputValidation.styleDataError(dataAtividade_Atividade, !InputValidation.isDataValidaRefeicoes(dataAtividade))
             ){
-                Atividade atividade = new Atividade(0, null, dataAtividade.toString(), tipoAtividade, descricao, null);
+                Atividade atividade = new Atividade(0,  dataAtividade.toString(), tipoAtividade, descricao,null);
 
                 if (callback != null) {
                     callback.onAtividadeCriada(atividade);

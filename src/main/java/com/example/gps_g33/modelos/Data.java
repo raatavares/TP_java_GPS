@@ -313,6 +313,9 @@ public class Data {
         return atividadesData;
     }
 
+
+
+
     public void addAtividade(Atividade atividade) {
         atividadesData.add(atividade);
         saveData();
