@@ -76,7 +76,7 @@
                         <Font size="16.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20">
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20">
                            <font>
                               <Font size="15.0" />
                            </font>

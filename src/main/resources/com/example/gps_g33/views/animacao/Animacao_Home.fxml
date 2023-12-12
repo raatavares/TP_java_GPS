@@ -30,17 +30,15 @@
                 <TableView fx:id="tableViewAtividades" prefHeight="439.0" prefWidth="976.0" GridPane.rowIndex="1">
                     <columns>
                         <TableColumn fx:id="idColumn" prefWidth="51.0" text="ID" />
-                        <TableColumn fx:id="nomeColumn" prefWidth="99.0" text="Nome" />
-                        <TableColumn fx:id="nifColumn" prefWidth="99.0" text="NIF" />
-                        <TableColumn fx:id="dataAtividadeColumn" prefWidth="104.0" text="Data da Atividade" />
-                        <TableColumn fx:id="descricaoColumn" prefWidth="75.0" text="Descrição" />
-                        <TableColumn fx:id="tipoAtividadeColumn" prefWidth="99.0" text="Atividade" />
+                        <TableColumn fx:id="dataAtividadeColumn" prefWidth="154.4000244140625" text="Data da Atividade" />
+                        <TableColumn fx:id="descricaoColumn" prefWidth="101.5999755859375" text="Descrição" />
+                        <TableColumn fx:id="tipoAtividadeColumn" prefWidth="146.4000244140625" text="Atividade" />
                     </columns>
                 </TableView>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                     <children>
                         <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
-                  <DatePicker onAction="#onSearchData" fx:id="datePicker" prefHeight="25.0" prefWidth="218.0">
+                  <DatePicker fx:id="datePicker" onAction="#onSearchData" prefHeight="25.0" prefWidth="218.0">
                      <HBox.margin>
                         <Insets right="270.0" />
                      </HBox.margin>
@@ -74,7 +72,7 @@
                                 <Font size="16.0" />
                             </font>
                             <graphic>
-                                <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20">
+                                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
