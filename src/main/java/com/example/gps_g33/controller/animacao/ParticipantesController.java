@@ -44,6 +44,12 @@ public class ParticipantesController {
     @FXML
     public Button cancelButton;
 
+    @FXML
+    public TextField searchFieldResi;
+    @FXML
+    public TextField searchFieldParti;
+
+
     public void initialize() {
         data = Data.getInstance();
 
@@ -200,5 +206,33 @@ public class ParticipantesController {
             }
 
 
+    }
+
+    public void onSearchResi() {
+        String search = searchFieldResi.getText();
+        if(search.isEmpty()) {
+            updateTable();
+            return;
+        }
+
+        tableViewResidentes.getItems().clear();
+        for (Integer id : residentes) {
+            if(data.getResidentePorId(id).getNome().contains(search) || data.getResidentePorId(id).getNif().contains(search))
+                tableViewResidentes.getItems().add(data.getResidentePorId(id));
+        }
+    }
+
+    public void onSearchParti() {
+        String search = searchFieldParti.getText();
+        if(search.isEmpty()) {
+            updateTable();
+            return;
+        }
+
+        tableViewParticipantes.getItems().clear();
+        for (Integer id : participantes) {
+            if(data.getResidentePorId(id).getNome().contains(search) || data.getResidentePorId(id).getNif().contains(search))
+                tableViewParticipantes.getItems().add(data.getResidentePorId(id));
+        }
     }
 }

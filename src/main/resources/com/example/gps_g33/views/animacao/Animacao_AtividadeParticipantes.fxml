@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,30 +28,34 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <Button fx:id="saveButton" onAction="#handleGuardarButton" layoutX="545.0" layoutY="406.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Guardar" textFill="WHITE" />
-        <Button fx:id="cancelButton" onAction="#handleCancelButton" layoutX="615.0" layoutY="406.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
+        <Button fx:id="saveButton" layoutX="545.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleGuardarButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Guardar" textFill="WHITE" />
+        <Button fx:id="cancelButton" layoutX="615.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
         <Group layoutX="325.0" layoutY="242.0" />
-      <TableView fx:id="tableViewParticipantes" layoutX="37.0" layoutY="183.0" prefHeight="200.0" prefWidth="297.0">
+      <TableView fx:id="tableViewParticipantes" layoutX="38.0" layoutY="197.0" prefHeight="200.0" prefWidth="297.0">
         <columns>
           <TableColumn fx:id="nomeColumnParti" prefWidth="75.0" text="Nome" />
           <TableColumn fx:id="nifColumnParti" prefWidth="75.0" text="Nif" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewResidentes" layoutX="396.0" layoutY="183.0" prefHeight="200.0" prefWidth="298.0">
+      <TableView fx:id="tableViewResidentes" layoutX="396.0" layoutY="198.0" prefHeight="200.0" prefWidth="298.0">
          <columns>
             <TableColumn fx:id="nomeColumnResi" prefWidth="75.0" text="Nome" />
             <TableColumn fx:id="nifColumnResi" prefWidth="75.0" text="Nif" />
          </columns>
       </TableView>
-      <Label layoutX="37.0" layoutY="153.0" text="Participantes">
+      <Label layoutX="37.0" layoutY="139.0" text="Participantes">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="396.0" layoutY="153.0" text="Residentes">
+      <Label layoutX="396.0" layoutY="139.0" text="Residentes">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <TextField fx:id="searchFieldResi" layoutX="422.0" layoutY="163.0" onAction="#onSearchResi" />
+      <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" layoutX="396.0" layoutY="182.0" size="20" />
+      <TextField fx:id="searchFieldParti" layoutX="63.0" layoutY="166.0" onAction="#onSearchParti" />
+      <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" layoutX="38.0" layoutY="184.0" size="20" />
     </children>
 </AnchorPane>
