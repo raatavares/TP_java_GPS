@@ -59,9 +59,6 @@ public class InfoResidentesController {
 
         if(residentesFiltrados.size()==0) {
             tableViewResidentes.setPlaceholder(new Label("Não foram encontrados residentes com esse nome"));
-        }else if(residentesFiltrados.size()==data.getMedicacoes().size()){
-
-            tableViewResidentes.setPlaceholder(new Label("Deve inserir o nome do residente para pesquisar"));
         }else{
             tableViewResidentes.setItems(FXCollections.observableArrayList(residentesFiltrados));
         }

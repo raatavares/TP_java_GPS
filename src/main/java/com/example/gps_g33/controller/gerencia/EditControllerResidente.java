@@ -58,7 +58,7 @@ public class EditControllerResidente {
         LocalDate dataAtual = LocalDate.now();
 
 
-        if (callback != null&&callback.usedCredentials(email, nif)) {
+        if (callback != null && !nif.equals(residente.getNif()) && callback.usedCredentials(email, nif)) {
             return;
         }
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
