@@ -6,6 +6,8 @@ import java.util.*;
 import java.io.FileReader;
 
 import com.calendarfx.model.Entry;
+import com.example.gps_g33.controller.familiares.Client;
+import com.example.gps_g33.controller.funcionarios.Server;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 public class Data {
@@ -17,6 +19,10 @@ public class Data {
     public String PATH_MEDICACOES = "Dados\\medicacoes.json";
     public String PATH_UTENSILIOS = "Dados\\Medicamentos&Utensilios.json";
     public String PATH_VISITAS = "Dados\\visitas.json";
+    public String PATH_ATIVIDADES = "Dados\\atividades.json";
+
+    public String PATH_LOGIN = "Dados\\logincredentials.json";
+
 
     private static Data instance;
     private List<Funcionario> funcionariosData;
@@ -28,6 +34,8 @@ public class Data {
     private List<Familiar> familiaresData;
 
     public List<Visita> calendarData;
+    public List<Atividade> atividadesData;
+    public List<UserCredentials> userCredentialsData;
 
     private int idLogado;
 
@@ -35,6 +43,21 @@ public class Data {
 
     public Data(){
         loadData();
+    }
+
+    public Server server;
+    public Client client;
+    public void setServer(Server server){
+        this.server = server;
+    }
+    public void setClient(Client client){
+        this.client = client;
+    }
+    public Server getServer(){
+        return server;
+    }
+    public Client getClient(){
+        return client;
     }
 
 
@@ -97,6 +120,42 @@ public class Data {
             }
         }
         return null; // Retornar null se o residente não for encontrado
+    }
+    public boolean usedNif(String Nif) {
+        for (Residente residente1 : residentesData) {
+            if (residente1.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        for (Funcionario funcionario : funcionariosData) {
+            if (funcionario.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getNif().equals(Nif)) {
+                return true;
+            }
+        }
+        return false; // Retornar false se NIF não for usado
+    }
+    public boolean usedEmail(String email) {
+        for (Residente residente1 : residentesData) {
+            if (residente1.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        for (Funcionario funcionario : funcionariosData) {
+            if (funcionario.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false; // Retornar false se email não for usado
     }
 
     public void addResidente(Residente residente) {
@@ -195,7 +254,7 @@ public class Data {
         return calendarData;
     }
 
-    private Visita getVisitaPorId(String id){
+    public Visita getVisitaPorId(String id){
         for (Visita Visita : calendarData) {
             if (Visita.getId().equals(id)) {
                 return Visita;
@@ -210,21 +269,74 @@ public class Data {
         if (visitaRemove != null) {
             calendarData.remove(visitaRemove);
         }
+        System.out.println("Removido do ficheiro json");
         saveData();
     }
-    public void addCalendarEvent(Entry calendarEvent) {
+    public boolean addCalendarEvent(Entry calendarEvent) {
         Visita visita = new Visita(calendarEvent);
         //Verificar que ainda nao existe nenhuma no mesmo dia e hora
         for (Visita v:calendarData){
             if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime())){
-                return;
+                System.out.println("Ja existe uma visita nesse dia e hora\n");
+                return false;
             }
         }
+        System.out.println("Adicionado ao ficheiro json");
+        saveData();
         calendarData.add(visita);
+        return true;
+    }
+
+    public boolean updateCalendarEvent(Entry calendarEvent) {
+        Visita visita = new Visita(calendarEvent);
+        Visita visitaToUpdate = getVisitaPorId(visita.getId());
+        if (visitaToUpdate != null) {
+            for (Visita v:calendarData){
+                if(v.getStartDate().equals(visita.getStartDate()) && v.getStartTime().equals(visita.getStartTime()) && !v.getId().equals(visita.getId())){
+                    System.out.println("Ja existe uma visita nesse dia e hora\n");
+                    return false;
+                }
+            }
+
+            calendarData.remove(visitaToUpdate);
+            calendarData.add(visita);
+            System.out.println("Atualizado no ficheiro json");
+            return true;
+        }else{
+            System.out.println("Ouve um erro ao dar update ao evento");
+            return false;
+        }
+        
+    }
+
+    public List<Atividade> getAtividades() {
+        return atividadesData;
     }
 
 
 
+
+    public void addAtividade(Atividade atividade) {
+        atividadesData.add(atividade);
+        saveData();
+    }
+
+    public void removeAtividade(int id) {
+        Atividade atividadeToRemove = getAtividadePorId(id);
+        if (atividadeToRemove != null) {
+            atividadesData.remove(atividadeToRemove);
+        }
+        saveData();
+    }
+
+    public Atividade getAtividadePorId(int id) {
+        for (Atividade atividade : atividadesData) {
+            if (atividade.getId() == id) {
+                return atividade;
+            }
+        }
+        return null;
+    }
 
     public void loadData() {
         try {
@@ -236,6 +348,8 @@ public class Data {
             FileReader readerUtensi = new FileReader(PATH_UTENSILIOS);
             FileReader readerVisitas = new FileReader(PATH_VISITAS);
             FileReader readerFamiliares = new FileReader(PATH_FAMILIARES);
+            FileReader readerAtividades = new FileReader(PATH_ATIVIDADES);
+            FileReader readerLoginCredentials = new FileReader(PATH_LOGIN);
 
             Type residenteListType = new TypeToken<List<Residente>>() {}.getType();
             Type funcionarioListType = new TypeToken<List<Funcionario>>() {}.getType();
@@ -246,6 +360,9 @@ public class Data {
             Type calendarListType = new TypeToken<List<Visita>>() {}.getType();
 
             Type familiarListType = new TypeToken<List<Familiar>>() {}.getType();
+            Type atividadesListType = new TypeToken<List<Atividade>>() {}.getType();
+
+            Type loginCredentialsListType = new TypeToken<List<UserCredentials>>() {}.getType();
 
             residentesData = gson.fromJson(readerResi, residenteListType);
             funcionariosData = gson.fromJson(readerFunc, funcionarioListType);
@@ -253,8 +370,9 @@ public class Data {
             medicacoesData = gson.fromJson(readerMedi, medicacaoListType);
             utensiliosData = gson.fromJson(readerUtensi, utensilioListType);
             familiaresData = gson.fromJson(readerFamiliares, familiarListType);
-
             calendarData = gson.fromJson(readerVisitas, calendarListType);
+            atividadesData = gson.fromJson(readerAtividades, atividadesListType);
+            userCredentialsData = gson.fromJson(readerLoginCredentials, loginCredentialsListType);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -271,6 +389,8 @@ public class Data {
             FileWriter writerUtensi = new FileWriter(PATH_UTENSILIOS);
             FileWriter writeVisitas = new FileWriter(PATH_VISITAS);
             FileWriter writerFamiliares = new FileWriter(PATH_FAMILIARES);
+            FileWriter writerAtividades = new FileWriter(PATH_ATIVIDADES);
+            FileWriter writerUserCredentials = new FileWriter(PATH_LOGIN);
 
             gson.toJson(residentesData, writerResi);
             gson.toJson(funcionariosData, writerFunc);
@@ -279,6 +399,9 @@ public class Data {
             gson.toJson(utensiliosData, writerUtensi);
             gson.toJson(calendarData, writeVisitas);
             gson.toJson(familiaresData, writerFamiliares);
+            gson.toJson(atividadesData, writerAtividades);
+            gson.toJson(userCredentialsData, writerUserCredentials);
+
 
             writerResi.close();
             writerFunc.close();
@@ -287,6 +410,8 @@ public class Data {
             writerUtensi.close();
             writeVisitas.close();
             writerFamiliares.close();
+            writerAtividades.close();
+            writerUserCredentials.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -339,6 +464,19 @@ public class Data {
         return maiorId + 1;
     }
 
+    public int calcularProximoIdAtividades() {
+
+        if (atividadesData == null) {
+            atividadesData = new ArrayList<>(); // ou outra inicialização adequada
+        }
+
+        int maiorId = atividadesData.stream()
+                .map(Atividade::getId)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+        return maiorId + 1;
+    }
+
     public int getIdLogado() {
         return idLogado;
     }
@@ -371,6 +509,13 @@ public class Data {
         saveData();
     }
 
+    public void clearCredentials() {
+        userCredentialsData.clear();
+        userCredentialsData.add(new UserCredentials("",""));
+        saveData();
+    }
+
+
     public void clearResidentes() {
         residentesData.clear();
         saveData();
@@ -386,8 +531,54 @@ public class Data {
         saveData();
     }
 
+    public void clearAtividades() {
+        atividadesData.clear();
+        saveData();
+    }
+
     public void setMedicacoesData(List<Medicacao> medicacoes) {
         medicacoesData = medicacoes;
     }
 
+    public String getNomeFamiliar() {
+        Funcionario funcionario = getFuncionarioPorId(idLogado);
+        return funcionario.getNome();
+    }
+    public String getNifFamiliar() {
+        Funcionario funcionario = getFuncionarioPorId(idLogado);
+        return funcionario.getNif();
+    }
+
+    public Familiar getFamiliarPorId(int id) {
+        for (Familiar familiar : familiaresData) {
+            if (familiar.getId() == id) {
+                return familiar;
+            }
+        }
+        return null; // Retornar null se o familiar não for encontrado
+    }
+
+    public List<Familiar> getFamiliares() {
+        return familiaresData;
+    }
+
+    public int getIdFamiliar() {
+        return idLogado;
+    }
+
+    public UserCredentials loadCredentials() {
+        loadData();
+        if(userCredentialsData.get(0)!=null){
+            return userCredentialsData.get(0);
+        }else{
+            return null;
+        }
+
+    }
+
+    public void saveCredentials(UserCredentials userCredentials) {
+        userCredentialsData.clear();
+        userCredentialsData.add(userCredentials);
+        saveData();
+    }
 }

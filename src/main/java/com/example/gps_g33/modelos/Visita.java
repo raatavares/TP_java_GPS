@@ -2,9 +2,9 @@ package com.example.gps_g33.modelos;
 
 import com.calendarfx.model.Entry;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class Visita {
     private String title;
@@ -19,7 +19,9 @@ public class Visita {
     private String rrule;
     private boolean recurrence;
 
-    public Visita(String title, String id, boolean fullDay, String startDate, String endDate, String startTime, String endTime, String zoneId, boolean recurring, String rrule, boolean recurrence) {
+    private List<Integer> idFamiliares;
+
+    public Visita(String title, String id, boolean fullDay, String startDate, String endDate, String startTime, String endTime, String zoneId, boolean recurring, String rrule, boolean recurrence, int idFamiliar) {
         this.title = title;
         this.id = id;
         this.fullDay = fullDay;
@@ -31,12 +33,16 @@ public class Visita {
         this.recurring = recurring;
         this.rrule = rrule;
         this.recurrence = recurrence;
+        this.idFamiliares.add(idFamiliar);
     }
 
-    public Visita(String title, String startTime, String endTime){
+    public Visita(String title, String startTime, String endTime, String startDate, String endDate){
         this.title = title;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.idFamiliares = new ArrayList<>();
     }
 
     public Visita(Entry c){
@@ -51,7 +57,9 @@ public class Visita {
         this.recurring = c.isRecurring();
         this.rrule = c.getRecurrenceRule();
         this.recurrence = c.isRecurrence();
+        this.idFamiliares = new ArrayList<>();
     }
+
 
     public String getTitle() {
         return title;
@@ -95,5 +103,29 @@ public class Visita {
 
     public boolean isRecurrence() {
         return recurrence;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public List<Integer> getFamiliares() {
+        return idFamiliares;
+    }
+
+    public void addFamiliarId(int id) {
+        this.idFamiliares.add(id);
+    }
+
+    public boolean isFamiliarId(int id) {
+        return this.idFamiliares.contains(id);
+    }
+
+    public void removeFamiliarId(int id) {
+        this.idFamiliares.remove(Integer.valueOf(id));
     }
 }

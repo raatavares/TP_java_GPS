@@ -3,16 +3,14 @@ package com.example.gps_g33.controller.gerencia;
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
+import com.example.gps_g33.util.CustomPopOver;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -135,12 +133,26 @@ public class GerenciaResidentesController implements ModalCallback {
     }
 
     @Override
+    public boolean usedCredentials(String email, String NIF) {
+        if (!data.usedNif(NIF)|| !data.usedEmail(email)) return false;
+        if (data.usedNif(NIF)) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return true;
+        } else if (data.usedEmail(email)) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
 
     }
 
     @Override
     public void onResidenteEditado(Residente residente) {
+
 
         for (int i = 0; i < data.getResidentes().size(); i++) {
             if(data.getResidentes().get(i).getId() == residente.getId()){
@@ -151,9 +163,18 @@ public class GerenciaResidentesController implements ModalCallback {
         updateTable();
 
     }
+
     @Override
     public void onResidenteCriado(Residente residente) {
         residente.setId(data.calcularProximoIdResidentes());
+
+        if (data.usedNif(residente.getNif())) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return;
+        } else if (data.usedEmail(residente.getEmail())) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return;
+        }
         data.addResidente(residente);
         updateTable();
     }
@@ -199,6 +220,16 @@ public class GerenciaResidentesController implements ModalCallback {
 
     @Override
     public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
 
     }
 

@@ -3,119 +3,124 @@ package com.example.gps_g33.controller.familiares;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.List;
-import com.example.gps_g33.modelos.Visita;
+import java.time.ZoneId;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.CalendarEvent;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.model.Entry;
+import com.calendarfx.view.DateControl;
+import com.calendarfx.view.page.WeekPage;
+import com.calendarfx.view.popover.PopOverContentPane;
+import com.example.gps_g33.HelloApplication;
+import com.example.gps_g33.controller.ModalCallback;
+import com.example.gps_g33.controller.depClinico.ModalControllerConsultasMedicacao;
+import com.example.gps_g33.modelos.*;
+import com.example.gps_g33.util.CustomPopOver;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.application.Platform;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.util.ArrayList;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import org.controlsfx.control.PopOver;
+
+import static com.calendarfx.model.Calendar.Style.STYLE2;
+
+
 
 public class marcarHorarioVisitaController {
-    @FXML
-    public TableView<Visita> tableView;
 
+    public Data data;
     @FXML
-    public TableColumn<Visita, String> titleColumn;
-    @FXML
-    public TableColumn<Visita, String> startDateColumn;
-    @FXML
-    public TableColumn<Visita, String> startTimeColumn;
-    @FXML
-    public TableColumn<Visita, String> endDateColumn;
-    @FXML
-    public TableColumn<Visita, String> endTimeColumn;
-
-    @FXML
-    public ComboBox<LocalTime> timeSelector;
-
-    public LocalTime minTime = LocalTime.MAX;
-    public LocalTime maxTime = LocalTime.MIN;
-
+    public WeekPage weekPage;
     public void initialize() {
-        configureTableColumns();
-        populateTimeSelector();
-        loadVisitSchedules();
-    }
+        data = Data.getInstance();
 
-    public void configureTableColumns() {
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
-        endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-        endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
-    }
+        CalendarSource myCalendarSource = new CalendarSource();
 
-    public void populateTimeSelector() {
-        timeSelector.getItems().clear(); // Limpa itens anteriores
+        weekPage.getCalendarSources().addAll(myCalendarSource);
 
-        LocalTime time = minTime;
-        while (time.isBefore(maxTime)) {
-            timeSelector.getItems().add(time);
-            time = time.plusHours(1);
-        }
-    }
+        weekPage.setRequestedTime(LocalTime.now());
 
-    public void loadVisitSchedules() {
-        try {
-            Gson gson = new Gson();
-            Type horarioVisitaListType = new TypeToken<List<Visita>>(){}.getType();
-            List<Visita> horariosOriginais = gson.fromJson(new FileReader("Dados/visitas.json"), horarioVisitaListType);
-            List<Visita> horariosProcessados = new ArrayList<>();
+        Thread updateTimeThread = new Thread("Calendar: Update Time Thread") {
+            @Override
+            public void run() {
+                while (true) {
+                    Platform.runLater(() -> {
+                        weekPage.setToday(LocalDate.now());
+                        weekPage.setTime(LocalTime.now());
+                    });
 
-            for (Visita horario : horariosOriginais) {
-                LocalTime startTime = LocalTime.parse(horario.getStartTime());
-                LocalTime endTime = LocalTime.parse(horario.getEndTime());
-            // Verifica se a visita precisa ser dividida
-            if (startTime.plusHours(1).isBefore(endTime)) {
-                // Divide a visita em intervalos de 1 hora
-                while (startTime.plusHours(1).isBefore(endTime)) {
-                    Visita novaVisita = new Visita(horario.getTitle(), startTime.toString(), startTime.plusHours(1).toString());
-                    horariosProcessados.add(novaVisita);
-                    startTime = startTime.plusHours(1);
+                    try {
+                        // update every 10 seconds
+                        sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
-                // Adiciona o último intervalo
-                horariosProcessados.add(new Visita(horario.getTitle(), startTime.toString(), endTime.toString()));
-            } else {
-                // Adiciona a visita original
-                horariosProcessados.add(horario);
-            }
+            };
+        };
 
-            // Atualiza os horários mínimos e máximos
-            if (startTime.isBefore(minTime)) {
-                minTime = startTime;
-            }
-            if (endTime.isAfter(maxTime)) {
-                maxTime = endTime;
+        updateTimeThread.setPriority(Thread.MIN_PRIORITY);
+        updateTimeThread.setDaemon(true);
+        updateTimeThread.start();
+
+
+        List<Visita> visitasList = data.getCalendarData();
+        //Criar eventos para vagasVisitas
+        LocalDateTime currentDateAndTime = LocalDateTime.now(); // Data e hora atuais
+
+        if(data.getCalendarData() != null){
+            for (Visita p:visitasList){
+                LocalDateTime startDateTime = LocalDateTime.of(LocalDate.parse(p.getStartDate()), LocalTime.parse(p.getStartTime()));
+                //Mostrar apenas as visitas que não estão cheias e as que são depois da data atual (não mostrar visitas passadas)
+
+                if(p.getFamiliares().size() < 5 && startDateTime.isAfter(currentDateAndTime) ) {
+                    Entry<String> entry = new Entry<>(p.getTitle());
+                    LocalDate startDate = LocalDate.parse(p.getStartDate());
+                    LocalDate endDate = LocalDate.parse(p.getEndDate());
+
+                    entry.setInterval(startDate.atTime(LocalTime.parse(p.getStartTime())),endDate.atTime(LocalTime.parse(p.getEndTime())));
+
+                    ZoneId zoneId = ZoneId.of(p.getZoneId());
+                    entry.setZoneId(zoneId);
+
+                    entry.setFullDay(p.isFullDay());
+                    entry.setRecurrenceRule(p.getRrule());
+                    entry.setId(p.getId());
+
+                    if(p.isFamiliarId(data.getIdFamiliar()))
+                        entry.getStyleClass().add("customStyle");
+
+                    weekPage.getCalendars().get(0).addEntry(entry);
+                }
+
             }
         }
 
-        tableView.getItems().setAll(horariosProcessados);
-        populateTimeSelector();
-    } catch (IOException e) {
-        e.printStackTrace();
-        // Implementar tratamento de erro
-    }
-    }
 
-    @FXML
-    public void handleBook() {
-        Visita horarioSelecionado = tableView.getSelectionModel().getSelectedItem();
-        LocalTime tempoSelecionado = timeSelector.getSelectionModel().getSelectedItem();
+        weekPage.setEntryDetailsPopOverContentCallback(param -> {
+            PopOver popOver = new PopOver();
+            CustomPopOver customPopOver = new CustomPopOver(popOver, param.getEntry());
+            return customPopOver;
 
-        if (horarioSelecionado != null && tempoSelecionado != null) {
-            // Implementar a lógica da reserva aqui
-            System.out.println("Reserva feita para: " + horarioSelecionado.getTitle() + " às " + tempoSelecionado);
-        }
-    }
-
-    @FXML
-    public void handleCancel() {
-        // Implementar a lógica de cancelamento aqui
-        System.out.println("Reserva cancelada.");
+        });
     }
 }

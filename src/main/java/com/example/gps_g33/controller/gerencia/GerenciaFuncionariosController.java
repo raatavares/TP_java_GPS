@@ -3,6 +3,7 @@ package com.example.gps_g33.controller.gerencia;
 import com.example.gps_g33.HelloApplication;
 import com.example.gps_g33.controller.ModalCallback;
 import com.example.gps_g33.modelos.*;
+import com.example.gps_g33.util.CustomPopOver;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +34,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
     public TableColumn<Funcionario, String> nifColumn;
     public TableColumn<Funcionario, String> contatoColumn;
     public TableColumn<Funcionario, String> emailColumn;
+    public TableColumn<Funcionario, String> departamentoColumn;
     public TextField searchField;
     public TextField searchFieldResidentes;
     public Button addButton;
@@ -50,6 +52,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
         nifColumn.setCellValueFactory(new PropertyValueFactory<>("nif"));
         contatoColumn.setCellValueFactory(new PropertyValueFactory<>("contato"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+        departamentoColumn.setCellValueFactory(new PropertyValueFactory<>("departamento"));
 
         updateTable();
     }
@@ -66,6 +69,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
             // Definir o callback
             ModalController controller = loader.getController();
             controller.setModalCallback(this);
+            controller.initialize();
 
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
@@ -95,6 +99,7 @@ public class GerenciaFuncionariosController implements ModalCallback {
                 editController.setModalCallback(this);
 
                 editController.setFuncionarioParaEdicao(funcionario);
+                //editController.initialize();
 
                 Stage modalStage = new Stage();
                 modalStage.initModality(Modality.APPLICATION_MODAL);
@@ -111,9 +116,28 @@ public class GerenciaFuncionariosController implements ModalCallback {
             }
         }
     }
-
+    @Override
+    public boolean usedCredentials(String email, String NIF) {
+        if (!data.usedNif(NIF)|| !data.usedEmail(email)) return false;
+        if (data.usedNif(NIF)) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return true;
+        } else if (data.usedEmail(email)) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return true;
+        }
+        return false;
+    }
     @Override
     public void onFuncionarioCriado(Funcionario funcionario) {
+
+        if (data.usedNif(funcionario.getNif())) {
+            CustomPopOver.exibirPopup("NIF já utilizado");
+            return ;
+        } else if (data.usedEmail(funcionario.getEmail())) {
+            CustomPopOver.exibirPopup("Email já utilizado");
+            return ;
+        }
         funcionario.setId(data.calcularProximoIdFuncionarios());
         data.addFuncionario(funcionario);
         updateTable();
@@ -164,6 +188,16 @@ public class GerenciaFuncionariosController implements ModalCallback {
 
     @Override
     public void onRestrictionCriada(Residente residentePorId) {
+
+    }
+
+    @Override
+    public void onAtividadeCriada(Atividade atividade) {
+
+    }
+
+    @Override
+    public void onAtividadeEditada(Atividade atividade) {
 
     }
 

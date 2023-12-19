@@ -233,7 +233,10 @@ Os elementos da gerência terão acesso a diversas informações sobre cada uten
 - [US17: Como cozinheira/o no Dep. Culinario eu quero gerir o planeamento de refeições (Criar,Apagar,Editar)](https://gitlab.com/ShorMario/gps_g33/-/issues/6)
 - [US18: Como funcionário pretendo abrir um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/136)
 - [US19: Como Familiar pretendo fazer a reserva de um periodo de visitas](https://gitlab.com/ShorMario/gps_g33/-/issues/137)
+- [US20:  Como Gerente eu quero poder editar o cargo dos funcionarios](https://gitlab.com/ShorMario/gps_g33/-/issues/172)
+- [US21: Como animador quero conseguir ver o histórico de atividades e que participantes estiveram nas atividades](https://gitlab.com/ShorMario/gps_g33/-/issues/173)
 
+- [US22: Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente](https://gitlab.com/ShorMario/gps_g33/-/issues/215)
 ***
 
 ## Definition of done
@@ -275,19 +278,19 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Risk List
 
 **RSK1 Falta de Experiência em Desenvolvimento de Software**
-- RSK1 – PxI: 3x5=15 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
+- RSK1 – PxI: 1x3=3 Nem todos os membros da equipa têm experiência em desenvolvimento de ‘software’ em java o que pode levar a atrasos no desenvolvimento do projeto.
 
 **RSK2 Resistência à mudança**
-- RSK2 – PxI: 3x4=12; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
+- RSK2 – PxI: 1x3=3; Pode haver resistência por parte dos funcionários e da equipa de cuidados aos idosos relativamente à adoção da nova tecnologia.
 
 **RSK3 Erros nos dados de entrada**
-- RSK3 – PxI: 1x5=5; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
+- RSK3 – PxI: 1x3=3; Pode haver dados incorretos ou imprecisos devido a erros de entrada por parte dos utilizadores autorizados, no entanto com o avançar do projeto a equipa está a fazer validações dos dados de entrada.
 
 **RSK4 Falhas técnicas**
-- RSK4 – PxI: 2x5=10; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
+- RSK4 – PxI: 1x5=5; Pode haver falhas técnicas na aplicação que poderiam interromper o funcionamento.
 
 **RSK5 Violações de segurança**
-- RSK5 – PxI: 3x5=15; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
+- RSK5 – PxI: 3x4=12; Pode haver violação de segurança de dados que pode comprometer as informações sensíveis dos idosos.
 
 
 ##### Mitigation Actions
@@ -468,7 +471,7 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 - Goal: Desenvolver todas as funcionalidades relativas aos Funcionários e Familiares.
 
-- Dates: from 14/Nov to 21/Nov, 2 weeks
+- Dates: from 14/Nov to 27/Nov, 2 weeks
 
 - Roles:
   - Product Owner: Leonardo Silva
@@ -546,7 +549,113 @@ Para que o projeto seja bem sucedido, devemos ter:
 
 ##### Sprint Review
 
-- Analysis: what was not done or what was added (Link to US or Task from the PB)
+- Analysis: [US18 - Dado que um funcionário entrou no sistema com as credenciais corretas, quando este pretende criar um horario para as visitas, deve ser capaz de ver/criar/editar/apagar os horarios de visistas.](https://gitlab.com/ShorMario/gps_g33/-/issues/141) 
+    - Não foram consideradas as seguintes tasks, pois utilizamos o componente do JavaFX, CalendarView da biblioteca CalendarFX que já tem essas funcionalidades
+    - [Task 7 - Tratar da lógica de alterar para cena "Criação do Novo Periodo de Visitas" ao premir o botão "Criar"](https://gitlab.com/ShorMario/gps_g33/-/issues/149)
+
+    - [Task 8 - Tratar da lógica de alterar para cena "Edição do periodo de Visitas" ao premir o botão "Editar"](https://gitlab.com/ShorMario/gps_g33/-/issues/150)
+
+    - [Task 12 - Tratar da apresentação da informação relativa a um periodo de visita ao pressionar o dia em concreto.](https://gitlab.com/ShorMario/gps_g33/-/issues/154)
+
+- Story Points: 2S+1M+2X+2H
+
+- Version: 0.1 
+
+- Client analysis: O cliente gostou e aprovou.
+
+- Conclusions: O cliente quer adicionar novas funcionalidades: 
+  - Alterar o cargo na criação ou edição do perfil dos funcionários para os diversos departamentos existentes.
+  - Ser possivel aos Animadores visualizar o histórico de atividades bem como os seus participantes
+
+  Deve ser dada a seguinte prioridade: US19 > US20 que será a funcionalidade de alterar o cargo no perfil do funcionário > US7 >> US13 >> US14 >> US21 >> US6.
+
+##### Sprint Retrospective
+
+- What we did well:
+   - Ao codificar fomos utilizando a classe InputValidation que faz a verificação dos dados de entrada do utilizador, tendo isso em conta fizemos logo os testes unitários também.
+
+- What we did less well:
+  - Nem sempre fizemos code review.
+  - Alguns erros na realização/escrita dos Story Points
+  - Houve uma notória ultrapassagem das horas para esta Sprint. Foram estimadas mais de 50 horas de trabalho para uma sprint onde deveriam ser feitas cerca de 40 horas.
+
+- How to improve to the next sprint:
+  - Melhorar a regularidade com que fazemos merge request.
+  - Apesar de nos terem sido pedidas certas tasks para esta Sprint ,se após fazermos a estimativa das User Stories as horas de trabalho ultrapassarem as horas 40 horas relativas a duas semanas devemos fazer uma seleção de que User Stories apresentar.
+
+***
+
+#### Sprint 3
+
+***
+
+##### Sprint Plan
+
+- Goal: Realizar as funcionalidades dos familiares e animadores. É importante serem realizadas todas as User Stories propostas pois consequentemente será esse o produto final.
+
+- Dates: from 28/11 to 11/12, 2 weeks
+
+- Roles:
+  - Product Owner: Mario Lourenço
+  - Scrum Master: Ricardo Tavares
+
+- To do:
+  - **US19: Dado que um familiar entre no sistema com os dados corretos, quando este estiver logado, deve ser capaz de reservar um período de visitas - Finalizar**
+  - **US20: Como Gerente eu quero poder editar o cargo dos funcionarios**
+    - Task1 - Alteração da Janela de Criação de um Funcionário.
+    - Task2 - Alteração da Janela de Edição de um Funcionário.
+    - Task3 - Alteração da lógica da tabela da Janela "Funcionários" do departamento de Gerencia para apresentar o departamento do Funcionário.
+    - Task4 - Lógica de colocar na ChoiceBox das Janelas de Criação e Edição do funcionário todos os Departamentos.
+    - Task5 - Lógica de alterar os dados do funcionário no ficheiro json
+  - **US7: Como Familiar eu quero visualizar as consultas do utente**
+    - Task1 - Criação da Janela "Consultas do Utente"
+    - Task2 - Lógica do preenchimento da tabela de consultas.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+  - **US13: Como Animador eu quero conseguir gerir as atividades (Criar,Apagar,Editar)**
+    - Task1 - Criação da Janela "Atividades"
+    - Task2 - Lógica de preenchimento da tabela de atividades.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+    - Task4 - Lógica de adicionar uma atividade.
+    - Task5 - Lógica de editar uma atividade.
+    - Task6 - Lógica de eliminar uma atividade.
+    - Task7 - Lógica de guardar os dados no ficheiro json.
+  - **US14: Como Animador eu quero registar a participação do residente na atividade**
+    - Task1 - Criação da Janela "Participantes"
+    - Task2 - Lógica de preenchimento da tabela de participantes.
+    - Task3 - Lógica de procura do Utente pela barra de pesquisa.
+    - Task4 - Lógica de adicionar um participante.
+    - Task5 - Lógica de eliminar um participante.
+    - Task6 - Lógica de guardar os dados no ficheiro json.
+
+  - **US21: Como animador quero conseguir ver o historico de atividades e que participantes estiveram nas atividades**
+    - Task1 - Criação da Janela "Histórico de Atividades"
+    - Task2 - Lógica de preenchimento da tabela histórico de atividades.
+    - Task3 - Lógica de procurar atividade pela data de realização.
+    - Task4 - Criação do modal "Participantes"
+    - Task5 - Lógica de preenchimento da tabela de participantes.
+    - Task6 - Lógica de procura do Utente pela barra de pesquisa.
+
+  - **US6 - Como familiar quero ter uma comunicação com o lar de idosos**
+    - Task1 - Criação da Janela "Comunicação"
+    - Task2 - Melhoria de UI/UX
+   
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
+
+    - Task1 - Criar a lógica do modelo que irá guardar as credenciais do utilizador.
+    - Task2 - Criar a lógica de guardar as credenciais num ficheiro json.
+    - Task3 - Criar a lógica de obter as credenciais do utilizador se existirem.
+    - Task4 - Criar a lógica de eliminar as credenciais do ficheiro json a quando a saida do utilizador do software.
+ 
+    
+- Story Points: 
+- Story Points: S: 4, M: 1, L: 2; Total = 18S 6M 9L 
+
+- Analysis: short analysis of the planning meeting
+
+##### Sprint Review
+
+- Analysis: A pedido do Cliente foi adicionada a nova funcionalidade:
+  - **US22 - Como utilizador do software quero guardar as minhas credenciais para entrar automaticamente**
 
 - Story Points: 2S+1M+2X+2H
 
@@ -559,15 +668,9 @@ Para que o projeto seja bem sucedido, devemos ter:
 ##### Sprint Retrospective
 
 - What we did well:
-    - A
+  - Estimamos as horas de cada User Storie adequadamente, resultando numa maior produtividade de todos.
+  - Por cada User Storie foi feita uma branch resultando na melhor organização na divisão de tarefas pelos desenvolvedores
+  - Finalizada a User Storie foi sempre feito o merge request com code review da branch da User Storie para a branch dev.
+
 - What we did less well:
-    - B
-- How to improve to the next sprint:
-    - C
-
-***
-
-#### Sprint 3
-
-***
-
+  - Existiram alguns problemas ao fazer merge para a branch dev uma vez que algumas branch's estavam alguns commits atraás 

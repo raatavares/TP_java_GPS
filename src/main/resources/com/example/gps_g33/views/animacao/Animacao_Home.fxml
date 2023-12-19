@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.animacao.AnimacaoHomeController">
+    <children>
+        <GridPane layoutX="16.0" layoutY="160.0" prefHeight="475.0" prefWidth="976.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="232.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="414.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="tableViewAtividades" prefHeight="439.0" prefWidth="976.0" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="51.0" text="ID" />
+                        <TableColumn fx:id="dataAtividadeColumn" prefWidth="154.4000244140625" text="Data da Atividade" />
+                        <TableColumn fx:id="descricaoColumn" prefWidth="101.5999755859375" text="Descrição" />
+                        <TableColumn fx:id="tipoAtividadeColumn" prefWidth="146.4000244140625" text="Atividade" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <FontAwesomeIconView fill="#3a4151" glyphName="SEARCH" size="20" />
+                  <DatePicker fx:id="datePicker" onAction="#onSearchData" prefHeight="25.0" prefWidth="218.0">
+                     <HBox.margin>
+                        <Insets right="270.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                        <Button fx:id="buttonToAddAtividade" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleToAddAtividade" prefHeight="38.0" prefWidth="234.0" style="-fx-background-color: #3a4151;" text="Adicionar" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </FontAwesomeIconView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="buttonToEditAtividade" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleToEditAtividade" prefHeight="37.0" prefWidth="201.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" size="20">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </FontAwesomeIconView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="deleteButton" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="38.0" prefWidth="210.0" style="-fx-background-color: #3a4151;" text="Apagar" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </FontAwesomeIconView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+        <Pane layoutX="16" layoutY="35" prefHeight="115.0" prefWidth="976.0" style="-fx-background-color: #3a4151;">
+            <children>
+                <Label layoutX="41.0" layoutY="47.0" text="Atividades" textFill="WHITE">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+                <Label layoutX="41.0" layoutY="30.0" text="/animacao/atividades" textFill="WHITE" />
+            </children>
+        </Pane>
+        <StackPane fx:id="contentArea" />
+    </children>
+</AnchorPane>

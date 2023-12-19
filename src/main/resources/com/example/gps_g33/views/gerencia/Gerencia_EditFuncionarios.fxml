@@ -2,13 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.gerencia.EditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: #dbcec1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gps_g33.controller.gerencia.EditController">
     <children>
         <Label layoutX="110.0" layoutY="30.0" style="-fx-background-color: #3a4151;" text="EDITAR FUNCIONARIO" textFill="WHITE">
             <font>
@@ -39,22 +40,28 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label layoutX="38.0" layoutY="261.0" text="Contacto">
+        <Label layoutX="39.0" layoutY="251.0" text="Contacto">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label layoutX="274.0" layoutY="261.0" text="Email">
+        <Label layoutX="268.0" layoutY="251.0" text="Email">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Button fx:id="editarButton" layoutX="321.0" layoutY="331.0" onAction="#onEditarButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" />
-        <Button fx:id="cancelarButton" layoutX="389.0" layoutY="331.0" onAction="#handleCancelarButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
+        <Button fx:id="editarButton" layoutX="321.0" layoutY="331.0" mnemonicParsing="false" onAction="#onEditarButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3a4151;" text="Editar" textFill="WHITE" />
+        <Button fx:id="cancelarButton" layoutX="389.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleCancelarButton" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ed5a5a;" text="Cancelar" textFill="WHITE" />
         <TextField fx:id="nomeField" layoutX="38.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
         <TextField fx:id="sobrenomeField" layoutX="274.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
         <TextField fx:id="nifField" layoutX="274.0" layoutY="207.0" prefHeight="25.0" prefWidth="129.0" />
-        <TextField fx:id="emailField" layoutX="274.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" />
-        <TextField fx:id ="contactoField" layoutX="38.0" layoutY="282.0" prefHeight="25.0" prefWidth="121.0" />
+        <TextField fx:id="emailField" layoutX="268.0" layoutY="270.0" prefHeight="25.0" prefWidth="192.0" />
+        <TextField fx:id="contactoField" layoutX="39.0" layoutY="270.0" prefHeight="25.0" prefWidth="121.0" />
+      <ChoiceBox layoutX="39.0" layoutY="331.0" prefWidth="150.0" fx:id="departamentoField"/>
+      <Label layoutX="39.0" layoutY="310.0" text="Departamento">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

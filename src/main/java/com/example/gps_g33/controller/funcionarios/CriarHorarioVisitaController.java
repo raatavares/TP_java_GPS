@@ -15,6 +15,7 @@ import com.example.gps_g33.modelos.Visita;
 import impl.com.calendarfx.view.ZoneIdStringConverter;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 
 import static com.calendarfx.model.CalendarEvent.*;
@@ -27,13 +28,7 @@ public class CriarHorarioVisitaController {
     public void initialize() throws Exception {
         data = Data.getInstance();
 
-
-        Calendar vagasVisitas = new Calendar("Visitas - Livres");
-        Calendar visitas = new Calendar("Visitas - Ocupadas");
-        visitas.setStyle(Style.STYLE1);
-
-        CalendarSource myCalendarSource = new CalendarSource("Visitas - Lar de Idosos");
-        myCalendarSource.getCalendars().addAll(vagasVisitas,visitas);
+        CalendarSource myCalendarSource = new CalendarSource();
 
         calendarView.getCalendarSources().addAll(myCalendarSource);
 
@@ -42,12 +37,38 @@ public class CriarHorarioVisitaController {
         calendarView.setShowAddCalendarButton(false);
 
         EventHandler<CalendarEvent> handler = event -> handleEvent1(event);
-        vagasVisitas.addEventHandler(handler);
+        calendarView.getCalendars().forEach(calendar -> calendar.addEventHandler(handler));
+
+        //apenas uma evento por hora
+        Thread updateTimeThread = new Thread("Calendar: Update Time Thread") {
+            @Override
+            public void run() {
+                while (true) {
+                    Platform.runLater(() -> {
+                        calendarView.setToday(LocalDate.now());
+                        calendarView.setTime(LocalTime.now());
+                    });
+
+                    try {
+                        // update every 10 seconds
+                        sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            };
+        };
+
+        updateTimeThread.setPriority(Thread.MIN_PRIORITY);
+        updateTimeThread.setDaemon(true);
+        updateTimeThread.start();
+
 
         List<Visita> visitasList = data.getCalendarData();
         //Criar eventos para vagasVisitas
-    if(data.getCalendarData() != null){
-        for (Visita p:visitasList){
+        if(data.getCalendarData() != null){
+            for (Visita p:visitasList){
                 Entry<String> entry = new Entry<>(p.getTitle());
                 LocalDate startDate = LocalDate.parse(p.getStartDate());
                 LocalDate endDate = LocalDate.parse(p.getEndDate());
@@ -60,58 +81,47 @@ public class CriarHorarioVisitaController {
                 entry.setFullDay(p.isFullDay());
                 entry.setRecurrenceRule(p.getRrule());
                 entry.setId(p.getId());
-                vagasVisitas.addEntries(entry);
+
+                if(p.getFamiliares().size() == 5){
+                    entry.getStyleClass().add("customStyle");
+                }
+
+                calendarView.getCalendars().get(0).addEntry(entry);
         }
     }
 
 
-
-/*        Thread updateTimeThread = new Thread("Calendar: Update Time Thread") {
-            @Override
-            public void run() {
-                while (true) {
-                    Platform.runLater(() -> {
-                        calendar.setToday(LocalDate.now());
-                        calendar.setTime(LocalTime.now());
-                    });
-
-                    try {
-                        // update every 10 seconds
-                        sleep(10000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            };
-
-        updateTimeThread.setPriority(Thread.MIN_PRIORITY);
-        updateTimeThread.setDaemon(true);
-        updateTimeThread.start();
-        };*/
-
-
     }
 
-    //Criar handle para calendarview[0} e adicionar evento
-
-    private static void handleEvent1(CalendarEvent event) {
+    private void handleEvent1(CalendarEvent event) {
         //Se event for adicionado ao vagasVisitas então adicionar ao ficheiro json
-        System.out.println("Calendar Event Type: " + event.getEventType());
+        System.out.println("Tipo Evento: " + event.getEventType());
+
+        EventType type = event.getEventType();
+
 
         if(event.isEntryRemoved()){
-            System.out.println("Removido do ficheiro json");
+            System.out.println("Evento removido");
             data.removeCalendarEvent(event.getEntry().getId());
-            return;
+        }else if(event.isEntryAdded()){
+            System.out.println("Evento adicionado");
+            data.addCalendarEvent(event.getEntry());
+        }else if(type == ENTRY_INTERVAL_CHANGED || type == ENTRY_TITLE_CHANGED || type == ENTRY_FULL_DAY_CHANGED || type == ENTRY_LOCATION_CHANGED || type == ENTRY_RECURRENCE_RULE_CHANGED  || type == ENTRY_USER_OBJECT_CHANGED){ // Evento alterado por algum motivo
+            System.out.println("Evento alterado");
+            data.updateCalendarEvent(event.getEntry());
+            if(data.updateCalendarEvent(event.getEntry())){
+                calendarView.refreshData();
+            }
         }
 
-        if(event.getCalendar().getName().equals("Visitas - Livres")){
+        /*if(event.getCalendar().getName().equals("Visitas - Livres")){
+            System.out.println("Calendar Name: " + event.getCalendar().getName());
             if(event.isEntryAdded()){
                 System.out.println("Adicionado ao ficheiro json");
                 System.out.println(event.getEntry());
                 data.addCalendarEvent(event.getEntry());
             }
-        }
+        }*/
     }
 
 }
