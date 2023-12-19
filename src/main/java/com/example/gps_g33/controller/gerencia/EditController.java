@@ -81,7 +81,7 @@ public class EditController {
         LocalDate dataNascimento = dataNascimentoPicker.getValue();
         LocalDate dataAtual = LocalDate.now();
 
-        if (callback != null&&callback.usedCredentials(email, nif)) {
+        if (callback != null && !nif.equals(funcionario.getNif()) && callback.usedCredentials(email, nif)) {
             return;
         }
         if(InputValidation.styleTextError(nomeField, !InputValidation.isLengthValid(nome,3))
